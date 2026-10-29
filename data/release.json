@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.29.11",
+  "version": "2026.10.29.12",
   "updated": "2026-10-29",
   "cards": 730,
   "specialties": 29,
@@ -60,8 +60,8 @@
   },
   "topics": 574,
   "multipleSourceTopics": 158,
-  "appVersion": "1.4.11",
-  "updatedAt": "2026-10-29T19:53:08Z",
+  "appVersion": "1.4.12",
+  "updatedAt": "2026-10-29T22:06:10Z",
   "registeredCards": 808,
   "withheldCards": 78,
   "auditedCards": 808,

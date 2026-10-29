@@ -12,7 +12,7 @@ async function copy(src,dst){
   if(!old||old.size!==st.size||old.mtimeMs<st.mtimeMs)await fs.copyFile(src,dst);
  }
 }
-for(const item of ['index.html','styles.css','app.js','catalog.js','document-screen.js','share-card.js','print-session.js','print-session.css','pdf-actions.js','pdf-actions.css','printable-pdf.js','pwa.js','analytics.js','viewer.html','viewer.css','viewer.js','print.html','print.css','print.js','sw.js','manifest.webmanifest','icon.svg','data','assets']){
+for(const item of ['index.html','styles.css','app.js','edus-guidance.js','catalog.js','document-screen.js','share-card.js','print-session.js','print-session.css','pdf-actions.js','pdf-actions.css','printable-pdf.js','pwa.js','analytics.js','viewer.html','viewer.css','viewer.js','print.html','print.css','print.js','sw.js','manifest.webmanifest','icon.svg','data','assets']){
  const src=path.join(root,item);if(await fs.stat(src).catch(()=>null))await copy(src,path.join(dist,item));
 }
 // Las vistas de documentos usan el mismo inicio canónico de la app. El HTML de

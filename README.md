@@ -58,3 +58,10 @@ La fecha y hora visibles proceden de `data/release.json` (`updatedAt`) y se mues
 ## Revisión del contenido
 
 La auditoría de 28 de octubre de 2026 revisó los 808 apartados contra sus copias de respaldo. Registró 186 incidencias: 78 apartados separados del catálogo y 108 fichas corregidas o reclasificadas. Las condiciones de envío encontradas en observaciones o prioridad se hicieron visibles en la revisión operativa. Se conservan los criterios de documentos distintos por separado. Las casillas corregidas tienen identificadores nuevos para no heredar marcas hechas sobre el significado anterior. El registro de decisiones está en `audits/2026-10-28-content-audit.json`. Esta revisión de selección y extracción no sustituye la confirmación institucional de la vigencia clínica de las fuentes.
+
+
+## Estudios y elección del documento
+
+La orientación operativa sobre EDUS aparece dentro de la revisión de las fichas que solicitan estudios, incluidos los requisitos generales del mismo documento. También se conserva en la impresión y en los textos para completar o revisar la referencia. Explica cómo localizar los estudios ya disponibles y cómo incorporar resultados o informes impresos mediante Asistente EDUS, con identificación de sus adjuntos en la referencia. Los requisitos clínicos originales y sus casillas permanecen sin cambios; digitalizar un informe no sustituye las imágenes ni materiales originales que la fuente solicite. El respaldo de esta orientación se identifica aparte de la fuente clínica.
+
+Los temas con varias fuentes requieren elegir documento antes de mostrar los criterios y las casillas. Se presenta el ámbito de cada fuente y su vigencia declarada. Un filtro explícito por documento desde el catálogo se respeta cuando identifica una sola variante. Después de elegir, el selector compacto permite cambiar de documento y consultar su comparación. Las marcas de revisión se mantienen por fuente. La apertura de una ficha en Analytics se registra cuando se muestra efectivamente el documento, sin contar la pantalla previa de elección.

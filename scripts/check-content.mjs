@@ -80,7 +80,7 @@ for(const [name,next] of [['updateChecklist','sourceStatusNote'],['applyDetailTa
  assert.doesNotThrow(()=>invoke(name==='updateChecklist'?get('r01-cirugia-pediatrica-constipacion-p34'):'full'));
 }
 
-const script=(await fs.readFile(path.join(root,'print.js'),'utf8')).replace("'./printable-pdf.js'",JSON.stringify(new URL('../printable-pdf.js',import.meta.url).href)).replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`).replace("'./catalog.js'",JSON.stringify(new URL('../catalog.js',import.meta.url).href));
+const script=(await fs.readFile(path.join(root,'print.js'),'utf8')).replace("'./printable-pdf.js'",JSON.stringify(new URL('../printable-pdf.js',import.meta.url).href)).replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`).replace("'./catalog.js'",JSON.stringify(new URL('../catalog.js',import.meta.url).href)).replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href));
 const {buildPrintDocument,checklistEntries}=await import(`data:text/javascript;base64,${Buffer.from(script).toString('base64')}`);
 for(const card of withheld)assert.throws(()=>buildPrintDocument({card,cards,sources,topics}),/no establece criterios/);
 assert.match(buildPrintDocument({card:breastReturn,cards,sources,topics}),/Condiciones de retorno al primer nivel/);

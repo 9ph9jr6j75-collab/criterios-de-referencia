@@ -1,8 +1,8 @@
 /* Solo se conserva la app y su catálogo; nunca PDF ni imágenes de páginas. */
 const CACHE_PREFIX = 'referencias-dripssha-shell-';
-const CACHE = `${CACHE_PREFIX}v1.4.11`;
+const CACHE = `${CACHE_PREFIX}v1.4.12`;
 const BASE = new URL('./', self.location.href);
-const SHELL = ['index.html','styles.css','app.js','release.js','catalog.js','pwa.js','analytics.js','icon.svg','manifest.webmanifest','viewer.html','viewer.js','viewer.css','print.html','print.js','print.css','document-screen.js','share-card.js','print-session.js','print-session.css','document-pages.js','pdf-actions.js','pdf-actions.css','printable-pdf.js'];
+const SHELL = ['index.html','styles.css','app.js','edus-guidance.js','release.js','catalog.js','pwa.js','analytics.js','icon.svg','manifest.webmanifest','viewer.html','viewer.js','viewer.css','print.html','print.js','print.css','document-screen.js','share-card.js','print-session.js','print-session.css','document-pages.js','pdf-actions.js','pdf-actions.css','printable-pdf.js'];
 const ICONS = ['assets/icon-180-v12.png','assets/icon-192-v12.png','assets/icon-512-v12.png'];
 const DATA_PATHS = ['data/topics.json','data/cards.json','data/sources.json','data/config.json'];
 const RESOURCES = [...SHELL,...ICONS,...DATA_PATHS];

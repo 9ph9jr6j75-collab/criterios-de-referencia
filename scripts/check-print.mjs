@@ -2,13 +2,15 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {isCatalogCard} from '../catalog.js';
+import {edusGuidanceForCard} from '../edus-guidance.js';
 
 const root = path.resolve(import.meta.dirname, '..');
 const release = JSON.parse(await fs.readFile(path.join(root, 'data/release.json'), 'utf8'));
 const catalogModule = 'data:text/javascript;base64,'+Buffer.from(await fs.readFile(path.join(root,'catalog.js'),'utf8')).toString('base64');
 let script = (await fs.readFile(path.join(root, 'print.js'), 'utf8')).replace("import { APP_RELEASE } from './release.js';", `const APP_RELEASE = ${JSON.stringify({ updatedAt: release.updatedAt })};`).replace("'./catalog.js'",JSON.stringify(catalogModule));
 const pdfModule = 'data:text/javascript;base64,'+Buffer.from(await fs.readFile(path.join(root,'printable-pdf.js'),'utf8')).toString('base64');
-script=script.replace("'./printable-pdf.js'",JSON.stringify(pdfModule));
+script=script.replace("'./printable-pdf.js'",JSON.stringify(pdfModule))
+  .replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href));
 const { buildPrintDocument, generalRequirements, checklistEntries, updateLabel } = await import(`data:text/javascript;base64,${Buffer.from(script).toString('base64')}`);
 const [cards, sources, topics] = await Promise.all(['cards', 'sources', 'topics'].map(async name => JSON.parse(await fs.readFile(path.join(root, `data/${name}.json`), 'utf8'))));
 
@@ -75,6 +77,16 @@ for (const card of cards) {
     continue;
   }
   const printed = buildPrintDocument({ card, cards, sources, topics });
+  const guidance = edusGuidanceForCard(card, cards);
+  const guidanceBlocks = printed.match(/class="notice edus-guidance-print"/g) || [];
+  assert.equal(guidanceBlocks.length,guidance?1:0,card.id+': una orientación operativa por documento cuando corresponde, fuera de los criterios clínicos.');
+  if(guidance){
+    assert(printed.includes(guidance.title),card.id+': título de la orientación EDUS.');
+    const escapeGuidance=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    for(const text of [guidance.body,guidance.originalsNote].filter(Boolean))assert(printed.includes(escapeGuidance(text)),card.id+': orientación íntegra y conservación de material original.');
+    for(const document of guidance.sources)assert(printed.includes(escapeGuidance(document.url)),card.id+': respaldo documental operativo.');
+    assert(printed.indexOf('class="notice edus-guidance-print"')<printed.indexOf('id="clinical-title"'),card.id+': orientación disponible antes del contenido clínico.');
+  }
   const source = sources.find(item => item.id === card.sourceId);
   assert.ok(printed.includes(card.sourceId), `Fuente perdida: ${card.id}`);
   const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));

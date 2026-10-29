@@ -92,11 +92,11 @@ await check('La precarga guarda inicio, visor, impresión e iconos con tipos cor
   }});
   await app.lifecycle('install');
   const cache=await app.caches.open(CURRENT);
-  for(const name of ['index.html','viewer.html','print.html','app.js','print.js','print.css','document-screen.js','document-pages.js','print-session.js','print-session.css','pdf-actions.js','pdf-actions.css','printable-pdf.js','assets/icon-192-v12.png','data/cards.json']){
+  for(const name of ['index.html','viewer.html','print.html','app.js','edus-guidance.js','print.js','print.css','document-screen.js','document-pages.js','print-session.js','print-session.css','pdf-actions.js','pdf-actions.css','printable-pdf.js','assets/icon-192-v12.png','data/cards.json']){
     const stored=await cache.match(address(name));
     assert(stored,name);assert.equal(stored.redirected,false,name);assert.equal(stored.url,'',name);
   }
-  assert.equal(cache.entries.size,30);
+  assert.equal(cache.entries.size,31);
   assert(app.requests.every(({request})=>request.cache==='reload'));
 });
 
@@ -115,22 +115,24 @@ await check('Una instalación sin red conserva la versión anterior y nunca mezc
 });
 
 await check('Faltar un módulo nuevo aborta la actualización completa y deja intacta la caché anterior',async()=>{
+ for(const missingModule of ['document-screen.js','edus-guidance.js']){
   const app=harness({fetcher:async request=>{
     const name=new URL(request.url).pathname.slice(new URL(BASE).pathname.length)||'index.html';
-    if(name==='document-screen.js')throw Error('Módulo nuevo no disponible');
+    if(name===missingModule)throw Error('Módulo nuevo no disponible: '+missingModule);
     const type=name.endsWith('.html')?'text/html':name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':name.endsWith('.svg')?'image/svg+xml':name.endsWith('.png')?'image/png':name.endsWith('.webmanifest')?'application/manifest+json':'application/json';
     return response(name.endsWith('.html')?html(name==='index.html'?'app':name.split('.')[0]):type.includes('json')?'{}':'recurso nuevo',{url:request.url,headers:{'Content-Type':type}});
   }});
   const old=await app.caches.open(LEGACY);
   await old.put(address('app.js'),response('/* versión anterior operativa */',{headers:{'Content-Type':'text/javascript'}}));
-  await old.put(address('document-screen.js'),response('/* no reutilizar este módulo anterior */',{headers:{'Content-Type':'text/javascript'}}));
+  await old.put(address(missingModule),response('/* no reutilizar este módulo anterior */',{headers:{'Content-Type':'text/javascript'}}));
   await assert.rejects(app.lifecycle('install'),/Módulo nuevo/);
   assert.equal(app.skipped,0);assert.equal(app.claimed,0);assert.equal(app.cacheMap.has(CURRENT),false);assert.equal(app.cacheMap.has(LEGACY),true);
   assert.equal(await (await old.match(address('app.js'))).text(),'/* versión anterior operativa */');
   assert.equal(old.entries.size,2,'No se modifica ningún recurso anterior');
+ }
 });
 
-await check('Una instalación íntegra activa y reclama clientes solo después de conservar los 30 recursos',async()=>{
+await check('Una instalación íntegra activa y reclama clientes solo después de conservar los 31 recursos',async()=>{
   const app=harness({fetcher:async request=>{
     const name=new URL(request.url).pathname.slice(new URL(BASE).pathname.length)||'index.html';
     const type=name.endsWith('.html')?'text/html':name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':name.endsWith('.svg')?'image/svg+xml':name.endsWith('.png')?'image/png':name.endsWith('.webmanifest')?'application/manifest+json':'application/json';
@@ -138,7 +140,7 @@ await check('Una instalación íntegra activa y reclama clientes solo después d
   }});
   await app.caches.open(LEGACY);await app.caches.open('otra-app');
   await app.lifecycle('install');assert.equal(app.skipped,1);assert.equal(app.claimed,0);assert.equal(app.cacheMap.has(LEGACY),true);
-  assert.equal((await app.caches.open(CURRENT)).entries.size,30);
+  assert.equal((await app.caches.open(CURRENT)).entries.size,31);
   await app.lifecycle('activate');assert.equal(app.claimed,1);assert.equal(app.cacheMap.has(LEGACY),false);assert.equal(app.cacheMap.has('otra-app'),true);
 });
 

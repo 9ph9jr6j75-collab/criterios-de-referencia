@@ -52,8 +52,8 @@
   active=true;loading=false;
   window.gtag('event','page_view',{page_title:'Criterios de referencia',page_location:canonical,page_referrer:''});
   pending.splice(0).forEach(([event,params])=>send(event,params));
-  const opened=()=>{const card_id=currentCard();if(card_id)send('reference_open',{card_id});};
-  opened();addEventListener('hashchange',opened);
+  // La app confirma la apertura después de elegir documento. Un hash de ficha
+  // también puede mostrar solo el selector y no acredita que se leyó la fuente.
   document.addEventListener('click',event=>{
    const element=event.target.closest?.('button,a,[data-favorite]');if(!element)return;
    const card_id=element.dataset?.favorite||currentCard();

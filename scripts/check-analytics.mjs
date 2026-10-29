@@ -43,17 +43,29 @@ await check('Las visitas no incluyen query, hash ni títulos clínicos y la vers
  env.window.trackReferenceEvent('reference_open',{card_id:card.id,query:'NO ENVIAR',patient_name:'NO ENVIAR',mode:'valor libre'});
  const event=env.events().at(-1);assert.equal(event[2].app_version,release.appVersion);assert.equal(event[2].card_id,card.id);assert(!JSON.stringify(env.calls()).includes('secreto'));assert(!JSON.stringify(env.calls()).includes('NO ENVIAR'));assert(!('mode' in event[2]));
 });
-await check('Solo se registran fichas e identificadores documentales conocidos, incluso con URL manipulada',async()=>{
+await check('El hash no registra aperturas; solo una apertura confirmada de una ficha activa cuenta',async()=>{
+ const selector=await boot({url:'https://9ph9jr6j75-collab.github.io/criterios-de-referencia/#ficha/'+encodeURIComponent(card.id)});
+ assert.equal(selector.events().filter(event=>event[1]==='reference_open').length,0,'Llegar al selector no abre una fuente');
+ assert(!selector.listeners.has('hashchange'),'La URL no confirma una selección de documento');
  const env=await boot({url:'https://9ph9jr6j75-collab.github.io/criterios-de-referencia/#ficha/nombre-clinico-inventado'});
  const initial=env.events().length;
  env.window.trackReferenceEvent('reference_open',{card_id:'persona_secreta'});
  env.window.trackReferenceEvent('source_download',{source_id:'persona_secreta'});
  env.window.trackReferenceEvent('evento_arbitrario',{query:'secreto'});
  assert.equal(env.events().length,initial);
- env.location.hash='#ficha/%E0%A4%A';assert.doesNotThrow(()=>env.listeners.get('hashchange')());assert.equal(env.events().length,initial);
- env.location.hash='#ficha/'+encodeURIComponent(card.id);env.listeners.get('hashchange')();
+ env.location.hash='#ficha/%E0%A4%A';assert.doesNotThrow(()=>env.listeners.get('hashchange')?.());assert.equal(env.events().length,initial);
+ env.location.hash='#ficha/'+encodeURIComponent(card.id);env.listeners.get('hashchange')?.();
+ assert.equal(env.events().length,initial,'Un cambio de URL no registra lectura');
+ env.window.trackReferenceEvent('reference_open',{card_id:card.id});
  assert.equal(env.events().at(-1)[1],'reference_open');assert.equal(env.events().at(-1)[2].card_id,card.id);assert.equal(env.events().at(-1)[2].source_id,'N19');
- const before=env.events().length;env.location.hash='#ficha/'+cards.find(item=>item.catalogStatus==='withheld').id;env.listeners.get('hashchange')();assert.equal(env.events().length,before);
+ const before=env.events().length,withheld=cards.find(item=>item.catalogStatus==='withheld').id;
+ env.location.hash='#ficha/'+withheld;env.listeners.get('hashchange')?.();
+ env.window.trackReferenceEvent('reference_open',{card_id:withheld});assert.equal(env.events().length,before);
+});
+await check('Una apertura confirmada antes de terminar la carga se conserva una sola vez',async()=>{
+ const env=await boot({url:'https://9ph9jr6j75-collab.github.io/criterios-de-referencia/#ficha/'+encodeURIComponent(card.id),early:window=>window.trackReferenceEvent('reference_open',{card_id:card.id,patient_name:'NO ENVIAR'})});
+ const opened=env.events().filter(event=>event[1]==='reference_open');
+ assert.equal(opened.length,1);assert.equal(opened[0][2].card_id,card.id);assert.equal(opened[0][2].source_id,'N19');assert(!JSON.stringify(env.calls()).includes('NO ENVIAR'));
 });
 await check('Eventos tempranos del visor y acciones reales conservan solo parámetros admitidos',async()=>{
  const env=await boot({early:window=>window.trackReferenceEvent('source_page',{source_id:'N19',page_number:4,search:'dato privado'})});

@@ -7,15 +7,29 @@ import {File} from 'node:buffer';
 import vm from 'node:vm';
 import {createTextPdf,normalizePdfText,pdfTextLines} from '../printable-pdf.js';
 import {isCatalogCard,generalRequirementsForCard,specificRequirementsForCard} from '../catalog.js';
+import {edusGuidanceForCard} from '../edus-guidance.js';
 
 const root=path.resolve(import.meta.dirname,'..');
 const [cards,sources,topics,release]=await Promise.all(['cards','sources','topics','release'].map(async name=>JSON.parse(await fs.readFile(path.join(root,`data/${name}.json`),'utf8'))));
 let printScript=await fs.readFile(path.join(root,'print.js'),'utf8');
 const catalogModule='data:text/javascript;base64,'+Buffer.from(await fs.readFile(path.join(root,'catalog.js'),'utf8')).toString('base64');
-const importless=printScript.replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`).replace("'./catalog.js'",JSON.stringify(catalogModule)).replace("import { createTextPdf } from './printable-pdf.js';",'const createTextPdf=globalThis.createTextPdf;');
+const importless=printScript.replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`).replace("'./catalog.js'",JSON.stringify(catalogModule)).replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href)).replace("import { createTextPdf } from './printable-pdf.js';",'const createTextPdf=globalThis.createTextPdf;');
 const {buildPrintDocument}=await import('data:text/javascript;base64,'+Buffer.from(importless).toString('base64'));
 const plain=html=>html.replace(/<(?:\/p|\/h[1-6]|\/li|\/dt|\/dd|\/pre|\/section|br)\b[^>]*>/g,'\n').replace(/<[^>]*>/g,'').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&');
 const compact=value=>String(value).replace(/\s+/g,' ').trim();
+function restoreWrappedUrls(extracted,original){
+  // pdftotext separa una URL larga en líneas. Solo unir esas divisiones si
+  // cada carácter coincide con la URL original; no ignorar texto ni espacios.
+  const urls=original.match(/https?:\/\/\S+/g)||[];
+  for(const url of new Set(urls)){
+    const escaped=[...url].map(char=>char.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+    const wrapped=new RegExp(escaped.join('(?:[ \\t]*\\n[ \\t\\f\\n]*)?'),'g');
+    let matches=0;
+    extracted=extracted.replace(wrapped,()=>{matches++;return url;});
+    assert.equal(matches,urls.filter(item=>item===url).length,'La URL completa conserva todos sus caracteres: '+url);
+  }
+  return extracted;
+}
 const temp=await fs.mkdtemp(path.join(os.tmpdir(),'criterios-pdf-check-'));
 try{
   const fixture='Español: áéíóú ÁÉÍÓÚ ñÑ üÜ ¿Cuándo? ¡Atención! Código · revisión.\nComparaciones: ≥ 10 y ≤ 20; Coombs (+).\n'+Array.from({length:180},(_,i)=>`Línea ${i+1}: criterio completo, revisión y observación documentada.`).join('\n')+'\nÚltima línea íntegra.';
@@ -33,8 +47,9 @@ try{
     const extracted=execFileSync('pdftotext',['-layout',filename,'-'],{encoding:'utf8'});
     const info=execFileSync('pdfinfo',[filename],{encoding:'utf8'});
     assert.match(info,/Page size:\s+595\.28 x 841\.89 pts/);
-    const restored=compact(extracted.replace(/Criterios de referencia · DRIPSSHA/g,'').replace(/Página \d+ de \d+/g,''));
-    const expected=compact(normalizePdfText(text).replace(/Criterios de referencia · DRIPSSHA/g,''));
+    const original=normalizePdfText(text).replace(/Criterios de referencia · DRIPSSHA/g,'');
+    const restored=compact(restoreWrappedUrls(extracted.replace(/Criterios de referencia · DRIPSSHA/g,'').replace(/Página \d+ de \d+/g,''),original));
+    const expected=compact(original);
     if(restored!==expected){let n=0;while(restored[n]===expected[n])n++;throw new Error(`Texto PDF ${name}, posición ${n}: ${JSON.stringify(restored.slice(n-40,n+150))} / ${JSON.stringify(expected.slice(n-40,n+150))}`);}
     if(name==='fixture'){assert.match(info,/Pages:\s+[4-9]/);assert.match(extracted,/áéíóú ÁÉÍÓÚ ñÑ üÜ/);assert.match(extracted,/>= 10 y <= 20/);}
     else{assert.ok(extracted.includes(selected.sourceId));assert.ok(extracted.includes('Revisado'));assert.ok(extracted.includes('Por revisar'));assert.ok(extracted.includes('Texto documental completo'));assert.ok(extracted.includes('Costa Rica'));}
@@ -49,7 +64,7 @@ try{
     const nodes=new Map(),events={},shares=[];let active=false,prints=0;
     const node=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,disabled:false,textContent:'',innerHTML:'',innerText:full,addEventListener(name,handler){this[name]=handler;}});return nodes.get(id);};
     const nav={userAgent:options?.apple?'iPhone':'Chrome',standalone:Boolean(options?.apple),canShare:()=>options?.supported!==false,share(data){shares.push({active,data});return options?.share?.()||Promise.resolve();}};
-    const context={document:{getElementById:node,title:''},navigator:nav,window:{print(){prints++;}},location:{search:'?id='+encodeURIComponent(selected.id)},sessionStorage:{getItem:()=>JSON.stringify(reviewed?[reviewed]:[])},URLSearchParams,AbortController,File,Promise,createTextPdf,isCatalogCard,generalRequirementsForCard,specificRequirementsForCard,APP_RELEASE:release,setTimeout,clearTimeout,console,
+    const context={document:{getElementById:node,title:''},navigator:nav,window:{print(){prints++;}},location:{search:'?id='+encodeURIComponent(selected.id)},sessionStorage:{getItem:()=>JSON.stringify(reviewed?[reviewed]:[])},URLSearchParams,AbortController,File,Promise,createTextPdf,isCatalogCard,generalRequirementsForCard,specificRequirementsForCard,edusGuidanceForCard,APP_RELEASE:release,setTimeout,clearTimeout,console,
       fetch:async url=>({ok:true,json:async()=>url.includes('cards')?cards:url.includes('sources')?sources:topics})};
     const script=importless.replace(/^import .*;\n/gm,'').replace(/export /g,'').replace('const createTextPdf=globalThis.createTextPdf;','');
     vm.runInNewContext(script,context);

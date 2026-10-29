@@ -10,7 +10,8 @@ let printSource=await fs.readFile(new URL('print.js',root),'utf8');
 const release=JSON.parse(await fs.readFile(new URL('data/release.json',root),'utf8'));
 const pdfURL='data:text/javascript;base64,'+Buffer.from(await fs.readFile(new URL('printable-pdf.js',root),'utf8')).toString('base64');
 const catalogModule='data:text/javascript;base64,'+Buffer.from(await fs.readFile(new URL('catalog.js',root),'utf8')).toString('base64');
-printSource=printSource.replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify({updatedAt:release.updatedAt})};`).replace("'./catalog.js'",JSON.stringify(catalogModule)).replace("'./printable-pdf.js'",JSON.stringify(pdfURL));
+printSource=printSource.replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify({updatedAt:release.updatedAt})};`).replace("'./catalog.js'",JSON.stringify(catalogModule)).replace("'./printable-pdf.js'",JSON.stringify(pdfURL))
+ .replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href));
 const {buildPrintDocument}=await import('data:text/javascript;base64,'+Buffer.from(printSource).toString('base64'));
 const source=(await fs.readFile(new URL('print-session.js',root),'utf8')).replace(/^import .*;\n/gm,'').replace(/export function /g,'function ')+'\nglobalThis.api={printCard,printDocumentText};';
 const settle=()=>new Promise(resolve=>setImmediate(resolve));

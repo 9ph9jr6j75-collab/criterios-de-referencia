@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "sourceId": "N09",
+  "cardId": "n09-catarata",
+  "purpose": "Expose the seven existing general referral requirements from the same N09 cataract document before its specific criteria, without adding a catalogue topic or importing requirements from another source.",
+  "evidence": {
+    "document": "assets/documents/N09.pdf",
+    "page": 7,
+    "section": "h. Referencia a nivel de mayor capacidad resolutiva",
+    "heading": "Toda referencia debe incluir",
+    "method": "PDF text extraction and visual verification of source page 7; flattened bullet text matches existing fullText after whitespace normalization.",
+    "scope": "N09 cataract referral only; visual acuity and fundal reflex subitems remain in the existing specific studies and review entries."
+  },
+  "card": {
+    "changedFields": [
+      "checklist",
+      "inlineGeneralRequirements"
+    ],
+    "before": {
+      "id": "n09-catarata",
+      "specialty": "Oftalmología",
+      "name": "Catarata",
+      "aliases": [],
+      "sourceId": "N09",
+      "pages": [
+        7,
+        8
+      ],
+      "scope": "Nacional CCSS; personas funcionarias de la red institucional",
+      "priority": "Según criterios de agudeza visual, opacidad y ojo preferencial",
+      "criteria": [
+        "Sospecha de catarata: disminución de agudeza visual lenta y progresiva con opacidad del cristalino. Anotar la agudeza visual y otros síntomas.",
+        "Si se sospecha catarata y la visión es mejor a 20/60, referir a Optometría.",
+        "Visión peor de 20/200 corregida en el mejor ojo: referir con prioridad a consulta externa de Oftalmología, no a Emergencias.",
+        "Referir con prioridad ante opacidad total del cristalino y/o si es ojo preferencial."
+      ],
+      "studies": [
+        {
+          "text": "Resultado de agudeza visual con cartilla de Snellen, con y sin lentes de visión lejana.",
+          "type": "source"
+        },
+        {
+          "text": "Capacidad de valoración del reflejo de fondo para determinar oclusión en la transparencia de medios visuales.",
+          "type": "source"
+        }
+      ],
+      "prior": [],
+      "notes": [
+        "No se requiere de otros exámenes.",
+        "Incluir los datos generales, antecedentes y examen físico que establece la fuente."
+      ],
+      "fullText": "h. Referencia a nivel de mayor capacidad resolutiva\nUna vez que en el Primer Nivel de Atención se ha definido la sospecha de catarata, basada\nen la historia clínica y exploración de la persona usuaria; el médico tratante confeccionará la\nreferencia a la especialidad de oftalmología, para ello debe seguir las siguientes indicaciones:\nToda referencia debe incluir\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral,\nescolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento\nrecibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas\nilícitas, alergia a medicamentos.\n• Antecedentes heredo familiares\n• Antecedentes quirúrgicos\n• Examen físico completo con descripción adecuada.\no Anotar la agudeza visual según los datos obtenidos al pasar la carta de\nSnellen. Este dato es muy importante, ya que así se conoce cierto grado de\ncompromiso visual para poder priorizar. La puede hacer personal de\nenfermería o el médico general y a la persona examinada se le debe realizar\ncon y sin lentes de visión lejana.\no Debe anotar también capacidad de valoración de reflejo de fondo, para\ndeterminar si existe oclusión en la transparencia de medios visuales. (Esta\nmedida puede ser tomada por personal de apoyo (médico general,\nenfermera, auxiliar de enfermería, técnico de oftalmología, optometrista,\npersonal entrenado) y no por un especialista de oftalmología\nnecesariamente.\ni. Criterios de referencia\nLa referencia debe escribir claramente (CCSS, s.f.b, p. 155):\n• Justificación del motivo de referir: Sospecha de catarata. Disminución de agudeza\nvisual de forma lenta y progresiva con opacidad del cristalino. Anotar los resultados\nde la toma de la agudeza visual, desde el centro de referencia. Anotar otros síntomas\nsi los presenta.\n\n• En caso de que se sospeche catarata y la persona tenga una visión mejor a 20/60,\nreferir a optometría\n• En caso de que la persona tenga visión peor de 20/200 corregida (con lentes) en el\nmejor ojo referir como prioritario a consulta externa de oftalmología, no al servicio\nde emergencias.\n• Se debe referir con prioridad si presenta opacidad total del cristalino y/ o es ojo\npreferencial\n• No se requiere de otros exámenes.\nj. Requisitos de referencia\n• Resultado de la toma de agudeza visual según los datos obtenidos al pasar la cartilla\nde Snellen, desde el centro de referencia.\n• Debe anotar también capacidad de valoración de reflejo de fondo, para determinar si\nexiste oclusión en la transparencia de medios visuales.\n• Se debe referir con prioridad si presenta opacidad total del cristalino",
+      "checklist": [
+        {
+          "id": "item-1",
+          "text": "Sospecha de catarata: disminución de agudeza visual lenta y progresiva con opacidad del cristalino. Anotar la agudeza visual y otros síntomas.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-2",
+          "text": "Si se sospecha catarata y la visión es mejor a 20/60, referir a Optometría.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-3",
+          "text": "Visión peor de 20/200 corregida en el mejor ojo: referir con prioridad a consulta externa de Oftalmología, no a Emergencias.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-4",
+          "text": "Referir con prioridad ante opacidad total del cristalino y/o si es ojo preferencial.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-5",
+          "text": "Resultado de agudeza visual con cartilla de Snellen, con y sin lentes de visión lejana.",
+          "kind": "study",
+          "requirement": "source"
+        },
+        {
+          "id": "item-6",
+          "text": "Capacidad de valoración del reflejo de fondo para determinar oclusión en la transparencia de medios visuales.",
+          "kind": "study",
+          "requirement": "source"
+        }
+      ],
+      "direction": "I-II"
+    },
+    "after": {
+      "id": "n09-catarata",
+      "specialty": "Oftalmología",
+      "name": "Catarata",
+      "aliases": [],
+      "sourceId": "N09",
+      "pages": [
+        7,
+        8
+      ],
+      "scope": "Nacional CCSS; personas funcionarias de la red institucional",
+      "priority": "Según criterios de agudeza visual, opacidad y ojo preferencial",
+      "criteria": [
+        "Sospecha de catarata: disminución de agudeza visual lenta y progresiva con opacidad del cristalino. Anotar la agudeza visual y otros síntomas.",
+        "Si se sospecha catarata y la visión es mejor a 20/60, referir a Optometría.",
+        "Visión peor de 20/200 corregida en el mejor ojo: referir con prioridad a consulta externa de Oftalmología, no a Emergencias.",
+        "Referir con prioridad ante opacidad total del cristalino y/o si es ojo preferencial."
+      ],
+      "studies": [
+        {
+          "text": "Resultado de agudeza visual con cartilla de Snellen, con y sin lentes de visión lejana.",
+          "type": "source"
+        },
+        {
+          "text": "Capacidad de valoración del reflejo de fondo para determinar oclusión en la transparencia de medios visuales.",
+          "type": "source"
+        }
+      ],
+      "prior": [],
+      "notes": [
+        "No se requiere de otros exámenes.",
+        "Incluir los datos generales, antecedentes y examen físico que establece la fuente."
+      ],
+      "fullText": "h. Referencia a nivel de mayor capacidad resolutiva\nUna vez que en el Primer Nivel de Atención se ha definido la sospecha de catarata, basada\nen la historia clínica y exploración de la persona usuaria; el médico tratante confeccionará la\nreferencia a la especialidad de oftalmología, para ello debe seguir las siguientes indicaciones:\nToda referencia debe incluir\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral,\nescolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento\nrecibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas\nilícitas, alergia a medicamentos.\n• Antecedentes heredo familiares\n• Antecedentes quirúrgicos\n• Examen físico completo con descripción adecuada.\no Anotar la agudeza visual según los datos obtenidos al pasar la carta de\nSnellen. Este dato es muy importante, ya que así se conoce cierto grado de\ncompromiso visual para poder priorizar. La puede hacer personal de\nenfermería o el médico general y a la persona examinada se le debe realizar\ncon y sin lentes de visión lejana.\no Debe anotar también capacidad de valoración de reflejo de fondo, para\ndeterminar si existe oclusión en la transparencia de medios visuales. (Esta\nmedida puede ser tomada por personal de apoyo (médico general,\nenfermera, auxiliar de enfermería, técnico de oftalmología, optometrista,\npersonal entrenado) y no por un especialista de oftalmología\nnecesariamente.\ni. Criterios de referencia\nLa referencia debe escribir claramente (CCSS, s.f.b, p. 155):\n• Justificación del motivo de referir: Sospecha de catarata. Disminución de agudeza\nvisual de forma lenta y progresiva con opacidad del cristalino. Anotar los resultados\nde la toma de la agudeza visual, desde el centro de referencia. Anotar otros síntomas\nsi los presenta.\n\n• En caso de que se sospeche catarata y la persona tenga una visión mejor a 20/60,\nreferir a optometría\n• En caso de que la persona tenga visión peor de 20/200 corregida (con lentes) en el\nmejor ojo referir como prioritario a consulta externa de oftalmología, no al servicio\nde emergencias.\n• Se debe referir con prioridad si presenta opacidad total del cristalino y/ o es ojo\npreferencial\n• No se requiere de otros exámenes.\nj. Requisitos de referencia\n• Resultado de la toma de agudeza visual según los datos obtenidos al pasar la cartilla\nde Snellen, desde el centro de referencia.\n• Debe anotar también capacidad de valoración de reflejo de fondo, para determinar si\nexiste oclusión en la transparencia de medios visuales.\n• Se debe referir con prioridad si presenta opacidad total del cristalino",
+      "checklist": [
+        {
+          "id": "n09-general-1",
+          "text": "Nombre del centro de procedencia, nombre del médico que refiere y fecha.",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "n09-general-2",
+          "text": "Ficha de identificación del usuario, edad, estado civil, condición laboral, escolaridad",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "n09-general-3",
+          "text": "Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "n09-general-4",
+          "text": "Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas, alergia a medicamentos.",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "n09-general-5",
+          "text": "Antecedentes heredo familiares",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "n09-general-6",
+          "text": "Antecedentes quirúrgicos",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "n09-general-7",
+          "text": "Examen físico completo con descripción adecuada.",
+          "kind": "general",
+          "requirement": "required"
+        },
+        {
+          "id": "item-1",
+          "text": "Sospecha de catarata: disminución de agudeza visual lenta y progresiva con opacidad del cristalino. Anotar la agudeza visual y otros síntomas.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-2",
+          "text": "Si se sospecha catarata y la visión es mejor a 20/60, referir a Optometría.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-3",
+          "text": "Visión peor de 20/200 corregida en el mejor ojo: referir con prioridad a consulta externa de Oftalmología, no a Emergencias.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-4",
+          "text": "Referir con prioridad ante opacidad total del cristalino y/o si es ojo preferencial.",
+          "kind": "criterion",
+          "requirement": "source"
+        },
+        {
+          "id": "item-5",
+          "text": "Resultado de agudeza visual con cartilla de Snellen, con y sin lentes de visión lejana.",
+          "kind": "study",
+          "requirement": "source"
+        },
+        {
+          "id": "item-6",
+          "text": "Capacidad de valoración del reflejo de fondo para determinar oclusión en la transparencia de medios visuales.",
+          "kind": "study",
+          "requirement": "source"
+        }
+      ],
+      "direction": "I-II",
+      "inlineGeneralRequirements": {
+        "pages": [
+          7
+        ],
+        "criteria": [
+          "Nombre del centro de procedencia, nombre del médico que refiere y fecha.",
+          "Ficha de identificación del usuario, edad, estado civil, condición laboral, escolaridad",
+          "Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido",
+          "Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas, alergia a medicamentos.",
+          "Antecedentes heredo familiares",
+          "Antecedentes quirúrgicos",
+          "Examen físico completo con descripción adecuada."
+        ]
+      }
+    }
+  },
+  "before": {
+    "cardsSha256": "12abb5746a1fba19755a1da28bd35529cc268d7939a8c0b85c510f3faee32c13",
+    "sourceRegistrySha256": "c5031ed69536fb0cc445cb87cd0cce5ad25cd3fe7d99d2a0ed492fbfdf5310de",
+    "checklistItems": 2175
+  },
+  "after": {
+    "cardsSha256": "9ca0e77a00844915d02d2231a31872daa5c50ad00fb7d971c87da866c2d09a70",
+    "sourceRegistrySha256": "c5031ed69536fb0cc445cb87cd0cce5ad25cd3fe7d99d2a0ed492fbfdf5310de",
+    "checklistItems": 2182
+  },
+  "invariants": {
+    "registeredCards": 808,
+    "activeCards": 730,
+    "addedCatalogueCards": 0,
+    "addedGeneralRequirements": 7,
+    "originalSpecificChecklistEntries": 6,
+    "existingChecklistIdsPreserved": true,
+    "fullTextUnchanged": true,
+    "criteriaStudiesNotesUnchanged": true,
+    "otherCardsUnchanged": true,
+    "historicalAuditsUnchanged": [
+      "audits/2026-10-29-repeated-content.json",
+      "audits/2026-10-29-r03-provenance.json"
+    ]
+  }
+}

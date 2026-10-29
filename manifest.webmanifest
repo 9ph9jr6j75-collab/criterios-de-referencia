@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Criterios de referencia · DRIPSSHA",
+  "short_name": "Criterios",
+  "description": "Criterios de referencia con lista de revisión y acceso a su fuente documental.",
+  "lang": "es-CR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f7fc",
+  "theme_color": "#245477",
+  "icons": [
+    {
+      "src": "assets/icon-192-v12.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512-v12.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

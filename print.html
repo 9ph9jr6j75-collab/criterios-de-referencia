@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf3fb">
+  <meta name="robots" content="noindex">
+  <title>Imprimir ficha · Criterios de referencia</title>
+  <link rel="stylesheet" href="print.css">
+  <script type="module" src="print.js"></script>
+</head>
+<body>
+  <header class="print-toolbar no-print">
+    <a id="return-to-card" class="button button-secondary" href="./">← Volver a la ficha</a>
+    <div class="print-actions"><button id="print-document" class="button button-secondary" type="button" disabled>Imprimir con el navegador</button><button id="share-print" class="button button-primary" type="button" hidden disabled>Preparar ficha en PDF</button></div>
+  </header>
+  <main>
+    <div id="load-status" class="status no-print" role="status" aria-live="polite">Preparando la ficha completa para imprimir…</div>
+    <section id="load-error" class="status error no-print" hidden aria-labelledby="error-heading">
+      <h1 id="error-heading">No se pudo preparar la ficha</h1>
+      <p id="error-message">Compruebe la conexión y vuelva a intentarlo.</p>
+      <button id="retry" class="button button-primary" type="button">Volver a intentar</button>
+    </section>
+    <p id="print-help" class="print-help no-print" hidden>En iPhone o iPad, prepare la ficha en PDF y después toque Compartir ficha PDF. Elija Imprimir o Guardar en Archivos. El documento conserva el contenido y las marcas de revisión; la app permanece abierta para volver a la ficha. En otros navegadores también puede usar Imprimir con el navegador.</p>
+    <p id="pdf-status" class="print-help no-print" role="status" aria-live="polite" hidden></p>
+    <article id="print-content" hidden aria-label="Ficha completa para imprimir"></article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+#reference-print-content{display:none}
+.print-session-dialog{width:min(520px,calc(100% - 28px));max-height:calc(100dvh - 32px);overflow:auto;margin:auto;padding:25px;border:1px solid #c9dbea;border-radius:16px;background:#fff;color:#284b65;box-shadow:0 16px 55px #173e6533;font:16px/1.6 Arial,Helvetica,sans-serif}
+.print-session-dialog::backdrop{background:#173e6552}
+.print-session-dialog h2{margin:0 0 12px;font-size:24px;line-height:1.3;color:#245477}
+.print-session-dialog p{margin:0 0 22px}
+.print-session-actions{display:flex;flex-wrap:wrap;gap:12px}
+.print-session-actions button{min-height:48px;padding:10px 17px;border:1px solid #b8cede;border-radius:9px;background:#285d83;color:#fff;font:600 15px/1.4 Arial,Helvetica,sans-serif;cursor:pointer}
+.print-session-actions button:last-child{background:#fff;color:#285d83}
+.print-session-actions button:focus-visible{outline:3px solid #6d9fc7;outline-offset:3px}
+.print-session-actions [hidden]{display:none!important}
+@media print{
+ @page{margin:16mm}
+ html[data-reference-print],html[data-reference-print] body{background:white!important;color:#182b3a!important;font:10pt/1.45 Arial,Helvetica,sans-serif!important}
+ html[data-reference-print] body>:not(#reference-print-content){display:none!important}
+ html[data-reference-print] #reference-print-content{display:block!important;width:auto;max-width:none;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:#fff;color:#182b3a;font:10pt/1.45 Arial,Helvetica,sans-serif}
+ #reference-print-content *{box-sizing:border-box}
+ #reference-print-content .document-heading{padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #66829a}
+ #reference-print-content .app-name{font-size:9pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#285d83;margin:0 0 8px}
+ #reference-print-content .specialty{font-size:10pt;margin:0 0 4px;color:#466175}
+ #reference-print-content h1{font-size:21pt;line-height:1.25;margin:0 0 9px;color:#245477;letter-spacing:0}
+ #reference-print-content h2{font-size:13pt;line-height:1.3;margin:19px 0 7px;color:#245477;break-after:avoid;page-break-after:avoid}
+ #reference-print-content h3{font-size:11pt;line-height:1.35;margin:14px 0 6px;color:#284b65;break-after:avoid;page-break-after:avoid}
+ #reference-print-content p{margin:8px 0 12px}
+ #reference-print-content .variant-name{font-size:11pt;font-weight:700}
+ #reference-print-content .updated{font-size:8pt;color:#4c6579}
+ #reference-print-content .metadata{display:grid;grid-template-columns:110px minmax(0,1fr);font-size:8pt;margin:0}
+ #reference-print-content .metadata dt,#reference-print-content .metadata dd{padding:5px 0;border-bottom:1px solid #ddd;overflow-wrap:anywhere}
+ #reference-print-content .metadata dt{font-weight:700}
+ #reference-print-content .metadata dd{margin:0;padding-left:12px}
+ #reference-print-content .notice{background:white;border-left:2px solid #778c9e;font-size:9pt;padding:7px 10px;margin:14px 0}
+ #reference-print-content .notice p:last-child{margin-bottom:0}
+ #reference-print-content .requirement-list{padding-left:18px;margin:8px 0 17px}
+ #reference-print-content .requirement-list li{padding:1px 0 4px;overflow-wrap:anywhere;break-inside:avoid;page-break-inside:avoid}
+ #reference-print-content .requirement-label{display:block;font-size:8pt;font-weight:700;color:#506b80;margin-top:2px}
+ #reference-print-content .document-text{font:9pt/1.5 Arial,Helvetica,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0 22px}
+ #reference-print-content .checklist{padding:0;list-style:none}
+ #reference-print-content .checklist li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;border-bottom:1px solid #ddd;padding:6px 0;font-size:9pt;break-inside:avoid;page-break-inside:avoid}
+ #reference-print-content .review-state{font-size:8pt;color:#35516a}
+ #reference-print-content .checklist-note{font-size:8pt;color:#526b7e}
+ #reference-print-content .general-group{margin-top:22px;border-top:1px solid #d6e2ec;padding-top:3px}
+ #reference-print-content .source-url{font-size:7.5pt;overflow-wrap:anywhere}
+ #reference-print-content .document-footer{margin-top:20px;border-top:1px solid #cfdde8;padding-top:10px;font-size:7.5pt;color:#466175}
+ #reference-print-content a{color:inherit;text-decoration:none;overflow-wrap:anywhere}
+}

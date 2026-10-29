@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "sourceId": "R03",
+  "purpose": "Identify the contributor-confirmed hospital service of R03 without altering clinical content or implying national applicability or formal approval.",
+  "evidence": {
+    "type": "contributor-confirmation-and-supplied-cover",
+    "origin": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)",
+    "coverYear": "2024",
+    "coverAuthors": [
+      "Dr. José Ramírez",
+      "Dr. Tony Ye"
+    ],
+    "approval": "No periodo de vigencia ni oficio de aprobación formal identificado en la copia."
+  },
+  "source": {
+    "changedFields": [
+      "alcance",
+      "approvalNote",
+      "documentStatus",
+      "estado",
+      "limites",
+      "provenance",
+      "shortLabel",
+      "titulo"
+    ],
+    "before": {
+      "id": "R03",
+      "tema": "Oftalmología",
+      "titulo": "Guías de referencia servicio de Oftalmología, actualización 2024",
+      "codigo": "No consta",
+      "fecha": "2024",
+      "alcance": "No identifica establecimiento o red en el contenido",
+      "vigencia": "No consta periodo ni oficio de aprobación",
+      "estado": "Adjunto revisado; procedencia por documentar",
+      "limites": "Autores José Ramírez y Tony Ye. Distingue urgencias de consulta externa. No atribuir alcance nacional ni hospital específico sin respaldo.",
+      "paginas": "DOCX: indicaciones generales y tablas de urgencias/consulta externa",
+      "enlace": "https://chatgpt.com/library?file_id=libfile_002aeade259c8191889512074eedf8cc&account_id=personal",
+      "documentStatus": "unverified",
+      "pageCount": 8,
+      "localPdf": "assets/documents/R03.pdf",
+      "pageImageBase": "assets/pages/R03/",
+      "originalDocx": "assets/documents/R03.docx",
+      "derivativeNotice": "Vista de lectura convertida desde el Word original aportado."
+    },
+    "after": {
+      "id": "R03",
+      "tema": "Oftalmología",
+      "titulo": "Guías de referencia del Servicio de Oftalmología del Hospital Tony Facio (HTFC), actualización 2024",
+      "codigo": "No consta",
+      "fecha": "2024",
+      "alcance": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)",
+      "vigencia": "No consta periodo ni oficio de aprobación",
+      "estado": "Adjunto revisado; procedencia del servicio confirmada por el aportante; sin oficio de aprobación identificado",
+      "limites": "Autores José Ramírez y Tony Ye; actualización 2024 según portada. Distingue urgencias de consulta externa. Criterios del Servicio de Oftalmología del Hospital Tony Facio (HTFC); no atribuir alcance nacional ni aplicación automática fuera del servicio.",
+      "paginas": "DOCX: indicaciones generales y tablas de urgencias/consulta externa",
+      "enlace": "https://chatgpt.com/library?file_id=libfile_002aeade259c8191889512074eedf8cc&account_id=personal",
+      "documentStatus": "regional",
+      "pageCount": 8,
+      "localPdf": "assets/documents/R03.pdf",
+      "pageImageBase": "assets/pages/R03/",
+      "originalDocx": "assets/documents/R03.docx",
+      "derivativeNotice": "Vista de lectura convertida desde el Word original aportado.",
+      "shortLabel": "HTFC · Oftalmología",
+      "provenance": "Procedencia confirmada por el aportante el 29/10/2026: Servicio de Oftalmología del Hospital Tony Facio (HTFC). La portada aportada identifica actualización 2024 y a los autores Dr. José Ramírez y Dr. Tony Ye.",
+      "approvalNote": "La procedencia del servicio está confirmada. La copia disponible no identifica periodo de vigencia ni oficio de aprobación formal."
+    }
+  },
+  "cardScopes": [
+    {
+      "cardId": "r03-oftalmologia-blefaritis-e-irritaciones-conjuntivales-cronicas",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-cataratas",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-celulitis-post-septal",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-chalazion-y-orzuelo",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-conjuntivitis",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-cuerpo-extrano-en-cornea-o-conjuntiva",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-diplopia",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-ectropion-entropion-y-otras-anormalidades-de-la-posicion-de-los-parpados",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-epiescleritis-y-escleritis",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-estrabismo",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-estrabismo-subito",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-estrabismo-traumatico",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-glaucoma-cronico",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-heridas-penetrantes-de-ojo",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-herpes-zoster-con-compromiso-de-rama-del-trigemino",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-neuritis-optica-y-papiledema",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-obstrucciones-de-la-via-lagrimal",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-perdida-cronica-de-la-agudeza-visual",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-pingueculas-y-otras-anomalias-de-la-conjuntiva-no-tumorales",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-proptosis-de-globo-ocular",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-pterigion",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-perdida-de-la-vision-subita-de-cualquier-indole",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-quemaduras-oculares-con-acidos-o-base",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-queratitis-infecciosa-ulceras-corneales",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-queratocono-y-otras-ectasias-o-degeneraciones-corneales",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-requisitos-generales-de-oftalmologia-actualizacion-2024",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-retinopatia-diabetica-y-retinopatias-asociadas-a-la-edad",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-sospecha-de-glaucoma-agudo",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-trauma-ocular-significativo-de-cualquier-origen",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-triquiasis-y-otras-anormalidades-de-la-posicion-de-los-parpados",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-tumores-malignos-de-cualquier-parte-del-globo-o-anexos",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    },
+    {
+      "cardId": "r03-oftalmologia-uveitis-aguda-o-cronicas-reagudizadas",
+      "before": "No identifica establecimiento o red en el contenido",
+      "after": "Servicio de Oftalmología del Hospital Tony Facio (HTFC)"
+    }
+  ],
+  "before": {
+    "sourceRegistrySha256": "a91d5c6585e4802119a27f560feba2aa0e23f90d8e24d2981e108039d53cc485",
+    "cardsSha256": "b03ef193596be59a90d5ef3ea5306c4d649b8dfeff1918399cff3ecaae6a0ddd",
+    "protectedCardFieldsSha256": "386f85608a94bab6a6c82a52ef39385672819add2633a76c3ec59fc310da4cc8"
+  },
+  "after": {
+    "sourceRegistrySha256": "c5031ed69536fb0cc445cb87cd0cce5ad25cd3fe7d99d2a0ed492fbfdf5310de",
+    "cardsSha256": "12abb5746a1fba19755a1da28bd35529cc268d7939a8c0b85c510f3faee32c13",
+    "protectedCardFieldsSha256": "386f85608a94bab6a6c82a52ef39385672819add2633a76c3ec59fc310da4cc8"
+  },
+  "invariants": {
+    "registeredCards": 808,
+    "activeCards": 730,
+    "changedScopeFields": 32,
+    "clinicalContentUnchanged": true,
+    "historicalAuditUnchanged": "audits/2026-10-29-repeated-content.json",
+    "changedEditorialProvenanceNotes": 1,
+    "protectedFields": "Every card field other than the 32 audited R03 scope values and the single audited editorial provenance note is unchanged; this includes all clinical text, criteria, studies, priorities and checklists."
+  },
+  "editorialNotes": [
+    {
+      "cardId": "r03-oftalmologia-requisitos-generales-de-oftalmologia-actualizacion-2024",
+      "field": "notes",
+      "index": 0,
+      "before": "El documento identifica autores y año 2024, pero no identifica establecimiento ni oficio de aprobación.",
+      "after": "Procedencia identificada: Servicio de Oftalmología del Hospital Tony Facio (HTFC), actualización 2024. La copia no identifica oficio de aprobación formal.",
+      "reason": "Editorial provenance clarification; no clinical criterion or documentary transcription changed."
+    }
+  ]
+}

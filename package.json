@@ -1,0 +1,10 @@
+{
+  "name": "criterios-de-referencia",
+  "version": "1.4.11",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/check.mjs"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "appId": "criterios-de-referencia",
+  "analytics": {
+    "enabled": true,
+    "measurementId": "G-PLDNSL0CSR",
+    "allowedSites": [
+      {
+        "host": "9ph9jr6j75-collab.github.io",
+        "pathPrefix": "/criterios-de-referencia/"
+      },
+      {
+        "host": "criterios-de-referencia.solanocorella.chatgpt.site",
+        "pathPrefix": "/"
+      }
+    ]
+  }
+}

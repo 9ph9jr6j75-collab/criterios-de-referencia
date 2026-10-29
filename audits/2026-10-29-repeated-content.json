@@ -1,0 +1,1018 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "purpose": "Remove repeated summary sentences without changing documentary transcription, clinical thresholds or source variants.",
+  "normalization": {
+    "baseline": "Unicode NFC and whitespace only; case, numbers and operators remain unchanged.",
+    "finalPeriodReviewedCardIds": [
+      "n06-criptorquidia",
+      "n06-hidrocele",
+      "r01-cirugia-pediatrica-fimosis-p30",
+      "r01-otorrinolaringologia-sinusitis-aguda-complicada",
+      "r01-pediatria-hipertrofia-adenoamigdalina",
+      "r03-oftalmologia-estrabismo"
+    ]
+  },
+  "before": {
+    "registeredCards": 808,
+    "activeCards": 730,
+    "checklistItems": 2177,
+    "fullTextSha256": "4cbad2545fd216549c0f5db39b8cd428e214142bfd8bc3c4a0651b8235abbdf7",
+    "studiesSha256": "c473fef456bc5291fcbc1676627779339cc0509ca37173f1b294a7b632b2b751",
+    "withheldCardsSha256": "5423258d72f2453d5d72fb401d4473ea03126c385d8d2c7bc7dc460d714e1931",
+    "otherCardFieldsSha256": "35a951a3a74958108583a0d7932975d511c158cd77c3de6345e4dcf0f8bcecf2",
+    "registrySources": 40,
+    "sourceRegistrySha256": "a91d5c6585e4802119a27f560feba2aa0e23f90d8e24d2981e108039d53cc485",
+    "sourcesWithCards": 20
+  },
+  "after": {
+    "registeredCards": 808,
+    "activeCards": 730,
+    "checklistItems": 2175,
+    "fullTextSha256": "4cbad2545fd216549c0f5db39b8cd428e214142bfd8bc3c4a0651b8235abbdf7",
+    "studiesSha256": "c473fef456bc5291fcbc1676627779339cc0509ca37173f1b294a7b632b2b751",
+    "withheldCardsSha256": "5423258d72f2453d5d72fb401d4473ea03126c385d8d2c7bc7dc460d714e1931",
+    "otherCardFieldsSha256": "35a951a3a74958108583a0d7932975d511c158cd77c3de6345e4dcf0f8bcecf2",
+    "registrySources": 40,
+    "sourceRegistrySha256": "a91d5c6585e4802119a27f560feba2aa0e23f90d8e24d2981e108039d53cc485",
+    "sourcesWithCards": 20
+  },
+  "summary": {
+    "affectedCards": 74,
+    "removedOccurrences": 80,
+    "removedNotes": 76,
+    "removedCriteria": 2,
+    "mergedChecklistItems": 2
+  },
+  "checklistAliases": [
+    {
+      "cardId": "r01-ginecoobstetricia-epi-p93",
+      "fromId": "audit14-87535d06357b",
+      "toId": "audit14-862426322526"
+    },
+    {
+      "cardId": "n19-requisitos-generales-y-aplicacion-del-lineamiento-de-gastroscopias-y-colonoscopias",
+      "fromId": "item-1",
+      "toId": "applicability"
+    }
+  ],
+  "removals": [
+    {
+      "cardId": "r01-cardiologia-arritmia-cardiaca-p18",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Enviar a pacientes con EKG con sintomatología de Sd. de Brugrada o pre excitación",
+      "retained": {
+        "field": "criteria",
+        "value": "Enviar a pacientes con EKG con sintomatología de Sd. de Brugrada o pre excitación",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-cardiologia-disnea-p19",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Enviar a pacientes con disnea sin causa aparente para ser estudiados.",
+      "retained": {
+        "field": "criteria",
+        "value": "Enviar a pacientes con disnea sin causa aparente para ser estudiados.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n06-criptorquidia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Testículos no palpables bilateral por médico general, solicitar de inmediato valoración por pediatra",
+      "retained": {
+        "field": "criteria",
+        "value": "Testículos no palpables bilateral por médico general, solicitar de inmediato valoración por pediatra.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria (only final period differs, explicitly reviewed)."
+    },
+    {
+      "cardId": "r01-cirugia-pediatrica-fimosis-p30",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Valorar circuncisión posterior y referir con prioridad si presenta membrana obliterante",
+      "retained": {
+        "field": "criteria",
+        "value": "Valorar circuncisión posterior y referir con prioridad si presenta membrana obliterante.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria (only final period differs, explicitly reviewed)."
+    },
+    {
+      "cardId": "n06-hidrocele",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Si se presenta a tensión referir a Urgencias para descartar hernia encarcelada",
+      "retained": {
+        "field": "criteria",
+        "value": "Si se presenta a tensión referir a Urgencias para descartar hernia encarcelada.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria (only final period differs, explicitly reviewed)."
+    },
+    {
+      "cardId": "r01-cirugia-pediatrica-sinequia-de-labios-menores-p31",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Valorar tratamiento con estrógenos conjugados tópicos BID por 1 mes si se presenta falla terapéutica referir.",
+      "retained": {
+        "field": "criteria",
+        "value": "Valorar tratamiento con estrógenos conjugados tópicos BID por 1 mes si se presenta falla terapéutica referir.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-dermatologia-acne-p45",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Debe haber recibido al menos dos meses continuos de Doxiciclina 100mg BID y Peróxido de Benzoilo.",
+      "retained": {
+        "field": "prior",
+        "value": "Debe haber recibido al menos dos meses continuos de Doxiciclina 100mg BID y Peróxido de Benzoilo.",
+        "index": 0
+      },
+      "reason": "Same sentence already retained in prior."
+    },
+    {
+      "cardId": "r01-dermatologia-herpes-zoster-p44",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Patología de manejo en Medicina General, en todos casos si no pueden recetar Aciclovir enviar al servicio de emergencias en las primeras 72 hrs",
+      "retained": {
+        "field": "criteria",
+        "value": "Patología de manejo en Medicina General, en todos casos si no pueden recetar Aciclovir enviar al servicio de emergencias en las primeras 72 hrs",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-gastroenterologia-ahf-de-ca-de-colon-p71",
+      "field": "notes",
+      "originalIndex": 1,
+      "removedValue": "Inicio de estudio 10años previos a la edad de presentación de la enfermedad en el familiar O partir de los 40años",
+      "retained": {
+        "field": "criteria",
+        "value": "Inicio de estudio 10años previos a la edad de presentación de la enfermedad en el familiar O partir de los 40años",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-gastroenterologia-hepatitis-agudas-p77",
+      "field": "notes",
+      "originalIndex": 1,
+      "removedValue": "1-Ptes con vómito, compromiso estado general, TP en menos del 60%, referir urgente al Servicio de Emergencias. 2-Si no cumple criterios referir prioridad Consulta Externa de Gastroenterología",
+      "retained": {
+        "field": "criteria",
+        "value": "1-Ptes con vómito, compromiso estado general, TP en menos del 60%, referir urgente al Servicio de Emergencias. 2-Si no cumple criterios referir prioridad Consulta Externa de Gastroenterología",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-geriatria-depresion-p86",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Estados depresivos sin ideación suicida o estados psicóticos se valoran por consulta externa, de lo contrario referir a urgencias para valoración por psiquiatría.",
+      "retained": {
+        "field": "criteria",
+        "value": "Estados depresivos sin ideación suicida o estados psicóticos se valoran por consulta externa, de lo contrario referir a urgencias para valoración por psiquiatría.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n04-sindrome-de-caidas",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Caídas recientes con deterioro funcional agudo, referir a servicio de emergencias o urgencias",
+      "retained": {
+        "field": "criteria",
+        "value": "Caídas recientes con deterioro funcional agudo, referir a servicio de emergencias o urgencias",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-geriatria-sindrome-de-caidas-p86",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Caídas recientes con deterioro funcional agudo referir al servicio de urgencias AD fractura.",
+      "retained": {
+        "field": "criteria",
+        "value": "Caídas recientes con deterioro funcional agudo referir al servicio de urgencias AD fractura.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-ginecoobstetricia-epi-p93",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Debe existir siempre dolor a la movilización del cérvix, palpación de útero y anexos, más datos sugestivos de infección; fiebre, flujo vaginal fétido, PCR, VES y leucocitosis Si existe afección severa del estado general, SRIS, si la paciente está embarazada o existe alguna sospecha o dificultad para que la paciente cumpla el esquema de tratamiento oral; referir para tratamiento IV.",
+      "retained": {
+        "field": "criteria",
+        "value": "Debe existir siempre dolor a la movilización del cérvix, palpación de útero y anexos, más datos sugestivos de infección; fiebre, flujo vaginal fétido, PCR, VES y leucocitosis Si existe afección severa del estado general, SRIS, si la paciente está embarazada o existe alguna sospecha o dificultad para que la paciente cumpla el esquema de tratamiento oral; referir para tratamiento IV.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-ginecoobstetricia-epi-p93",
+      "field": "checklist",
+      "originalIndex": 1,
+      "removedValue": {
+        "id": "audit14-87535d06357b",
+        "text": "Debe existir siempre dolor a la movilización del cérvix, palpación de útero y anexos, más datos sugestivos de infección; fiebre, flujo vaginal fétido, PCR, VES y leucocitosis Si existe afección severa del estado general, SRIS, si la paciente está embarazada o existe alguna sospecha o dificultad para que la paciente cumpla el esquema de tratamiento oral; referir para tratamiento IV.",
+        "kind": "history",
+        "requirement": "conditional"
+      },
+      "retained": {
+        "field": "checklist",
+        "value": {
+          "id": "audit14-862426322526",
+          "text": "Debe existir siempre dolor a la movilización del cérvix, palpación de útero y anexos, más datos sugestivos de infección; fiebre, flujo vaginal fétido, PCR, VES y leucocitosis Si existe afección severa del estado general, SRIS, si la paciente está embarazada o existe alguna sospecha o dificultad para que la paciente cumpla el esquema de tratamiento oral; referir para tratamiento IV.",
+          "kind": "criterion",
+          "requirement": "conditional",
+          "legacyIds": [
+            "audit14-87535d06357b"
+          ]
+        },
+        "id": "audit14-862426322526",
+        "index": 1
+      },
+      "reason": "One review checkbox per identical sentence; removed ID retained as legacy alias."
+    },
+    {
+      "cardId": "r01-medicina-familiar-y-comunitaria-hepatopatias",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Toda sospecha de complicaciones de hepatopatías agudas como encefalopatías, SDA, o peritonitis espontaneas enviar al servicio de urgencias",
+      "retained": {
+        "field": "criteria",
+        "value": "Toda sospecha de complicaciones de hepatopatías agudas como encefalopatías, SDA, o peritonitis espontaneas enviar al servicio de urgencias",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-medicina-familiar-y-comunitaria-insuficiencias-cardiaca",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "NYHA IV o ICC enviar con prioridad sin requisitos",
+      "retained": {
+        "field": "criteria",
+        "value": "NYHA IV o ICC enviar con prioridad sin requisitos",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-medicina-familiar-y-comunitaria-nodulos-tiroideos-con-sospecha-de-malignidad",
+      "field": "criteria",
+      "originalIndex": 1,
+      "removedValue": "Enviar pacientes con hallazgos clínicos y factores de riesgo. De forma prioritaria sin US como requisito. Enviar los pacientes sin factores de riesgo con US",
+      "retained": {
+        "field": "studies",
+        "value": {
+          "text": "Enviar pacientes con hallazgos clínicos y factores de riesgo. De forma prioritaria sin US como requisito. Enviar los pacientes sin factores de riesgo con US",
+          "type": "conditional"
+        },
+        "index": 1
+      },
+      "reason": "Same sentence retained as a conditional study requirement; the source condition remains typed."
+    },
+    {
+      "cardId": "r01-medicina-familiar-y-comunitaria-nodulos-tiroideos-con-sospecha-de-malignidad",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Enviar pacientes con hallazgos clínicos y factores de riesgo. De forma prioritaria sin US como requisito. Enviar los pacientes sin factores de riesgo con US",
+      "retained": {
+        "field": "studies",
+        "value": {
+          "text": "Enviar pacientes con hallazgos clínicos y factores de riesgo. De forma prioritaria sin US como requisito. Enviar los pacientes sin factores de riesgo con US",
+          "type": "conditional"
+        },
+        "index": 1
+      },
+      "reason": "Same sentence already retained in studies."
+    },
+    {
+      "cardId": "r01-medicina-interna-valoracion-preoperatoria",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Pacientes sin comorbilidades y con cx de moderada o alto riesgo a partir de los 50 años.",
+      "retained": {
+        "field": "criteria",
+        "value": "Pacientes sin comorbilidades y con cx de moderada o alto riesgo a partir de los 50 años.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r03-oftalmologia-cataratas",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "En caso de sospecha de catarata, con visión mejor a 20/60, referirse inicialmente a Optometria\n*Referir con prioridad si presenta agudeza visual peor a 20/200 corregida con lentes en el mejor ojo, opacidad total del cristalino o si es ojo preferencial (ojo único)",
+      "retained": {
+        "field": "criteria",
+        "value": "En caso de sospecha de catarata, con visión mejor a 20/60, referirse inicialmente a Optometria\n*Referir con prioridad si presenta agudeza visual peor a 20/200 corregida con lentes en el mejor ojo, opacidad total del cristalino o si es ojo preferencial (ojo único)",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-oftalmologia-cuerpo-extrano-por-cortadura-de-metal-o-por-soldadura",
+      "field": "notes",
+      "originalIndex": 1,
+      "removedValue": "Si no se logra extraer el cuerpo extraño, se coloca un parche con terramicina por 24 horas, y referir urgente para la valoración por Oftalmología al día siguiente.",
+      "retained": {
+        "field": "criteria",
+        "value": "Si no se logra extraer el cuerpo extraño, se coloca un parche con terramicina por 24 horas, y referir urgente para la valoración por Oftalmología al día siguiente.",
+        "index": 0
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r03-oftalmologia-ectropion-entropion-y-otras-anormalidades-de-la-posicion-de-los-parpados",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "*Referir a Urgencias en caso de presentar desepitelización o úlcera corneal.",
+      "retained": {
+        "field": "criteria",
+        "value": "*Referir a Urgencias en caso de presentar desepitelización o úlcera corneal.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r03-oftalmologia-estrabismo",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Referir con prioridad a niños",
+      "retained": {
+        "field": "criteria",
+        "value": "Referir con prioridad a niños.",
+        "index": 0
+      },
+      "reason": "Same sentence already retained in criteria (only final period differs, explicitly reviewed)."
+    },
+    {
+      "cardId": "r01-oftalmologia-trauma-ocular-importante-de-cualquier-origen",
+      "field": "notes",
+      "originalIndex": 2,
+      "removedValue": "Referir urgente a emergencias si presenta pérdidas de contenido ocular.",
+      "retained": {
+        "field": "criteria",
+        "value": "Referir urgente a emergencias si presenta pérdidas de contenido ocular.",
+        "index": 2
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-otorrinolaringologia-sinusitis-aguda-complicada",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Complicaciones orbitarias e intracraneales",
+      "retained": {
+        "field": "criteria",
+        "value": "Complicaciones orbitarias e intracraneales.",
+        "index": 0
+      },
+      "reason": "Same sentence already retained in criteria (only final period differs, explicitly reviewed)."
+    },
+    {
+      "cardId": "r01-pediatria-adenopatias",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "IgG (+) No amerita ser referido\nporque es un proceso\ninflamatorio",
+      "retained": {
+        "field": "criteria",
+        "value": "IgG (+) No amerita ser referido porque es un proceso inflamatorio",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-pediatria-hipertrofia-adenoamigdalina",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Al menos 6 IVRS al año",
+      "retained": {
+        "field": "criteria",
+        "value": "Al menos 6 IVRS al año.",
+        "index": 0
+      },
+      "reason": "Same sentence already retained in criteria (only final period differs, explicitly reviewed)."
+    },
+    {
+      "cardId": "n05-hipertrofia-de-amigdalas",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Ante sospecha de malignidad (hipertrofia unilateral progresiva no relacionada con procesos infecciosos) referir con carácter prioritario. Para amigdalectomía: siete episodios en el último año, cinco episodios al año en los últimos dos años, o tres episodios al año en los últimos tres años. Absceso periamigdalino o linfadenitis cervical supurativa asociados a amigdalitis recurrente, con necesidad de incisión y drenaje debe referirse a Urgencias.",
+      "retained": {
+        "field": "criteria",
+        "value": "Ante sospecha de malignidad (hipertrofia unilateral progresiva no relacionada con procesos infecciosos) referir con carácter prioritario. Para amigdalectomía: siete episodios en el último año, cinco episodios al año en los últimos dos años, o tres episodios al año en los últimos tres años. Absceso periamigdalino o linfadenitis cervical supurativa asociados a amigdalitis recurrente, con necesidad de incisión y drenaje debe referirse a Urgencias.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n05-neumonia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Referir a Urgencias a cualquier niño con neumonía que cumpla criterios de hospitalización: Edad menor 6 meses Episodios de cianosis Dificultad respiratoria grave: taquipnea para la edad, tirajes, quejido, saturación de Oxígeno menor o igual a 92% Inestabilidad hemodinámica Evidencia de neumonía complicada (con derrame pleural, absceso pulmonar, otros) Alteración del estado de conciencia Situación social de riesgo Dificultad para alimentarse Dudas en la capacidad de los cuidadores de cumplir el cuido y tratamiento del paciente Duda diagnóstica.",
+      "retained": {
+        "field": "criteria",
+        "value": "Referir a Urgencias a cualquier niño con neumonía que cumpla criterios de hospitalización: Edad menor 6 meses Episodios de cianosis Dificultad respiratoria grave: taquipnea para la edad, tirajes, quejido, saturación de Oxígeno menor o igual a 92% Inestabilidad hemodinámica Evidencia de neumonía complicada (con derrame pleural, absceso pulmonar, otros) Alteración del estado de conciencia Situación social de riesgo Dificultad para alimentarse Dudas en la capacidad de los cuidadores de cumplir el cuido y tratamiento del paciente Duda diagnóstica.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n05-reflujo-gastroesofagico-rge",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Referir a Urgencias: si existe sospecha de enfermedad grave como estenosis hipertrófica de píloro por vómitos en proyectil, biliosos , con sangre o deshidratación.",
+      "retained": {
+        "field": "criteria",
+        "value": "Referir a Urgencias: si existe sospecha de enfermedad grave como estenosis hipertrófica de píloro por vómitos en proyectil, biliosos , con sangre o deshidratación.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n03-trastornos-conductuales",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Inicio de síntomas antes de los 6 años(TDAH)",
+      "retained": {
+        "field": "criteria",
+        "value": "Inicio de síntomas antes de los 6 años(TDAH)",
+        "index": 2
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-trabajo-social-mujeres-adultas-con-diagnosticos-de-abuso-fisico-t741-abuso-sexual-t742-abuso-psicologico-t743",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Las referencias deben\nelaborarse en EDUS, para\nser validadas por Trabajo\nSocial del II nivel,\nposteriormente Redes\ngenera y gestiona la cita al\nusuario para la consulta\nsocial individual en el\nhospital, donde se valoran\nlos criterios de inclusión a la\nconsulta social grupal.",
+      "retained": {
+        "field": "prior",
+        "value": "Las referencias deben\nelaborarse en EDUS, para\nser validadas por Trabajo\nSocial del II nivel,\nposteriormente Redes\ngenera y gestiona la cita al\nusuario para la consulta\nsocial individual en el\nhospital, donde se valoran\nlos criterios de inclusión a la\nconsulta social grupal.",
+        "index": 0
+      },
+      "reason": "Same sentence already retained in prior."
+    },
+    {
+      "cardId": "r01-urologia-litiasis-renal-y-colico-renouretral",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Si el paciente se encuentra con un\nepisodio de cólico reno uretral se debe\nenviar a Urgencias para tratamiento\nanalgésico.",
+      "retained": {
+        "field": "criteria",
+        "value": "Si el paciente se encuentra con un episodio de cólico reno uretral se debe enviar a Urgencias para tratamiento analgésico.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "r01-vascular-periferico-trombosis-venosa-profunda",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Referir al servicio de urgencias si\ncumple con dos o más criterios de\nWells.",
+      "retained": {
+        "field": "criteria",
+        "value": "Referir al servicio de urgencias si\ncumple con dos o más criterios de\nWells.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n19-pirosis-o-reflujo-indicacion-de-gastroscopia-de-rutina",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-disfagia-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sindrome-dispeptico-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sindrome-ulceroso-gastrico-o-duodenal-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-perdida-de-peso-en-estudio-indicacion-de-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sindrome-anemico-cronico-o-anemia-megaloblastica-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-control-de-displasia-leve-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-gastritis-cronica-con-metaplasia-intestinal-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-gastritis-cronica-con-metaplasia-intestinal-gastroscopia",
+      "field": "notes",
+      "originalIndex": 1,
+      "removedValue": "Seguimiento con gastroscopia: Gastritis Atrófica y Metaplasia intestinal: cada 5 años en mayores de 50 años. Displasia de bajo grado cada año. Displasia de alto grado: resecarla y control en 6 meses.",
+      "retained": {
+        "field": "criteria",
+        "value": "Seguimiento con gastroscopia: Gastritis Atrófica y Metaplasia intestinal: cada 5 años en mayores de 50 años. Displasia de bajo grado cada año. Displasia de alto grado: resecarla y control en 6 meses.",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n19-sangre-oculta-positiva-estudios-endoscopicos",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-antecedente-de-cancer-gastrico-en-familiar-de-primer-grado-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-hernia-hiatal-indicacion-de-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-ingesta-de-causticos-en-las-primeras-24-horas-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-masa-epigastrica-palpable-o-por-us-tac-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-hematemesis-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sindrome-pilorico-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-melena-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sindrome-anemico-agudo-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-control-de-displasia-de-alto-grado-reseccion-endoscopica",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-cuerpo-extrano-en-esofago-gastroscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-displasia-gastrica-consulta-de-gastroenterologia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-serologia-positiva-por-hepatitis-b-o-c-consulta-de-gastroenterologia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-higado-graso-criterios-de-referencia-a-gastroenterologia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-hepatitis-aguda-consulta-de-gastroenterologia-o-emergencias",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-hepatopatia-cronica-consulta-de-gastroenterologia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-antecedente-de-cancer-de-colon-en-familiar-de-primer-grado-colonoscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-rectorragia-masiva-colonoscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-rectorragia-masiva-colonoscopia",
+      "field": "notes",
+      "originalIndex": 1,
+      "removedValue": "Referir siempre al servicio de emergencias",
+      "retained": {
+        "field": "criteria",
+        "value": "Referir siempre al servicio de emergencias",
+        "index": 1
+      },
+      "reason": "Same sentence already retained in criteria."
+    },
+    {
+      "cardId": "n19-adenoma-colorrectal-o-polipos-colonoscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-poliposis-familiar-y-polipos-adenomatosos-colonoscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-anemia-cronica-colonoscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-polipos-adenomatosos-de-colon-seguimiento-por-colonoscopia",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-requisitos-generales-y-aplicacion-del-lineamiento-de-gastroscopias-y-colonoscopias",
+      "field": "criteria",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same scope exclusion retained in applicability and displayed by the scope banner."
+    },
+    {
+      "cardId": "n19-requisitos-generales-y-aplicacion-del-lineamiento-de-gastroscopias-y-colonoscopias",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-requisitos-generales-y-aplicacion-del-lineamiento-de-gastroscopias-y-colonoscopias",
+      "field": "checklist",
+      "originalIndex": 1,
+      "removedValue": {
+        "id": "item-1",
+        "text": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+        "kind": "criterion",
+        "requirement": "source"
+      },
+      "retained": {
+        "field": "checklist",
+        "value": {
+          "id": "applicability",
+          "text": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+          "kind": "criterion",
+          "requirement": "conditional",
+          "legacyIds": [
+            "item-1"
+          ]
+        },
+        "id": "applicability",
+        "index": 0
+      },
+      "reason": "One review checkbox per identical sentence; removed ID retained as legacy alias."
+    },
+    {
+      "cardId": "n19-patologia-esofagica-aguda-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sangrado-digestivo-alto-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-sangrado-digestivo-bajo-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-dolor-abdominal-agudo-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-obstruccion-intestinal-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-pancreatitis-aguda-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-encefalopatia-hepatica-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-ascitis-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-procesos-anorrectales-agudos-ruta-de-atencion-del-apartado-8",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    },
+    {
+      "cardId": "n19-contrarreferencia-de-gastroenterologia-al-nivel-de-origen",
+      "field": "notes",
+      "originalIndex": 0,
+      "removedValue": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4).",
+      "retained": {
+        "field": "applicability",
+        "value": "Este lineamiento excluye a las personas menores de trece años, las mujeres gestantes y las personas en estado de encamamiento prolongado (página 4)."
+      },
+      "reason": "Same sentence already retained in applicability."
+    }
+  ],
+  "presentationRequirements": [
+    "N19 applicability remains visible once in the dedicated banner; inline general requirements must show it only if the parent has not already shown the same scope.",
+    "Both app and printable checklists must recognize legacyIds when restoring saved review marks.",
+    "FullText and original PDF remain documentary evidence, even when their content repeats the structured summary."
+  ]
+}

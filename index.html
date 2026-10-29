@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#245477">
+  <style id="document-entry-style">
+    #document-entry-shell{display:none}html[data-document-entry] body>:not(#document-entry-shell){display:none!important}html[data-document-entry]{background:#f3f7fc}html[data-document-entry] #document-entry-shell{display:block;max-width:620px;margin:8vh auto;padding:24px;color:#244e6c;font:16px/1.6 system-ui,-apple-system,sans-serif}#document-entry-shell a{display:inline-block;min-height:44px;padding:10px 15px;border:1px solid #7598b3;border-radius:9px;background:#fff;color:#245477;text-decoration:none;font-weight:650}#document-entry-shell h1{font-size:24px;line-height:1.3;margin:24px 0 12px}#document-entry-shell [hidden]{display:none!important}
+  </style>
+  <script>
+    (()=>{
+      const params=new URLSearchParams(location.search),screen=params.get('screen');
+      const documentScreen=screen==='print'||screen==='source';
+      const cardEntry=!documentScreen&&/^#ficha\/(?:[a-zA-Z0-9_-]|%[a-fA-F0-9]{2})+$/.test(location.hash);
+      if(!documentScreen&&!cardEntry)return;
+      const hash=params.get('return')||'',id=params.get('id')||'';
+      const back=cardEntry?'./':/^#[a-zA-Z0-9_\-/%.?=&]*$/.test(hash)?'./'+hash:id?'./#ficha/'+encodeURIComponent(id):'./';
+      const entry=window.ReferenceDocumentEntry={state:'loading',kind:cardEntry?'card':screen,sync(){
+        const link=document.getElementById('document-entry-return');if(link){link.href=back;link.textContent=cardEntry?'← Volver al catálogo':'← Volver a la ficha';}
+        const title=document.getElementById('document-entry-title');if(title)title.textContent=entry.state==='failed'?'No se pudo abrir esta vista':cardEntry?'Abriendo la ficha…':screen==='print'?'Preparando la ficha para imprimir…':'Preparando el documento…';
+        if(entry.state==='failed'){
+          const status=document.getElementById('document-entry-status');if(status)status.textContent=cardEntry?'No se completó la carga. Puede volver al catálogo o reintentar sin perder la revisión.':'No se completó la carga. Puede volver a la ficha o reintentar sin perder la revisión.';
+          const retry=document.getElementById('document-entry-retry');if(retry){retry.href=location.href;retry.hidden=false;}
+        }
+      },ready(){
+        if(entry.state!=='loading')return false;
+        entry.state='ready';clearTimeout(timer);document.documentElement.removeAttribute('data-document-entry');document.getElementById('document-entry-shell')?.remove();return true;
+      },fail(){
+        if(entry.state!=='loading')return;
+        entry.state='failed';clearTimeout(timer);document.documentElement.setAttribute('data-document-entry','failed');entry.sync();
+      }};
+      document.documentElement.setAttribute('data-document-entry','loading');
+      const timer=setTimeout(()=>entry.fail(),20000);
+    })();
+  </script>
+  <meta name="description" content="Criterios de referencia de primer a segundo nivel. Consulte por patología y revise los requisitos con acceso a la fuente original.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Criterios">
+  <title>Criterios de referencia · DRIPSSHA</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-180-v12.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pdf-actions.css">
+  <link rel="stylesheet" href="print-session.css">
+  <script src="pdf-actions.js" defer></script>
+  <script src="app.js" type="module"></script>
+  <script src="analytics.js" defer></script>
+  <script src="pwa.js" defer></script>
+</head>
+<body>
+  <div id="document-entry-shell" aria-labelledby="document-entry-title"><a id="document-entry-return" href="./">← Volver a la ficha</a><h1 id="document-entry-title">Preparando el documento…</h1><p id="document-entry-status" role="status" aria-live="polite">La ficha conserva su revisión.</p><a id="document-entry-retry" href="./" hidden>Reintentar</a></div><script>window.ReferenceDocumentEntry?.sync();</script>
+  <a class="skip-link" href="#main">Ir al contenido</a>
+  <header class="app-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Criterios de referencia, inicio">
+        <span class="brand-symbol" aria-hidden="true"><img src="assets/icon-192-v12.png" width="52" height="52" alt=""></span>
+        <span class="brand-words"><strong>Criterios de referencia</strong><small>Iniciativa de la DRIPSSHA · Huetar Atlántica</small></span>
+      </a>
+      <nav class="utility-nav" aria-label="Información de la aplicación">
+        <a href="#guia" data-nav="guia">Cómo usarla</a>
+        <a href="#fuentes" data-nav="fuentes">Fuentes <span id="header-source-count" class="nav-count"></span></a>
+        <a href="#acerca" data-nav="acerca">Créditos</a>
+        <button type="button" id="install-app" data-catalog-only hidden class="button button-primary install-entry" data-install-app><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg><span data-install-label>Instalar app</span></button>
+      </nav>
+    </div>
+    <div class="header-support">
+      <p class="app-updated">Actualizada: <time data-app-updated></time> <span>· Costa Rica</span></p>
+      <button type="button" class="button installation-help-button installation-help-header" data-catalog-only hidden data-install-help><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4C7 2 4 2 2 3v13c2-1 5-1 8 1 3-2 6-2 8-1V3c-2-1-5-1-8 1Zm0 0v13"/></svg>Cómo instalar</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="catalog-screen" class="screen catalog-screen">
+      <div class="intro-line"><div><p class="eyebrow">Del criterio a la referencia</p><h1>Revise lo que debe llevar<br class="desktop-break"> su referencia.</h1><p class="intro-copy">Busque la patología. Consulte los criterios y compruebe los requisitos antes de enviar.</p></div><div class="intro-seal" aria-hidden="true"><span>PRIMER</span><svg viewBox="0 0 64 30" fill="none"><path d="M5 15h52M44 3l13 12-13 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SEGUNDO NIVEL</span></div></div>
+      <div class="search-panel no-print">
+        <label class="search-label" for="search">¿Por qué necesita referir?</label>
+        <div class="search-field"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="Ej.: catarata, cefalea, hematuria…" aria-describedby="search-help"><button id="clear-search" class="clear-search" type="button" aria-label="Limpiar búsqueda" hidden>×</button><kbd aria-hidden="true">/</kbd></div>
+        <div class="search-help-row"><span id="search-help">Busque por patología, especialidad o una palabra del criterio.</span><button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="true" aria-controls="filter-fields"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M5 10h10M7 15h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Filtros<span id="active-filters-count" hidden></span></button></div>
+        <div id="filter-fields" class="filter-fields">
+          <div class="filter-control"><label for="specialty-filter">Especialidad</label><select id="specialty-filter"><option value="">Todas las especialidades</option></select></div>
+          <div class="filter-control"><label for="scope-filter">Alcance</label><select id="scope-filter"><option value="">Todos los alcances</option><option value="national">Nacional CCSS</option><option value="regional">Regional y de servicio</option><option value="unverified">Procedencia por documentar</option></select></div>
+          <div class="filter-control"><label for="priority-filter">Tipo de atención</label><select id="priority-filter"><option value="">Cualquier prioridad</option><option value="urgent">Urgencias</option><option value="priority">Consulta prioritaria</option><option value="routine">Consulta a cupo</option></select></div>
+          <div class="filter-control source-filter"><label for="source-filter">Fuentes con fichas</label><select id="source-filter"><option value="">Todas</option></select></div>
+        </div>
+        <p class="source-coverage"><span id="source-coverage-label">Fuentes incorporadas al buscador.</span> <a href="#fuentes" id="source-registry-link">Ver el registro completo de fuentes</a></p>
+      </div>
+      <div class="catalog-toolbar no-print"><div class="catalog-tabs" role="tablist" aria-label="Vista del catálogo"><button type="button" role="tab" id="tab-all" data-list-mode="all" aria-selected="true">Todas <span id="all-count"></span></button><button type="button" role="tab" id="tab-favorites" data-list-mode="favorites" aria-selected="false">Favoritas <span id="favorite-count"></span></button><button type="button" role="tab" id="tab-recent" data-list-mode="recent" aria-selected="false">Recientes</button></div><button id="reset-filters" class="text-button" type="button" hidden>Quitar filtros</button></div>
+      <div class="results-heading"><div><h2 id="results-title">Criterios de referencia</h2><p id="result-count" role="status" aria-live="polite">Cargando documentos…</p></div><label id="sort-control" class="sort-control no-print"><span>Ordenar por</span><select id="sort-order" aria-label="Ordenar resultados"><option value="relevance">Coincidencia</option><option value="specialty">Especialidad</option><option value="name" selected>Patología A a Z</option></select></label><p id="sort-fixed" class="sort-fixed no-print" hidden></p></div>
+      <div id="catalog-notice" class="catalog-note"><span class="note-dot" aria-hidden="true"></span><p>Cada ficha reúne los requisitos generales identificados y los criterios específicos de su documento. Cuando hay varias fuentes, consulte cada una por separado.</p></div>
+      <section id="specialty-general" class="specialty-general" aria-labelledby="specialty-general-title" hidden></section>
+      <div id="results-grid" class="results-grid" aria-busy="true"><div class="loading-card" aria-hidden="true"></div><div class="loading-card" aria-hidden="true"></div><div class="loading-card" aria-hidden="true"></div><div class="loading-card" aria-hidden="true"></div></div>
+      <div id="empty-state" class="empty-state" hidden><div class="empty-symbol" aria-hidden="true">⌕</div><h3 id="empty-title">No encontramos esa búsqueda</h3><p id="empty-copy">Pruebe con otro término o quite algún filtro.</p><button id="empty-reset" class="button button-secondary" type="button">Ver todos los criterios</button></div>
+      <div class="load-more-wrap"><button id="load-more" class="button button-secondary" type="button" hidden>Mostrar más criterios</button></div>
+    </section>
+    <section id="detail-screen" class="screen detail-screen" hidden aria-labelledby="detail-title"></section>
+    <section id="info-screen" class="screen info-screen" hidden></section>
+  </main>
+
+  <footer class="app-footer no-print">
+    <div class="footer-credit"><strong>Criterios de referencia</strong><span>Iniciativa de la DRIPSSHA · Huetar Atlántica</span><small>Dirección de Red Integrada de Prestación de Servicios de Salud Huetar Atlántica · CCSS</small></div>
+    <div class="footer-links"><a href="#acerca">Créditos y contacto</a><a href="#fuentes">Fuentes y versiones</a><a href="mailto:msolanoc@ccss.sa.cr?subject=Criterios%20de%20referencia%3A%20error%20u%20observaci%C3%B3n">Reportar error o sugerir mejora</a><a class="footer-email" href="mailto:msolanoc@ccss.sa.cr">msolanoc@ccss.sa.cr</a><span id="app-version">Actualizada: <time data-app-updated></time> · Costa Rica</span></div>
+  </footer>
+  <div id="toast" class="toast no-print" role="status" aria-live="polite" hidden></div>
+  <div id="offline-note" class="offline-note no-print" hidden>Sin conexión. Se muestra el contenido disponible en este dispositivo.</div>
+  <noscript><div class="noscript-note">Active JavaScript para buscar las fichas. Puede consultar los documentos en la carpeta de fuentes de esta aplicación.</div></noscript>
+</body>
+</html>

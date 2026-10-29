@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "purpose": "Expose existing general or preparatory instructions from the same source before each applicable referral checklist. No general requirements are borrowed from another document or imposed on other clinical routes.",
+  "evidence": [
+    {
+      "sourceId": "N17",
+      "document": "assets/documents/N17.pdf",
+      "sha256": "28e22abd558ad86eafdd274f52abf7413de90907e58f2a9e6c00591bb3cb3f30",
+      "pages": [
+        6,
+        7
+      ],
+      "verification": "Original PDF text inspected; source wording and footnotes preserved where quoted, faithful summaries retain conditions and recommendation strength."
+    },
+    {
+      "sourceId": "N11",
+      "document": "assets/documents/N11.pdf",
+      "sha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "pages": [
+        69,
+        70
+      ],
+      "verification": "Original PDF text inspected; source wording and footnotes preserved where quoted, faithful summaries retain conditions and recommendation strength."
+    },
+    {
+      "sourceId": "N12",
+      "document": "assets/documents/N12.pdf",
+      "sha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "pages": [
+        82
+      ],
+      "verification": "Original PDF text inspected; source wording and footnotes preserved where quoted, faithful summaries retain conditions and recommendation strength."
+    }
+  ],
+  "changes": [
+    {
+      "sourceId": "N17",
+      "cardId": "n17-referencia-de-trabajo-social-del-i-al-ii-nivel",
+      "changedFields": [
+        "checklist",
+        "inlineGeneralRequirements"
+      ],
+      "pages": [
+        6,
+        7
+      ],
+      "reason": "La ficha actual solo representa sección4.6.3 p10; faltan instrucciones generales4.1.1 a4.1.8 que sí se aplican a envíos entre servicios de Trabajo Social. Conservar íntegra condición previa coordinación de jefatura en criterio específico.",
+      "addedChecklistItems": 13,
+      "before": {
+        "id": "n17-referencia-de-trabajo-social-del-i-al-ii-nivel",
+        "specialty": "Trabajo Social",
+        "name": "Referencia de Trabajo Social del I al II nivel",
+        "aliases": [],
+        "sourceId": "N17",
+        "pages": [
+          10
+        ],
+        "scope": "Nacional CCSS; profesionales de Trabajo Social de los tres niveles",
+        "priority": "",
+        "criteria": [
+          "Personas usuarias que requieren abordaje social en procesos grupales ofertados en hospital o área de salud de II nivel, previa coordinación con la jefatura de Trabajo Social de ese servicio."
+        ],
+        "studies": [],
+        "prior": [],
+        "notes": [
+          "Esta instrucción regula referencia entre servicios de Trabajo Social. No sustituye la valoración médica ni la oferta/criterios de referencia inicial a Trabajo Social."
+        ],
+        "fullText": "4.6.3 Referencias de Trabajo Social del I nivel de atención dirigidas a Trabajo Social del II\nnivel de atención\n• Personas usuarias que requieren abordaje social en procesos grupales que se\nofertan en el Hospital o Área de Salud del II nivel de atención (previa coordinación\ncon la jefatura de Trabajo Social de ese servicio de Trabajo Social del II nivel).",
+        "checklist": [
+          {
+            "id": "item-1",
+            "text": "Personas usuarias que requieren abordaje social en procesos grupales ofertados en hospital o área de salud de II nivel, previa coordinación con la jefatura de Trabajo Social de ese servicio.",
+            "kind": "criterion",
+            "requirement": "source"
+          }
+        ],
+        "direction": "I-II"
+      },
+      "after": {
+        "id": "n17-referencia-de-trabajo-social-del-i-al-ii-nivel",
+        "specialty": "Trabajo Social",
+        "name": "Referencia de Trabajo Social del I al II nivel",
+        "aliases": [],
+        "sourceId": "N17",
+        "pages": [
+          10
+        ],
+        "scope": "Nacional CCSS; profesionales de Trabajo Social de los tres niveles",
+        "priority": "",
+        "criteria": [
+          "Personas usuarias que requieren abordaje social en procesos grupales ofertados en hospital o área de salud de II nivel, previa coordinación con la jefatura de Trabajo Social de ese servicio."
+        ],
+        "studies": [],
+        "prior": [],
+        "notes": [
+          "Esta instrucción regula referencia entre servicios de Trabajo Social. No sustituye la valoración médica ni la oferta/criterios de referencia inicial a Trabajo Social."
+        ],
+        "fullText": "4.6.3 Referencias de Trabajo Social del I nivel de atención dirigidas a Trabajo Social del II\nnivel de atención\n• Personas usuarias que requieren abordaje social en procesos grupales que se\nofertan en el Hospital o Área de Salud del II nivel de atención (previa coordinación\ncon la jefatura de Trabajo Social de ese servicio de Trabajo Social del II nivel).",
+        "checklist": [
+          {
+            "id": "n17-general-1",
+            "text": "Apegarse al contenido establecido en la regulación técnica institucional vigente en materia de referencia.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-2",
+            "text": "Apegarse a la oferta de servicios de Trabajo Social.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-3",
+            "text": "Apegarse a los criterios de referencia a Trabajo Social que se indican en los documentos de regulación técnica vigentes, según corresponda.",
+            "kind": "general",
+            "requirement": "conditional"
+          },
+          {
+            "id": "n17-general-4",
+            "text": "Consignar la intervención social realizada y los resultados obtenidos con la persona usuaria y su red de apoyo.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-5",
+            "text": "Fundamentar las situaciones sociales específicas que requieren seguimiento y que por ende se refieren a otro servicio de Trabajo Social.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-6",
+            "text": "Indicar el motivo de referencia de forma concreta, y las acciones que se recomiendan seguir con la persona usuaria y su red de apoyo.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-7",
+            "text": "Es un requisito para la referencia, que la persona usuaria cuente con valoración y abordaje social en el servicio de Trabajo Social que refiere.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-8",
+            "text": "La ausencia de la persona usuaria a consulta social no es un criterio o motivo para referencia a un servicio de Trabajo Social de otro establecimiento de salud o nivel de atención.",
+            "kind": "general",
+            "requirement": "source"
+          },
+          {
+            "id": "n17-general-9",
+            "text": "Las visitas domiciliarias son parte del procedimiento del abordaje social que desarrolla la persona profesional a cargo de la valoración y seguimiento social del caso, por lo que no se debe enviar referencia a un servicio de Trabajo Social de Hospital o Área de Salud con el propósito de que realice la visita domiciliaria.",
+            "kind": "general",
+            "requirement": "source"
+          },
+          {
+            "id": "n17-general-10",
+            "text": "En caso de que la persona usuaria realice cambio de domicilio en el EDUS, la persona profesional en Trabajo Social verifica con la persona usuaria la nueva dirección de la vivienda y realiza referencia al servicio de Trabajo Social según corresponda por área de adscripción o área de atracción.",
+            "kind": "general",
+            "requirement": "conditional"
+          },
+          {
+            "id": "n17-general-11",
+            "text": "Otras situaciones que por criterio profesional corresponderían ser referidas a un servicio de otro establecimiento de salud o nivel de atención, deben ser coordinadas entre las jefaturas de Trabajo Social de los servicios involucrados. La referencia se envía según acuerdo entre las partes. La coordinación debe realizarse entre jefaturas de los servicios de Trabajo Social. En caso de no llegar a acuerdos, pueden solicitar asesoría a la supervisora de Trabajo Social de la DRIPSS o a la Coordinación Nacional de Trabajo Social, agotada la capacidad resolutiva.",
+            "kind": "general",
+            "requirement": "conditional"
+          },
+          {
+            "id": "n17-general-12",
+            "text": "Cada referencia que se emite debe estar firmada por la persona profesional en Trabajo Social que la elaboró.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n17-general-13",
+            "text": "Las referencias que se emiten deben ser revisadas y refrendadas por la jefatura del servicio de Trabajo Social (según la dinámica y organización interna del servicio), para verificar que cumplan con lo establecido en esta Instrucción de Trabajo. Las referencias que emiten las profesionales que ostentan puestos de jefatura de servicio de Trabajo Social y las trabajadoras sociales del Centro Nacional de Control del Dolor y Cuidados Paliativos no requieren refrendo.",
+            "kind": "general",
+            "requirement": "conditional"
+          },
+          {
+            "id": "item-1",
+            "text": "Personas usuarias que requieren abordaje social en procesos grupales ofertados en hospital o área de salud de II nivel, previa coordinación con la jefatura de Trabajo Social de ese servicio.",
+            "kind": "criterion",
+            "requirement": "source"
+          }
+        ],
+        "direction": "I-II",
+        "inlineGeneralRequirements": {
+          "pages": [
+            6,
+            7
+          ],
+          "criteria": [
+            "Apegarse al contenido establecido en la regulación técnica institucional vigente en materia de referencia.",
+            "Apegarse a la oferta de servicios de Trabajo Social.",
+            "Apegarse a los criterios de referencia a Trabajo Social que se indican en los documentos de regulación técnica vigentes, según corresponda.",
+            "Consignar la intervención social realizada y los resultados obtenidos con la persona usuaria y su red de apoyo.",
+            "Fundamentar las situaciones sociales específicas que requieren seguimiento y que por ende se refieren a otro servicio de Trabajo Social.",
+            "Indicar el motivo de referencia de forma concreta, y las acciones que se recomiendan seguir con la persona usuaria y su red de apoyo.",
+            "Es un requisito para la referencia, que la persona usuaria cuente con valoración y abordaje social en el servicio de Trabajo Social que refiere.",
+            "La ausencia de la persona usuaria a consulta social no es un criterio o motivo para referencia a un servicio de Trabajo Social de otro establecimiento de salud o nivel de atención.",
+            "Las visitas domiciliarias son parte del procedimiento del abordaje social que desarrolla la persona profesional a cargo de la valoración y seguimiento social del caso, por lo que no se debe enviar referencia a un servicio de Trabajo Social de Hospital o Área de Salud con el propósito de que realice la visita domiciliaria.",
+            "En caso de que la persona usuaria realice cambio de domicilio en el EDUS, la persona profesional en Trabajo Social verifica con la persona usuaria la nueva dirección de la vivienda y realiza referencia al servicio de Trabajo Social según corresponda por área de adscripción o área de atracción.",
+            "Otras situaciones que por criterio profesional corresponderían ser referidas a un servicio de otro establecimiento de salud o nivel de atención, deben ser coordinadas entre las jefaturas de Trabajo Social de los servicios involucrados. La referencia se envía según acuerdo entre las partes.",
+            "Cada referencia que se emite debe estar firmada por la persona profesional en Trabajo Social que la elaboró.",
+            "Las referencias que se emiten deben ser revisadas y refrendadas por la jefatura del servicio de Trabajo Social (según la dinámica y organización interna del servicio), para verificar que cumplan con lo establecido en esta Instrucción de Trabajo. Las referencias que emiten las profesionales que ostentan puestos de jefatura de servicio de Trabajo Social y las trabajadoras sociales del Centro Nacional de Control del Dolor y Cuidados Paliativos no requieren refrendo."
+          ],
+          "notes": [
+            "La coordinación debe realizarse entre jefaturas de los servicios de Trabajo Social. En caso de no llegar a acuerdos, pueden solicitar asesoría a la supervisora de Trabajo Social de la DRIPSS o a la Coordinación Nacional de Trabajo Social, agotada la capacidad resolutiva."
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "N11",
+      "cardId": "n11-referencia-de-psicologia-a-hospitales-perifericos-o-regionales",
+      "changedFields": [
+        "checklist",
+        "inlineGeneralRequirements"
+      ],
+      "pages": [
+        69,
+        70
+      ],
+      "reason": "Los2requisitos obligatorios y recomendación ya están en fullText; la documentación está resumida en notes pero ninguno está en checklist. Incorporación estructurada no altera criteriosclínicos.",
+      "addedChecklistItems": 3,
+      "before": {
+        "id": "n11-referencia-de-psicologia-a-hospitales-perifericos-o-regionales",
+        "specialty": "Psicología",
+        "name": "Referencia de Psicología a hospitales periféricos o regionales",
+        "aliases": [],
+        "sourceId": "N11",
+        "pages": [
+          69,
+          70
+        ],
+        "scope": "Nacional CCSS; tres niveles",
+        "priority": "",
+        "criteria": [
+          "Síntomas persistentes o que se agravan luego del periodo de intervención descrito en la fuente (por ejemplo, 4 a 6 sesiones; también refiere seis sesiones).",
+          "Aumento o agravamiento de características clínicas: comorbilidades significativas, deterioro de funcionalidad social, laboral o familiar, o conductas de riesgo que requieren mayor especialización y abordaje interdisciplinario.",
+          "La persona no demuestra mejoría como respuesta al tratamiento inicial; puede requerirse un abordaje clínico de mayor especialización."
+        ],
+        "studies": [],
+        "prior": [],
+        "notes": [
+          "Esta sección regula referencias de profesionales de Psicología de áreas de salud hacia colegas de establecimientos de mayor complejidad.",
+          "Consignar la referencia en EDUS o formulario según corresponda, y las anotaciones/alta indicadas por el manual.",
+          "Analizar junto con el lineamiento L.GM.DDSS.ARSDT.31072024 o sus actualizaciones, según indica el propio manual."
+        ],
+        "fullText": "Criterios para referir una persona usuaria a los hospitales periféricos o regionales\nLos profesionales de psicología de las Áreas de Salud tipo I, II y III, podrán remitir\nreferencias a sus colegas de los establecimientos de salud del siguiente nivel de\ncomplejidad (hospitales periféricos y regionales), considerando los siguientes\ncriterios básicos, durante la valoración y atención de la persona se podrán\nconsiderar otros partiendo del criterio clínico del profesional de psicología\ntratante.\n• Síntomas persistentes:\nNo se observa cambio o mejoría (incluso se detecta incremento de la\nsintomatología problema), en la condición psicológica de las personas, luego\nde seis sesiones, si, tras un período de intervención (por ejemplo, 4 a 6\nsesiones), los síntomas persisten o se agravan.\n• Aumento o agravamiento de las características clínicas del caso:\nLa presencia de comorbilidades significativas (síntomas de depresión\npsicótica, por ejemplo), deterioro en la funcionalidad social, laboral o familiar\n(por ejemplo, disminución clara y estable en la interacción con personas\nsignificativas, por más de un mes) o la presencia y aumento de conductas de\nriesgo (autolesiones, entre otros) que requieran una intervención de mayor\nespecialización y abordaje interdisciplinario, no podrían dar una resolución a\nlos problemas de salud psicológica de la persona usuaria y se requiere la\nintervención de un establecimiento de salud con mayor complejidad.\n• La persona usuaria no demuestra una mejoría como respuesta al\ntratamiento inicial.\nCuando las estrategias descritas en el punto anterior no logran reducir la\nsintomatología, se podría estar ante una toma de decisión técnica para\nampliar las estrategias de abordaje y la evaluación del caso, en su defecto\nse podrá solicitar un abordaje clínico de mayor especialización en el siguiente\nnivel de atención. Previo a una referencia, se puede desarrollar una sesión\ntécnica clínica uni o interdisciplinaria, para analizar el caso.\nEn todos los casos, ya sea que la persona usuaria se mantenga en atención en las\nÁreas de Salud tipo I, II y III o se refieran al siguiente establecimiento de salud en\ncomplejidad ascendente, se deberán realizar las anotaciones en el perfil del EDUS\n\npermitido para estas actividades, dando de alta en el momento que se realiza la\nreferencia.\nEn complemento, tal y como está estipulado en otras regulaciones técnicas de la\ndisciplina, las referencias se consignarán obligatoriamente en los aplicativos EDUS\no en la hoja de referencias (GM-2123-2025, Formulario “Gestión de pacientes”),\nsegún corresponda.\nSe recomienda que, al realizar las referencias de un nivel de menor complejidad a\notro de mayor complejidad, se procure establecer una sesión técnica de análisis de\nlos casos referidos para que los profesionales de psicología de ambos\nestablecimientos puedan tener los elementos técnicos necesarios para el abordaje,\ntransición y continuidad de la atención.\n",
+        "checklist": [
+          {
+            "id": "item-1",
+            "text": "Síntomas persistentes o que se agravan luego del periodo de intervención descrito en la fuente (por ejemplo, 4 a 6 sesiones; también refiere seis sesiones).",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-2",
+            "text": "Aumento o agravamiento de características clínicas: comorbilidades significativas, deterioro de funcionalidad social, laboral o familiar, o conductas de riesgo que requieren mayor especialización y abordaje interdisciplinario.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-3",
+            "text": "La persona no demuestra mejoría como respuesta al tratamiento inicial; puede requerirse un abordaje clínico de mayor especialización.",
+            "kind": "criterion",
+            "requirement": "source"
+          }
+        ],
+        "direction": "I-II"
+      },
+      "after": {
+        "id": "n11-referencia-de-psicologia-a-hospitales-perifericos-o-regionales",
+        "specialty": "Psicología",
+        "name": "Referencia de Psicología a hospitales periféricos o regionales",
+        "aliases": [],
+        "sourceId": "N11",
+        "pages": [
+          69,
+          70
+        ],
+        "scope": "Nacional CCSS; tres niveles",
+        "priority": "",
+        "criteria": [
+          "Síntomas persistentes o que se agravan luego del periodo de intervención descrito en la fuente (por ejemplo, 4 a 6 sesiones; también refiere seis sesiones).",
+          "Aumento o agravamiento de características clínicas: comorbilidades significativas, deterioro de funcionalidad social, laboral o familiar, o conductas de riesgo que requieren mayor especialización y abordaje interdisciplinario.",
+          "La persona no demuestra mejoría como respuesta al tratamiento inicial; puede requerirse un abordaje clínico de mayor especialización."
+        ],
+        "studies": [],
+        "prior": [],
+        "notes": [
+          "Esta sección regula referencias de profesionales de Psicología de áreas de salud hacia colegas de establecimientos de mayor complejidad.",
+          "Consignar la referencia en EDUS o formulario según corresponda, y las anotaciones/alta indicadas por el manual.",
+          "Analizar junto con el lineamiento L.GM.DDSS.ARSDT.31072024 o sus actualizaciones, según indica el propio manual."
+        ],
+        "fullText": "Criterios para referir una persona usuaria a los hospitales periféricos o regionales\nLos profesionales de psicología de las Áreas de Salud tipo I, II y III, podrán remitir\nreferencias a sus colegas de los establecimientos de salud del siguiente nivel de\ncomplejidad (hospitales periféricos y regionales), considerando los siguientes\ncriterios básicos, durante la valoración y atención de la persona se podrán\nconsiderar otros partiendo del criterio clínico del profesional de psicología\ntratante.\n• Síntomas persistentes:\nNo se observa cambio o mejoría (incluso se detecta incremento de la\nsintomatología problema), en la condición psicológica de las personas, luego\nde seis sesiones, si, tras un período de intervención (por ejemplo, 4 a 6\nsesiones), los síntomas persisten o se agravan.\n• Aumento o agravamiento de las características clínicas del caso:\nLa presencia de comorbilidades significativas (síntomas de depresión\npsicótica, por ejemplo), deterioro en la funcionalidad social, laboral o familiar\n(por ejemplo, disminución clara y estable en la interacción con personas\nsignificativas, por más de un mes) o la presencia y aumento de conductas de\nriesgo (autolesiones, entre otros) que requieran una intervención de mayor\nespecialización y abordaje interdisciplinario, no podrían dar una resolución a\nlos problemas de salud psicológica de la persona usuaria y se requiere la\nintervención de un establecimiento de salud con mayor complejidad.\n• La persona usuaria no demuestra una mejoría como respuesta al\ntratamiento inicial.\nCuando las estrategias descritas en el punto anterior no logran reducir la\nsintomatología, se podría estar ante una toma de decisión técnica para\nampliar las estrategias de abordaje y la evaluación del caso, en su defecto\nse podrá solicitar un abordaje clínico de mayor especialización en el siguiente\nnivel de atención. Previo a una referencia, se puede desarrollar una sesión\ntécnica clínica uni o interdisciplinaria, para analizar el caso.\nEn todos los casos, ya sea que la persona usuaria se mantenga en atención en las\nÁreas de Salud tipo I, II y III o se refieran al siguiente establecimiento de salud en\ncomplejidad ascendente, se deberán realizar las anotaciones en el perfil del EDUS\n\npermitido para estas actividades, dando de alta en el momento que se realiza la\nreferencia.\nEn complemento, tal y como está estipulado en otras regulaciones técnicas de la\ndisciplina, las referencias se consignarán obligatoriamente en los aplicativos EDUS\no en la hoja de referencias (GM-2123-2025, Formulario “Gestión de pacientes”),\nsegún corresponda.\nSe recomienda que, al realizar las referencias de un nivel de menor complejidad a\notro de mayor complejidad, se procure establecer una sesión técnica de análisis de\nlos casos referidos para que los profesionales de psicología de ambos\nestablecimientos puedan tener los elementos técnicos necesarios para el abordaje,\ntransición y continuidad de la atención.\n",
+        "checklist": [
+          {
+            "id": "n11-general-1",
+            "text": "Se deberán realizar las anotaciones en el perfil del EDUS permitido para estas actividades, dando de alta en el momento que se realiza la referencia.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n11-general-2",
+            "text": "Las referencias se consignarán obligatoriamente en los aplicativos EDUS o en la hoja de referencias (GM-2123-2025, Formulario “Gestión de pacientes”), según corresponda.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "n11-general-3",
+            "text": "Se recomienda que, al realizar las referencias de un nivel de menor complejidad a otro de mayor complejidad, se procure establecer una sesión técnica de análisis de los casos referidos para que los profesionales de psicología de ambos establecimientos puedan tener los elementos técnicos necesarios para el abordaje, transición y continuidad de la atención.",
+            "kind": "general",
+            "requirement": "desirable"
+          },
+          {
+            "id": "item-1",
+            "text": "Síntomas persistentes o que se agravan luego del periodo de intervención descrito en la fuente (por ejemplo, 4 a 6 sesiones; también refiere seis sesiones).",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-2",
+            "text": "Aumento o agravamiento de características clínicas: comorbilidades significativas, deterioro de funcionalidad social, laboral o familiar, o conductas de riesgo que requieren mayor especialización y abordaje interdisciplinario.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-3",
+            "text": "La persona no demuestra mejoría como respuesta al tratamiento inicial; puede requerirse un abordaje clínico de mayor especialización.",
+            "kind": "criterion",
+            "requirement": "source"
+          }
+        ],
+        "direction": "I-II",
+        "inlineGeneralRequirements": {
+          "pages": [
+            69,
+            70
+          ],
+          "criteria": [
+            "Se deberán realizar las anotaciones en el perfil del EDUS permitido para estas actividades, dando de alta en el momento que se realiza la referencia.",
+            "Las referencias se consignarán obligatoriamente en los aplicativos EDUS o en la hoja de referencias (GM-2123-2025, Formulario “Gestión de pacientes”), según corresponda.",
+            "Se recomienda que, al realizar las referencias de un nivel de menor complejidad a otro de mayor complejidad, se procure establecer una sesión técnica de análisis de los casos referidos para que los profesionales de psicología de ambos establecimientos puedan tener los elementos técnicos necesarios para el abordaje, transición y continuidad de la atención."
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "N12",
+      "cardId": "n12-hipertension-arterial-referencia-a-medicina-familiar-y-comunitaria",
+      "changedFields": [
+        "checklist",
+        "inlineGeneralRequirements"
+      ],
+      "pages": [
+        82
+      ],
+      "reason": "Instrucciones de preparación ya representadas en notes y fullText, pero ausentes de la revisión. No importar los estudios de N14 automáticamente. Conservar el aviso actual que impide demorar una emergencia hipertensiva por completar requisitos de consulta externa.",
+      "addedChecklistItems": 3,
+      "before": {
+        "id": "n12-hipertension-arterial-referencia-a-medicina-familiar-y-comunitaria",
+        "specialty": "Medicina Familiar y Comunitaria",
+        "name": "Hipertensión arterial: referencia a Medicina Familiar y Comunitaria",
+        "aliases": [],
+        "sourceId": "N12",
+        "pages": [
+          82
+        ],
+        "scope": "Nacional CCSS; primer nivel",
+        "priority": "Prioridad a consulta externa según esta sección",
+        "criteria": [
+          "Descompensación frecuente de PA pese a tratamiento antihipertensivo adecuado, con presiones mayores a 160/90 persistentes en dos o más atenciones.",
+          "Personas que consultan por urgencias hipertensivas, si tienen tratamiento farmacológico previo, o con cuadro de emergencia hipertensiva."
+        ],
+        "studies": [
+          {
+            "text": "Estudios indicados en el lineamiento vigente de funcionamiento, atención clínica y procedimientos de Medicina Familiar y Comunitaria.",
+            "type": "source"
+          }
+        ],
+        "prior": [],
+        "notes": [
+          "Prioridad a consulta externa según esta sección. La atención de una emergencia hipertensiva se rige por la sección de crisis del protocolo, no debe demorarse por completar requisitos de consulta externa.",
+          "Asegurarse de buena adherencia al tratamiento. Referencia concomitante a Nutrición y Atención Farmacéutica cuando se dispone.",
+          "El abordaje integral en familia para definir red de apoyo es deseable."
+        ],
+        "fullText": "a) Criterios de referencia a Medicina Familiar y Comunitaria:\nDeben ser referidas con prioridad a la consulta externa de Medicina Familiar y Comunitaria:\n✓ Personas que se presentan con descompensación frecuente de la PA a pesar de tener un\ntratamiento antihipertensivo adecuado, con presiones mayores a 160/90 persistentes en dos\no más atenciones.\n✓ Personas que consultan por urgencias hipertensivas (si la persona usuaria tiene tratamiento\nfarmacológico previo) o con cuadro de emergencia hipertensiva.\nDeben contar con los estudios indicados en el Lineamiento Técnico Para el Funcionamiento, la\nAtención Clínica y procedimientos médicos en la Especialidad de Medicina Familiar y Comunitaria\nen la Red Integrada de Servicios de Salud vigente.\nEs deseable realizar un abordaje integral en familia para definir la red de apoyo, además es\nimportante asegurarse que la persona presente buena adherencia al tratamiento previo a la\nreferencia al profesional médico especialista de familia. Se debe realizar una referencia\nconcomitante a Nutrición y Atención Farmacéutica, cuando se dispone de dichos servicios.",
+        "checklist": [
+          {
+            "id": "item-1",
+            "text": "Descompensación frecuente de PA pese a tratamiento antihipertensivo adecuado, con presiones mayores a 160/90 persistentes en dos o más atenciones.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-2",
+            "text": "Personas que consultan por urgencias hipertensivas, si tienen tratamiento farmacológico previo, o con cuadro de emergencia hipertensiva.",
+            "kind": "criterion",
+            "requirement": "conditional"
+          },
+          {
+            "id": "item-3",
+            "text": "Estudios indicados en el lineamiento vigente de funcionamiento, atención clínica y procedimientos de Medicina Familiar y Comunitaria.",
+            "kind": "study",
+            "requirement": "source"
+          }
+        ],
+        "direction": "I-II"
+      },
+      "after": {
+        "id": "n12-hipertension-arterial-referencia-a-medicina-familiar-y-comunitaria",
+        "specialty": "Medicina Familiar y Comunitaria",
+        "name": "Hipertensión arterial: referencia a Medicina Familiar y Comunitaria",
+        "aliases": [],
+        "sourceId": "N12",
+        "pages": [
+          82
+        ],
+        "scope": "Nacional CCSS; primer nivel",
+        "priority": "Prioridad a consulta externa según esta sección",
+        "criteria": [
+          "Descompensación frecuente de PA pese a tratamiento antihipertensivo adecuado, con presiones mayores a 160/90 persistentes en dos o más atenciones.",
+          "Personas que consultan por urgencias hipertensivas, si tienen tratamiento farmacológico previo, o con cuadro de emergencia hipertensiva."
+        ],
+        "studies": [
+          {
+            "text": "Estudios indicados en el lineamiento vigente de funcionamiento, atención clínica y procedimientos de Medicina Familiar y Comunitaria.",
+            "type": "source"
+          }
+        ],
+        "prior": [],
+        "notes": [
+          "Prioridad a consulta externa según esta sección. La atención de una emergencia hipertensiva se rige por la sección de crisis del protocolo, no debe demorarse por completar requisitos de consulta externa.",
+          "Asegurarse de buena adherencia al tratamiento. Referencia concomitante a Nutrición y Atención Farmacéutica cuando se dispone.",
+          "El abordaje integral en familia para definir red de apoyo es deseable."
+        ],
+        "fullText": "a) Criterios de referencia a Medicina Familiar y Comunitaria:\nDeben ser referidas con prioridad a la consulta externa de Medicina Familiar y Comunitaria:\n✓ Personas que se presentan con descompensación frecuente de la PA a pesar de tener un\ntratamiento antihipertensivo adecuado, con presiones mayores a 160/90 persistentes en dos\no más atenciones.\n✓ Personas que consultan por urgencias hipertensivas (si la persona usuaria tiene tratamiento\nfarmacológico previo) o con cuadro de emergencia hipertensiva.\nDeben contar con los estudios indicados en el Lineamiento Técnico Para el Funcionamiento, la\nAtención Clínica y procedimientos médicos en la Especialidad de Medicina Familiar y Comunitaria\nen la Red Integrada de Servicios de Salud vigente.\nEs deseable realizar un abordaje integral en familia para definir la red de apoyo, además es\nimportante asegurarse que la persona presente buena adherencia al tratamiento previo a la\nreferencia al profesional médico especialista de familia. Se debe realizar una referencia\nconcomitante a Nutrición y Atención Farmacéutica, cuando se dispone de dichos servicios.",
+        "checklist": [
+          {
+            "id": "n12-general-1",
+            "text": "Asegurarse de que la persona presente buena adherencia al tratamiento previo a la referencia al profesional médico especialista de familia.",
+            "kind": "general",
+            "requirement": "source"
+          },
+          {
+            "id": "n12-general-2",
+            "text": "Se debe realizar una referencia concomitante a Nutrición y Atención Farmacéutica, cuando se dispone de dichos servicios.",
+            "kind": "general",
+            "requirement": "conditional"
+          },
+          {
+            "id": "n12-general-3",
+            "text": "Es deseable realizar un abordaje integral en familia para definir la red de apoyo.",
+            "kind": "general",
+            "requirement": "desirable"
+          },
+          {
+            "id": "item-1",
+            "text": "Descompensación frecuente de PA pese a tratamiento antihipertensivo adecuado, con presiones mayores a 160/90 persistentes en dos o más atenciones.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-2",
+            "text": "Personas que consultan por urgencias hipertensivas, si tienen tratamiento farmacológico previo, o con cuadro de emergencia hipertensiva.",
+            "kind": "criterion",
+            "requirement": "conditional"
+          },
+          {
+            "id": "item-3",
+            "text": "Estudios indicados en el lineamiento vigente de funcionamiento, atención clínica y procedimientos de Medicina Familiar y Comunitaria.",
+            "kind": "study",
+            "requirement": "source"
+          }
+        ],
+        "direction": "I-II",
+        "inlineGeneralRequirements": {
+          "pages": [
+            82
+          ],
+          "criteria": [
+            "Asegurarse de que la persona presente buena adherencia al tratamiento previo a la referencia al profesional médico especialista de familia.",
+            "Se debe realizar una referencia concomitante a Nutrición y Atención Farmacéutica, cuando se dispone de dichos servicios.",
+            "Es deseable realizar un abordaje integral en familia para definir la red de apoyo."
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "N12",
+      "cardId": "n12-hipertension-arterial-referencia-a-medicina-interna",
+      "changedFields": [
+        "checklist",
+        "inlineGeneralRequirements"
+      ],
+      "pages": [
+        82
+      ],
+      "reason": "Instrucción expresa ya en notes y fullText, ausente de las casillas. Los ocho estudios previos ya están representados en las casillas específicas.",
+      "addedChecklistItems": 1,
+      "before": {
+        "id": "n12-hipertension-arterial-referencia-a-medicina-interna",
+        "specialty": "Medicina Interna",
+        "name": "Hipertensión arterial: referencia a Medicina Interna",
+        "aliases": [],
+        "sourceId": "N12",
+        "pages": [
+          82
+        ],
+        "scope": "Nacional CCSS; primer nivel",
+        "priority": "Consulta externa",
+        "criteria": [
+          "HTA descompensada asociada a comorbilidades bajo triple terapia a dosis máxima.",
+          "Requerimiento de estudios complementarios por hipertensión secundaria."
+        ],
+        "studies": [
+          {
+            "text": "Hemograma",
+            "type": "source"
+          },
+          {
+            "text": "Glicemia en ayunas",
+            "type": "source"
+          },
+          {
+            "text": "Perfil lipídico",
+            "type": "source"
+          },
+          {
+            "text": "EGO",
+            "type": "source"
+          },
+          {
+            "text": "BUN-creatinina",
+            "type": "source"
+          },
+          {
+            "text": "Proteinuria de 24 horas",
+            "type": "source"
+          },
+          {
+            "text": "EKG",
+            "type": "source"
+          },
+          {
+            "text": "Radiografía de tórax, de ser posible.",
+            "type": "desirable"
+          }
+        ],
+        "prior": [],
+        "notes": [
+          "Anotar cifras de presión arterial seriadas e indicar si la persona ha tenido régimen dietético o de ejercicio."
+        ],
+        "fullText": "b) Criterios de referencia a Medicina Interna:\nDeben ser referidas a consulta externa de Medicina interna:\n✓ Personas con HTA descompensada asociada a comorbilidades bajo triple terapia a dosis\nmáxima.\n✓ Personas que requieran estudios complementarios por hipertensión secundaria.\nPrevio a ser referido, la persona usuaria debe contar con hemograma, glicemia en ayunas, perfil\nlipídico, EGO, BUN-Creatinina, proteinuria 24 h, EKG y de ser posible radiografía de tórax. En la\nreferencia deben anotarse las cifras de presión arterial seriadas e indicar si la persona ha tenido algún\nrégimen dietético o de ejercicio.",
+        "checklist": [
+          {
+            "id": "item-1",
+            "text": "HTA descompensada asociada a comorbilidades bajo triple terapia a dosis máxima.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-2",
+            "text": "Requerimiento de estudios complementarios por hipertensión secundaria.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-3",
+            "text": "Hemograma",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-4",
+            "text": "Glicemia en ayunas",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-5",
+            "text": "Perfil lipídico",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-6",
+            "text": "EGO",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-7",
+            "text": "BUN-creatinina",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-8",
+            "text": "Proteinuria de 24 horas",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-9",
+            "text": "EKG",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-10",
+            "text": "Radiografía de tórax, de ser posible.",
+            "kind": "study",
+            "requirement": "desirable"
+          }
+        ],
+        "direction": "I-II"
+      },
+      "after": {
+        "id": "n12-hipertension-arterial-referencia-a-medicina-interna",
+        "specialty": "Medicina Interna",
+        "name": "Hipertensión arterial: referencia a Medicina Interna",
+        "aliases": [],
+        "sourceId": "N12",
+        "pages": [
+          82
+        ],
+        "scope": "Nacional CCSS; primer nivel",
+        "priority": "Consulta externa",
+        "criteria": [
+          "HTA descompensada asociada a comorbilidades bajo triple terapia a dosis máxima.",
+          "Requerimiento de estudios complementarios por hipertensión secundaria."
+        ],
+        "studies": [
+          {
+            "text": "Hemograma",
+            "type": "source"
+          },
+          {
+            "text": "Glicemia en ayunas",
+            "type": "source"
+          },
+          {
+            "text": "Perfil lipídico",
+            "type": "source"
+          },
+          {
+            "text": "EGO",
+            "type": "source"
+          },
+          {
+            "text": "BUN-creatinina",
+            "type": "source"
+          },
+          {
+            "text": "Proteinuria de 24 horas",
+            "type": "source"
+          },
+          {
+            "text": "EKG",
+            "type": "source"
+          },
+          {
+            "text": "Radiografía de tórax, de ser posible.",
+            "type": "desirable"
+          }
+        ],
+        "prior": [],
+        "notes": [
+          "Anotar cifras de presión arterial seriadas e indicar si la persona ha tenido régimen dietético o de ejercicio."
+        ],
+        "fullText": "b) Criterios de referencia a Medicina Interna:\nDeben ser referidas a consulta externa de Medicina interna:\n✓ Personas con HTA descompensada asociada a comorbilidades bajo triple terapia a dosis\nmáxima.\n✓ Personas que requieran estudios complementarios por hipertensión secundaria.\nPrevio a ser referido, la persona usuaria debe contar con hemograma, glicemia en ayunas, perfil\nlipídico, EGO, BUN-Creatinina, proteinuria 24 h, EKG y de ser posible radiografía de tórax. En la\nreferencia deben anotarse las cifras de presión arterial seriadas e indicar si la persona ha tenido algún\nrégimen dietético o de ejercicio.",
+        "checklist": [
+          {
+            "id": "n12-general-1",
+            "text": "En la referencia deben anotarse las cifras de presión arterial seriadas e indicar si la persona ha tenido algún régimen dietético o de ejercicio.",
+            "kind": "general",
+            "requirement": "required"
+          },
+          {
+            "id": "item-1",
+            "text": "HTA descompensada asociada a comorbilidades bajo triple terapia a dosis máxima.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-2",
+            "text": "Requerimiento de estudios complementarios por hipertensión secundaria.",
+            "kind": "criterion",
+            "requirement": "source"
+          },
+          {
+            "id": "item-3",
+            "text": "Hemograma",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-4",
+            "text": "Glicemia en ayunas",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-5",
+            "text": "Perfil lipídico",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-6",
+            "text": "EGO",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-7",
+            "text": "BUN-creatinina",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-8",
+            "text": "Proteinuria de 24 horas",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-9",
+            "text": "EKG",
+            "kind": "study",
+            "requirement": "source"
+          },
+          {
+            "id": "item-10",
+            "text": "Radiografía de tórax, de ser posible.",
+            "kind": "study",
+            "requirement": "desirable"
+          }
+        ],
+        "direction": "I-II",
+        "inlineGeneralRequirements": {
+          "pages": [
+            82
+          ],
+          "criteria": [
+            "En la referencia deben anotarse las cifras de presión arterial seriadas e indicar si la persona ha tenido algún régimen dietético o de ejercicio."
+          ]
+        }
+      }
+    }
+  ],
+  "before": {
+    "cardsSha256": "9ca0e77a00844915d02d2231a31872daa5c50ad00fb7d971c87da866c2d09a70",
+    "sourceRegistrySha256": "c5031ed69536fb0cc445cb87cd0cce5ad25cd3fe7d99d2a0ed492fbfdf5310de",
+    "checklistItems": 2182
+  },
+  "after": {
+    "cardsSha256": "27a48336c32aca22a0e8172f559eb7b3ade60a55e7a72d09256693490a769a75",
+    "sourceRegistrySha256": "c5031ed69536fb0cc445cb87cd0cce5ad25cd3fe7d99d2a0ed492fbfdf5310de",
+    "checklistItems": 2202
+  },
+  "assessment": {
+    "activeRecordsReviewed": 41,
+    "sourceFindings": [
+      {
+        "sourceId": "R02",
+        "activeReviewed": 16,
+        "pagesReviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "generalReferralList": "No distinct sourcewide list. Each condition defines its own referral requirements.",
+        "existingPresentation": "The 16 active condition records retain their own enumerated Requisitos in notes and matching checklist entries.",
+        "changeNeeded": false,
+        "caution": "Do not generalize laboratories or other tests from one condition to all Neurology referrals. Two operational ATP/procedures records are already withheld and are not part of these16."
+      },
+      {
+        "sourceId": "N02",
+        "activeReviewed": 2,
+        "pagesReviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "generalReferralList": "No separate administrative/general referral requirements list.",
+        "existingPresentation": "Algorithm p5 lists alarm features; migraine algorithm pp5-6 requires treatment at primary level and referral if no improvement at maximum tolerated doses, already retained in criteria/prior/checklist.",
+        "changeNeeded": false,
+        "caution": "The p4 principle of exhausting primary care resources cannot be applied as a delay to alarm features atp5. Do not borrow R01/R02 generals."
+      },
+      {
+        "sourceId": "N10",
+        "activeReviewed": 1,
+        "pagesReviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "generalReferralList": "No distinct general referral-form list.",
+        "existingPresentation": "Section5a,p8 has3vascular referral criteria already in criteria/checklist; cutaneous/vascular manifestations and nutrition route retained innotes. Prior therapeutic measures p7-8 are contextual treatment guidance, not a separate general referral list.",
+        "changeNeeded": false,
+        "caution": "No new mandatory tests can be inferred from document diagnostic/therapy sections."
+      },
+      {
+        "sourceId": "N16",
+        "activeReviewed": 3,
+        "pagesReviewed": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "generalReferralList": "No distinct general referral-form list.",
+        "existingPresentation": "EBAIS to Pediatrics/APER criteria p19 and Pediatrics/APER to ORL or Pediatrics to Allergy criteria p24 already retained; conditional cavum radiograph keptconditional.",
+        "changeNeeded": false,
+        "caution": "MG treatment indications p19 recommend nonpharmacologic measures and treating comorbidities. These are clinical management instructions, not an additional mandatory referral/general-form list; do not attach them to all3routes as universal admission criteria."
+      },
+      {
+        "sourceId": "N12",
+        "reviewedPages": [
+          82,
+          83
+        ],
+        "decision": "No universal general list. Structure only the four existing referral preparation duties on the two applicable cards."
+      },
+      {
+        "sourceId": "N14",
+        "reviewedPages": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          18
+        ],
+        "decision": "No lista administrativa general independiente. Ámbito local ya está en notes. P11 común contextualiza capacidad resolutiva; propuesta opcional de presentación, no necesaria adición clínica a11fichas."
+      },
+      {
+        "sourceId": "N11",
+        "reviewedPages": [
+          65,
+          69,
+          70
+        ],
+        "decision": "Two mandatory documentation steps and one desirable technical meeting are already in fullText; add review coverage if showing integrated generals."
+      },
+      {
+        "sourceId": "N17",
+        "reviewedPages": [
+          6,
+          7,
+          10
+        ],
+        "decision": "True omitted source-wide sending requirements. Add13 with footnotes/conditions preserved."
+      },
+      {
+        "sourceId": "N13",
+        "reviewedPages": [
+          35,
+          36,
+          37
+        ],
+        "decision": "No distinct general checklist for this referral section; do not invent one."
+      }
+    ],
+    "notAdded": [
+      {
+        "sourceId": "N13",
+        "cardId": "n13-referencia-por-alto-riesgo-obstetrico-o-perinatal",
+        "pages": [
+          36
+        ],
+        "finding": "No lista general independiente de requisitos para este envío en sección12-14. Evaluación en8días para captación tardía>28semanas y no referir captación tardía con evaluaciónnormal ya están en notes. No copiar otrasguías ni convertir8días en esperaprevia obligatoria para alto riesgo."
+      },
+      {
+        "sourceId": "N12",
+        "cardIds": [
+          "n12-hipertension-arterial-referencia-a-cardiologia",
+          "n12-hipertension-arterial-referencia-a-geriatria",
+          "n12-hipertension-arterial-referencia-a-nefrologia"
+        ],
+        "pages": [
+          82,
+          83
+        ],
+        "finding": "No lista común aplicable a las cinco especialidades. Sus condiciones y estudios propios ya están en criterios/estudios/casillas. No añadir listas administrativas de R01 u otros documentos. Nefrología mantiene excepción de no estudios adicionales para estadios4/5."
+      }
+    ],
+    "n14Decision": "11 existing records retain optional local-context notes. No universal administrative general list is stated, so no new general checklist is added.",
+    "limitations": [
+      "N11 p65 exige analizar con L.GM.DDSS.ARSDT.31072024 oactualizaciones, yaindicado ennotes yregistroE02sintexto; no inventar contenido deE02.",
+      "N17 4.1.5 domicilio y4.1.6 otras situaciones soncondicionales;4.1.8 mantieneexcepcionesderefrendo.",
+      "N13 revisiónlimitada a requisitosgenerales de referencia, noextracciónde todascondicionesobstétricas delprotocolo."
+    ]
+  },
+  "invariants": {
+    "registeredCards": 808,
+    "activeCards": 730,
+    "addedCatalogueCards": 0,
+    "changedCards": 4,
+    "addedGeneralRequirements": 20,
+    "existingChecklistEntriesAndIdsPreserved": true,
+    "existingClinicalFieldsUnchanged": true,
+    "sourceRegistryUnchanged": true,
+    "otherCardsUnchanged": true,
+    "n17CoordinationFootnoteVisibleInTextAndCheck": true,
+    "recommendationAndConditionalTypesPreserved": true,
+    "historicalAuditsUnchanged": [
+      "audits/2026-10-29-repeated-content.json",
+      "audits/2026-10-29-r03-provenance.json",
+      "audits/2026-10-29-cataract-general-requirements.json"
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "format": 1,
+  "repository": "9ph9jr6j75-collab/criterios-de-referencia",
+  "baseCommit": "5eaaadf8d1a930321f9ba3b0e666c4ed25f84834",
+  "sourceBaseCommit": "c744a9ae3235919518e9c8a8792aef2f5534bec1",
+  "version": "1.4.14",
+  "releaseUpdatedAt": "2026-10-30T00:31:16Z",
+  "bundle": {
+    "name": "source-update-v1.4.14.zip",
+    "size": 72649,
+    "sha256": "2f96dac293dffc74be75fb5f1f2c8f52227a1db7133bc15742cd1da54413d450"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "before": {
+        "size": 9152,
+        "sha256": "37896634f63bb6e587c7f95b3660cb030513d2e92d40dfa62fd6022158466d3f"
+      },
+      "after": {
+        "size": 9544,
+        "sha256": "5d377193b135e3507d62b6021b211d7c66dd1da20ad39224a6e8693d94007f36"
+      }
+    },
+    {
+      "path": "app.js",
+      "before": {
+        "size": 71014,
+        "sha256": "53f3cc54d37df38958485ba1d74c33ad350ea16e343b71447b7bc673d1c054e5"
+      },
+      "after": {
+        "size": 70897,
+        "sha256": "5a3368cea6499ffd3bdeff55acc4eb40fd7ca40f256068dbdfa955de17ef299e"
+      }
+    },
+    {
+      "path": "data/release.json",
+      "before": {
+        "size": 1504,
+        "sha256": "6aa1e33ffdac042bfaaa1fdf2c87037e7dfa28305f6610d420057811973fc8e8"
+      },
+      "after": {
+        "size": 1504,
+        "sha256": "4cef377ce13990264a8d460e78d7242e0410136b1ab6fbf165453c2290ee1b19"
+      }
+    },
+    {
+      "path": "edus-guidance.js",
+      "before": {
+        "size": 6264,
+        "sha256": "5e1ea1670f140b135594fa21cc607cfa6389c1e05ad5d96b6be39b3b345d2536"
+      },
+      "after": {
+        "size": 6263,
+        "sha256": "58f46cc9b653b126710b4876221e2621629f2f3d6f7852e315e2129412e1d301"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "size": 198,
+        "sha256": "29523995cdc3661f84728d74e36c94be5d90a03328ed8e9d722edbfe718c328d"
+      },
+      "after": {
+        "size": 198,
+        "sha256": "c8f1969f153e09d136be983368b4691e7ad08915d41a0b1a52267c27e2cfd688"
+      }
+    },
+    {
+      "path": "review-content.js",
+      "before": {
+        "size": 5363,
+        "sha256": "4a899bb7266775624d79ce6475c8f5a91c11538988715d247580635c9e2f6983"
+      },
+      "after": {
+        "size": 6019,
+        "sha256": "1a3b24b516fa8fa36c0fd003efb59ddaa003e579bfeed306e8c1cc6a5366b0b9"
+      }
+    },
+    {
+      "path": "scripts/check-combined-review.mjs",
+      "before": {
+        "size": 32577,
+        "sha256": "ef25b81c002b615da3021a5c8b26cbe712a73bf99e72606a0c719e55bf28cc27"
+      },
+      "after": {
+        "size": 36691,
+        "sha256": "494ef24ea82db45268e1f5859c6c1379b1bf304121d4c091b7a403f0391323db"
+      }
+    },
+    {
+      "path": "scripts/test-document-selection.mjs",
+      "before": {
+        "size": 11890,
+        "sha256": "572c0a01f89d41356b3bdee75389cc0c92eadc9677492f0f45a435e1c3b57123"
+      },
+      "after": {
+        "size": 15685,
+        "sha256": "d61d663ed72f931ad9811321837cce84fb997a0468e28905b43b93e0746ba433"
+      }
+    },
+    {
+      "path": "scripts/test-edus-guidance.mjs",
+      "before": {
+        "size": 9380,
+        "sha256": "b17cdc0c1e420dd9b17c6c37acedbee18771daff805214537f15abb91552f1bb"
+      },
+      "after": {
+        "size": 12253,
+        "sha256": "e927e0404124a2a2434fa540661380bbe9d6aadbe58c88d97c0136760105094e"
+      }
+    },
+    {
+      "path": "scripts/test-review-content.mjs",
+      "before": {
+        "size": 9720,
+        "sha256": "413e88809f109f1082866715b440b944d3493670a2663e3a61018e70af6b4f22"
+      },
+      "after": {
+        "size": 12701,
+        "sha256": "d6ebac3344d6d4720d9df42f9c8155e7109685b2f6ad2734fdc8f6368516c08c"
+      }
+    },
+    {
+      "path": "styles.css",
+      "before": {
+        "size": 63506,
+        "sha256": "4d4463910ecc31aac16f57108904fecb3a4fb006501e3bd88a2e811f9f98e8b0"
+      },
+      "after": {
+        "size": 63585,
+        "sha256": "db526e7fe30fa00be650a2b6560b1d0fb45d2751fb8aa598606c788cc1d1c6bd"
+      }
+    },
+    {
+      "path": "sw.js",
+      "before": {
+        "size": 10672,
+        "sha256": "43926cc412628b9a22af92900abaa4d96a59aa953f9d2d1c447619028deae295"
+      },
+      "after": {
+        "size": 10672,
+        "sha256": "24c3e900fca836a941887ac53b87395e9a9cfd6a96b94473195ef3ef79960553"
+      }
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "data/cards.json",
+      "size": 2099806,
+      "sha256": "a283ab072abc33d85bd61571e10abc6fe7cb34a6cc13e783365dd94677016231"
+    },
+    {
+      "path": "data/sources.json",
+      "size": 41298,
+      "sha256": "4ccff54175f030455c4036daff9d4384be4f4ad6ac9dacdfed6cb9497329484f"
+    },
+    {
+      "path": "data/topics.json",
+      "size": 239946,
+      "sha256": "3da2cc286677da4ba9e7db89ff6903a4d8b4952ae8ebbb74e02b5b00d5acd9dc"
+    }
+  ]
+}

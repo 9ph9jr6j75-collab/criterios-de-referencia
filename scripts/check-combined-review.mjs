@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import vm from 'node:vm';
 import {generalRequirementsForCard,specificRequirementsForCard,isCatalogCard,isGeneralCard,createTopicIndex} from '../catalog.js';
 import {edusGuidanceForCard} from '../edus-guidance.js';
+import {reviewBuckets,reviewSupplements} from '../review-content.js';
 
 const root=new URL('../',import.meta.url);
 const [app,cards,sources,release]=await Promise.all([
@@ -18,7 +19,7 @@ const {checklistEntries}=await import('data:text/javascript;base64,'+Buffer.from
 const index=await fs.readFile(new URL('index.html',root),'utf8');
 const definitions=JSON.parse(await fs.readFile(new URL('data/topics.json',root),'utf8')).groups;
 const integratedAudit=JSON.parse(await fs.readFile(new URL('audits/2026-10-29-integrated-general-requirements.json',root),'utf8'));
-const names=['getChecked','checklist','reviewGroups','edusGuidanceHTML','checklistHTML','updateChecklist','contentList','generalRequirementsHTML','documentChoiceRequired','renderDetail','referenceTemplate','missingTemplate','showScreen'];
+const names=['viewerURL','getChecked','checklist','reviewGroups','edusGuidanceHTML','reviewPageLinksHTML','reviewSupplementsHTML','checklistHTML','updateChecklist','generalRequirementsHTML','sourceTranscriptionHTML','documentChoiceRequired','applyDetailTab','renderDetail','referenceTemplate','missingTemplate','showScreen'];
 const functions=names.map(name=>{
   const start=app.indexOf(`  function ${name}(`);assert(start>=0,name);
   const next=app.slice(start+1).search(/\n  (?:async )?function /);
@@ -28,7 +29,7 @@ const escape=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<'
 function boot(allCards=cards){
   const storage=new Map(),nodes=new Map(),inputs=[],messages=[];
   class Node {
-    constructor(){this.listeners={};this.dataset={};this.style={};this.attrs={};this.textContent='';this.disabled=false;this.checked=false;this.hidden=false;}
+    constructor(){this.listeners={};this.dataset={};this.style={};this.attrs={};this.textContent='';this.disabled=false;this.checked=false;this.hidden=false;this.open=false;}
     addEventListener(name,callback){this.listeners[name]=callback;}
     setAttribute(name,value){this.attrs[name]=value;}
     matches(selector){return selector==='[data-check-id]'&&Boolean(this.dataset.checkId);}
@@ -37,7 +38,7 @@ function boot(allCards=cards){
     set innerHTML(value){
       this.html=value;inputs.length=0;
       for(const tag of value.matchAll(/<[^>]+>/g)){
-        const id=/\bid="([^"]+)"/.exec(tag[0]);if(id)nodes.set('#'+id[1],new Node());
+        const id=/\bid="([^"]+)"/.exec(tag[0]);if(id){const element=new Node();element.open=/\sopen(?:\s|>)/.test(tag[0]);nodes.set('#'+id[1],element);}
         const check=/\bdata-check-id="([^"]+)"/.exec(tag[0]);
         if(check){const node=new Node();node.dataset.checkId=check[1];node.dataset.checkCardId=/\bdata-check-card-id="([^"]+)"/.exec(tag[0])?.[1];node.checked=/\schecked(?:\s|>)/.test(tag[0]);inputs.push(node);}
       }
@@ -50,20 +51,20 @@ function boot(allCards=cards){
   nodes.set('.header-support',headerSupport);nodes.set('.app-header',header);nodes.set('.app-updated',date);
   const catalogOnly=Array.from({length:2},()=>{const entry=new Node();entry.hidden=true;return entry;});
   const state={cards:allCards,sourceMap:new Map(sources.map(item=>[item.id,item])),recent:[],chosenDocuments:new Set(),topicIndex:allCards===cards?createTopicIndex(cards,definitions):{byCard:new Map()}};
-  const context={state,STORE:'test',sessionStorage:storage,localStorage:new Map(),checklistEntries,generalRequirementsForCard,specificRequirementsForCard,isCatalogCard,edusGuidanceForCard,
+  const context={state,STORE:'test',sessionStorage:storage,localStorage:new Map(),checklistEntries,generalRequirementsForCard,specificRequirementsForCard,isCatalogCard,edusGuidanceForCard,reviewBuckets,reviewSupplements,
     $:selector=>nodes.get(selector),$$:selector=>selector==='[data-catalog-only]'?catalogOnly:selector==='[data-detail-tab]'||selector==='.utility-nav [data-nav]'?[]:inputs.filter(input=>selector.includes(':checked')?input.checked:true),
     safeRead:(store,key,fallback)=>store.get(key)??fallback,safeWrite:(store,key,value)=>store.set(key,value),
     esc:escape,arr:value=>Array.isArray(value)?value:value?[value]:[],icon:()=>'',
     pageLabel:item=>`Pág. ${(item.pages||[]).join(', ')}`,sourceFor:item=>state.sourceMap.get(item.sourceId)||{id:item.sourceId,titulo:item.sourceId},
-    viewerURL:(source,card)=>`./?screen=source&source=${source.id}&page=${card.pages[0]}`,sourceStatusNote:()=>'<section data-test-document-warning="true">Alcance de la fuente</section>',topicSourcesHTML:()=>'',summaryHTML:()=>'',sourcePanel:()=>'',feedbackPanel:()=>'<section data-test-feedback="true">Reportar un error</section>',statusBadge:()=>'',
-    updateDetailFavorite(){},applyDetailTab(){},cardPriorityType:()=>'',document:{title:''},location:{hash:''},window:{},
+    sourceStatusNote:()=>'<section data-test-document-warning="true">Alcance de la fuente</section>',topicSourcesHTML:()=>'',summaryHTML:()=>'',sourcePanel:()=>'',feedbackPanel:()=>'<section data-test-feedback="true">Reportar un error</section>',statusBadge:()=>'',
+    updateDetailFavorite(){},cardPriorityType:()=>'',document:{title:''},location:{hash:''},window:{},
     announce:message=>messages.push(message),norm:value=>String(value||'').toLowerCase(),textOf:item=>item?.text||String(item||''),
     saveDetailReading(){},toggleFavorite(){},shareCard(){},printCard(){},copyText(){},detailReading:()=>({detailTab:'summary'})
   };
   vm.createContext(context);vm.runInContext(functions,context);
   // These content regressions inspect an explicitly selected document. The
   // unchosen-document gate is exercised separately in test-document-selection.
-  const renderChosenDetail=id=>{state.chosenDocuments.add(id);context.renderDetail(id);};
+  const renderChosenDetail=(id,restoreReading=false)=>{state.chosenDocuments.add(id);context.location.hash='#ficha/'+encodeURIComponent(id);context.renderDetail(id,restoreReading);};
   return {context,renderChosenDetail,storage,nodes,inputs,panel,messages,details,date,catalogOnly};
 }
 // Inspect hierarchy rather than matching the source template's punctuation.
@@ -72,13 +73,17 @@ function hierarchy(html){
   const voids=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
   for(const token of html.matchAll(/<\/?([a-z][\w:-]*)\b[^>]*>/gi)){
     const tag=token[1].toLowerCase();
-    if(token[0].startsWith('</')){const index=stack.findLastIndex(node=>node.tag===tag);if(index>0)stack.length=index;continue;}
-    const parent=stack.at(-1),node={tag,markup:token[0],parent,children:[]};
+    if(token[0].startsWith('</')){const index=stack.findLastIndex(node=>node.tag===tag);if(index>0){stack[index].end=token.index+token[0].length;stack.length=index;}continue;}
+    const parent=stack.at(-1),node={tag,markup:token[0],parent,children:[],start:token.index,openEnd:token.index+token[0].length,end:token.index+token[0].length};
     parent.children.push(node);elements.push(node);
     if(!voids.has(tag)&&!token[0].endsWith('/>'))stack.push(node);
   }
   return {root,elements};
 }
+const hasClass=(node,name)=>(/\bclass="([^"]*)"/.exec(node.markup)?.[1]||'').split(/\s+/).includes(name);
+const within=(node,ancestor)=>{for(let current=node.parent;current;current=current.parent)if(current===ancestor)return true;return false;};
+const visibleInitially=node=>{for(let current=node;current?.tag;current=current.parent)if((current.tag==='details'&&!/\sopen(?:\s|>)/.test(current.markup))||/\shidden(?:\s|>)/.test(current.markup))return false;return true;};
+const decode=value=>String(value).replace(/&(?:amp|lt|gt|quot|#39);/g,char=>({'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'\"','&#39;':"'"}[char]));
 let checks=0;
 const check=(name,run)=>{run();checks++;console.log('✓ '+name);};
 check('Las 652 fichas asociadas reciben generales antes de la patología sin mezclar fuentes ni rutas',()=>{
@@ -97,16 +102,24 @@ check('Las 730 fichas muestran la revisión primero, avisos antes y reporte al f
     const {root,elements}=hierarchy(env.panel.html);
     const feedbacks=elements.filter(node=>node.markup.includes('data-test-feedback='));
     assert.equal(feedbacks.length,1,card.id);
-    const feedback=feedbacks[0],layout=elements.find(node=>/class="detail-layout"/.test(node.markup));
-    const checklist=elements.find(node=>/class="checklist-panel"/.test(node.markup));
+    const feedback=feedbacks[0],layout=elements.find(node=>hasClass(node,'detail-layout'));
+    const checklist=elements.find(node=>hasClass(node,'checklist-panel'));
     assert(layout&&checklist,card.id);assert.equal(checklist.parent,layout,card.id);
     assert.equal(layout.children[0],checklist,card.id+' La revisión precede el contenido documental.');
-    assert.match(layout.children[1].markup,/class="reference-column"/,card.id);
+    const transcription=elements.find(node=>node.markup.includes('id="document-transcription"'));
+    assert(transcription&&transcription.tag==='details',card.id);assert.equal(layout.children[1],transcription,card.id);
+    assert(!/\sopen(?:\s|>)/.test(transcription.markup),card.id+': transcripción cerrada de inicio.');
+    assert(!/reference-column|Resumen por requisito|role="tablist"/.test(env.panel.html),card.id+': una sola lectura principal.');
+    assert.match(env.panel.html,/>Desmarcar todas las casillas<\/button>/,card.id);
+    if(card.fullText)assert(env.panel.html.slice(transcription.start,transcription.end).includes(escape(card.fullText)),card.id+': la transcripción original permanece íntegra.');
     const guidance=edusGuidanceForCard(card,cards);
     const guidanceBlocks=elements.filter(node=>/class="edus-guidance"/.test(node.markup));
     assert.equal(guidanceBlocks.length,guidance?1:0,card.id+': una orientación EDUS cuando corresponde.');
     if(guidance){
-      assert.equal(guidanceBlocks[0].parent,checklist,card.id+': orientación visible dentro de Revise su referencia.');
+      assert.equal(guidanceBlocks[0].parent,checklist,card.id+': orientación dentro de Revise su referencia.');
+      const guidanceDetails=elements.find(node=>hasClass(node,'edus-guidance-details'));assert(guidanceDetails,card.id);
+      assert(!/\sopen(?:\s|>)/.test(guidanceDetails.markup),card.id+': explicación operativa plegada.');
+      if(guidance.originalsNote){const originals=elements.find(node=>hasClass(node,'edus-originals'));assert(originals&&visibleInitially(originals),card.id+': material original siempre visible.');}
       for(const text of [guidance.title,guidance.body,guidance.scopeNote,guidance.originalsNote].filter(Boolean))assert(env.panel.html.includes(escape(text)),card.id+': orientación íntegra y distinta del texto documental.');
       for(const source of guidance.sources)assert(env.panel.html.includes(escape(source.url)),card.id+': respaldo de la orientación.');
     }
@@ -133,6 +146,80 @@ check('Las 730 fichas muestran la revisión primero, avisos antes y reporte al f
     rendered++;
   }
   assert.equal(rendered,730);
+});
+check('Cada grupo conserva acceso directo a todas sus páginas y el retorno a la ficha exacta',()=>{
+  const env=boot();let groupsChecked=0,linksChecked=0;
+  for(const card of cards.filter(isCatalogCard)){
+    env.renderChosenDetail(card.id);
+    const {elements}=hierarchy(env.panel.html),checklist=elements.find(node=>hasClass(node,'checklist-panel'));
+    const renderedGroups=elements.filter(node=>hasClass(node,'checklist-group')&&within(node,checklist));
+    const groups=env.context.reviewGroups(card);assert.equal(renderedGroups.length,groups.length,card.id);
+    groups.forEach((group,index)=>{
+      const rendered=renderedGroups[index],links=elements.filter(node=>node.tag==='a'&&within(node,rendered)&&node.markup.includes('data-source-action="pages"'));
+      const source=env.context.state.sourceMap.get(group.card.sourceId);
+      if(!source?.pageImageBase)return;
+      const expected=[...new Set(group.card.pages.map(Number))].sort((a,b)=>a-b),found=new Set();
+      assert(links.length,card.id+': respaldo visible del grupo '+group.card.id);
+      for(const link of links){
+        assert(visibleInitially(link),card.id+': acceso al respaldo antes de abrir transcripción.');
+        const href=decode(/\bhref="([^"]+)"/.exec(link.markup)?.[1]||'');
+        const url=new URL(href,'https://criterios.example/app/');
+        assert.equal(url.searchParams.get('screen'),'source');assert.equal(url.searchParams.get('source'),group.card.sourceId,card.id);
+        const page=Number(url.searchParams.get('page'));assert(expected.includes(page),card.id+': no inventar otra página.');
+        assert.equal(url.searchParams.get('return'),'#ficha/'+encodeURIComponent(card.id),card.id+': volver a la variante consultada.');
+        found.add(page);linksChecked++;
+      }
+      assert.deepEqual([...found].sort((a,b)=>a-b),expected,card.id+': todas las páginas declaradas.');groupsChecked++;
+    });
+  }
+  assert(groupsChecked>=730&&linksChecked>=1000);console.log(`  ${groupsChecked} grupos y ${linksChecked} enlaces de respaldo comprobados.`);
+});
+check('Precisiones únicas permanecen visibles y las repeticiones de Catarata y Amputados salen de la lectura abierta',()=>{
+  const env=boot();
+  const view=html=>{
+    const {elements}=hierarchy(html),closed=elements.filter(node=>node.tag==='details'&&!/\sopen(?:\s|>)/.test(node.markup));
+    let result=html;
+    for(const node of closed.filter(node=>!closed.some(other=>other!==node&&within(node,other))).sort((a,b)=>b.start-a.start))result=result.slice(0,node.start)+result.slice(node.end);
+    return result;
+  };
+  const cataract=cards.find(card=>card.id==='n09-catarata');env.renderChosenDetail(cataract.id);
+  const cataractView=view(env.panel.html);
+  assert(cataractView.includes('No se requiere de otros exámenes.'));
+  assert(!cataractView.includes('Incluir los datos generales, antecedentes y examen físico que establece la fuente.'));
+  for(const entry of cataract.checklist)assert.equal(cataractView.split(escape(entry.text)).length-1,1,entry.id+': una sola lectura abierta.');
+  const amputados=cards.find(card=>card.id==='r01-fisiatria-amputados-p62');env.renderChosenDetail(amputados.id);
+  const amputadosView=view(env.panel.html);
+  assert.equal(amputadosView.split('Muñón doloroso traer Rx correspondiente').length-1,1,'La radiografía no vuelve a copiarse en un resumen.');
+  for(const id of ['n12-hipertension-arterial-referencia-a-medicina-familiar-y-comunitaria','n12-hipertension-arterial-referencia-a-nefrologia']){
+    const card=cards.find(item=>item.id===id);env.renderChosenDetail(id);const visible=view(env.panel.html);
+    for(const note of card.notes.filter(text=>/no debe demorarse|no solicitar estudios complementarios adicionales/.test(text)))assert(visible.includes(escape(note)),id+': conservar excepción clínica visible.');
+  }
+});
+check('Las etiquetas de obligatoriedad y condición de los estudios se conservan junto a sus casillas',()=>{
+  const env=boot();let labels=0;
+  const labelFor={required:'Obligatorio en la fuente',desirable:'Deseable según la fuente',conditional:'Según el caso o la condición descrita'};
+  for(const card of cards.filter(isCatalogCard)){
+    env.renderChosenDetail(card.id);
+    const {elements}=hierarchy(env.panel.html),labelsHTML=elements.filter(node=>node.tag==='label'&&hasClass(node,'checklist-item'));
+    const entries=env.context.reviewGroups(card).flatMap(group=>reviewBuckets(group.card).flatMap(bucket=>bucket.entries));
+    assert.equal(labelsHTML.length,entries.length,card.id);
+    entries.forEach((entry,index)=>{
+      const text=env.panel.html.slice(labelsHTML[index].start,labelsHTML[index].end),label=labelFor[entry.sourceRequirement||entry.requirement];
+      assert(text.includes(escape(entry.text)),card.id+': texto íntegro al lado de su marca.');
+      if(label){assert(text.includes(label),card.id+': condición o carácter deseable conservados.');labels++;}
+    });
+  }
+  assert(labels>100,'Se comprueban etiquetas reales de estudios y requisitos.');
+});
+check('Desplegar y volver a plegar la transcripción conserva el estado de lectura y las casillas',()=>{
+  const env=boot();env.storage.set('test:checks:n09-catarata',['item-1']);env.renderChosenDetail('n09-catarata');
+  const details=env.nodes.get('#document-transcription');assert.equal(details.open,false);assert(details.listeners.toggle);
+  details.open=true;details.listeners.toggle({target:details});assert.equal(env.context.state.detailTab,'full');
+  env.context.detailReading=()=>({detailTab:'full'});env.renderChosenDetail('n09-catarata',true);
+  assert.equal(env.nodes.get('#document-transcription').open,true,'Volver del visor conserva el desplegado.');
+  assert(env.inputs.find(input=>input.dataset.checkId==='item-1').checked);
+  env.context.applyDetailTab('summary');assert.equal(env.nodes.get('#document-transcription').open,false);
+  assert(env.inputs.find(input=>input.dataset.checkId==='item-1').checked,'Plegar no cambia las marcas.');
 });
 check('La instalación solo aparece en el inicio y la fecha permanece visible al cambiar de pantalla',()=>{
   const initialEntries=[...index.matchAll(/<[^>]*\bdata-catalog-only\b[^>]*>/g)].map(match=>match[0]);
@@ -161,7 +248,7 @@ check('Marcar la patología no completa el progreso cuando falta revisar general
   assert.equal(env.nodes.get('#check-progress-label').textContent,'1 de 2 casillas revisadas');
   assert.equal(env.nodes.get('#check-pending-label').textContent,'1 por revisar');
   assert(env.panel.html.indexOf('GENERAL')<env.panel.html.indexOf('ESPECÍFICO'));
-  assert(!env.panel.html.includes('AJENO'));assert.match(env.panel.html,/<details open>/);
+  assert(!env.panel.html.includes('AJENO'));assert.equal(env.nodes.get('#document-transcription').open,false);
 });
 check('Eventos conservan por separado casillas con igual ID y las marcas históricas',()=>{
   const env=boot([selected,general,foreign]);env.storage.set('test:checks:general',['old']);env.renderChosenDetail('main');
@@ -172,18 +259,23 @@ check('Eventos conservan por separado casillas con igual ID y las marcas histór
   assert.deepEqual(Array.from(env.storage.get('test:checks:general')),[]);assert.deepEqual(Array.from(env.storage.get('test:checks:main')),['same']);
   env.renderChosenDetail('main');assert(!env.inputs.find(input=>input.dataset.checkCardId==='general').checked);assert(env.inputs.find(input=>input.dataset.checkCardId==='main').checked);
 });
-check('Limpiar revisión elimina solo los grupos mostrados, sin tocar otra fuente',()=>{
+check('Desmarcar todas las casillas elimina solo los grupos mostrados, sin tocar otra fuente',()=>{
   const env=boot([selected,general,foreign]);for(const id of ['main','general','foreign'])env.storage.set(`test:checks:${id}`,['same']);
   env.renderChosenDetail('main');env.nodes.get('#reset-checklist').listeners.click();
   assert.deepEqual(Array.from(env.storage.get('test:checks:main')),[]);assert.deepEqual(Array.from(env.storage.get('test:checks:general')),[]);assert.deepEqual(env.storage.get('test:checks:foreign'),['same']);
   assert.equal(env.nodes.get('#check-progress-label').textContent,'0 de 2 casillas revisadas');assert(env.nodes.get('#reset-checklist').disabled);
+  assert.match(env.panel.html,/>Desmarcar todas las casillas<\/button>/);assert.match(env.messages.at(-1),/desmarcaron todas las casillas/);
 });
 check('Generales sin casillas siguen abiertos y no se presentan como revisión completada',()=>{
   const unstructured=cards.find(card=>isCatalogCard(card)&&isGeneralCard(card)&&!card.checklist?.length);
   assert(unstructured);const main=cards.find(card=>generalRequirementsForCard(card,cards).some(item=>item.id===unstructured.id));assert(main);
   const env=boot();env.storage.set('test:checks:'+main.id,env.context.checklist(main).map(item=>item.id));env.renderChosenDetail(main.id);
-  assert.match(env.panel.html,/Estos requisitos generales no tienen casillas separadas/);assert.equal(env.nodes.get('#check-pending-label').textContent,'Revise también el texto general');
-  const block=env.nodes.get('#general-requirements-text');env.nodes.get('#review-general-text').listeners.click();assert(env.details.open);assert(block.focused&&block.scrolled);
+  assert.equal(env.nodes.get('#check-pending-label').textContent,'Revise también el texto general');
+  const {elements}=hierarchy(env.panel.html),supplement=elements.find(node=>node.markup.includes('data-supplement-card="'+unstructured.id+'"'));
+  assert(supplement&&visibleInitially(supplement),'Los generales sin casillas se leen antes de desplegar la transcripción.');
+  assert(env.panel.html.slice(supplement.start,supplement.end).includes(escape(unstructured.fullText))||env.panel.html.slice(supplement.start,supplement.end).includes(escape(unstructured.criteria?.[0]||'')));
+  env.context.applyDetailTab('full');assert.equal(env.nodes.get('#document-transcription').open,true);
+  env.context.applyDetailTab('summary');assert.equal(env.nodes.get('#document-transcription').open,false);
   assert.match(env.context.missingTemplate(main),/Este apartado no tiene casillas separadas/);
 });
 check('Pendientes y esquema copiado incluyen requisitos generales y sus páginas',()=>{

@@ -173,3 +173,66 @@
 .edus-guidance h3{font-size:16px;line-height:1.4;color:#245477;margin:0 0 10px}.edus-guidance p{margin:0 0 10px}.edus-guidance .edus-guidance-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:#526e80}.edus-guidance-scope{font-size:12px}.edus-originals{border-left:3px solid #a47b36;padding-left:10px}.edus-guidance-sources summary{cursor:pointer;font-weight:650;text-decoration:underline;min-height:32px}.edus-guidance-sources ul{margin:8px 0;padding-left:18px}.edus-guidance-sources a{color:#245477}.edus-guidance-sources svg{width:12px;height:12px}.edus-guidance-sources a:focus-visible,.edus-guidance-sources summary:focus-visible{outline:3px solid #3784bf;outline-offset:3px}
 
 .document-switcher{padding:16px 20px}.document-switcher>label{display:block;font-weight:700;color:#245477;margin-bottom:7px}.document-switcher>select{width:100%;min-height:48px;font:inherit;font-weight:650;padding:10px 36px 10px 12px;border:2px solid #7d9fb7;border-radius:8px;background:#fff;color:#245477;text-overflow:ellipsis}.document-switcher>p{font-size:13px;line-height:1.6;margin:9px 0}.document-comparison>summary{min-height:32px;cursor:pointer;font-weight:650;color:#285d83;text-decoration:underline}.document-comparison[open]{padding-top:8px}.document-comparison .source-options{margin-top:12px}
+/* Una sola lectura de requisitos. El respaldo completo se consulta a petición. */
+@media screen{
+.detail-screen{max-width:1020px}
+.detail-layout.single-reading{display:block;max-width:900px;margin:0 auto}
+.single-reading>.checklist-panel{position:static;overflow:hidden;border-top:5px solid #285d83}
+.single-reading .checklist-header{padding:23px 27px 19px;background:#eaf2f9}
+.single-reading .checklist-header h2{font-size:23px}
+.single-reading .checklist-header>p{font-size:14px;line-height:1.65}
+.single-reading .checklist-progress{padding:18px 27px 7px}
+.single-reading .checklist-progress .progress-caption{font-size:14px;gap:10px}
+.single-reading .checklist-items{max-height:none;overflow:visible;padding:4px 27px 12px}
+.single-reading .checklist-group+.checklist-group{margin-top:19px;padding-top:12px;border-top:1px solid var(--line)}
+.single-reading .checklist-group-title{font-size:18px;margin:14px 0 4px;padding:12px 13px}
+.single-reading .checklist-item{padding:16px 0;gap:13px}
+.single-reading .checklist-item input{width:20px;height:20px;margin-top:3px}
+.single-reading .checklist-text{font-size:15px;line-height:1.7;color:#35556b}
+.single-reading .checklist-item:has(input:checked) .checklist-text{color:#647d8f}
+.single-reading .checklist-tag{font-size:12px;line-height:1.6;margin-top:5px;color:#60778b}
+.single-reading .checklist-actions{padding:20px 27px;display:flex;flex-wrap:wrap;gap:10px}
+.single-reading .checklist-actions>.button{flex:1 1 260px;min-height:46px;font-size:14px}
+.single-reading .checklist-actions>.checklist-footnote,.single-reading .checklist-actions>.checklist-reset{width:100%;flex-basis:100%}
+.single-reading .checklist-footnote{font-size:12px;line-height:1.7;margin:4px 0}
+.single-reading .checklist-reset{margin-top:8px;text-align:right}
+.single-reading .checklist-reset button{padding:10px 14px;min-height:44px;border:1px solid #cadbe6;border-radius:7px;background:#fff;font-size:14px;color:#355d7a}
+.single-reading .checklist-reset button:disabled{opacity:.65}
+.review-bucket+.review-bucket{margin-top:22px}
+.review-subtitle{font-size:16px;color:var(--navy);margin:16px 0 8px}
+.review-page-links{display:flex;align-items:center;gap:6px 16px;flex-wrap:wrap;margin:0 0 8px;color:#55728a;font-size:13px;line-height:1.5}
+.review-page-links>a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:650}
+.review-page-links svg{width:17px;height:17px}
+.review-supplements{margin:14px 0 7px}
+.review-supplement{padding:15px 17px;margin-top:12px;background:#fff5df;border-left:3px solid #bc944c;border-radius:5px}
+.review-supplement h4{color:#75521e;font-size:15px;margin:0 0 7px}
+.review-supplement ul{margin:0;padding-left:20px}
+.review-supplement li{font-size:15px;line-height:1.7;white-space:pre-line;overflow-wrap:anywhere}
+.review-supplement li+li{margin-top:10px}
+.documentary-text{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.documentary-text>summary{padding:18px 22px;min-height:58px;color:var(--navy);font-size:16px;font-weight:700;cursor:pointer}
+.documentary-text-body{padding:0 22px 22px}
+.documentary-text .general-requirements{margin-bottom:24px;padding:0;border:0;border-radius:0;background:none}
+.documentary-text h3{font-size:18px;color:var(--navy);margin:15px 0 10px}
+.documentary-text h4{font-size:15px;color:var(--navy);margin:15px 0 8px}
+.documentary-text .full-source-text{font-size:14px;white-space:pre-wrap;line-height:1.7;overflow-wrap:anywhere;margin:0}
+.single-reading>.source-panel{margin-top:20px}
+.single-reading .edus-guidance{margin:0 27px 8px;padding:12px 0 8px;border-top:1px solid var(--line);border-bottom:0;background:none}
+.edus-guidance-details>summary{min-height:44px;padding:8px 0;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer}
+.edus-guidance-details>p{font-size:14px;line-height:1.7}
+.single-reading .edus-originals{font-size:14px;line-height:1.7}
+}
+@media screen and (max-width:760px){
+.single-reading .checklist-header{padding:20px 18px 16px}
+.single-reading .checklist-header h2{font-size:21px}
+.single-reading .checklist-progress{padding:16px 18px 7px}
+.single-reading .checklist-items{padding:4px 18px 10px}
+.single-reading .checklist-group-title{font-size:17px;padding:11px 10px}
+.single-reading .checklist-text{font-size:15px}
+.single-reading .checklist-actions{padding:18px;display:flex}
+.single-reading .checklist-actions>.button{flex-basis:100%;font-size:14px}
+.single-reading .edus-guidance{margin-left:18px;margin-right:18px}
+.documentary-text>summary{padding:17px 18px;font-size:15px}
+.documentary-text-body{padding:0 18px 18px}
+.review-supplement{padding:13px}
+}

@@ -4,6 +4,7 @@ import {shareCard} from './share-card.js';
 import {printCard} from './print-session.js';
 import {checklistEntries} from './print.js';
 import {edusGuidanceForCard} from './edus-guidance.js';
+import {reviewBuckets,reviewSupplements} from './review-content.js';
 import {createTopicIndex, orderDocuments, groupResults, uniqueTopicCount, isCatalogCard, specialtyGeneralRequirements, generalRequirementsForCard, specificRequirementsForCard, generalRequirementsCoverage, showSpecialtyGeneralAccess, includeGeneralSearchResult, orderCatalogTopics} from './catalog.js';
 /* Criterios de referencia. La revisión se realiza en el navegador; no se envían datos clínicos. */
 if (!mountDocumentScreen()) (() => {
@@ -271,12 +272,31 @@ if (!mountDocumentScreen()) (() => {
   function edusGuidanceHTML(card) {
     const guidance=edusGuidanceForCard(card,state.cards);
     if(!guidance)return '';
-    return `<section class="edus-guidance" aria-label="Orientación operativa sobre estudios en EDUS"><p class="edus-guidance-label">Orientación operativa de la app</p><h3>${esc(guidance.title)}</h3><p>${esc(guidance.body)}</p><p class="edus-guidance-scope">${esc(guidance.scopeNote)}</p>${guidance.originalsNote?`<p class="edus-originals"><strong>Material original.</strong> ${esc(guidance.originalsNote)}</p>`:''}<details class="edus-guidance-sources"><summary>Consultar respaldo institucional</summary><ul>${guidance.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)} ${icon('external')}</a></li>`).join('')}</ul></details></section>`;
+    return `<section class="edus-guidance" aria-label="Orientación operativa sobre estudios en EDUS"><details class="edus-guidance-details"><summary>${esc(guidance.title)}</summary><p class="edus-guidance-label">Orientación operativa de la app</p><p>${esc(guidance.body)}</p><p class="edus-guidance-scope">${esc(guidance.scopeNote)}</p><details class="edus-guidance-sources"><summary>Consultar respaldo institucional</summary><ul>${guidance.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)} ${icon('external')}</a></li>`).join('')}</ul></details></details>${guidance.originalsNote?`<p class="edus-originals"><strong>Material original.</strong> ${esc(guidance.originalsNote)}</p>`:''}</section>`;
+  }
+  function reviewPageLinksHTML(card) {
+    const source=sourceFor(card),pages=[...new Set(arr(card.pages).map(Number).filter(page=>Number.isInteger(page)&&page>0))];
+    return `<div class="review-page-links"><span>Fuente ${esc(card.sourceId)}</span>${source.pageImageBase?pages.map(page=>`<a href="${esc(viewerURL(source,{...card,pages:[page]}))}" data-source-action="pages" aria-label="Ver página original ${page} de la fuente ${esc(card.sourceId)}">${icon('book')}Pág. ${page}</a>`).join(''):`<span>${esc(pageLabel(card))}</span>`}</div>`;
+  }
+  function reviewSupplementsHTML(card,options={}) {
+    const sections=reviewSupplements(card,options);
+    if(!sections.length)return '';
+    return `<section class="review-supplements" data-supplement-card="${esc(card.id)}" aria-label="Precisiones de la fuente ${esc(card.sourceId)}">${sections.map(section=>`<div class="review-supplement"><h4>${esc(section.title)}</h4><ul>${section.items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul></div>`).join('')}</section>`;
   }
   function checklistHTML(card) {
     const groups=reviewGroups(card),total=groups.reduce((sum,group)=>sum+group.entries.length,0),hasGeneral=groups.some(group=>group.general);
-    const itemHTML=(entry,group)=>`<label class="checklist-item"><input type="checkbox" data-check-card-id="${esc(group.card.id)}" data-check-id="${esc(entry.id)}" ${group.checked.has(entry.id)?'checked':''}><span class="checklist-text">${esc(entry.text)}${entry.requirement === 'desirable' ? '<small class="checklist-tag">Deseable según la fuente</small>' : entry.requirement === 'conditional' ? '<small class="checklist-tag">Según el caso o la condición descrita</small>' : ''}</span></label>`;
-    return `<aside class="checklist-panel" aria-labelledby="checklist-title"><div class="checklist-header"><p class="checklist-eyebrow">Antes de enviar</p><h2 id="checklist-title">Revise su referencia</h2><p>${hasGeneral?'Revise primero los requisitos generales y después los criterios de esta ficha.':'Compruebe los elementos de esta ficha.'} Fuente <strong>${esc(card.sourceId)}</strong>. Las marcas corresponden solo a este documento.</p>${hasGeneral?'<button type="button" class="button button-secondary checklist-general-link" id="review-general-text">Ver texto de requisitos generales</button>':''}</div><div class="checklist-progress"><div class="progress-caption"><span id="check-progress-label"></span><strong id="check-pending-label"></strong></div><div class="progress-track" role="progressbar" aria-label="Casillas revisadas" aria-valuemin="0" aria-valuemax="${total || 1}" aria-valuenow="0"><span id="check-progress-bar"></span></div></div>${edusGuidanceHTML(card)}<div class="checklist-items">${groups.map((group,index)=>`<section class="checklist-group" data-review-card="${esc(group.card.id)}">${hasGeneral?`<h3 class="checklist-group-title">${index+1}. ${group.general?'Requisitos generales':'Criterios de esta ficha'}</h3><p class="checklist-group-source">Fuente ${esc(group.card.sourceId)} · ${esc(pageLabel(group.card))}</p>`:''}${group.entries.length?group.entries.map(entry=>itemHTML(entry,group)).join(''):`<p class="source-empty">${group.general?'Estos requisitos generales no tienen casillas separadas. Revise su texto antes de enviar.':'Esta ficha no tiene requisitos separados para marcar. Revise el texto de la fuente.'}</p>`}</section>`).join('')}</div><div class="checklist-actions no-print"><button type="button" class="button button-primary" id="copy-reference">${icon('copy')}Copiar esquema de referencia</button><button type="button" class="button button-secondary" id="copy-missing">${icon('copy')}Copiar elementos por revisar</button><p class="checklist-footnote">${hasGeneral?'La revisión incluye los requisitos generales y los específicos de esta fuente. ':''}Las marcas indican revisión, no certifican pertinencia clínica. Se conservan en esta sesión. La app no recibe datos de pacientes.</p><div class="checklist-reset"><button type="button" id="reset-checklist">Limpiar esta revisión</button></div></div></aside>`;
+    const representedTexts=groups.flatMap(group=>group.entries.map(entry=>entry.text));
+    const itemHTML=(entry,group)=>{
+      const type=entry.sourceRequirement||entry.requirement;
+      const label=type==='required'?'Obligatorio en la fuente':type==='desirable'?'Deseable según la fuente':type==='conditional'?'Según el caso o la condición descrita':'';
+      return `<label class="checklist-item"><input type="checkbox" data-check-card-id="${esc(group.card.id)}" data-check-id="${esc(entry.id)}" ${group.checked.has(entry.id)?'checked':''}><span class="checklist-text">${esc(entry.text)}${label?`<small class="checklist-tag">${esc(label)}</small>`:''}</span></label>`;
+    };
+    const groupHTML=group=>{
+      const buckets=reviewBuckets(group.card),heading=group.general?`Requisitos generales de ${group.card.specialty}`:'';
+      const extraScope=group.general&&group.card.applicability&&String(group.card.applicability).trim()!==String(card.applicability||'').trim()?`<div class="document-status-note"><strong>Alcance de estos requisitos.</strong> ${esc(group.card.applicability)}</div>`:'';
+      return `<section class="checklist-group" data-review-card="${esc(group.card.id)}">${heading?`<h3 class="checklist-group-title">${esc(heading)}</h3>${reviewPageLinksHTML(group.card)}`:''}${extraScope}${buckets.map(bucket=>`<div class="review-bucket">${group.general?(buckets.length>1?`<h4 class="review-subtitle">${esc(bucket.title)}</h4>`:''):`<h3 class="checklist-group-title">${esc(bucket.title)}</h3>${reviewPageLinksHTML(group.card)}`}${bucket.entries.map(entry=>itemHTML(entry,group)).join('')}</div>`).join('')}${!buckets.length&&!group.general?`<h3 class="checklist-group-title">Criterios de esta ficha</h3>${reviewPageLinksHTML(group.card)}`:''}${reviewSupplementsHTML(group.card,{representedTexts,hasGeneral})}</section>`;
+    };
+    return `<section class="checklist-panel" aria-labelledby="checklist-title"><div class="checklist-header"><p class="checklist-eyebrow">Antes de enviar</p><h2 id="checklist-title">Revise su referencia</h2><p>${hasGeneral?'Revise primero los requisitos generales y después los criterios de esta ficha.':'Compruebe los elementos de esta ficha.'} Las casillas indican aspectos revisados; los criterios se aplican según el caso. Fuente <strong>${esc(card.sourceId)}</strong>.</p></div><div class="checklist-progress"><div class="progress-caption"><span id="check-progress-label"></span><strong id="check-pending-label"></strong></div><div class="progress-track" role="progressbar" aria-label="Casillas revisadas" aria-valuemin="0" aria-valuemax="${total || 1}" aria-valuenow="0"><span id="check-progress-bar"></span></div></div><div class="checklist-items">${groups.map(groupHTML).join('')}</div>${edusGuidanceHTML(card)}<div class="checklist-actions no-print"><button type="button" class="button button-primary" id="copy-reference">${icon('copy')}Copiar esquema de referencia</button><button type="button" class="button button-secondary" id="copy-missing">${icon('copy')}Copiar elementos por revisar</button><p class="checklist-footnote">${hasGeneral?'La revisión incluye los requisitos generales y los específicos de esta fuente. ':''}Las marcas no certifican pertinencia clínica. Se conservan en esta sesión. La app no recibe datos de pacientes.</p><div class="checklist-reset"><button type="button" id="reset-checklist">Desmarcar todas las casillas</button></div></div></section>`;
   }
   function updateChecklist(card) {
     if (!$('#check-progress-label')) return;
@@ -337,28 +357,14 @@ if (!mountDocumentScreen()) (() => {
     }
     return `<section class="topic-sources${choosing?' source-choice-required':''}" aria-labelledby="topic-sources-title"><div class="topic-intro"><p class="eyebrow">${comparisonLabel}</p><h2 id="topic-sources-title">${choosing?'Elija el documento para esta referencia':sourceCount>1?'Documento elegido y otras fuentes':'Apartados de la fuente'}</h2><p>Elija según el destino de la referencia y el ámbito del documento. Que una fuente sea nacional, regional o más reciente no demuestra por sí mismo que sustituya a las otras.</p></div><div class="source-selection-note">${esc(topic.note||'Los documentos pueden diferir en condiciones, estudios, prioridad o destino. Revise el documento aplicable al establecimiento receptor.')} Las listas de revisión permanecen separadas por documento.</div><div class="source-options">${ordered.map(option).join('')}</div></section>`;
   }
-  function contentList(items) { return `<ul class="content-list">${arr(items).map(item => `<li>${esc(textOf(item))}</li>`).join('')}</ul>`; }
-  function section(number,title,content) { return `<section class="info-panel"><h2><span class="section-number">${number}</span>${esc(title)}</h2>${content}</section>`; }
-  function studyLabel(type) { return type === 'required' ? 'Obligatorio en la fuente' : type === 'desirable' ? 'Deseable' : type === 'conditional' ? 'Según el caso' : 'Indicado en la fuente'; }
-  function summaryHTML(card) {
-    let html='',number=0;
-    const sameStudyText=value=>String(value||'').normalize('NFC').replace(/\s+/g,' ').trim();
-    const studiesNote=card.studiesNote&&!arr(card.studies).some(study=>sameStudyText(textOf(study))===sameStudyText(card.studiesNote))?card.studiesNote:'';
-    if(card.route)html+=section(++number,'Destino indicado en la fuente',`<p>${esc(card.route)}</p>`);
-    if (card.context) html += `<div class="full-text-label">${esc(card.context)}</div>`;
-    if (arr(card.criteria).length) html += section(++number,card.category==='general'?'Requisitos generales':isReturnCard(card)?'Condiciones de retorno al primer nivel':'Criterios para referir',contentList(card.criteria));
-    if (arr(card.prior).length) html += section(++number,'Antes de referir',contentList(card.prior));
-    if (arr(card.studies).length || card.studiesNote) html += section(++number,'Estudios y valoraciones previas', `${arr(card.studies).map(study => {const type = typeof study === 'object' ? study.type || 'source' : 'source';return `<div class="study-item"><span>${esc(textOf(study))}</span><span class="study-type ${esc(type)}">${studyLabel(type)}</span></div>`;}).join('')}${studiesNote ? `<p class="source-empty" style="margin-top:13px">${esc(studiesNote)}</p>` : ''}`);
-    if (arr(card.notes).length) html += section(++number,'Observaciones de la fuente',contentList(card.notes));
-    if (!html) html = section(++number,'Criterio documentado',`<div class="full-source-text">${esc(card.fullText || 'Consulte el documento original para revisar esta condición.')}</div>`);
-    if (arr(card.flags).length) html += section('i','Precisiones documentales',contentList(card.flags));
-    return html;
-  }
   function generalRequirementsHTML(card) {
     const general = generalRequirementsForCard(card,state.cards);
     if (!general.length) return '';
-    const sameText=(a,b)=>String(a||'').normalize('NFC').replace(/\s+/g,' ').trim()===String(b||'').normalize('NFC').replace(/\s+/g,' ').trim();
-    return `<section class="general-requirements info-panel" id="general-requirements-text" tabindex="-1"><details open><summary><span class="general-requirements-icon">${icon('book')}</span><span><strong>Requisitos generales de ${esc(card.specialty)}</strong><small>Antes de los criterios específicos · misma fuente ${esc(card.sourceId)}</small></span><span class="general-chevron" aria-hidden="true">+</span></summary><div class="general-requirements-content"><p>Estos requisitos se suman a los de esta ficha y proceden del mismo documento y especialidad. Revise las condiciones que correspondan a la persona valorada antes de enviar la referencia.</p>${general.map(item => `<div class="general-requirements-group">${general.length > 1 ? `<h3>${esc(item.name)}</h3>`:''}${item.applicability&&!sameText(item.applicability,card.applicability)?`<div class="document-status-note"><strong>Alcance de estos requisitos.</strong> ${esc(item.applicability)}</div>`:''}${arr(item.criteria).length ? contentList(item.criteria) : `<div class="full-source-text">${esc(item.fullText || '')}</div>`}${arr(item.prior).length ? contentList(item.prior) : ''}${arr(item.studies).length ? contentList(item.studies) : ''}${arr(item.notes).length ? contentList(item.notes) : ''}<a href="${item.inlineGeneral?esc(viewerURL(sourceFor(item),item)):'#ficha/'+encodeURIComponent(item.id)}" class="general-source-link">${item.inlineGeneral?'Ver requisitos generales en la fuente':'Abrir ficha de requisitos generales'} · ${esc(pageLabel(item))} ${icon('arrow')}</a></div>`).join('')}</div></details></section>`;
+    return `<section class="general-requirements" id="general-requirements-text"><h3>Requisitos generales de ${esc(card.specialty)}</h3>${general.map(item=>`<section class="general-transcription"><h4>${esc(item.name)}</h4>${reviewPageLinksHTML(item)}<pre class="full-source-text">${esc(item.fullText||[...arr(item.criteria),...arr(item.prior),...arr(item.studies),...arr(item.notes)].map(textOf).join('\n\n'))}</pre></section>`).join('')}</section>`;
+  }
+  function sourceTranscriptionHTML(card) {
+    const content=card.fullText||[...arr(card.criteria),...arr(card.prior),...arr(card.studies),...arr(card.notes)].map(textOf).join('\n\n');
+    return `<details class="documentary-text" id="document-transcription"><summary>Consultar transcripción completa de la fuente</summary><div class="documentary-text-body"><p class="source-navigation-note">Transcripción de las secciones de respaldo. Consulte las páginas originales para verificar tablas, notas al pie y disposición del documento.</p>${generalRequirementsHTML(card)}<section class="specific-transcription"><h3>${esc(card.name)}</h3>${reviewPageLinksHTML(card)}<pre class="full-source-text">${esc(content)}</pre></section></div></details>`;
   }
   function sourceActions(source,card) {
     const viewer = source.pageImageBase ? viewerURL(source,card) : '';
@@ -409,11 +415,10 @@ if (!mountDocumentScreen()) (() => {
     return {scrollY:Math.max(0,Number(saved.scrollY)||0),detailTab:saved.detailTab==='full'?'full':'summary'};
   }
   function applyDetailTab(tabName) {
-    if(!$('#summary-content')||!$('#full-content'))return;
+    const transcription=$('#document-transcription');
+    if(!transcription)return;
     state.detailTab=tabName==='full'?'full':'summary';
-    const full=state.detailTab==='full';
-    $('#summary-content').hidden=full;$('#full-content').hidden=!full;
-    $$('[data-detail-tab]',$('#detail-screen')).forEach(tab=>tab.setAttribute('aria-selected',String(tab.dataset.detailTab===state.detailTab)));
+    transcription.open=state.detailTab==='full';
   }
   function renderDetail(id,restoreReading=false) {
     const card = state.cards.find(c => c.id === id), panel = $('#detail-screen');
@@ -442,7 +447,7 @@ if (!mountDocumentScreen()) (() => {
     safeWrite(localStorage, `${STORE}:recent`, state.recent);
     const source = sourceFor(card), ptype = cardPriorityType(card);
     const topic = state.topicIndex.byCard.get(id);
-    panel.innerHTML = `<div class="detail-topbar no-print"><a class="back-link" href="#" id="back-to-results">${icon('back')}Volver a resultados</a><div class="detail-tools"><button class="icon-button" id="detail-favorite" type="button" title="Guardar en favoritas" aria-label="Guardar en favoritas">${icon('star')}</button><button class="icon-button" id="detail-share" type="button" title="Compartir ficha" aria-label="Compartir ficha">${icon('share')}</button><button class="icon-button" id="detail-print" type="button" title="Imprimir ficha" aria-label="Imprimir ficha">${icon('print')}</button></div></div><div class="detail-title-row"><p class="detail-specialty"><span class="specialty-dot"></span>${esc(card.specialty)}</p><h1 id="detail-title" tabindex="-1">${esc(topic?.name||card.name)}</h1><div class="card-badges">${statusBadge(source,card)}<span class="badge">Fuente ${esc(card.sourceId)} · ${esc(pageLabel(card))}</span></div></div>${topicSourcesHTML(topic,card)}<div class="active-document-label"><strong>Documento elegido: ${esc(source.id)}</strong><span>${esc(card.name)} · ${esc(source.titulo)}</span><span><b>Ámbito:</b> ${esc(source.alcance||card.scope||'No identificado en la copia')}</span></div>${sourceStatusNote(source,card)}${card.priority ? `<section class="priority-panel ${ptype}">${icon(ptype === 'urgent' ? 'info' : 'clock')}<div><strong>Prioridad y destino según la fuente</strong><p>${esc(card.priority)}</p></div></section>` : ''}<div class="detail-layout">${checklistHTML(card)}<div class="reference-column">${generalRequirementsHTML(card)}<div class="reference-tabs no-print" role="tablist" aria-label="Contenido de la ficha"><button type="button" role="tab" id="summary-tab" data-detail-tab="summary" aria-selected="true" aria-controls="summary-content">Resumen por requisito</button><button type="button" role="tab" id="full-tab" data-detail-tab="full" aria-selected="false" aria-controls="full-content">Texto de la fuente</button></div><div id="summary-content" class="reference-content" role="tabpanel" aria-labelledby="summary-tab">${summaryHTML(card)}</div><div id="full-content" class="reference-content" role="tabpanel" aria-labelledby="full-tab" hidden><div class="full-text-label">Transcripción de la sección de respaldo. Consulte la página original para verificar tablas, notas al pie y disposición del documento.</div><section class="info-panel"><h2>${icon('book')}Texto documental</h2><pre class="full-source-text">${esc(card.fullText || [...arr(card.criteria).map(textOf),...arr(card.prior).map(textOf),...arr(card.studies).map(textOf),...arr(card.notes).map(textOf)].join('\n\n'))}</pre></section></div>${sourcePanel(source,card)}</div></div>${feedbackPanel(card)}`;
+    panel.innerHTML = `<div class="detail-topbar no-print"><a class="back-link" href="#" id="back-to-results">${icon('back')}Volver a resultados</a><div class="detail-tools"><button class="icon-button" id="detail-favorite" type="button" title="Guardar en favoritas" aria-label="Guardar en favoritas">${icon('star')}</button><button class="icon-button" id="detail-share" type="button" title="Compartir ficha" aria-label="Compartir ficha">${icon('share')}</button><button class="icon-button" id="detail-print" type="button" title="Imprimir ficha" aria-label="Imprimir ficha">${icon('print')}</button></div></div><div class="detail-title-row"><p class="detail-specialty"><span class="specialty-dot"></span>${esc(card.specialty)}</p><h1 id="detail-title" tabindex="-1">${esc(topic?.name||card.name)}</h1><div class="card-badges">${statusBadge(source,card)}<span class="badge">Fuente ${esc(card.sourceId)} · ${esc(pageLabel(card))}</span></div></div>${topicSourcesHTML(topic,card)}<div class="active-document-label"><strong>Documento elegido: ${esc(source.id)}</strong><span>${esc(card.name)} · ${esc(source.titulo)}</span><span><b>Ámbito:</b> ${esc(source.alcance||card.scope||'No identificado en la copia')}</span></div>${sourceStatusNote(source,card)}${card.priority ? `<section class="priority-panel ${ptype}">${icon(ptype === 'urgent' ? 'info' : 'clock')}<div><strong>Prioridad y destino según la fuente</strong><p>${esc(card.priority)}</p></div></section>` : ''}<div class="detail-layout single-reading">${checklistHTML(card)}${sourceTranscriptionHTML(card)}${sourcePanel(source,card)}</div>${feedbackPanel(card)}`;
     $('#detail-source-select')?.addEventListener('change',event=>chooseDocument(event.target.value));
     updateDetailFavorite(); updateChecklist(card); applyDetailTab(state.detailTab);
     window.trackReferenceEvent?.('reference_open',{card_id:card.id});
@@ -456,15 +461,9 @@ if (!mountDocumentScreen()) (() => {
     $('#detail-share').addEventListener('click',() => shareCard({card,title:topic?.name||card.name,url:location.href,button:$('#detail-share'),onStatus:announce}));
     $('#copy-reference').addEventListener('click',() => copyText(referenceTemplate(card),'Esquema copiado. Complete los datos clínicos en el expediente.'));
     $('#copy-missing').addEventListener('click',() => copyText(missingTemplate(card),'Elementos por revisar copiados.'));
-    $('#review-general-text')?.addEventListener('click',()=>{
-      const generalText=$('#general-requirements-text');
-      if(!generalText)return;
-      const details=$('details',generalText);if(details)details.open=true;
-      generalText.focus({preventScroll:true});generalText.scrollIntoView({block:'start'});
-    });
     $('#reset-checklist').addEventListener('click',() => {
       reviewGroups(card).forEach(group=>safeWrite(sessionStorage,`${STORE}:checks:${group.card.id}`,[]));
-      $$('[data-check-id]',panel).forEach(input => input.checked=false);updateChecklist(card);announce('Se limpiaron las marcas de esta ficha y de los requisitos generales mostrados.');
+      $$('[data-check-id]',panel).forEach(input => input.checked=false);updateChecklist(card);announce('Se desmarcaron todas las casillas de esta ficha y de sus requisitos generales.');
     });
     panel.onchange = event => {
       if (!event.target.matches('[data-check-id]')) return;
@@ -473,9 +472,7 @@ if (!mountDocumentScreen()) (() => {
       const checked = $$('[data-check-id]:checked',panel).filter(input=>input.dataset.checkCardId===reviewId).map(input => input.dataset.checkId);
       safeWrite(sessionStorage,`${STORE}:checks:${reviewId}`,checked);updateChecklist(card);
     };
-    $$('[data-detail-tab]',panel).forEach(button => button.addEventListener('click',() => {
-      applyDetailTab(button.dataset.detailTab);saveDetailReading();
-    }));
+    $('#document-transcription')?.addEventListener('toggle',event=>{state.detailTab=event.target.open?'full':'summary';saveDetailReading();});
   }
   function referenceTemplate(card) {
     const source = sourceFor(card);

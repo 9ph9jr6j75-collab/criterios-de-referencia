@@ -2,7 +2,7 @@
 import {generalRequirementsForCard,isCatalogCard} from './catalog.js';
 
 export const EDUS_GUIDANCE = Object.freeze({
-  title:'Disponibilidad de estudios en EDUS',
+  title:'Estudios en EDUS y Asistente EDUS',
   body:'Compruebe que los estudios solicitados por esta fuente o aportados durante la consulta estén disponibles para el especialista. Si ya constan en EDUS, indique su fecha y ubicación. Los resultados o informes impresos que no estén incorporados, incluidos los de servicios privados, deben digitalizarse mediante Asistente EDUS conforme al procedimiento institucional. Indique expresamente en la referencia qué estudios se encuentran en sus adjuntos y la fecha de cada uno.',
   scopeNote:'Esta orientación explica cómo disponer de los estudios solicitados o aportados; no agrega exámenes a los criterios de la fuente ni exige duplicar resultados que ya están accesibles en EDUS.',
   originalsNote:'Si la fuente solicita imágenes o material de anatomía patológica original, mantenga esa indicación. Digitalizar el informe no sustituye ese material. Una fotografía de una placa no equivale por sí sola a la imagen diagnóstica original.',

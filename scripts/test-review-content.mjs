@@ -112,6 +112,51 @@ test('los detalles de Hidrocele y lipomas permanecen aunque una parte coincida',
   }
 });
 
+
+test('Hidrocele no repite los requisitos generales en un recuadro de precisiones', () => {
+  const hidrocele=byId.get('r01-cirugia-pediatrica-hidrocele-p30');
+  const [general]=generalRequirementsForCard(hidrocele,cards);
+  assert.equal(general.id,'r01-cirugia-pediatrica-requisitos-generales');
+  assert.equal(rows(general).length,3);
+  assert.deepEqual(output(general),[]);
+  assert.match(general.fullText,/Indicaciones generales/);
+  assert.match(general.fullText,/fotocopia/);
+});
+
+test('solo un encabezado editorial puede diferir de una secuencia clínica completa', () => {
+  const entries=[
+    {id:'one',text:'1. Hemoglobina menor de 11 g/dL.',kind:'general'},
+    {id:'two',text:'2. No solicitar otros exámenes. Referir a consulta externa.',kind:'general'}
+  ];
+  const repeated='Indicaciones generales '+entries.map(entry=>entry.text).join(' ');
+  const card=bare({category:'general',checklist:entries,criteria:[repeated]});
+  assert.deepEqual(output(card),[]);
+  assert.deepEqual(output({...card,criteria:[repeated.replace('Indicaciones generales ','Indicaciones generales: ')]}),[]);
+  for(const changed of [
+    repeated.replace('11 g/dL','10 g/dL'),
+    repeated.replace('11 g/dL','11 mg/dL'),
+    repeated.replace('No solicitar','Solicitar'),
+    repeated.replace('consulta externa','Emergencias'),
+    repeated+' Excepto si presenta dolor.',
+    repeated.replace('2. No solicitar','3. No solicitar'),
+    repeated.replace('2. No solicitar','2. no solicitar'),
+    repeated.replace('Indicaciones generales','Indicaciones generales para menores de cinco años')
+  ]) assert.deepEqual(output({...card,criteria:[changed]}),[changed],changed);
+  assert.deepEqual(output({...card,category:undefined,name:'Patología específica'}),[repeated]);
+  assert.deepEqual(output({...card,criteria:[repeated.replace('2. No solicitar otros exámenes. Referir a consulta externa.','')]}),[repeated.replace('2. No solicitar otros exámenes. Referir a consulta externa.','')]);
+});
+
+test('los diez generales con encabezado repetido muestran sus casillas una sola vez', () => {
+  const repeated=active.filter(card => (card.category==='general'||/^requisitos generales/i.test(card.name)) && rows(card).length &&
+    values(card,'criteria').some(text=>/^Indicaciones generales(?:\s*:\s*|\s+)/i.test(key(text))&&key(text).replace(/^Indicaciones generales(?:\s*:\s*|\s+)/i,'')===rows(card).map(entry=>key(entry.text)).join(' ')));
+  assert.equal(repeated.length,10);
+  for(const card of repeated){
+    assert(!reviewSupplements(card).some(group=>group.title==='Precisiones de requisitos generales'),card.id);
+    assert(rows(card).length>0,card.id);
+    assert(card.fullText,card.id);
+  }
+});
+
 test('auditoría de las 730 fichas: todo texto clínico está en casilla o suplemento sin mutar los datos', () => {
   const before=JSON.stringify(cards);
   let supplementCount=0,fieldCount=0;
@@ -132,7 +177,8 @@ test('auditoría de las 730 fichas: todo texto clínico está en casilla o suple
           fieldCount++;
           const studiesCombined=field==='studiesNote'&&key(text)===key(values(groupCard,'studies').join('\n'));
           const generic=generals.length>0&&text==='Incluir los datos generales, antecedentes y examen físico que establece la fuente.';
-          assert(visibleKeys.has(key(text))||visibleKeys.has(wholeList)||studiesCombined||generic,groupCard.id+' '+field+': '+text);
+          const sameGeneralSequence=(groupCard.category==='general'||groupCard.inlineGeneral||/^requisitos generales/i.test(groupCard.name))&&ownRows.length>0&&key(text).replace(/^Indicaciones generales(?:\s*:\s*|\s+)/i,'')===ownRows.map(entry=>key(entry.text)).join(' ');
+          assert(visibleKeys.has(key(text))||visibleKeys.has(wholeList)||studiesCombined||generic||sameGeneralSequence,groupCard.id+' '+field+': '+text);
         }
       }
     }

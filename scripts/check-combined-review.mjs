@@ -50,7 +50,7 @@ function boot(allCards=cards){
   date.parentElement=headerSupport;headerSupport.parentElement=header;
   nodes.set('.header-support',headerSupport);nodes.set('.app-header',header);nodes.set('.app-updated',date);
   const catalogOnly=Array.from({length:2},()=>{const entry=new Node();entry.hidden=true;return entry;});
-  const state={cards:allCards,sourceMap:new Map(sources.map(item=>[item.id,item])),recent:[],chosenDocuments:new Set(),topicIndex:allCards===cards?createTopicIndex(cards,definitions):{byCard:new Map()}};
+  const state={cards:allCards,sourceMap:new Map(sources.map(item=>[item.id,item])),recent:[],pendingDocumentChoice:'',topicIndex:allCards===cards?createTopicIndex(cards,definitions):{byCard:new Map()}};
   const context={state,STORE:'test',sessionStorage:storage,localStorage:new Map(),checklistEntries,generalRequirementsForCard,specificRequirementsForCard,isCatalogCard,edusGuidanceForCard,reviewBuckets,reviewSupplements,
     $:selector=>nodes.get(selector),$$:selector=>selector==='[data-catalog-only]'?catalogOnly:selector==='[data-detail-tab]'||selector==='.utility-nav [data-nav]'?[]:inputs.filter(input=>selector.includes(':checked')?input.checked:true),
     safeRead:(store,key,fallback)=>store.get(key)??fallback,safeWrite:(store,key,value)=>store.set(key,value),
@@ -64,7 +64,7 @@ function boot(allCards=cards){
   vm.createContext(context);vm.runInContext(functions,context);
   // These content regressions inspect an explicitly selected document. The
   // unchosen-document gate is exercised separately in test-document-selection.
-  const renderChosenDetail=(id,restoreReading=false)=>{state.chosenDocuments.add(id);context.location.hash='#ficha/'+encodeURIComponent(id);context.renderDetail(id,restoreReading);};
+  const renderChosenDetail=(id,restoreReading=false)=>{state.pendingDocumentChoice=id;context.location.hash='#ficha/'+encodeURIComponent(id);context.renderDetail(id,restoreReading);};
   return {context,renderChosenDetail,storage,nodes,inputs,panel,messages,details,date,catalogOnly};
 }
 // Inspect hierarchy rather than matching the source template's punctuation.
@@ -116,9 +116,19 @@ check('Las 730 fichas muestran la revisión primero, avisos antes y reporte al f
     const guidanceBlocks=elements.filter(node=>/class="edus-guidance"/.test(node.markup));
     assert.equal(guidanceBlocks.length,guidance?1:0,card.id+': una orientación EDUS cuando corresponde.');
     if(guidance){
-      assert.equal(guidanceBlocks[0].parent,checklist,card.id+': orientación dentro de Revise su referencia.');
-      const guidanceDetails=elements.find(node=>hasClass(node,'edus-guidance-details'));assert(guidanceDetails,card.id);
-      assert(!/\sopen(?:\s|>)/.test(guidanceDetails.markup),card.id+': explicación operativa plegada.');
+      const block=guidanceBlocks[0],progress=elements.find(node=>hasClass(node,'checklist-progress')),items=elements.find(node=>hasClass(node,'checklist-items'));
+      assert.equal(block.parent,checklist,card.id+': orientación dentro de Revise su referencia.');
+      assert(progress&&items,card.id);assert.equal(progress.parent,checklist,card.id);assert.equal(items.parent,checklist,card.id);
+      assert(checklist.children.indexOf(progress)<checklist.children.indexOf(block)&&checklist.children.indexOf(block)<checklist.children.indexOf(items),card.id+': EDUS visible después del progreso y antes de las casillas.');
+      const heading=elements.find(node=>node.tag==='h3'&&within(node,block));
+      const body=elements.find(node=>hasClass(node,'edus-guidance-body')),scope=elements.find(node=>hasClass(node,'edus-guidance-scope'));
+      for(const [node,text] of [[heading,guidance.title],[body,guidance.body],[scope,guidance.scopeNote]]){
+        assert(node&&within(node,block)&&visibleInitially(node),card.id+': título e instrucciones de EDUS visibles sin desplegar.');
+        assert(env.panel.html.slice(node.start,node.end).includes(escape(text)),card.id+': orientación visible íntegra.');
+      }
+      const folded=elements.filter(node=>node.tag==='details'&&within(node,block));
+      assert.equal(folded.length,1,card.id+': solo se pliega el respaldo institucional.');
+      assert(hasClass(folded[0],'edus-guidance-sources'),card.id);assert(!/\sopen(?:\s|>)/.test(folded[0].markup),card.id+': respaldo institucional plegado.');
       if(guidance.originalsNote){const originals=elements.find(node=>hasClass(node,'edus-originals'));assert(originals&&visibleInitially(originals),card.id+': material original siempre visible.');}
       for(const text of [guidance.title,guidance.body,guidance.scopeNote,guidance.originalsNote].filter(Boolean))assert(env.panel.html.includes(escape(text)),card.id+': orientación íntegra y distinta del texto documental.');
       for(const source of guidance.sources)assert(env.panel.html.includes(escape(source.url)),card.id+': respaldo de la orientación.');
@@ -134,14 +144,15 @@ check('Las 730 fichas muestran la revisión primero, avisos antes y reporte al f
     assert.equal(feedback.parent,root,card.id);assert.equal(root.children.at(-1),feedback,card.id);
     assert(root.children.indexOf(layout)<root.children.indexOf(feedback),card.id);
     const generals=generalRequirementsForCard(card,cards);
+    const renderedText=decode(env.panel.html.replace(/<[^>]*>/g,' ')).normalize('NFC').replace(/\s+/gu,' ').trim();
     const expectedReviews=[...generals,specificRequirementsForCard(card)].flatMap(item=>(item.checklist||[]).map((entry,index)=>({cardId:item.id,checkId:typeof entry==='string'?`c${index+1}`:entry.id||`c${index+1}`})));
     assert.deepEqual(env.inputs.map(input=>({cardId:input.dataset.checkCardId,checkId:input.dataset.checkId})),expectedReviews,card.id+': todas las casillas generales y específicas aparecen en la misma ficha, una vez y en orden.');
     for(const general of generals){
       for(const field of ['criteria','prior','studies','notes'])for(const item of general[field]||[]){
         const text=typeof item==='object'?String(item.text??item.label??''):String(item);
-        if(text)assert(env.panel.html.includes(escape(text)),card.id+': texto general '+field+' incorporado sin abrir otra ficha.');
+        if(text)assert(renderedText.includes(text.normalize('NFC').replace(/\s+/gu,' ').trim()),card.id+': texto general '+field+' incorporado sin abrir otra ficha.');
       }
-      if(!general.criteria?.length&&general.fullText)assert(env.panel.html.includes(escape(general.fullText)),card.id+': texto general sin casillas también está disponible en esta ficha.');
+      if(general.fullText)assert(env.panel.html.slice(transcription.start,transcription.end).includes(escape(general.fullText)),card.id+': transcripción general original íntegra en esta ficha.');
     }
     rendered++;
   }
@@ -173,6 +184,26 @@ check('Cada grupo conserva acceso directo a todas sus páginas y el retorno a la
     });
   }
   assert(groupsChecked>=730&&linksChecked>=1000);console.log(`  ${groupsChecked} grupos y ${linksChecked} enlaces de respaldo comprobados.`);
+});
+check('Los generales completos se leen una vez con casillas, aun cuando el texto repetido comienza con Indicaciones generales',()=>{
+  const normalized=value=>String(value||'').normalize('NFC').replace(/\s+/gu,' ').trim();
+  const covered=cards.filter(card=>isCatalogCard(card)&&isGeneralCard(card)&&card.checklist?.length&&card.criteria?.length===1&&normalized(card.criteria[0]).replace(/^Indicaciones generales\s*:?\s*/u,'')===normalized(card.checklist.map(entry=>entry.text).join(' ')));
+  assert.equal(covered.length,11,'Diez generales con encabezado y Odontología ya cubierto por su propia casilla.');
+  const coveredIds=new Set(covered.map(card=>card.id)),env=boot();let views=0;
+  for(const card of cards.filter(isCatalogCard)){
+    const generals=env.context.reviewGroups(card).filter(group=>coveredIds.has(group.card.id));if(!generals.length)continue;
+    env.renderChosenDetail(card.id);const {elements}=hierarchy(env.panel.html);
+    for(const general of generals){
+      const group=elements.find(node=>hasClass(node,'checklist-group')&&node.markup.includes('data-review-card="'+general.card.id+'"'));assert(group,card.id);
+      const visible=normalized(decode(env.panel.html.slice(group.start,group.end).replace(/<[^>]*>/g,' ')));
+      for(const entry of general.entries)assert.equal(visible.split(normalized(entry.text)).length-1,1,card.id+': cada requisito general tiene una lectura visible.');
+      for(const note of general.card.notes||[])assert(visible.includes(normalized(note)),card.id+': se conserva la precisión única.');
+      const transcription=elements.find(node=>node.markup.includes('id="document-transcription"'));assert(transcription&&!visibleInitially(transcription),card.id);
+      assert(env.panel.html.slice(transcription.start,transcription.end).includes(escape(general.card.fullText)),card.id+': el texto original completo permanece en la transcripción.');
+    }
+    views++;
+  }
+  assert.equal(views,241);
 });
 check('Precisiones únicas permanecen visibles y las repeticiones de Catarata y Amputados salen de la lectura abierta',()=>{
   const env=boot();
@@ -282,6 +313,18 @@ check('Pendientes y esquema copiado incluyen requisitos generales y sus páginas
   const env=boot([selected,general,foreign]),pending=env.context.missingTemplate(selected),template=env.context.referenceTemplate(selected);
   assert(pending.indexOf('REQUISITOS GENERALES')<pending.indexOf('CRITERIOS DE ESTA FICHA'));assert.match(pending,/GENERAL/);assert.match(pending,/Pág\. 4/);assert.match(pending,/Pág\. 20/);assert(!pending.includes('AJENO'));
   assert.match(template,/Revisar también los requisitos generales/);assert.match(template,/Pág\. 4/);
+});
+check('La orientación EDUS se conserva al copiar el esquema y los elementos por revisar',()=>{
+  const env=boot();let applicable=0;
+  for(const card of cards.filter(isCatalogCard)){
+    const guidance=edusGuidanceForCard(card,cards);if(!guidance)continue;
+    const template=env.context.referenceTemplate(card),pending=env.context.missingTemplate(card);
+    assert.match(template,/Ubicación y fecha de los estudios en EDUS/,card.id);
+    assert.match(template,/Asistente EDUS, indicar expresamente cuáles están en sus adjuntos/,card.id);
+    for(const text of [guidance.body,guidance.scopeNote,guidance.originalsNote].filter(Boolean))assert(pending.includes(text),card.id+': copiar pendientes conserva la orientación completa.');
+    applicable++;
+  }
+  assert.equal(applicable,617);
 });
 check('Catarata N09 muestra sus siete generales antes de los seis criterios conservando las marcas anteriores',()=>{
   const card=cards.find(item=>item.id==='n09-catarata'),env=boot();assert(card);

@@ -27,7 +27,7 @@ if (!mountDocumentScreen()) (() => {
     cards: [], topics: [], topicIndex: null, sources: [], sourceMap: new Map(), index: new Map(), filtered: [], visible: Math.max(PAGE_SIZE,Number(saved.visible)||PAGE_SIZE),
     favorites: new Set(safeRead(localStorage, `${STORE}:favorites`, [])),
     recent: safeRead(localStorage, `${STORE}:recent`, []),
-    chosenDocuments: new Set(safeRead(sessionStorage, `${STORE}:chosen-documents`, [])),
+    pendingDocumentChoice: '',
     query: saved.query || '', specialty: saved.specialty || '', scope: saved.scope || '',
     priority: saved.priority || '', source: saved.source || '', mode: saved.mode || 'all',
     sort: saved.sort || (norm(saved.query)?'relevance':'name'), filtersOpen: saved.filtersOpen !== false,
@@ -272,7 +272,7 @@ if (!mountDocumentScreen()) (() => {
   function edusGuidanceHTML(card) {
     const guidance=edusGuidanceForCard(card,state.cards);
     if(!guidance)return '';
-    return `<section class="edus-guidance" aria-label="Orientación operativa sobre estudios en EDUS"><details class="edus-guidance-details"><summary>${esc(guidance.title)}</summary><p class="edus-guidance-label">Orientación operativa de la app</p><p>${esc(guidance.body)}</p><p class="edus-guidance-scope">${esc(guidance.scopeNote)}</p><details class="edus-guidance-sources"><summary>Consultar respaldo institucional</summary><ul>${guidance.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)} ${icon('external')}</a></li>`).join('')}</ul></details></details>${guidance.originalsNote?`<p class="edus-originals"><strong>Material original.</strong> ${esc(guidance.originalsNote)}</p>`:''}</section>`;
+    return `<section class="edus-guidance" aria-label="Orientación operativa sobre estudios en EDUS"><p class="edus-guidance-label">Orientación operativa de la app</p><h3>${esc(guidance.title)}</h3><p class="edus-guidance-body">${esc(guidance.body)}</p><p class="edus-guidance-scope">${esc(guidance.scopeNote)}</p>${guidance.originalsNote?`<p class="edus-originals"><strong>Material original.</strong> ${esc(guidance.originalsNote)}</p>`:''}<details class="edus-guidance-sources"><summary>Consultar respaldo institucional</summary><ul>${guidance.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)} ${icon('external')}</a></li>`).join('')}</ul></details></section>`;
   }
   function reviewPageLinksHTML(card) {
     const source=sourceFor(card),pages=[...new Set(arr(card.pages).map(Number).filter(page=>Number.isInteger(page)&&page>0))];
@@ -296,7 +296,7 @@ if (!mountDocumentScreen()) (() => {
       const extraScope=group.general&&group.card.applicability&&String(group.card.applicability).trim()!==String(card.applicability||'').trim()?`<div class="document-status-note"><strong>Alcance de estos requisitos.</strong> ${esc(group.card.applicability)}</div>`:'';
       return `<section class="checklist-group" data-review-card="${esc(group.card.id)}">${heading?`<h3 class="checklist-group-title">${esc(heading)}</h3>${reviewPageLinksHTML(group.card)}`:''}${extraScope}${buckets.map(bucket=>`<div class="review-bucket">${group.general?(buckets.length>1?`<h4 class="review-subtitle">${esc(bucket.title)}</h4>`:''):`<h3 class="checklist-group-title">${esc(bucket.title)}</h3>${reviewPageLinksHTML(group.card)}`}${bucket.entries.map(entry=>itemHTML(entry,group)).join('')}</div>`).join('')}${!buckets.length&&!group.general?`<h3 class="checklist-group-title">Criterios de esta ficha</h3>${reviewPageLinksHTML(group.card)}`:''}${reviewSupplementsHTML(group.card,{representedTexts,hasGeneral})}</section>`;
     };
-    return `<section class="checklist-panel" aria-labelledby="checklist-title"><div class="checklist-header"><p class="checklist-eyebrow">Antes de enviar</p><h2 id="checklist-title">Revise su referencia</h2><p>${hasGeneral?'Revise primero los requisitos generales y después los criterios de esta ficha.':'Compruebe los elementos de esta ficha.'} Las casillas indican aspectos revisados; los criterios se aplican según el caso. Fuente <strong>${esc(card.sourceId)}</strong>.</p></div><div class="checklist-progress"><div class="progress-caption"><span id="check-progress-label"></span><strong id="check-pending-label"></strong></div><div class="progress-track" role="progressbar" aria-label="Casillas revisadas" aria-valuemin="0" aria-valuemax="${total || 1}" aria-valuenow="0"><span id="check-progress-bar"></span></div></div><div class="checklist-items">${groups.map(groupHTML).join('')}</div>${edusGuidanceHTML(card)}<div class="checklist-actions no-print"><button type="button" class="button button-primary" id="copy-reference">${icon('copy')}Copiar esquema de referencia</button><button type="button" class="button button-secondary" id="copy-missing">${icon('copy')}Copiar elementos por revisar</button><p class="checklist-footnote">${hasGeneral?'La revisión incluye los requisitos generales y los específicos de esta fuente. ':''}Las marcas no certifican pertinencia clínica. Se conservan en esta sesión. La app no recibe datos de pacientes.</p><div class="checklist-reset"><button type="button" id="reset-checklist">Desmarcar todas las casillas</button></div></div></section>`;
+    return `<section class="checklist-panel" aria-labelledby="checklist-title"><div class="checklist-header"><p class="checklist-eyebrow">Antes de enviar</p><h2 id="checklist-title">Revise su referencia</h2><p>${hasGeneral?'Revise primero los requisitos generales y después los criterios de esta ficha.':'Compruebe los elementos de esta ficha.'} Las casillas indican aspectos revisados; los criterios se aplican según el caso. Fuente <strong>${esc(card.sourceId)}</strong>.</p></div><div class="checklist-progress"><div class="progress-caption"><span id="check-progress-label"></span><strong id="check-pending-label"></strong></div><div class="progress-track" role="progressbar" aria-label="Casillas revisadas" aria-valuemin="0" aria-valuemax="${total || 1}" aria-valuenow="0"><span id="check-progress-bar"></span></div></div>${edusGuidanceHTML(card)}<div class="checklist-items">${groups.map(groupHTML).join('')}</div><div class="checklist-actions no-print"><button type="button" class="button button-primary" id="copy-reference">${icon('copy')}Copiar esquema de referencia</button><button type="button" class="button button-secondary" id="copy-missing">${icon('copy')}Copiar elementos por revisar</button><p class="checklist-footnote">${hasGeneral?'La revisión incluye los requisitos generales y los específicos de esta fuente. ':''}Las marcas no certifican pertinencia clínica. Se conservan en esta sesión. La app no recibe datos de pacientes.</p><div class="checklist-reset"><button type="button" id="reset-checklist">Desmarcar todas las casillas</button></div></div></section>`;
   }
   function updateChecklist(card) {
     if (!$('#check-progress-label')) return;
@@ -316,15 +316,17 @@ if (!mountDocumentScreen()) (() => {
     return html;
   }
   function documentChoiceRequired(card,topic,restoreReading=false) {
+    // La elección sólo autoriza la apertura que sigue al clic o al cambio de fuente.
+    // Una nueva visita al tema vuelve a pedir el documento, aunque ya se consultara.
+    const explicitlyChosen=state.pendingDocumentChoice===card.id;
+    state.pendingDocumentChoice='';
     const members=(topic?.cards||[card]).filter(isCatalogCard);
     if(new Set(members.map(item=>item.sourceId)).size<2)return false;
-    const choices=state.chosenDocuments||(state.chosenDocuments=new Set());
-    if(choices.has(card.id)||restoreReading)return false;
+    if(explicitlyChosen||restoreReading)return false;
     // Un filtro de documento elegido desde el catálogo es una elección expresa.
     // El alcance, la búsqueda o una preferencia de orden no eligen el documento.
     const filtered=members.filter(item=>item.sourceId===state.source);
     if(state.navigatingFromCatalog&&state.source===card.sourceId&&filtered.length===1){
-      choices.add(card.id);safeWrite(sessionStorage,`${STORE}:chosen-documents`,[...choices]);
       return false;
     }
     return true;
@@ -332,8 +334,7 @@ if (!mountDocumentScreen()) (() => {
   function chooseDocument(id) {
     const card=state.cards.find(item=>item.id===id);
     if(!card||!isCatalogCard(card))return;
-    const choices=state.chosenDocuments||(state.chosenDocuments=new Set());
-    choices.add(id);safeWrite(sessionStorage,`${STORE}:chosen-documents`,[...choices]);
+    state.pendingDocumentChoice=id;
     state.navigatingFromCatalog=false;
     const hash='#ficha/'+encodeURIComponent(id);
     if(location.hash===hash)handleRoute();else location.hash=hash;

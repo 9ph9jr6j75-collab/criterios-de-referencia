@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import vm from 'node:vm';
 import {edusGuidanceForCard,EDUS_GUIDANCE} from '../edus-guidance.js';
 import {generalRequirementsForCard,isCatalogCard,isGeneralCard} from '../catalog.js';
 
@@ -9,6 +10,16 @@ const active=cards.filter(isCatalogCard);
 const byId=new Map(cards.map(card=>[card.id,card]));
 const guide=id=>edusGuidanceForCard(byId.get(id),cards);
 const bare=overrides=>({id:'synthetic',name:'Ejemplo',sourceId:'TEST',specialty:'Ejemplo',direction:'I-II',criteria:[],studies:[],prior:[],notes:[],checklist:[],fullText:'',...overrides});
+const app=await readFile(new URL('../app.js',import.meta.url),'utf8');
+const renderStart=app.indexOf('  function edusGuidanceHTML(');
+assert(renderStart>=0,'La app conserva un renderizador común de orientación EDUS.');
+const renderEnd=app.indexOf('\n  function ',renderStart+1);
+assert(renderEnd>renderStart);
+const escape=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const renderContext={state:{cards},edusGuidanceForCard,esc:escape,icon:()=>''};
+vm.createContext(renderContext);vm.runInContext(app.slice(renderStart,renderEnd),renderContext);
+const renderedGuidance=card=>renderContext.edusGuidanceHTML(card);
+const initiallyVisible=html=>html.replace(/<details\b[^>]*>[\s\S]*?<\/details>/g,'');
 
 // Include every rendering field used by the catalogue, without scope/provenance metadata.
 const clinicalText=card=>['criteria','studies','studiesNote','prior','notes','checklist','fullText'].flatMap(key=>{
@@ -27,6 +38,7 @@ const unrelatedCopyIds=new Set([
 const physicalSections=active.filter(card=>copyTerm.test(normalize(clinicalText(card)))&&!unrelatedCopyIds.has(card.id));
 
 test('la orientación es operativa, identifica EDUS y evita duplicar resultados o pedir otros exámenes',()=>{
+ assert.match(EDUS_GUIDANCE.title,/Asistente EDUS/);
  assert.match(EDUS_GUIDANCE.body,/Si ya constan en EDUS/);
  assert.match(EDUS_GUIDANCE.body,/servicios privados/);
  assert.match(EDUS_GUIDANCE.body,/Asistente EDUS/);
@@ -36,6 +48,36 @@ test('la orientación es operativa, identifica EDUS y evita duplicar resultados 
  assert.equal(EDUS_GUIDANCE.label,'Orientación operativa de la app');
  assert.equal(EDUS_GUIDANCE.sources.length,2);
  for(const source of EDUS_GUIDANCE.sources)assert.ok(source.url.startsWith('https://')&&source.document&&source.pages.length);
+});
+
+test('las instrucciones de Asistente EDUS se leen sin desplegar en todas las fichas aplicables',()=>{
+ let shown=0;
+ for(const card of active){
+  const guidance=edusGuidanceForCard(card,cards),html=renderedGuidance(card);
+  if(!guidance){assert.equal(html,'',card.id);continue;}
+  const visible=initiallyVisible(html);
+  for(const text of [guidance.title,guidance.label,guidance.body,guidance.scopeNote,guidance.originalsNote].filter(Boolean))assert(visible.includes(escape(text)),card.id+': orientación íntegra visible antes de abrir otro control.');
+  assert.match(visible,/<h3>[^<]*Asistente EDUS<\/h3>/,card.id+': título reconocible.');
+  assert.equal((html.match(/<details\b/g)||[]).length,1,card.id+': solo el respaldo institucional es desplegable.');
+  assert.match(html,/<details class="edus-guidance-sources">/,card.id);
+  for(const source of guidance.sources){assert(html.includes(escape(source.url)),card.id+': respaldo conservado.');assert(!visible.includes(escape(source.url)),card.id+': respaldo secundario plegado.');}
+  shown++;
+ }
+ assert.equal(shown,617);
+});
+
+test('EDUS sigue visible cuando procede de generales, en Hidrocele y en el apartado que menciona cistocele',()=>{
+ const inherited=byId.get('r01-cirugia-pediatrica-hidrocele-p30');
+ assert(inherited);assert.equal(edusGuidanceForCard(inherited,[inherited]),null,'Hidrocele no pide estudios propios.');
+ const guidance=guide(inherited.id);assert(guidance);assert.deepEqual(guidance.generalSourceIds,['R01']);
+ const cistocele=byId.get('r01-radiologia-e-imagenes-medicas-us-pelvis-y-via-urinaria');
+ assert(cistocele&&/cistocele/i.test(cistocele.fullText));
+ for(const card of [inherited,cistocele]){
+  const visible=initiallyVisible(renderedGuidance(card));
+  assert(visible.includes(escape(guide(card.id).body)),card.id);
+  assert.match(visible,/Asistente EDUS/);assert.match(visible,/Indique expresamente en la referencia/);
+ }
+ assert.equal(inherited.studiesNote,'No requiere','Se conserva la excepción clínica de la fuente.');
 });
 
 test('un estudio listado activa la orientación sin alterar su requisito',()=>{

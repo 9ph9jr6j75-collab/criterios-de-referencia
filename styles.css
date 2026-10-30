@@ -217,9 +217,10 @@
 .documentary-text h4{font-size:15px;color:var(--navy);margin:15px 0 8px}
 .documentary-text .full-source-text{font-size:14px;white-space:pre-wrap;line-height:1.7;overflow-wrap:anywhere;margin:0}
 .single-reading>.source-panel{margin-top:20px}
-.single-reading .edus-guidance{margin:0 27px 8px;padding:12px 0 8px;border-top:1px solid var(--line);border-bottom:0;background:none}
-.edus-guidance-details>summary{min-height:44px;padding:8px 0;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer}
-.edus-guidance-details>p{font-size:14px;line-height:1.7}
+.single-reading .edus-guidance{margin:8px 27px 18px;padding:18px 20px;border:1px solid #cadde8;border-left:4px solid #356d94;border-radius:8px;background:#f1f7fa}
+.single-reading .edus-guidance h3{font-size:17px;line-height:1.45;margin:0 0 10px}
+.single-reading .edus-guidance-body{font-size:15px;line-height:1.7}
+.single-reading .edus-guidance-scope{font-size:13px;line-height:1.7}
 .single-reading .edus-originals{font-size:14px;line-height:1.7}
 }
 @media screen and (max-width:760px){
@@ -231,7 +232,7 @@
 .single-reading .checklist-text{font-size:15px}
 .single-reading .checklist-actions{padding:18px;display:flex}
 .single-reading .checklist-actions>.button{flex-basis:100%;font-size:14px}
-.single-reading .edus-guidance{margin-left:18px;margin-right:18px}
+.single-reading .edus-guidance{margin-left:18px;margin-right:18px;padding:16px}
 .documentary-text>summary{padding:17px 18px;font-size:15px}
 .documentary-text-body{padding:0 18px 18px}
 .review-supplement{padding:13px}

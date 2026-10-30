@@ -61,6 +61,13 @@ export function reviewBuckets(card) {
  */
 export function reviewSupplements(card, {representedTexts = [], hasGeneral = false} = {}) {
   const entries = normalizedEntries(card);
+  const general = card?.inlineGeneral || card?.category === 'general' || /^requisitos generales/i.test(card?.name || '');
+  const checklistSequence = entries.map(entry => comparisonText(entry.text)).join(' ');
+  // Algunas listas generales conservan un encabezado antes de la misma
+  // secuencia íntegra de casillas. Se admite solo ese encabezado editorial;
+  // la numeración y todos los signos y términos clínicos deben coincidir.
+  const coveredGeneralSequence = text => Boolean(general && checklistSequence &&
+    comparisonText(text).replace(/^Indicaciones generales(?:\s*:\s*|\s+)/i, '') === checklistSequence);
   const shown = new Set([...entries.map(entry => entry.text), ...arr(representedTexts)].map(comparisonText).filter(Boolean));
   const output = [];
   const candidates = [
@@ -82,7 +89,7 @@ export function reviewSupplements(card, {representedTexts = [], hasGeneral = fal
     for (const text of texts) {
       const key = comparisonText(text);
       const generalReminder = hasGeneral && key === comparisonText(genericGeneralNote);
-      if (!wholeListCovered && !shown.has(key) && !generalReminder) items.push(text);
+      if (!wholeListCovered && !shown.has(key) && !generalReminder && !coveredGeneralSequence(text)) items.push(text);
       shown.add(key);
     }
     if (items.length) output.push({title, items});

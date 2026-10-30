@@ -124,9 +124,13 @@ if (!mountDocumentScreen()) (() => {
     const specialities = [...counts.keys()].filter(Boolean).sort((a,b) => a.localeCompare(b, 'es'));
     $('#specialty-filter').innerHTML = '<option value="">Todas las especialidades</option>' + specialities.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('');
     const usedSources = new Set(state.cards.filter(isCatalogCard).map(card => card.sourceId));
-    $('#source-filter').innerHTML = `<option value="">Todas (${usedSources.size})</option>` + state.sources.filter(s => usedSources.has(s.id)).map(s => `<option value="${esc(s.id)}">${esc(s.id+' · '+(s.shortLabel || s.tema || shortText(s.titulo, 45)))}</option>`).join('');
-    $('#source-coverage-label').textContent = `El buscador reúne fichas de ${usedSources.size} fuentes.`;
-    $('#source-registry-link').textContent = `Ver las ${state.sources.length} fuentes registradas y su disponibilidad`;
+    const scopes = new Set(state.cards.filter(isCatalogCard).map(scopeType));
+    $('#scope-filter').innerHTML = '<option value="">Todos los alcances</option>' + [['national','Nacional CCSS'],['regional','Regional y de servicio'],['unverified','Procedencia por documentar']].filter(([value])=>scopes.has(value)).map(([value,label])=>`<option value="${value}">${label}</option>`).join('');
+    if(state.scope&&!scopes.has(state.scope))state.scope='';
+    if(state.source&&!usedSources.has(state.source))state.source='';
+    $('#source-filter').innerHTML = `<option value="">Todos (${usedSources.size} con fichas)</option>` + state.sources.filter(s => usedSources.has(s.id)).map(s => `<option value="${esc(s.id)}">${esc(s.id+' · '+(s.shortLabel || s.tema || shortText(s.titulo, 45)))}</option>`).join('');
+    $('#source-coverage-label').textContent = `${usedSources.size} documentos tienen fichas en el buscador. El registro completo contiene ${state.sources.length}; los ${state.sources.length-usedSources.size} restantes no tienen fichas incorporadas.`;
+    $('#source-registry-link').textContent = `Ver el registro de los ${state.sources.length} documentos y su disponibilidad`;
     $('#header-source-count').textContent = state.sources.length;
     $('#all-count').textContent = state.topics.filter(topic => topic.cards.some(c => isCatalogCard(c)&&!isReturnCard(c))).length;
     syncControls(); updateFavoriteCounts();
@@ -158,43 +162,44 @@ if (!mountDocumentScreen()) (() => {
     const full = norm([card.name,card.specialty,aliases,card.priority,...arr(card.criteria).map(textOf),...arr(card.studies).map(textOf),...arr(card.prior).map(textOf),...arr(card.notes).map(textOf),card.fullText,card.context].filter(Boolean).join(' '));
     return {title,specialty,aliases,full};
   }
-  function filterCards() {
-    const query = norm(state.query), tokens = query.split(' ').filter(Boolean);
-    const pinnedIds=new Set(showSpecialtyGeneralAccess(state)?specialtyGeneralRequirements(state.cards,state,state.sourceMap).map(card=>card.id):[]);
-    const recentOrder = new Map(state.recent.map((id,i) => [id,i]));
-    const favoriteTopics=new Set([...state.favorites].filter(id=>state.cards.some(card=>card.id===id&&isCatalogCard(card))).map(id=>state.topicIndex.byCard.get(id)?.id));
-    let cards = state.cards.filter(card => {
+  function filterCards(overrides = {}) {
+    const selected = {...state,...overrides};
+    const query = norm(selected.query), tokens = query.split(' ').filter(Boolean);
+    const pinnedIds=new Set(showSpecialtyGeneralAccess(selected)?specialtyGeneralRequirements(selected.cards,selected,selected.sourceMap).map(card=>card.id):[]);
+    const recentOrder = new Map(selected.recent.map((id,i) => [id,i]));
+    const favoriteTopics=new Set([...selected.favorites].filter(id=>selected.cards.some(card=>card.id===id&&isCatalogCard(card))).map(id=>selected.topicIndex.byCard.get(id)?.id));
+    let cards = selected.cards.filter(card => {
       if (!isCatalogCard(card)) return false;
-      if (!includeGeneralSearchResult(card,state)) return false;
+      if (!includeGeneralSearchResult(card,selected)) return false;
       if (pinnedIds.has(card.id)) return false;
-      if (isReturnCard(card) && !state.source) return false;
-      if (state.mode === 'favorites' && !favoriteTopics.has(state.topicIndex.byCard.get(card.id)?.id)) return false;
-      if (state.mode === 'recent' && !recentOrder.has(card.id)) return false;
-      if (state.specialty && card.specialty !== state.specialty) return false;
-      if (state.scope && scopeType(card) !== state.scope) return false;
-      if (state.source && card.sourceId !== state.source) return false;
-      if (state.priority && cardPriorityType(card) !== state.priority && !(cardPriorityType(card) === 'mixed' && (state.priority === 'urgent' ? /urgenc|emergenc|inmediat/ : state.priority === 'priority' ? /prioridad|prioritari|preferent/ : /cupo|ordinari|rutina|rutinari/).test(norm(card.priority)))) return false;
-      const idx = state.index.get(card.id);
+      if (isReturnCard(card) && !selected.source) return false;
+      if (selected.mode === 'favorites' && !favoriteTopics.has(selected.topicIndex.byCard.get(card.id)?.id)) return false;
+      if (selected.mode === 'recent' && !recentOrder.has(card.id)) return false;
+      if (selected.specialty && card.specialty !== selected.specialty) return false;
+      if (selected.scope && scopeType(card) !== selected.scope) return false;
+      if (selected.source && card.sourceId !== selected.source) return false;
+      if (selected.priority && cardPriorityType(card) !== selected.priority && !(cardPriorityType(card) === 'mixed' && (selected.priority === 'urgent' ? /urgenc|emergenc|inmediat/ : selected.priority === 'priority' ? /prioridad|prioritari|preferent/ : /cupo|ordinari|rutina|rutinari/).test(norm(card.priority)))) return false;
+      const idx = selected.index.get(card.id);
       return !query || tokens.every(t => idx.full.includes(t));
     });
     const scores = new Map();
     if (tokens.length) for (const card of cards) {
-      const idx = state.index.get(card.id);
+      const idx = selected.index.get(card.id);
       scores.set(card.id, (idx.title === query ? 1000 : 0) + (idx.title.startsWith(query) ? 300 : 0) + (idx.title.includes(query) ? 200 : 0) + tokens.reduce((score,t) => score+(idx.title.includes(t)?45:0)+(idx.aliases.includes(t)?30:0)+(idx.specialty.includes(t)?20:0),0));
     }
     cards.sort((a,b) => {
-      if (state.mode === 'recent') return recentOrder.get(a.id) - recentOrder.get(b.id);
-      if (state.sort === 'relevance' && query) return (scores.get(b.id)-scores.get(a.id)) || a.name.localeCompare(b.name,'es');
-      if (state.sort === 'name') return a.name.localeCompare(b.name,'es') || a.specialty.localeCompare(b.specialty,'es');
+      if (selected.mode === 'recent') return recentOrder.get(a.id) - recentOrder.get(b.id);
+      if (selected.sort === 'relevance' && query) return (scores.get(b.id)-scores.get(a.id)) || a.name.localeCompare(b.name,'es');
+      if (selected.sort === 'name') return a.name.localeCompare(b.name,'es') || a.specialty.localeCompare(b.specialty,'es');
       return a.specialty.localeCompare(b.specialty,'es') || a.name.localeCompare(b.name,'es') || a.sourceId.localeCompare(b.sourceId,'es');
     });
-    return orderCatalogTopics(groupResults(cards,state.topicIndex,state.sourceMap,state.mode==='recent'),state);
+    return orderCatalogTopics(groupResults(cards,selected.topicIndex,selected.sourceMap,selected.mode==='recent'),selected);
   }
   function cardHTML(card) {
-    const topic=card.topic, members=card.allCards, multiple=members.length>1;
+    const topic=card.topic, members=state.source?card.matchingCards:card.allCards, multiple=members.length>1;
     const source = sourceFor(card), priority = cardPriorityType(card);
     const coverage=generalRequirementsCoverage(card.matchingCards,state.cards);
-    const favoriteId=members.find(member=>state.favorites.has(member.id))?.id, favorite=Boolean(favoriteId);
+    const favoriteId=card.allCards.find(member=>state.favorites.has(member.id))?.id, favorite=Boolean(favoriteId);
     const excerpt = multiple ? 'Seleccione el documento según el destino de su referencia. Cada fuente conserva sus propios criterios.' : card.context || textOf(arr(card.criteria)[0]) || textOf(arr(card.prior)[0]) || shortText(card.fullText);
     const sourceCount=new Set(members.map(member=>member.sourceId)).size;
     const matchedCount=card.matchingCards.length;
@@ -225,6 +230,10 @@ if (!mountDocumentScreen()) (() => {
     renderSpecialtyGeneral(general);
     $('#result-count').textContent = general.length?`${count.toLocaleString('es-CR')} ${count===1?'tema':'temas'} · ${general.length} ${general.length===1?'documento de requisitos generales':'documentos de requisitos generales'}`:count === 1 ? '1 tema disponible' : `${count.toLocaleString('es-CR')} temas${count !== total ? ' encontrados' : ' disponibles'}`;
     $('#empty-state').hidden = count > 0; grid.hidden = count === 0;
+    const priorityLabels={urgent:'Urgencias',priority:'Consulta prioritaria',routine:'Consulta a cupo'};
+    const withoutPriority=!count&&state.priority?filterCards({priority:''}).length:0;
+    $('#empty-remove-priority').hidden=!withoutPriority;
+    $('#empty-remove-priority').textContent=`Quitar ${priorityLabels[state.priority]||'filtro de atención'} y ver ${withoutPriority} ${withoutPriority===1?'tema':'temas'}`;
     if (state.mode === 'favorites') {
       $('#empty-title').textContent = 'Sus favoritas, a un toque';
       $('#empty-copy').textContent = state.favorites.size ? 'No hay favoritas que coincidan con estos filtros.' : 'Marque la estrella de una ficha para encontrarla aquí cuando la necesite.';
@@ -232,14 +241,17 @@ if (!mountDocumentScreen()) (() => {
       $('#empty-title').textContent = 'Aquí verá sus últimas consultas';
       $('#empty-copy').textContent = state.recent.length ? 'Ninguna ficha reciente coincide con estos filtros.' : 'Abra una ficha y quedará disponible en esta sección.';
     } else {
-      $('#empty-title').textContent = 'No encontramos esa búsqueda';
-      $('#empty-copy').textContent = 'Pruebe con otro término o quite algún filtro. Una ausencia en el catálogo no determina que la referencia no corresponda.';
+      $('#empty-title').textContent = [state.specialty,state.scope,state.priority,state.source].some(Boolean)?'No hay temas con estos filtros':'No encontramos esa búsqueda';
+      $('#empty-copy').textContent = withoutPriority?`El filtro ${priorityLabels[state.priority]} está activo. Al quitarlo ${withoutPriority===1?'aparece':'aparecen'} ${withoutPriority} ${withoutPriority===1?'tema':'temas'}; se conservan la búsqueda y los demás filtros. Las fichas sin prioridad explícita no aparecen al filtrar por tipo de atención.`:'Pruebe con otro término o quite algún filtro. Una ausencia en el catálogo no determina que la referencia no corresponda.';
     }
     $('#load-more').hidden = count <= state.visible;
     $('#load-more').textContent = `Mostrar ${Math.min(PAGE_SIZE,count-state.visible)} criterios más`;
     const filters = [state.specialty,state.scope,state.priority,state.source].filter(Boolean).length;
     $('#active-filters-count').textContent = filters; $('#active-filters-count').hidden = !filters;
     $('#reset-filters').hidden = !filters && !state.query;
+    const activeFilters=[['query','Búsqueda',state.query],['specialty','Especialidad',state.specialty],['scope','Alcance',({national:'Nacional CCSS',regional:'Regional y de servicio',unverified:'Procedencia por documentar'})[state.scope]],['priority','Atención',priorityLabels[state.priority]],['source','Documento',state.source?`${state.source} · ${sourceFor({sourceId:state.source}).shortLabel||shortText(sourceFor({sourceId:state.source}).titulo,48)}`:'']].filter(([, ,value])=>value);
+    $('#active-filter-list').hidden=!activeFilters.length;
+    $('#active-filter-list').innerHTML=activeFilters.map(([key,label,value])=>`<button type="button" class="active-filter" data-remove-filter="${key}" aria-label="Quitar filtro de ${esc(label.toLowerCase())}: ${esc(value)}"><span>${esc(label)}: <strong>${esc(value)}</strong></span><span aria-hidden="true">×</span></button>`).join('');
     syncControls();
   }
   function updateFavoriteCounts() { $('#favorite-count').textContent = uniqueTopicCount(state.favorites,state.topicIndex) || ''; }
@@ -573,6 +585,10 @@ if (!mountDocumentScreen()) (() => {
     state.query='';state.specialty='';state.scope='';state.priority='';state.source='';state.visible=PAGE_SIZE;
     syncControls();renderCatalog();saveCatalog(0);
   }
+  function removeFilter(key) {
+    if(!['query','specialty','scope','priority','source'].includes(key))return;
+    state[key]='';state.visible=PAGE_SIZE;renderCatalog();saveCatalog(0);
+  }
   function attachEvents() {
     $('#search').addEventListener('input',event=>{const hadQuery=Boolean(norm(state.query));state.query=event.target.value;if(!hadQuery&&norm(state.query))state.sort='relevance';state.visible=PAGE_SIZE;clearTimeout(state.debounce);state.debounce=setTimeout(()=>{renderCatalog();saveCatalog(0);},120);});
     $('#clear-search').addEventListener('click',()=>{state.query='';state.visible=PAGE_SIZE;$('#search').value='';renderCatalog();saveCatalog(0);$('#search').focus();});
@@ -580,6 +596,8 @@ if (!mountDocumentScreen()) (() => {
     $('#filter-toggle').addEventListener('click',()=>{state.filtersOpen=!state.filtersOpen;syncControls();saveCatalog();});
     $$('[data-list-mode]').forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.listMode)));
     $('#reset-filters').addEventListener('click',resetFilters);
+    $('#active-filter-list').addEventListener('click',event=>{const button=event.target.closest('[data-remove-filter]');if(button)removeFilter(button.dataset.removeFilter);});
+    $('#empty-remove-priority').addEventListener('click',()=>removeFilter('priority'));
     $('#empty-reset').addEventListener('click',()=>{state.mode='all';resetFilters();});
     $('#load-more').addEventListener('click',()=>{state.visible+=PAGE_SIZE;renderCatalog(true);saveCatalog(window.scrollY);});
     $('#catalog-screen').addEventListener('click',event=>{const favorite=event.target.closest('[data-favorite]');if(favorite){toggleFavorite(favorite.dataset.favorite);return;}if(event.target.closest('[data-card-link]')){saveCatalog(window.scrollY);state.navigatingFromCatalog=true;}});

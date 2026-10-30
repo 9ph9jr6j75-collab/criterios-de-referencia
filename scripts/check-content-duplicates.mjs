@@ -4,12 +4,71 @@ import {createHash} from 'node:crypto';
 import {isCatalogCard} from '../catalog.js';
 
 const root=new URL('../',import.meta.url);
-const [cards,sources,audit,provenanceAudit,cataractAudit,integratedAudit]=await Promise.all(['data/cards.json','data/sources.json','audits/2026-10-29-repeated-content.json','audits/2026-10-29-r03-provenance.json','audits/2026-10-29-cataract-general-requirements.json','audits/2026-10-29-integrated-general-requirements.json'].map(async path=>JSON.parse(await fs.readFile(new URL(path,root),'utf8'))));
+const [publishedCards,sources,audit,provenanceAudit,cataractAudit,integratedAudit,generalChecklistAudit]=await Promise.all(['data/cards.json','data/sources.json','audits/2026-10-29-repeated-content.json','audits/2026-10-29-r03-provenance.json','audits/2026-10-29-cataract-general-requirements.json','audits/2026-10-29-integrated-general-requirements.json','audits/2026-10-29-general-checklists.json'].map(async path=>JSON.parse(await fs.readFile(new URL(path,root),'utf8'))));
 const text=value=>typeof value==='object'&&value!==null?String(value.text??value.label??''):String(value??'');
 const normal=value=>text(value).normalize('NFC').replace(/\s+/gu,' ').trim();
 const period=value=>normal(value).replace(/\.$/u,'');
 const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
 const sha=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');
+
+// Esta capa estructura únicamente nueve listas generales que ya estaban
+// transcritas. Se valida el cambio exacto y se restaura en memoria el estado
+// anterior para someter las 808 fichas a todas las auditorías históricas.
+const expectedGeneralChecklists=[
+  ['r01-medicina-familiar-y-comunitaria-requisitos-generales-de-medicina-familiar-y-comunitaria','R01',[106,107],7],
+  ['r01-medicina-interna-requisitos-generales-de-medicina-interna','R01',[117,118],5],
+  ['r01-medicina-paliativa-y-control-del-dolor-requisitos-generales-de-medicina-paliativa-y-control-del-dolor','R01',[130],3],
+  ['r01-neurologia-requisitos-generales-de-neurologia','R01',[137],4],
+  ['n08-requisitos-generales-y-referencia-a-soporte-nutricional','N08',[10,11,12,13],10],
+  ['r01-oftalmologia-requisitos-generales-de-oftalmologia','R01',[162,163],4],
+  ['r01-oncologia-requisitos-generales-de-oncologia','R01',[175,176],3],
+  ['r01-ortopedia-requisitos-generales-de-ortopedia','R01',[193],2],
+  ['r01-otorrinolaringologia-requisitos-generales-de-otorrinolaringologia','R01',[184],3]
+];
+assert.equal(generalChecklistAudit.schemaVersion,1);
+assert.equal(generalChecklistAudit.baselineCommit,'2e9c8b1fd4f2d25b75782194b3c1146dfd07357b');
+assert.deepEqual(generalChecklistAudit.changedFields,['checklist','reviewNotes']);
+assert.equal(generalChecklistAudit.changes.length,9);
+assert.deepEqual(generalChecklistAudit.changes.map(change=>change.cardId),expectedGeneralChecklists.map(([id])=>id));
+assert.equal(sha(publishedCards),generalChecklistAudit.after.cardsSha256,'La base completa coincide con el estado exacto auditado, incluidas las 799 fichas sin cambios.');
+assert.equal(publishedCards.length,808);
+assert.equal(generalChecklistAudit.before.registeredCards,808);assert.equal(generalChecklistAudit.after.registeredCards,808);
+assert.equal(generalChecklistAudit.before.activeCards,730);assert.equal(generalChecklistAudit.after.activeCards,publishedCards.filter(isCatalogCard).length);
+assert.equal(generalChecklistAudit.before.checklistItems,2202);assert.equal(generalChecklistAudit.after.checklistItems,2243);
+assert.equal(publishedCards.reduce((count,card)=>count+(card.checklist?.length||0),0),generalChecklistAudit.after.checklistItems);
+assert.equal(generalChecklistAudit.before.cardsSha256,integratedAudit.after.cardsSha256);
+assert.equal(generalChecklistAudit.before.sourceRegistrySha256,generalChecklistAudit.after.sourceRegistrySha256);
+assert.equal(sha(sources),generalChecklistAudit.after.sourceRegistrySha256);
+assert.deepEqual(generalChecklistAudit.invariants,{addedCatalogueCards:0,removedCatalogueCards:0,changedSourceRecords:0,unchangedCardRecords:799,unchangedOriginalClinicalAndDocumentaryFields:true});
+assert.equal(generalChecklistAudit.assessment.generalRecordsStructured,9);assert.equal(generalChecklistAudit.assessment.addedChecklistItems,41);
+const cards=structuredClone(publishedCards);
+const preservedGeneralFields=card=>Object.fromEntries(Object.entries(card).filter(([key])=>!['checklist','reviewNotes'].includes(key)));
+for(const [index,[id,sourceId,pages,count]]of expectedGeneralChecklists.entries()){
+  const change=generalChecklistAudit.changes[index],card=cards.find(card=>card.id===id);
+  assert(card&&isCatalogCard(card));assert(/^Requisitos generales/i.test(card.name));
+  assert.equal(change.sourceId,sourceId);assert.equal(card.sourceId,sourceId);
+  assert.deepEqual(change.pages,pages);assert.deepEqual(card.pages,pages);
+  assert.deepEqual(change.changedFields,['checklist','reviewNotes']);
+  assert.deepEqual(Object.keys(change.before),['checklist']);assert.deepEqual(change.before.checklist,[]);
+  assert.deepEqual(Object.keys(change.after),['checklist','reviewNotes']);
+  assert.equal(change.after.checklist.length,count);assert(change.after.reviewNotes.length>0);
+  assert.deepEqual(card.checklist,change.after.checklist);assert.deepEqual(card.reviewNotes,change.after.reviewNotes);
+  assert.equal(sha(preservedGeneralFields(card)),change.preservedFieldsSha256,'Conservar criteria/fullText, páginas y todos los campos previos de '+id+'.');
+  const ids=new Set();for(const entry of card.checklist){assert(entry.id&&entry.text?.trim());assert(!ids.has(entry.id));ids.add(entry.id);}
+  assert(card.reviewNotes.every(note=>typeof note==='string'&&note.trim()));
+  card.checklist=structuredClone(change.before.checklist);delete card.reviewNotes;
+}
+assert.equal(sha(cards),generalChecklistAudit.before.cardsSha256,'Solo checklist y reviewNotes de las nueve fichas autorizadas pueden diferir del estado anterior.');
+const expectedGeneralEvidence=[
+  ['R01','812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c',[106,107,117,118,130,137,162,163,175,176,184,193]],
+  ['N08','ec60920fd28e5912502fd79b71725f8bfc78397c1e7d173f16489d1d45230d72',[10,11,12,13]]
+];
+assert.equal(generalChecklistAudit.evidence.length,2);
+for(const [index,[sourceId,hash,pages]]of expectedGeneralEvidence.entries()){
+  const evidence=generalChecklistAudit.evidence[index];assert.equal(evidence.sourceId,sourceId);
+  assert.equal(evidence.document,'assets/documents/'+sourceId+'.pdf');assert.equal(evidence.sha256,hash);assert.deepEqual(evidence.pages,pages);
+  assert.equal(createHash('sha256').update(await fs.readFile(new URL(evidence.document,root))).digest('hex'),hash,'El PDF de respaldo sigue intacto.');
+}
 const sorted=[...cards].sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
 const byId=new Map(cards.map(card=>[card.id,card]));
 const approvedPeriods=new Set(audit.normalization.finalPeriodReviewedCardIds);
@@ -223,4 +282,4 @@ assert.equal(n19.checklist.find(item=>item.id==='applicability').requirement,'co
 assert.equal(provenanceCards.reduce((count,card)=>count+(card.checklist?.length||0),0),audit.after.checklistItems);
 assert.equal(audit.summary.removedOccurrences,audit.removals.length);
 assert.equal(audit.summary.affectedCards,new Set(audit.removals.map(item=>item.cardId)).size);
-console.log(JSON.stringify({ok:true,activeCards:cards.filter(isCatalogCard).length,...audit.summary,checklistItems:integratedAudit.after.checklistItems,structuredGeneralRequirements:27,documentaryTextUnchanged:true,studiesUnchanged:true}));
+console.log(JSON.stringify({ok:true,activeCards:cards.filter(isCatalogCard).length,...audit.summary,checklistItems:generalChecklistAudit.after.checklistItems,newlyStructuredGeneralRequirements:9,newGeneralChecklistItems:41,documentaryTextUnchanged:true,studiesUnchanged:true}));

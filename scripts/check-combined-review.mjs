@@ -298,9 +298,13 @@ check('Desmarcar todas las casillas elimina solo los grupos mostrados, sin tocar
   assert.match(env.panel.html,/>Desmarcar todas las casillas<\/button>/);assert.match(env.messages.at(-1),/desmarcaron todas las casillas/);
 });
 check('Generales sin casillas siguen abiertos y no se presentan como revisión completada',()=>{
-  const unstructured=cards.find(card=>isCatalogCard(card)&&isGeneralCard(card)&&!card.checklist?.length);
-  assert(unstructured);const main=cards.find(card=>generalRequirementsForCard(card,cards).some(item=>item.id===unstructured.id));assert(main);
-  const env=boot();env.storage.set('test:checks:'+main.id,env.context.checklist(main).map(item=>item.id));env.renderChosenDetail(main.id);
+  // Mantener el caso de respaldo aunque los nueve generales anteriores ya
+  // tengan casillas. La simulación conserva su transcripción y asociación.
+  const existing=cards.find(card=>isCatalogCard(card)&&isGeneralCard(card)&&Array.isArray(card.reviewNotes));
+  assert(existing);const unstructured={...existing,checklist:[]};delete unstructured.reviewNotes;
+  const caseCards=cards.map(card=>card.id===unstructured.id?unstructured:card);
+  const main=caseCards.find(card=>generalRequirementsForCard(card,caseCards).some(item=>item.id===unstructured.id));assert(main);
+  const env=boot(caseCards);env.storage.set('test:checks:'+main.id,env.context.checklist(main).map(item=>item.id));env.renderChosenDetail(main.id);
   assert.equal(env.nodes.get('#check-pending-label').textContent,'Revise también el texto general');
   const {elements}=hierarchy(env.panel.html),supplement=elements.find(node=>node.markup.includes('data-supplement-card="'+unstructured.id+'"'));
   assert(supplement&&visibleInitially(supplement),'Los generales sin casillas se leen antes de desplegar la transcripción.');
@@ -324,7 +328,7 @@ check('La orientación EDUS se conserva al copiar el esquema y los elementos por
     for(const text of [guidance.body,guidance.scopeNote,guidance.originalsNote].filter(Boolean))assert(pending.includes(text),card.id+': copiar pendientes conserva la orientación completa.');
     applicable++;
   }
-  assert.equal(applicable,617);
+  assert.equal(applicable,637);
 });
 check('Catarata N09 muestra sus siete generales antes de los seis criterios conservando las marcas anteriores',()=>{
   const card=cards.find(item=>item.id==='n09-catarata'),env=boot();assert(card);

@@ -73,7 +73,10 @@ export function reviewSupplements(card, {representedTexts = [], hasGeneral = fal
   const candidates = [
     ['Contexto de la fuente', arr(card?.context)],
     ['Destino indicado en la fuente', arr(card?.route)],
-    [card?.inlineGeneral || card?.category === 'general' || /^requisitos generales/i.test(card?.name || '') ? 'Precisiones de requisitos generales' : 'Criterios documentados', arr(card?.criteria)],
+    // Solo las fichas generales revisadas expresamente pueden sustituir la
+    // antigua extracción en prosa por notas de lectura. Sus instrucciones
+    // completas están en las casillas y la transcripción permanece íntegra.
+    [general ? 'Precisiones de requisitos generales' : 'Criterios documentados', general && Array.isArray(card?.reviewNotes) ? card.reviewNotes : arr(card?.criteria)],
     ['Antes de referir', arr(card?.prior)],
     ['Estudios y valoraciones previas', arr(card?.studies)],
     ['Precisiones sobre estudios', arr(card?.studiesNote)],

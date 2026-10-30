@@ -17446,8 +17446,55 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nGUIAS DE REFERENCIA - SERVICIO DE MEDICINA FAMILIAR\nLa Medicina Familiar y Comunitaria es una especialidad dedicada a brindar cuidados, centrados en la persona en su contexto\nfamiliar y comunitario de forma continua, independientemente de su edad, sexo, condición socioeconómica o de salud,\nintegrando en el proceso de atención los factores físicos, psicológicos, sociales, culturales y asistenciales que contribuyen al\nproceso salud-enfermedad en pro de los sistemas de salud.\nIndicaciones generales\n1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la\natención de medicina especializada indicados por la Gerencia Médica.\n2. Toda referencia debe incluir:\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a\nmedicamentos.\n• Antecedentes Heredofamiliares\n• Antecedentes Quirúrgicos\n• Examen físico completo\n3. Adjuntar copia de reportes de exámenes de laboratorio y gabinete efectuados (según sea el caso y los recursos que se\ntengan disponibles). Se debe adjuntar EKG y RX de Tórax (NO es necesario el reporte).\n\n4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su\ndefecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y\npor qué se agotó la capacidad resolutiva del primer nivel.\n5. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA\nCONSULTA EXTERNA.\n6. Los casos considerados como cita prioritaria deben ser comentados a especialistas, de no localizarlo deben referir a la\nJefatura de Consulta Externa para su canalización respectiva e indicar que no fue se logró ubicar al médico.\n7. Dado que la Especialidad de Medicina Familiar puede formar parte o coordinar diferentes tipos de Servicios (ej. Clínica\nde Cesación de Fumado, Clínica de Rehabilitación Cardiaca, etc.), en estos casos los requisitos para referir a dichos\nServicios tienen sus propias normas de referencia, las cuales deben ser consultadas.\n8. En todos los casos es deseable que la persona al ser referida, sea acompañada de un familiar, encargado(a) o cuidador(a).\nEn especial si es adulto mayor.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Toda referencia debe incluir: • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a medicamentos. • Antecedentes Heredofamiliares • Antecedentes Quirúrgicos • Examen físico completo",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-studies",
+        "text": "3. Adjuntar copia de reportes de exámenes de laboratorio y gabinete efectuados (según sea el caso y los recursos que se tengan disponibles). Se debe adjuntar EKG y RX de Tórax (NO es necesario el reporte).",
+        "kind": "study",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-4-justification",
+        "text": "4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y por qué se agotó la capacidad resolutiva del primer nivel.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-5-urgent-route",
+        "text": "5. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA CONSULTA EXTERNA.",
+        "kind": "general",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-6-priority-coordination",
+        "text": "6. Los casos considerados como cita prioritaria deben ser comentados a especialistas, de no localizarlo deben referir a la Jefatura de Consulta Externa para su canalización respectiva e indicar que no fue se logró ubicar al médico.",
+        "kind": "general",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-7-specific-services",
+        "text": "7. Dado que la Especialidad de Medicina Familiar puede formar parte o coordinar diferentes tipos de Servicios (ej. Clínica de Cesación de Fumado, Clínica de Rehabilitación Cardiaca, etc.), en estos casos los requisitos para referir a dichos Servicios tienen sus propias normas de referencia, las cuales deben ser consultadas.",
+        "kind": "general",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-8-companion",
+        "text": "8. En todos los casos es deseable que la persona al ser referida, sea acompañada de un familiar, encargado(a) o cuidador(a). En especial si es adulto mayor.",
+        "kind": "general",
+        "requirement": "desirable"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "La Medicina Familiar y Comunitaria es una especialidad dedicada a brindar cuidados, centrados en la persona en su contexto familiar y comunitario de forma continua, independientemente de su edad, sexo, condición socioeconómica o de salud, integrando en el proceso de atención los factores físicos, psicológicos, sociales, culturales y asistenciales que contribuyen al proceso salud-enfermedad en pro de los sistemas de salud.",
+      "1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la Gerencia Médica."
+    ]
   },
   {
     "id": "r01-medicina-familiar-y-comunitaria-sospecha-de-neoplasias",
@@ -19938,8 +19985,42 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nGUIAS DE REFERENCIA - SERVICIO DE MEDICINA INTERNA\nIndicaciones generales\n1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la\natención de medicina especializada indicados por la Gerencia Médica.\n2. Toda referencia debe incluir:\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a\nmedicamentos.\n• Antecedentes Heredofamiliares\n• Antecedentes Quirúrgicos\n• Examen físico completo\n3. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso). Se debe adjuntar EKG y Rx de\nTórax (NO es necesario el reporte).\n4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su\ndefecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y\npor qué se agotó la capacidad resolutiva del primer nivel.\n\n5. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA\nCONSULTA EXTERNA.\n6. Los casos considerados como cita prioritaria deben ser comentados a especialistas, de no localizarlo deben\nreferir a la Jefatura de Consulta Externa para su canalización respectiva e indicar que no fue se logró ubicar al\nmédico.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Toda referencia debe incluir: • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a medicamentos. • Antecedentes Heredofamiliares • Antecedentes Quirúrgicos • Examen físico completo",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-studies",
+        "text": "3. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso). Se debe adjuntar EKG y Rx de Tórax (NO es necesario el reporte).",
+        "kind": "study",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-4-justification",
+        "text": "4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y por qué se agotó la capacidad resolutiva del primer nivel.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-5-urgent-route",
+        "text": "5. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA CONSULTA EXTERNA.",
+        "kind": "general",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-6-priority-coordination",
+        "text": "6. Los casos considerados como cita prioritaria deben ser comentados a especialistas, de no localizarlo deben referir a la Jefatura de Consulta Externa para su canalización respectiva e indicar que no fue se logró ubicar al médico.",
+        "kind": "general",
+        "requirement": "conditional"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la Gerencia Médica."
+    ]
   },
   {
     "id": "r01-medicina-interna-sincope-lipotimia",
@@ -20686,8 +20767,30 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nGUIAS DE REFERENCIA\nSERVICIO DE MEDICINA PALIATIVA Y CONTROL DEL DOLOR\nIndicaciones generales\n1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la\natención de medicina especializada indicados por la gerencia médica.\n2. Toda referencia debe incluir:\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a\nmedicamentos.\n• Antecedentes Heredofamiliares\n• Antecedentes Quirúrgicos\n• Examen físico completo\n3. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso).\n4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en\nsu defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de\natención, y por qué se agotó la capacidad resolutiva del primer nivel.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Toda referencia debe incluir: • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a medicamentos. • Antecedentes Heredofamiliares • Antecedentes Quirúrgicos • Examen físico completo",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-studies",
+        "text": "3. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso).",
+        "kind": "study",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-4-justification",
+        "text": "4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y por qué se agotó la capacidad resolutiva del primer nivel.",
+        "kind": "general",
+        "requirement": "source"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la gerencia médica."
+    ]
   },
   {
     "id": "r01-medicina-paliativa-y-control-del-dolor-sindromes-demenciales-y-enfermedad-cerebro-vascular-terminal",
@@ -21943,8 +22046,36 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nGUIAS DE REFERENCIA - SERVICIO DE NEUROLOGIA\nIndicaciones generales\n1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la\natención de medicina especializada indicados por la Gerencia Médica.\n2. Toda referencia debe incluir:\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y\nalergia a medicamentos.\n• Antecedentes Heredofamiliares\n• Antecedentes Quirúrgicos\n• Examen físico completo enfatizando en examen neurológico\n3. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso)\n4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o\nen su defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel\nde atención, y por qué se agotó la capacidad resolutiva del primer nivel.\n5. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA\nCONSULTA EXTERNA.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Toda referencia debe incluir: • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a medicamentos. • Antecedentes Heredofamiliares • Antecedentes Quirúrgicos • Examen físico completo enfatizando en examen neurológico",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-studies",
+        "text": "3. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso)",
+        "kind": "study",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-4-justification",
+        "text": "4. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y por qué se agotó la capacidad resolutiva del primer nivel.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-5-urgent-route",
+        "text": "5. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA CONSULTA EXTERNA.",
+        "kind": "general",
+        "requirement": "conditional"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la Gerencia Médica."
+    ]
   },
   {
     "id": "r02-neurologia-sospecha-primer-brote-enfermedad-desmielinizante-incluyendo-neuritis-optica",
@@ -22538,8 +22669,86 @@
     "prior": [],
     "notes": [],
     "fullText": "Objetivo y alcance:\nObjetivo:\nEstablecer los criterios de referencia y contrarreferencia a los Servicios de Consulta Externa de\nNutrición para una intervención nutricional oportuna, continua y eficiente, en los distintos niveles\nde atención de la CCSS.\nAlcance:\nEste documento normativo es de aplicación obligatoria para todos los profesionales en Nutrición\nen los tres niveles de atención de la CCSS encargados del abordaje en la Consulta Externa, así\ncomo los profesionales en salud responsables de la atención de personas usuarias que requieran\nuna intervención nutricional, previa coordinación con el Servicio de Nutrición.\nFundamentación del lineamiento:\nLos establecimientos de salud y dependencias de la CCSS operan bajo un modelo de Red, con\nun abordaje interniveles entre las distintas unidades del sistema, basado en protocolos de\natención y relaciones de mutua colaboración, asegurando la continuidad de la atención de los\nusuarios (CCSS, 2023) (CCSS,2024).\n“…Solo mediante un Primer Nivel de Atención fuerte, articulador y resolutivo, cercano a la\ncomunidad y accesible, es posible avanzar hacia el ejercicio del derecho a la salud para todos.”\n(Almeida, Artaza, Donoso & Fábrega, 2018). Este principio forma parte del accionar institucional\nen las últimas décadas, orientando esfuerzos hacia el fortalecimiento de la atención primaria\ncomo eje fundamental del sistema de salud.\nLa atención nutricional que se brinda a la persona usuaria en la Red Integrada de Servicios de\nSalud requiere garantizar un servicio ágil, oportuno e inmediato que facilite los trámites\nrequeridos para atender la referencia con base en las necesidades de salud.\nEl Lineamiento de Referencia y Contrarreferencia de las personas usuarias de la Consulta\nExterna de Nutrición de los Establecimientos de Salud de la CCSS (2015) estandariza los\ncriterios de referencia y contrarreferencia entre niveles; buscando una mejor capacidad resolutiva\nen los tres niveles de atención, sin embargo, requiere una nueva actualización para responder a\nla oferta y demanda actuales de los servicios.\n\nDescripción del lineamiento:\nEn el presente lineamiento se detallan los criterios de referencia, según las patologías que se\natienden con mayor frecuencia en la Consulta Externa de Nutrición en los tres niveles de atención\ny los documentos normativos de la Institución, que regulan la participación del profesional en\nNutrición como parte del tratamiento que se le ofrece al paciente. El sistema de referencia y\ncontrarreferencia varía según la disponibilidad de profesionales en Nutrición, en los niveles de\natención.\n1. Disposiciones generales\n1.1. Se recomienda que toda referencia que se reciba en la consulta externa de Nutrición\ncontenga la siguiente información: motivo de la referencia, edad, diagnóstico, datos\nantropométricos, bioquímicos, clínicos, síntesis de la evolución, tratamiento\nestablecido y recomendaciones.\n1.2. La referencia se devuelve o se rechaza al establecimiento de salud donde se emitió\ncuando: el paciente referido no corresponda por adscripción al centro al cual se envía\nla referencia, no cumple con los criterios establecidos, no corresponde al servicio o\nes una referencia de Medicina Mixta.\n1.3. Los pacientes con referencia a nutrición no requieren una nueva referencia en los\núltimos cinco años; excepto cuando al ser valorados por los médicos se detecte un\nnuevo diagnóstico que así lo amerite.\n1.4. En el caso de usuarios donde se ha presentado interrupción en el tratamiento\nnutricional por ausentismo con justificación, se requiere una nueva referencia por\nparte del médico tratante. Tomar en cuenta que la referencia tiene una validez de 6\nmeses.\n1.5. El nutricionista realiza una serie de actividades para la atención de la referencia\nemitida las cuales se presentan en el anexo 2.\n1.6. El nutricionista dispone de tres modalidades de atención para el paciente con\nobesidad educación nutricional, consulta individual y consulta grupal.\n1.7. Personas usuarias con estado nutricional normal y sobrepeso sin patología asociada\nno requieren referencia ni atención en la consulta externa de Nutrición.\n1.8. Persona usuaria con TCA debe ser valorada por el nutricionista en el establecimiento\nde salud donde el paciente mantiene el control de la patología. El nutricionista\nparticipa del equipo multidisciplinario en los establecimientos de salud que cuentan\ncon este servicio.\n\n1.9. En caso de mayores de 12 años y adultos con alguna alergia alimentaria, serán\natendidos en el establecimiento de salud donde mantienen el control.\n1.10. Persona usuaria que presenta patologías del TGI son atendidos en el nivel de\natención donde se brinde el control de la patología.\n1.11. Persona usuaria con disfagia o sialorrea referida a la Consulta Externa del Servicio\nde Nutrición de los Hospitales, debe contar con una valoración previa de parte de\nTerapia del Lenguaje o de Motora Oral, donde se especifique el tipo de texturas y la\ndensidad de los líquidos que tolera. En caso de no contar con dicha valoración, debe\nser contrarreferida al médico para que solicite la evaluación respectiva.\n1.12. Las personas usuarias que han sido abordadas en el II y III nivel de atención no deben\nser contra referidos a nutrición del I nivel, si el motivo de referencia original fue\nresuelto y fue dado de alta o no tuvo adherencia adecuada al tratamiento nutricional\na pesar del proceso de educación que acompaña éste. Si se decide contrarreferir para\nseguimiento debe contar con el diagnóstico y tratamiento nutricional.\n1.13. Las personas usuarias referidas a la Consulta Externa de Nutrición del primer nivel\nde atención se citan como pacientes de seguimiento.\n1.14. Toda persona usuaria en control ambulatorio en una Clínica o grupo multidisciplinario\nque cuente con nutricionista (por ejemplo, clínica de ostomizados, cesación de\nfumado, pie diabético, anticoagulados, comisión local de soporte nutricional, cirugía\nbariátrica, entre otras) se debe mantener en ésta hasta ser dada de alta de parte del\ngrupo multidisciplinario.\n1.15. El profesional en Nutrición coordina con los nutricionistas de su región en los\ndiferentes niveles, cuando se requiera la atención de un paciente en particular.\n1.16. El profesional en Nutrición da de alta al paciente, según los criterios establecidos en\nel Lineamiento para el Proceso de Atención en la Consulta Externa de Nutrición en\nlos Establecimientos de Salud de la Caja Costarricense de Seguro Social vigente.\n1.17. Las referencias para Soporte Nutricional del HNN en menores de 13 años, se\ndescriben en el apartado 6.1 de este lineamiento. En caso de establecimientos de\nsalud que cuenten con Soporte Nutricional Pediátrico aplican los mismos criterios que\nse describen en el apartado 1.18.\n1.18. La referencia para uso de suplementos nutricionales debe ser inicialmente valorada\npor el nutricionista, para determinar si se requiere o no la suplementación; de acuerdo\ncon criterio profesional refiere de forma inmediata a Soporte Nutricional o da\nseguimiento; en caso de no lograr los objetivos planteados, contrarefiere al médico\ntratante para que elabore la referencia a la consulta externa de Soporte Nutricional al\nestablecimiento de salud correspondiente; esta solicitud debe incluir la valoración\n\ncompleta, la intervención nutricional realizada, indicando los resultados obtenidos y el\nmotivo.\nLas unidades que tengan una comunicación directa entre el profesional en Nutrición\ny la Comisión Local de Soporte Nutricional, pueden realizar la referencia directamente\na ésta, incluyendo la intervención previamente descrita.\nEn la tabla 1 se describen algunos de los criterios de inclusión o exclusión para las referencias a\nSoporte Nutricional del hospital que corresponde, según red de servicios.\nTabla 1. Criterios de inclusión y exclusión para la Referencia al\nComité Local de Soporte Nutricional\nCriterios de inclusión Criterios de exclusión\n• Pacientes en condición nutricional • Pacientes referidos por pérdida de\nvulnerable, previamente evaluados por peso, DSN, malnutrición, DLP, DM y/o\nNutrición, que no mejoran su estado baja ingesta de alimentos, que no hayan\nnutricional a pesar de la intervención sido valorados o reevaluados por el\ndietoterapéutica. profesional en nutrición\n• Casos nuevos de pacientes con sonda correspondiente.\npara alimentación, gastrostomía o PEG, • Paciente con condiciones de riesgo\ncuya dieta basada en licuados social o vulnerabilidad (la situación\nartesanales resulta insuficiente para social no es indicación para\nsatisfacer sus requerimientos suplementación, excepto casos\nnutricionales. específicos previo valoración por\n• Pacientes con suplementación con profesional en Trabajo Social y\nfórmula polimérica estándares referidos Nutrición).\ndel II y III nivel de atención en salud.\n• Pacientes con ileostomías de alto gasto,\nfistulas enterocutáneas, síndrome de\nintestino corto referidos del II y III nivel de\natención en salud.\nFuente: Coordinación Nacional de Nutrición. 2025. Elaborado según información suministrada por las Jefaturas de\nlos Servicios de Nutrición de los hospitales: Los Chiles, Max Peralta, México, San Vicente de Paul, San Vito “Juana\nPirola”, Centro Nacional de Control del Dolor y Cuidados Paliativos.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "n08-general-1",
+        "text": "1.1. Se recomienda que toda referencia que se reciba en la consulta externa de Nutrición contenga la siguiente información: motivo de la referencia, edad, diagnóstico, datos antropométricos, bioquímicos, clínicos, síntesis de la evolución, tratamiento establecido y recomendaciones.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-2",
+        "text": "1.2. La referencia se devuelve o se rechaza al establecimiento de salud donde se emitió cuando: el paciente referido no corresponda por adscripción al centro al cual se envía la referencia, no cumple con los criterios establecidos, no corresponde al servicio o es una referencia de Medicina Mixta.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-3",
+        "text": "1.3. Los pacientes con referencia a nutrición no requieren una nueva referencia en los últimos cinco años; excepto cuando al ser valorados por los médicos se detecte un nuevo diagnóstico que así lo amerite.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-4",
+        "text": "1.4. En el caso de usuarios donde se ha presentado interrupción en el tratamiento nutricional por ausentismo con justificación, se requiere una nueva referencia por parte del médico tratante. Tomar en cuenta que la referencia tiene una validez de 6 meses.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-7",
+        "text": "1.7. Personas usuarias con estado nutricional normal y sobrepeso sin patología asociada no requieren referencia ni atención en la consulta externa de Nutrición.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-8-9-10",
+        "text": "1.8. Persona usuaria con TCA debe ser valorada por el nutricionista en el establecimiento de salud donde el paciente mantiene el control de la patología. El nutricionista participa del equipo multidisciplinario en los establecimientos de salud que cuentan con este servicio.\n\n1.9. En caso de mayores de 12 años y adultos con alguna alergia alimentaria, serán atendidos en el establecimiento de salud donde mantienen el control.\n\n1.10. Persona usuaria que presenta patologías del TGI son atendidos en el nivel de atención donde se brinde el control de la patología.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-11",
+        "text": "1.11. Persona usuaria con disfagia o sialorrea referida a la Consulta Externa del Servicio de Nutrición de los Hospitales, debe contar con una valoración previa de parte de Terapia del Lenguaje o de Motora Oral, donde se especifique el tipo de texturas y la densidad de los líquidos que tolera. En caso de no contar con dicha valoración, debe ser contrarreferida al médico para que solicite la evaluación respectiva.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-14",
+        "text": "1.14. Toda persona usuaria en control ambulatorio en una Clínica o grupo multidisciplinario que cuente con nutricionista (por ejemplo, clínica de ostomizados, cesación de fumado, pie diabético, anticoagulados, comisión local de soporte nutricional, cirugía bariátrica, entre otras) se debe mantener en ésta hasta ser dada de alta de parte del grupo multidisciplinario.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-17",
+        "text": "1.17. Las referencias para Soporte Nutricional del HNN en menores de 13 años, se describen en el apartado 6.1 de este lineamiento. En caso de establecimientos de salud que cuenten con Soporte Nutricional Pediátrico aplican los mismos criterios que se describen en el apartado 1.18.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "n08-general-18",
+        "text": "1.18. La referencia para uso de suplementos nutricionales debe ser inicialmente valorada por el nutricionista, para determinar si se requiere o no la suplementación; de acuerdo con criterio profesional refiere de forma inmediata a Soporte Nutricional o da seguimiento; en caso de no lograr los objetivos planteados, contrarefiere al médico tratante para que elabore la referencia a la consulta externa de Soporte Nutricional al establecimiento de salud correspondiente; esta solicitud debe incluir la valoración completa, la intervención nutricional realizada, indicando los resultados obtenidos y el motivo. Las unidades que tengan una comunicación directa entre el profesional en Nutrición y la Comisión Local de Soporte Nutricional, pueden realizar la referencia directamente a ésta, incluyendo la intervención previamente descrita.",
+        "kind": "general",
+        "requirement": "source"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "Alcance: Este documento normativo es de aplicación obligatoria para todos los profesionales en Nutrición en los tres niveles de atención de la CCSS encargados del abordaje en la Consulta Externa, así como los profesionales en salud responsables de la atención de personas usuarias que requieran una intervención nutricional, previa coordinación con el Servicio de Nutrición.",
+      "El sistema de referencia y contrarreferencia varía según la disponibilidad de profesionales en Nutrición, en los niveles de atención.",
+      "1.5. El nutricionista realiza una serie de actividades para la atención de la referencia emitida las cuales se presentan en el anexo 2.",
+      "1.6. El nutricionista dispone de tres modalidades de atención para el paciente con obesidad educación nutricional, consulta individual y consulta grupal.",
+      "1.12. Las personas usuarias que han sido abordadas en el II y III nivel de atención no deben ser contra referidos a nutrición del I nivel, si el motivo de referencia original fue resuelto y fue dado de alta o no tuvo adherencia adecuada al tratamiento nutricional a pesar del proceso de educación que acompaña éste. Si se decide contrarreferir para seguimiento debe contar con el diagnóstico y tratamiento nutricional.",
+      "1.13. Las personas usuarias referidas a la Consulta Externa de Nutrición del primer nivel de atención se citan como pacientes de seguimiento.",
+      "1.15. El profesional en Nutrición coordina con los nutricionistas de su región en los diferentes niveles, cuando se requiera la atención de un paciente en particular.",
+      "1.16. El profesional en Nutrición da de alta al paciente, según los criterios establecidos en el Lineamiento para el Proceso de Atención en la Consulta Externa de Nutrición en los Establecimientos de Salud de la Caja Costarricense de Seguro Social vigente.",
+      "En la tabla 1 se describen algunos de los criterios de inclusión o exclusión para las referencias a Soporte Nutricional del hospital que corresponde, según red de servicios.",
+      "Tabla 1. Criterios de inclusión: Pacientes en condición nutricional vulnerable, previamente evaluados por Nutrición, que no mejoran su estado nutricional a pesar de la intervención dietoterapéutica.",
+      "Tabla 1. Criterios de inclusión: Casos nuevos de pacientes con sonda para alimentación, gastrostomía o PEG, cuya dieta basada en licuados artesanales resulta insuficiente para satisfacer sus requerimientos nutricionales.",
+      "Tabla 1. Criterios de inclusión: Pacientes con suplementación con fórmula polimérica estándares referidos del II y III nivel de atención en salud.",
+      "Tabla 1. Criterios de inclusión: Pacientes con ileostomías de alto gasto, fistulas enterocutáneas, síndrome de intestino corto referidos del II y III nivel de atención en salud.",
+      "Tabla 1. Criterios de exclusión: Pacientes referidos por pérdida de peso, DSN, malnutrición, DLP, DM y/o baja ingesta de alimentos, que no hayan sido valorados o reevaluados por el profesional en nutrición correspondiente.",
+      "Tabla 1. Criterios de exclusión: Paciente con condiciones de riesgo social o vulnerabilidad (la situación social no es indicación para suplementación, excepto casos específicos previo valoración por profesional en Trabajo Social y Nutrición)."
+    ]
   },
   {
     "id": "r01-odontologia-especializada-k116-mucocele-de-la-glandula-salival",
@@ -26557,8 +26766,36 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nGUIAS DE REFERENCIA\nESPECIALIDAD DE OFTALMOLOGÍA\nGUIAS DE REFERENCIA - SERVICIO DE OFTALMOLOGÍA\nIndicaciones generales\n1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la\natención de medicina especializada indicados por la Gerencia Médica.\n2. Toda referencia debe incluir:\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a\nmedicamentos.\n• Antecedentes Heredofamiliares\n• Antecedentes Quirúrgicos\n• Examen físico completo\n3. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su\ndefecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y\npor qué se agotó la capacidad resolutiva del primer nivel.\n4. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA\nCONSULTA EXTERNA.\n5. Los pacientes que lleguen al Servicio de Emergencias durante el tiempo extraordinario (De lunes a jueves de 4pm a\n7am y viernes desde las 3pm hasta lunes 7 am); debido a alguna patología ocular aguda, deben ser enviados al hospital\nque cuente con oftalmólogo de disponibilidad durante este tiempo para su valoración. Durante este tiempo el paciente\nes responsabilidad del médico tratante y del Servicio de Emergencias.\nPatologías que debe ser Referida al Servicio de Emergencias",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Toda referencia debe incluir: • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a medicamentos. • Antecedentes Heredofamiliares • Antecedentes Quirúrgicos • Examen físico completo",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-justification",
+        "text": "3. Justificación clara del motivo de referir a este paciente. Diagnóstico claro por el cual se refiere al paciente, o en su defecto una impresión diagnóstica, que deje entrever la necesidad de resolver el caso en un segundo nivel de atención, y por qué se agotó la capacidad resolutiva del primer nivel.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-4-urgent-route",
+        "text": "4. Los casos considerados como urgentes deben referirse directamente al Servicio de Urgencias y NO A LA CONSULTA EXTERNA.",
+        "kind": "general",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-5-emergency-availability",
+        "text": "5. Los pacientes que lleguen al Servicio de Emergencias durante el tiempo extraordinario (De lunes a jueves de 4pm a 7am y viernes desde las 3pm hasta lunes 7 am); debido a alguna patología ocular aguda, deben ser enviados al hospital que cuente con oftalmólogo de disponibilidad durante este tiempo para su valoración. Durante este tiempo el paciente es responsabilidad del médico tratante y del Servicio de Emergencias.",
+        "kind": "general",
+        "requirement": "conditional"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la Gerencia Médica."
+    ]
   },
   {
     "id": "r03-oftalmologia-requisitos-generales-de-oftalmologia-actualizacion-2024",
@@ -27052,8 +27289,30 @@
       "La sección identifica el Servicio de Oncología HCG y atención en Tercer Nivel (pp. PDF 174-176). Verificar el destino aplicable en la red."
     ],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nIndicaciones generales\n1. Todas las referencias deberán cumplir con los lineamientos para la asignación de citas de pacientes que se\nrefieren a la atención de medicina especializada indicados por la Gerencia Medica.\n2. Datos indispensables que debe contener la referencia\n✓ Datos de identificación del usuario completos, incluyendo edad, sexo, estado civil, escolaridad y\ncondición laboral.\n✓ Centro de procedencia y fecha, nombre y código del médico que refiere.\n✓ Antecedentes Personales Patológicos (APP), síntomas y signos, tiempo de evolución y tratamiento\nutilizado.\n✓ Antecedentes Personales NO Patológicos (APnP), uso de alcohol, tabaco u otras drogas, transfusiones\nsanguíneas anteriores, alergia a medicamentos.\n✓ Antecedentes Heredofamiliares (AHF), relevantes, particularmente oncológicos\n✓ Antecedentes Quirúrgicos\n✓ Examen físico completo y claro\n3. Documentos o exámenes a adjuntar o cualquier otro requisito necesario\nEstudios previos realizados donde se determinó el diagnostico o impresión diagnostica, importante incluir\ncopias de reporte de resultados y originales de láminas, fotos, placas de RX, US u otros, así como reporte de\nBiopsias (recordar que algunos tipos de cáncer requieren inmunohistoquímica por lo cual es indispensable\ncontar con los bloques de biopsia para completar estudios).\n\n4. Justificación o motivo de referencia\nDiagnóstico claro o bien impresión diagnostica por lo que se refiere al paciente, para atención del caso en un\ncentro especializado según corresponda al nivel de atención (Tercer Nivel).",
-    "checklist": [],
-    "direction": "I-III"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Datos indispensables que debe contener la referencia ✓ Datos de identificación del usuario completos, incluyendo edad, sexo, estado civil, escolaridad y condición laboral. ✓ Centro de procedencia y fecha, nombre y código del médico que refiere. ✓ Antecedentes Personales Patológicos (APP), síntomas y signos, tiempo de evolución y tratamiento utilizado. ✓ Antecedentes Personales NO Patológicos (APnP), uso de alcohol, tabaco u otras drogas, transfusiones sanguíneas anteriores, alergia a medicamentos. ✓ Antecedentes Heredofamiliares (AHF), relevantes, particularmente oncológicos ✓ Antecedentes Quirúrgicos ✓ Examen físico completo y claro",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-studies-materials",
+        "text": "3. Documentos o exámenes a adjuntar o cualquier otro requisito necesario Estudios previos realizados donde se determinó el diagnostico o impresión diagnostica, importante incluir copias de reporte de resultados y originales de láminas, fotos, placas de RX, US u otros, así como reporte de Biopsias (recordar que algunos tipos de cáncer requieren inmunohistoquímica por lo cual es indispensable contar con los bloques de biopsia para completar estudios).",
+        "kind": "study",
+        "requirement": "source"
+      },
+      {
+        "id": "general-4-justification",
+        "text": "4. Justificación o motivo de referencia Diagnóstico claro o bien impresión diagnostica por lo que se refiere al paciente, para atención del caso en un centro especializado según corresponda al nivel de atención (Tercer Nivel).",
+        "kind": "general",
+        "requirement": "source"
+      }
+    ],
+    "direction": "I-III",
+    "reviewNotes": [
+      "1. Todas las referencias deberán cumplir con los lineamientos para la asignación de citas de pacientes que se refieren a la atención de medicina especializada indicados por la Gerencia Medica."
+    ]
   },
   {
     "id": "r01-oncologia-tumor-de-cervix-y-vagina-carcinoma-invasor",
@@ -28033,8 +28292,24 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nIndicaciones generales\n5. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la\natención de medicina especializada indicados por la gerencia médica.\n6. Toda referencia debe incluir;\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral, escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas, alergia a\nmedicamentos.\n• Antecedentes Heredo familiares\n• Antecedentes Quirúrgicos\n• Examen físico completo enfatizar exploración articular con descripción adecuada.\n7. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso). Traer las RX al momento\nde la cita. NO ES NECESARIO EL REPORTE ESCRITO.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-6-information",
+        "text": "6. Toda referencia debe incluir; • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral, escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas, alergia a medicamentos. • Antecedentes Heredo familiares • Antecedentes Quirúrgicos • Examen físico completo enfatizar exploración articular con descripción adecuada.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-7-studies-images",
+        "text": "7. Adjuntar examen de laboratorios (fotocopia) y gabinete efectuados (según sea el caso). Traer las RX al momento de la cita. NO ES NECESARIO EL REPORTE ESCRITO.",
+        "kind": "study",
+        "requirement": "conditional"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "5. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la gerencia médica."
+    ]
   },
   {
     "id": "r01-ortopedia-sindrome-de-tunel-carpal",
@@ -29079,8 +29354,30 @@
     "prior": [],
     "notes": [],
     "fullText": "Patología:\nRequisitos generales\n\nCriterio de referencia:\nGUIAS DE REFERENCIA - SERVICIO DE ORL\nIndicaciones generales\n1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención\nde medicina especializada indicados por la gerencia médica\n2. Toda referencia debe incluir:\n• Nombre del centro de procedencia, nombre del médico que refiere y fecha.\n• Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad\n• Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido\n• Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a\nmedicamentos.\n• Antecedentes Heredofamiliares\n• Antecedentes Quirúrgicos\n• Examen físico dirigido, incluyendo según sea el caso valoración de oídos, nariz, cavidad oral, orofaringe y\ncuello.\n3. Si es posible dependiendo de la patología; Rx de Cavum Faríngeo, audiometría reciente, y Rx de Watters.\n4. Justificación clara del motivo de referir a este paciente; si es para tratamiento médico o quirúrgico. Indicando los nombres\nde los tratamientos ya suministrados.",
-    "checklist": [],
-    "direction": "I-II"
+    "checklist": [
+      {
+        "id": "general-2-information",
+        "text": "2. Toda referencia debe incluir: • Nombre del centro de procedencia, nombre del médico que refiere y fecha. • Ficha de identificación del usuario, edad, estado civil, condición laboral y escolaridad • Antecedentes patológicos, sintomatología tiempo de evolución y tratamiento recibido • Antecedentes personales no patológicos, transfusiones realizadas, uso de drogas ilícitas y alergia a medicamentos. • Antecedentes Heredofamiliares • Antecedentes Quirúrgicos • Examen físico dirigido, incluyendo según sea el caso valoración de oídos, nariz, cavidad oral, orofaringe y cuello.",
+        "kind": "general",
+        "requirement": "source"
+      },
+      {
+        "id": "general-3-conditional-studies",
+        "text": "3. Si es posible dependiendo de la patología; Rx de Cavum Faríngeo, audiometría reciente, y Rx de Watters.",
+        "kind": "study",
+        "requirement": "conditional"
+      },
+      {
+        "id": "general-4-justification",
+        "text": "4. Justificación clara del motivo de referir a este paciente; si es para tratamiento médico o quirúrgico. Indicando los nombres de los tratamientos ya suministrados.",
+        "kind": "general",
+        "requirement": "source"
+      }
+    ],
+    "direction": "I-II",
+    "reviewNotes": [
+      "1. Las referencias deberán cumplir con los lineamientos para la asignación de citas a pacientes se refieren para la atención de medicina especializada indicados por la gerencia médica"
+    ]
   },
   {
     "id": "n16-rinitis-alergica-referencia-desde-pediatria-o-aper-a-orl",

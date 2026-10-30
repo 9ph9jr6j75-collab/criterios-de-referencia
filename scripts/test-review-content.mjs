@@ -11,7 +11,10 @@ const bare = changes => ({id:'test', name:'Ejemplo', sourceId:'TEST', specialty:
 const textOf = value => value && typeof value === 'object' ? String(value.text ?? value.label ?? '') : String(value ?? '');
 const key = value => textOf(value).normalize('NFC').replace(/\s+/g,' ').trim().replace(/^Documentar el criterio de referencia aplicable:\s*/i,'');
 const fields = ['context','route','criteria','prior','studies','studiesNote','notes','flags'];
-const values = (card, field) => (Array.isArray(card[field]) ? card[field] : [card[field]]).filter(value => value !== null && value !== undefined).map(textOf).filter(value => key(value));
+const values = (card, field) => {
+  const value=field==='criteria'&&Array.isArray(card.reviewNotes)?card.reviewNotes:card[field];
+  return (Array.isArray(value)?value:[value]).filter(value => value !== null && value !== undefined).map(textOf).filter(value => key(value));
+};
 const rows = card => reviewBuckets(card).flatMap(bucket => bucket.entries);
 const output = (card, options) => reviewSupplements(card, options).flatMap(group => group.items);
 
@@ -76,13 +79,26 @@ test('Catarata conserva sus 13 casillas y la precisión sobre otros exámenes', 
 
 test('los requisitos generales sin casillas mantienen íntegro su contenido', () => {
   const generals = active.filter(card=>/^requisitos generales/i.test(card.name)&&!(card.checklist||[]).length);
-  assert.equal(generals.length,9);
+  assert.equal(generals.length,0,'Todos los generales activos tienen instrucciones verificables estructuradas.');
   for (const card of generals) {
     const visible = output(card).map(key);
     for (const field of fields) for (const text of values(card,field)) assert(visible.includes(key(text)),card.id+' '+field);
   }
   const fallback = bare({fullText:'Criterio solo transcrito: con todas sus condiciones.'});
   assert.deepEqual(output(fallback),[fallback.fullText]);
+  const general=bare({name:'Requisitos generales de prueba',criteria:['Condición íntegra sin casillas.']});
+  assert.deepEqual(output(general),general.criteria,'Se conserva el respaldo para un futuro apartado sin casillas.');
+});
+
+test('los generales revisados muestran instrucciones una sola vez y conservan las notas documentales',()=>{
+  const structured=active.filter(card=>Array.isArray(card.reviewNotes));
+  assert.equal(structured.length,9);
+  for(const card of structured){
+    const supplement=output(card);
+    assert.deepEqual(supplement,[...card.reviewNotes,...output({...card,reviewNotes:[]})],card.id+': también se conservan las precisiones documentales existentes.');
+    assert(card.fullText&&card.criteria.length,card.id+': transcripción original conservada.');
+    for(const entry of rows(card))assert(!supplement.some(text=>key(text)===key(entry.text)),card.id+': no repetir una casilla como prosa.');
+  }
 });
 
 test('las 69 diferencias de etiqueta conservan 68 tipos de estudio y la condición propia de Hepatitis', () => {
@@ -185,7 +201,7 @@ test('auditoría de las 730 fichas: todo texto clínico está en casilla o suple
   }
   assert.equal(active.length,730);
   // Inline general rows are counted with their own real card below.
-  assert.equal(active.flatMap(rows).length,2202);
+  assert.equal(active.flatMap(rows).length,2243);
   assert.equal(JSON.stringify(cards),before);
   console.log(JSON.stringify({active:active.length,checklistRows:active.flatMap(rows).length,auditedClinicalValues:fieldCount,preservedSupplementItems:supplementCount}));
 });

@@ -63,7 +63,18 @@ test('las instrucciones de Asistente EDUS se leen sin desplegar en todas las fic
   for(const source of guidance.sources){assert(html.includes(escape(source.url)),card.id+': respaldo conservado.');assert(!visible.includes(escape(source.url)),card.id+': respaldo secundario plegado.');}
   shown++;
  }
- assert.equal(shown,617);
+ assert.equal(shown,637);
+});
+
+test('los estudios generales de ORL activan EDUS sin añadir exámenes a la fuente',()=>{
+ const general=byId.get('r01-otorrinolaringologia-requisitos-generales-de-otorrinolaringologia');
+ assert(general.checklist.some(entry=>entry.kind==='study'&&/Si es posible/.test(entry.text)));
+ const beforeCards=cards.map(card=>card.id===general.id?{...card,checklist:[]}:card);
+ const beforeById=new Map(beforeCards.map(card=>[card.id,card]));
+ const newlyShown=active.filter(card=>guide(card.id)&&!edusGuidanceForCard(beforeById.get(card.id),beforeCards));
+ assert.equal(newlyShown.length,20);
+ assert(newlyShown.every(card=>card.specialty==='Otorrinolaringología'&&card.sourceId==='R01'));
+ for(const card of newlyShown)assert(renderedGuidance(card).includes('Asistente EDUS'),card.id);
 });
 
 test('EDUS sigue visible cuando procede de generales, en Hidrocele y en el apartado que menciona cistocele',()=>{

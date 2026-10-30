@@ -1,0 +1,222 @@
+{
+  "format": 1,
+  "repository": "9ph9jr6j75-collab/criterios-de-referencia",
+  "baseCommit": "d84215f3eeb1dfb992c7a4871632824235654428",
+  "sourceBaseCommit": "2e9c8b1fd4f2d25b75782194b3c1146dfd07357b",
+  "version": "1.4.16",
+  "releaseUpdatedAt": "2026-10-30T05:31:40Z",
+  "bundle": {
+    "name": "source-update-v1.4.16.zip",
+    "size": 337535,
+    "sha256": "7e5dfca6604c2eaea315bfc0dee2d7c602a5658fe7a6524b0200f89263375d80"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "before": {
+        "size": 10023,
+        "sha256": "f68293114f6f0323968b33517d79371b3740f007975175a8e186d5b290837a5c"
+      },
+      "after": {
+        "size": 11087,
+        "sha256": "381960001443116f4f47ea648cc37a894a541225c1a9415bb8ac3c1ec50c3649"
+      }
+    },
+    {
+      "path": "app.js",
+      "before": {
+        "size": 70897,
+        "sha256": "5a3368cea6499ffd3bdeff55acc4eb40fd7ca40f256068dbdfa955de17ef299e"
+      },
+      "after": {
+        "size": 73966,
+        "sha256": "67540dd5ae2f8aa93babc8b026f030be8b1054c009d669eef8081935fac11d8c"
+      }
+    },
+    {
+      "path": "audits/2026-10-29-general-checklists.json",
+      "before": null,
+      "after": {
+        "size": 31773,
+        "sha256": "df719aa9cece64c56f429d3aa0e57e99967be75844c7e2f23d5baf89dcd4450b"
+      }
+    },
+    {
+      "path": "data/cards.json",
+      "before": {
+        "size": 2099806,
+        "sha256": "a283ab072abc33d85bd61571e10abc6fe7cb34a6cc13e783365dd94677016231"
+      },
+      "after": {
+        "size": 2124291,
+        "sha256": "e611361230e043375ad027321cbe6cb941042d6aec905be2bd178c6e7286f291"
+      }
+    },
+    {
+      "path": "data/release.json",
+      "before": {
+        "size": 1504,
+        "sha256": "5a3107f31b7e5428a228ed3e4495ce13e3c179f627bc79f9ea49638ccff9da22"
+      },
+      "after": {
+        "size": 1504,
+        "sha256": "4f388769945fc7d20a3e12febc7e307580a4a9df05ce84e46a1445da59e94e4f"
+      }
+    },
+    {
+      "path": "index.html",
+      "before": {
+        "size": 14581,
+        "sha256": "924da4e96be13ca099f697e7a38b02547228544453bd8614d3ebf778829b6ac6"
+      },
+      "after": {
+        "size": 14761,
+        "sha256": "f9d1dd44e854020893e58aaf8cbadcbbf8604e864c75e6735dd75784fdb4dd24"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "size": 198,
+        "sha256": "b0be7e1b2698a2bcf6178e67a7b59273dcc396dea83eae234c9cd33fc200ed87"
+      },
+      "after": {
+        "size": 198,
+        "sha256": "a59bc4632b5252768fff26f270f15a3dfc30c778a5ebf2f09c11557d9b98256b"
+      }
+    },
+    {
+      "path": "review-content.js",
+      "before": {
+        "size": 6019,
+        "sha256": "1a3b24b516fa8fa36c0fd003efb59ddaa003e579bfeed306e8c1cc6a5366b0b9"
+      },
+      "after": {
+        "size": 6221,
+        "sha256": "0bde3a65c3b34c93a771c8c838d6a9b4e7660db7e1d4cab693ae229dd866217f"
+      }
+    },
+    {
+      "path": "scripts/check-combined-review.mjs",
+      "before": {
+        "size": 36691,
+        "sha256": "494ef24ea82db45268e1f5859c6c1379b1bf304121d4c091b7a403f0391323db"
+      },
+      "after": {
+        "size": 37023,
+        "sha256": "97bac638e19a521f058e08c3d57d5b9cb9e0d60a47696428517b69ace344ac7a"
+      }
+    },
+    {
+      "path": "scripts/check-content-duplicates.mjs",
+      "before": {
+        "size": 19373,
+        "sha256": "f5c239643e4fab0e9f3ac6978f556444662b960697d3d42a08d03d9d198d3054"
+      },
+      "after": {
+        "size": 24809,
+        "sha256": "a47df4978f42e9d439691c0473b51b6550b86631ea9ab0c987d5c33b742235a9"
+      }
+    },
+    {
+      "path": "scripts/test-catalog-filters.mjs",
+      "before": null,
+      "after": {
+        "size": 8925,
+        "sha256": "1826aaf718a3f2126761c44177b40d487970db694809f31701a696a6284cd9bf"
+      }
+    },
+    {
+      "path": "scripts/test-edus-guidance.mjs",
+      "before": {
+        "size": 12253,
+        "sha256": "e927e0404124a2a2434fa540661380bbe9d6aadbe58c88d97c0136760105094e"
+      },
+      "after": {
+        "size": 13040,
+        "sha256": "948178d820aa9debf31021dcede06824948c0e013401520b95e87c8375ce9f0b"
+      }
+    },
+    {
+      "path": "scripts/test-nutrition-general-checklist.mjs",
+      "before": null,
+      "after": {
+        "size": 6233,
+        "sha256": "07f58edf3dd12a712a337e0b38731f36faa36759f7a781d14bfcbdd161535c18"
+      }
+    },
+    {
+      "path": "scripts/test-r01-general-checklists.mjs",
+      "before": null,
+      "after": {
+        "size": 5800,
+        "sha256": "029773f452e9449743bafa4b6a1d08bc243f974aad2bc1219e89f0b964b352df"
+      }
+    },
+    {
+      "path": "scripts/test-review-content.mjs",
+      "before": {
+        "size": 12701,
+        "sha256": "d6ebac3344d6d4720d9df42f9c8155e7109685b2f6ad2734fdc8f6368516c08c"
+      },
+      "after": {
+        "size": 13797,
+        "sha256": "78d4355ab15df05c201339187882fdffc48c8e52d4f5fd48d70be70e58aa3fd6"
+      }
+    },
+    {
+      "path": "styles.css",
+      "before": {
+        "size": 63585,
+        "sha256": "db526e7fe30fa00be650a2b6560b1d0fb45d2751fb8aa598606c788cc1d1c6bd"
+      },
+      "after": {
+        "size": 64485,
+        "sha256": "39203b65031215bcd3cc2e059749cf5576389f68c75419c0ec0f57f0eca5067a"
+      }
+    },
+    {
+      "path": "sw.js",
+      "before": {
+        "size": 10672,
+        "sha256": "319d63d63650e9bc6fed81f1e6897df40d5cc3109b2f0d4f82e4697f131792bc"
+      },
+      "after": {
+        "size": 10672,
+        "sha256": "60033cf6b284f19c481e10f7ca289987fcd7b0266d3a23eda90cb61ea018fd2d"
+      }
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "data/sources.json",
+      "size": 41298,
+      "sha256": "4ccff54175f030455c4036daff9d4384be4f4ad6ac9dacdfed6cb9497329484f"
+    },
+    {
+      "path": "data/topics.json",
+      "size": 239946,
+      "sha256": "3da2cc286677da4ba9e7db89ff6903a4d8b4952ae8ebbb74e02b5b00d5acd9dc"
+    }
+  ],
+  "clinicalCorrection": {
+    "allowedCardIds": [
+      "n08-requisitos-generales-y-referencia-a-soporte-nutricional",
+      "r01-medicina-familiar-y-comunitaria-requisitos-generales-de-medicina-familiar-y-comunitaria",
+      "r01-medicina-interna-requisitos-generales-de-medicina-interna",
+      "r01-medicina-paliativa-y-control-del-dolor-requisitos-generales-de-medicina-paliativa-y-control-del-dolor",
+      "r01-neurologia-requisitos-generales-de-neurologia",
+      "r01-oftalmologia-requisitos-generales-de-oftalmologia",
+      "r01-oncologia-requisitos-generales-de-oncologia",
+      "r01-ortopedia-requisitos-generales-de-ortopedia",
+      "r01-otorrinolaringologia-requisitos-generales-de-otorrinolaringologia"
+    ],
+    "allowedFields": [
+      "checklist",
+      "reviewNotes"
+    ],
+    "cardCount": 808,
+    "checklistItemsBefore": 2202,
+    "checklistItemsAfter": 2243
+  }
+}

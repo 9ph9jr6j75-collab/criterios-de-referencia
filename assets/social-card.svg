@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Criterios de referencia</title>
+  <desc id="description">Portada azul de Criterios de referencia. DRIPSSHA, Huetar Atlántica.</desc>
+  <defs>
+    <linearGradient id="background"><stop stop-color="#183e5a"/><stop offset="1" stop-color="#245477"/></linearGradient>
+    <clipPath id="logo"><rect x="72" y="120" width="330" height="330" rx="38"/></clipPath>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <image href="icon-512-v12.png" x="72" y="120" width="330" height="330" clip-path="url(#logo)"/>
+  <g fill="#fff" font-family="DejaVu Sans, sans-serif" font-size="74" font-weight="700">
+    <text x="456" y="225">Criterios de</text>
+    <text x="456" y="319">referencia</text>
+  </g>
+  <text x="460" y="388" fill="#cfdeea" font-family="DejaVu Sans, sans-serif" font-size="29">Consulta por patología</text>
+  <path d="M72 506H1128" stroke="#63849c" stroke-width="2"/>
+  <text x="600" y="567" text-anchor="middle" fill="#e1ecf4" font-family="DejaVu Sans, sans-serif" font-size="30">DRIPSSHA · Huetar Atlántica</text>
+</svg>

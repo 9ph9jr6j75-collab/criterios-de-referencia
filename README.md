@@ -69,3 +69,7 @@ Los temas con varias fuentes requieren elegir documento antes de mostrar los cri
 ## Lectura de la ficha
 
 La ficha presenta una sola lista de revisión con los requisitos generales y los criterios específicos del documento elegido. Cada grupo conserva enlaces a sus páginas originales. Las condiciones y observaciones que no estén ya en las casillas permanecen visibles, incluidas las precisiones sobre estudios y los avisos de alcance. El texto documental completo se consulta en un desplegable cerrado inicialmente. La orientación sobre EDUS y Asistente EDUS permanece visible antes de las casillas en las fichas que solicitan estudios o heredan ese requisito. Solo los enlaces de respaldo institucional se despliegan a petición; las indicaciones sobre material original también permanecen visibles. Los identificadores de las casillas y las marcas por fuente se conservan. «Desmarcar todas las casillas» reinicia la revisión de la ficha y sus requisitos generales.
+
+## Vista previa al compartir
+
+El inicio declara una portada horizontal de 1200 × 630 píxeles en Open Graph, con URL HTTPS pública y dimensiones explícitas. La imagen para compartir está en `assets/social-card-v15.png` y su diseño editable en `assets/social-card.svg`. Los iconos de instalación se conservan separados. El enlace canónico y la imagen corresponden a la publicación de GitHub Pages. El formato final de la vista previa depende de la aplicación receptora.

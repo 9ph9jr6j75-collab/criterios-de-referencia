@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import './test-pwa-identity.mjs';
 import {createTopicIndex, groupResults, orderDocuments, uniqueTopicCount, isCatalogCard} from '../catalog.js';
 const root=path.resolve(import.meta.dirname,'..');
 const cards=JSON.parse(await fs.readFile(path.join(root,'data/cards.json'),'utf8'));

@@ -51,6 +51,8 @@ if (!mountDocumentScreen()) (() => {
   const priorityType = (value,sourceId) => {
     const n = norm(String(value || '').replace(/,?\s*según este apartado de la fuente\.?/gi, ''));
     if (!n || /contradict|ver criterio|segun patologia/.test(n)) return '';
+    // En la tabla odontológica, grado 3 «No Urgente» es consulta a cupo.
+    if(sourceId==='R01'&&/^(?:3 )?(?:cita )?no urgente$/.test(n))return 'routine';
     if(sourceId==='N19') {
       const urgent=/\burgente\b|\burgencia\b|emergencias/.test(n), grade3=/\bgrado 3\b/.test(n), grade12=/\bgrado [12]\b/.test(n);
       if((urgent&&(grade3||grade12||/consulta externa/.test(n)))||(grade3&&grade12)||(grade12&&/a cupo/.test(n)))return 'mixed';
@@ -304,7 +306,7 @@ if (!mountDocumentScreen()) (() => {
       return `<label class="checklist-item"><input type="checkbox" data-check-card-id="${esc(group.card.id)}" data-check-id="${esc(entry.id)}" ${group.checked.has(entry.id)?'checked':''}><span class="checklist-text">${esc(entry.text)}${label?`<small class="checklist-tag">${esc(label)}</small>`:''}</span></label>`;
     };
     const groupHTML=group=>{
-      const buckets=reviewBuckets(group.card),heading=group.general?`Requisitos generales de ${group.card.specialty}`:'';
+      const buckets=reviewBuckets(group.card),heading=group.general?(group.card.appliesToSpecialties?.length?'Requisitos generales de referencia odontológica':`Requisitos generales de ${group.card.specialty}`):'';
       const extraScope=group.general&&group.card.applicability&&String(group.card.applicability).trim()!==String(card.applicability||'').trim()?`<div class="document-status-note"><strong>Alcance de estos requisitos.</strong> ${esc(group.card.applicability)}</div>`:'';
       return `<section class="checklist-group" data-review-card="${esc(group.card.id)}">${heading?`<h3 class="checklist-group-title">${esc(heading)}</h3>${reviewPageLinksHTML(group.card)}`:''}${extraScope}${buckets.map(bucket=>`<div class="review-bucket">${group.general?(buckets.length>1?`<h4 class="review-subtitle">${esc(bucket.title)}</h4>`:''):`<h3 class="checklist-group-title">${esc(bucket.title)}</h3>${reviewPageLinksHTML(group.card)}`}${bucket.entries.map(entry=>itemHTML(entry,group)).join('')}</div>`).join('')}${!buckets.length&&!group.general?`<h3 class="checklist-group-title">Criterios de esta ficha</h3>${reviewPageLinksHTML(group.card)}`:''}${reviewSupplementsHTML(group.card,{representedTexts,hasGeneral})}</section>`;
     };

@@ -3,6 +3,9 @@ export const isCatalogCard = card => card?.catalogStatus !== 'withheld';
 
 export const isGeneralCard = card => Boolean(card && (card.category === 'general' || /^requisitos generales/i.test(card.name || '')));
 const specialtyKey = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+// Una lista general puede abarcar varias especialidades cuando el propio
+// documento lo declara. La asociación sigue limitada a su fuente y ruta.
+const generalAppliesTo = (general,specialty) => [general.specialty,...(Array.isArray(general.appliesToSpecialties)?general.appliesToSpecialties:[])].some(value=>specialtyKey(value)===specialtyKey(specialty));
 
 function referralDirection(card) {
   const value=String(card?.direction || 'I-II').trim().toUpperCase().replace(/\s+/g,'').replace(/[–—]/g,'-');
@@ -23,7 +26,7 @@ export function isReferralCard(card) {
 export function generalRequirementsForCard(card,cards) {
   if(!isCatalogCard(card)||!isReferralCard(card)||isGeneralCard(card))return [];
   const direction=referralDirection(card).join('-');
-  const general=cards.filter(other=>isCatalogCard(other)&&isGeneralCard(other)&&isReferralCard(other)&&other.id!==card.id&&other.sourceId===card.sourceId&&specialtyKey(other.specialty)===specialtyKey(card.specialty)&&referralDirection(other).join('-')===direction);
+  const general=cards.filter(other=>isCatalogCard(other)&&isGeneralCard(other)&&isReferralCard(other)&&other.id!==card.id&&other.sourceId===card.sourceId&&generalAppliesTo(other,card.specialty)&&referralDirection(other).join('-')===direction);
   const inline=card.inlineGeneralRequirements;
   if(inline?.criteria?.length)general.push({id:card.id,sourceId:card.sourceId,specialty:card.specialty,direction:card.direction,category:'general',inlineGeneral:true,name:`Requisitos generales de ${card.specialty}`,pages:inline.pages,criteria:inline.criteria,notes:inline.notes||[],checklist:(card.checklist||[]).filter(item=>item.kind==='general'),fullText:inline.criteria.join('\n\n')});
   return general;
@@ -58,7 +61,7 @@ export function specialtyGeneralRequirements(cards,{specialty,source='',scope=''
   // Una búsqueda o una lista personal reduce las patologías, no los requisitos
   // comunes del documento. Solo la especialidad, la fuente y el alcance los acotan.
   if(!specialty)return [];
-  return orderDocuments(cards.filter(card=>isCatalogCard(card)&&isGeneralCard(card)&&isReferralCard(card)&&specialtyKey(card.specialty)===specialtyKey(specialty)&&sourceMap.has(card.sourceId)&&(!source||card.sourceId===source)&&(!scope||scopeForCard(card,sourceMap)===scope)),sourceMap);
+  return orderDocuments(cards.filter(card=>isCatalogCard(card)&&isGeneralCard(card)&&isReferralCard(card)&&generalAppliesTo(card,specialty)&&sourceMap.has(card.sourceId)&&(!source||card.sourceId===source)&&(!scope||scopeForCard(card,sourceMap)===scope)),sourceMap);
 }
 
 export function createTopicIndex(cards, definitions) {

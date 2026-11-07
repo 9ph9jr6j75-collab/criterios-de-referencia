@@ -108,7 +108,18 @@ check('Todas las variantes anuncian cobertura según sus documentos, sin alterar
   for(const card of cards.filter(card=>isCatalogCard(card)&&isReferralCard(card)&&!isGeneralCard(card))){
     const general=generalRequirementsForCard(card,cards);
     if(general.length)withGeneral++;else withoutGeneral++;
-    for(const item of general){assert.equal(item.sourceId,card.sourceId);assert.equal(item.specialty,card.specialty);assert.equal(item.direction||'I-II',card.direction||'I-II');}
+    for(const item of general){
+      assert.equal(item.sourceId,card.sourceId);assert.equal(item.direction||'I-II',card.direction||'I-II');
+      if(item.specialty!==card.specialty){
+        // El apartado común odontológico se conserva una sola vez. La fuente
+        // documenta su aplicación a OGA y Endodoncia; no es una herencia general
+        // de requisitos entre especialidades ni entre documentos distintos.
+        assert.equal(item.id,'r01-odontologia-especializada-requisitos-generales-de-odontologia-especializada');
+        assert.equal(item.sourceId,'R01');assert.equal(item.specialty,'Odontología general avanzada');assert.equal(card.specialty,'Endodoncia');
+        assert.deepEqual(item.appliesToSpecialties,['Odontología general avanzada','Endodoncia']);
+        assert(item.appliesToSpecialties.includes(card.specialty),'La especialidad está expresamente incluida en la lista general documentada.');
+      }else assert.equal(item.specialty,card.specialty);
+    }
   }
   assert(withGeneral>600&&withoutGeneral>0,'Ejercitar fichas reales con y sin listas generales identificadas.');
   assert.equal(JSON.stringify(cards),before,'La presentación no modifica los criterios ni crea nuevas fichas.');

@@ -101,5 +101,47 @@ assert.equal(chips.state.source,'');assert.equal(chips.state.specialty,'Oftalmol
 chips.context.removeFilter('cards');assert.equal(chips.state.cards,cards,'No aceptar nombres arbitrarios como filtros.');
 const favorite=boot({query:'catarata',source:'R03',favorites:new Set(['n09-catarata'])});
 assert(favorite.context.cardHTML(favorite.state.filtered[0]).includes('aria-pressed="true"'),'La favorita sigue siendo del tema aunque se filtre otra variante.');
+
+// Endodoncia conserva las fichas existentes, pero debe encontrarse tanto por
+// nombre de especialidad como por diagnóstico, alias y el filtro real de UI.
+const dentalPrefix='r01-odontologia-especializada-';
+const expectedEndodonticIds=['pulpitis-sintomatica-k040','pulpitis-asintomatica-k040','periodontitis-apical-sintomatica-k045','periodontitis-apical-asintomatica-k045','absceso-apical-agudo-k047','absceso-apical-cronico-k046','lesiones-de-encia-y-de-la-zona-edentula-asociadas-con-traumatismo-k062'].map(suffix=>dentalPrefix+suffix).sort();
+const matchingIds=env=>Array.from(env.state.filtered).flatMap(result=>Array.from(result.matchingCards,card=>card.id)).sort();
+assert(baseline.node('#specialty-filter').innerHTML.includes('value="Endodoncia"'),'Ofrecer Endodoncia como especialidad.');
+assert(baseline.node('#specialty-filter').innerHTML.includes('value="Odontología general avanzada"'),'Conservar OGA como especialidad propia.');
+assert(!baseline.node('#specialty-filter').innerHTML.includes('value="Odontología especializada"'),'No ocultar ambos apartados bajo el encabezado general.');
+for(const query of ['endodoncia','ENDODONCIA']){
+  const env=boot({query});assert.deepEqual(matchingIds(env),expectedEndodonticIds);
+  assert(env.state.filtered.every(result=>env.context.cardHTML(result).includes('Endodoncia')));
+  assert(env.state.filtered.every(result=>env.context.cardHTML(result).includes('Incluye requisitos generales y específicos')),'La búsqueda directa conserva la revisión completa.');
+}
+const dentalFilter=boot();dentalFilter.change('#specialty-filter','Endodoncia');
+assert.deepEqual(matchingIds(dentalFilter),expectedEndodonticIds);
+assert.equal(dentalFilter.node('#specialty-filter').value,'Endodoncia');
+assert.equal(dentalFilter.saved.at(-1).specialty,'Endodoncia');
+assert.equal(dentalFilter.node('#specialty-general').hidden,false,'Los requisitos generales también están al explorar Endodoncia.');
+assert(dentalFilter.node('#specialty-general').innerHTML.includes(dentalPrefix+'requisitos-generales-de-odontologia-especializada'));
+dentalFilter.change('#source-filter','N09');assert.equal(dentalFilter.state.filtered.length,0,'Un filtro de otro documento no conserva criterios ajenos.');
+assert.equal(dentalFilter.node('#specialty-general').hidden,true);
+const oga=boot({specialty:'Odontología general avanzada',query:'OGA'});
+assert.equal(oga.state.filtered.length,20,'OGA conserva sus veinte temas clínicos, aparte del requisito general.');
+assert(oga.state.filtered.every(result=>result.specialty==='Odontología general avanzada'));
+for(const query of ['pulpitis','K040']){
+  const env=boot({specialty:'Endodoncia',query});assert.equal(env.state.filtered.length,2);
+  assert(env.state.filtered.every(result=>result.specialty==='Endodoncia'));
+}
+const routineEndodonticIds=['pulpitis-asintomatica-k040','periodontitis-apical-asintomatica-k045','absceso-apical-cronico-k046'].map(suffix=>dentalPrefix+suffix).sort();
+const priorityEndodonticIds=expectedEndodonticIds.filter(id=>!routineEndodonticIds.includes(id));
+const routineEndodontics=boot({specialty:'Endodoncia',priority:'routine'});
+assert.deepEqual(matchingIds(routineEndodontics),routineEndodonticIds,'No Urgente y A Cupo corresponden a consulta a cupo, sin confundirse por la palabra urgente.');
+const priorityEndodontics=boot({specialty:'Endodoncia',priority:'priority'});
+assert.deepEqual(matchingIds(priorityEndodontics),priorityEndodonticIds,'Solo las cuatro fichas con Cita Urgente se incluyen como consulta prioritaria.');
+const urgentEndodontics=boot({specialty:'Endodoncia',priority:'urgent'});
+assert.equal(urgentEndodontics.state.filtered.length,0,'Cita Urgente no equivale a remisión al Servicio de Urgencias.');
+const dentalFavoriteId=dentalPrefix+'pulpitis-sintomatica-k040';
+const dentalFavorite=boot({specialty:'Endodoncia',mode:'favorites',favorites:new Set([dentalFavoriteId])});
+assert.deepEqual(matchingIds(dentalFavorite),[dentalFavoriteId],'La reclasificación conserva las favoritas por ID.');
+const dentalRecent=boot({specialty:'Endodoncia',mode:'recent',recent:[dentalFavoriteId]});
+assert.deepEqual(matchingIds(dentalRecent),[dentalFavoriteId],'Las recientes siguen abriendo la ficha anterior.');
 assert.equal(JSON.stringify({cards,sources,definitions}),originalData,'La interfaz no altera la documentación clínica.');
-console.log(JSON.stringify({ok:true,indexedDocuments:20,registeredDocuments:40,topics:567,sourcePredicates:20,sourceSelectionEvents:3,emptySpecialties:['Alergología','Nefrología','Psicología']}));
+console.log(JSON.stringify({ok:true,indexedDocuments:20,registeredDocuments:40,topics:567,sourcePredicates:20,sourceSelectionEvents:3,endodonticSearchAndFilter:7,ogaClinicalTopics:20,emptySpecialties:['Alergología','Nefrología','Psicología']}));

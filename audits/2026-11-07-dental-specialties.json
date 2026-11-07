@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "reason": "Recuperar los encabezados odontológicos del documento R01 en la clasificación, filtros y búsqueda de la app.",
+  "generalCardId": "r01-odontologia-especializada-requisitos-generales-de-odontologia-especializada",
+  "evidence": [
+    {
+      "sourceId": "R01",
+      "document": "assets/documents/R01.pdf",
+      "sha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "pages": [
+        142,
+        143,
+        159,
+        160,
+        161
+      ],
+      "classification": "Página 143: Odontología general avanzada. Página 159: Endodoncia. Criterios de Endodoncia en páginas 160–161; indicaciones generales odontológicas en 142–143."
+    }
+  ],
+  "before": {
+    "cardsSha256": "1994edde86e61bb6466df610d27c9709e3721a59760c9e672b59c5db72dcf3ad",
+    "registeredCards": 808,
+    "activeCards": 730,
+    "specialtyCounts": {
+      "Alergología": 1,
+      "Cardiología": 18,
+      "Cirugía general": 10,
+      "Cirugía pediátrica": 55,
+      "Clínica de mamas": 9,
+      "Dermatología": 24,
+      "EISAM": 1,
+      "Fisiatría": 17,
+      "Gastroenterología": 97,
+      "Geriatría": 29,
+      "Ginecoobstetricia": 38,
+      "Medicina Familiar y Comunitaria": 38,
+      "Medicina Interna": 37,
+      "Medicina Paliativa y Control del Dolor": 12,
+      "Nefrología": 1,
+      "Neurología": 24,
+      "Nutrición": 10,
+      "Odontología especializada": 28,
+      "Oftalmología": 66,
+      "Oncología": 9,
+      "Ortopedia": 12,
+      "Otorrinolaringología": 31,
+      "Pediatría": 76,
+      "Psicología": 1,
+      "Psiquiatría": 22,
+      "Radiología e imágenes médicas": 16,
+      "Trabajo Social": 9,
+      "Urología": 28,
+      "Vascular periférico": 11
+    }
+  },
+  "after": {
+    "cardsSha256": "2b19ccd41e774cfbea2d69b4e9bcd97d4e38dcfc99da48f2fc164ac6c221b21b",
+    "registeredCards": 808,
+    "activeCards": 730,
+    "specialtyCounts": {
+      "Alergología": 1,
+      "Cardiología": 18,
+      "Cirugía general": 10,
+      "Cirugía pediátrica": 55,
+      "Clínica de mamas": 9,
+      "Dermatología": 24,
+      "EISAM": 1,
+      "Endodoncia": 7,
+      "Fisiatría": 17,
+      "Gastroenterología": 97,
+      "Geriatría": 29,
+      "Ginecoobstetricia": 38,
+      "Medicina Familiar y Comunitaria": 38,
+      "Medicina Interna": 37,
+      "Medicina Paliativa y Control del Dolor": 12,
+      "Nefrología": 1,
+      "Neurología": 24,
+      "Nutrición": 10,
+      "Odontología general avanzada": 21,
+      "Oftalmología": 66,
+      "Oncología": 9,
+      "Ortopedia": 12,
+      "Otorrinolaringología": 31,
+      "Pediatría": 76,
+      "Psicología": 1,
+      "Psiquiatría": 22,
+      "Radiología e imágenes médicas": 16,
+      "Trabajo Social": 9,
+      "Urología": 28,
+      "Vascular periférico": 11
+    }
+  },
+  "changes": [
+    {
+      "cardId": "r01-odontologia-especializada-k116-mucocele-de-la-glandula-salival",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K116"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K116",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "9d7ea2d955ac5bd74a8b3aa469d0225d12f122d2d32b97aa9083e86981420dea"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-k134-granuloma-y-lesiones-semejantes-de-la-mucosa",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K134"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K134",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "d3b4e2fb6435dce91da018147646ad8808dc28da40390fbee0176bbe7ee2918d"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-k135-fibrosis-de-la-submucosa-bucal",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K135"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K135",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "a4d863ceca1430a707d5f8b2544d944c73d6cdaf71333214808902f05ec79c70"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-absceso-apical-agudo-k047",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K047"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K047",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "96af15808b99f8ce11741cdcfdb2f562d5a41a5a1943e4544fad455756a7348d"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-absceso-apical-cronico-k046",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K046"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K046",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "ae6168f1aacf1531db7d0365d12d9e89679f67d6776896532c24c9f7e46c0793"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-abscesos-faciales-celulitis-y-absceso-de-boca-k122",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K122"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K122",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "dfa2365583766fae53097fc1409ec4a3631ffcfebd71a10e60dc6be67182ba31"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-alveolitis-k103",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K103"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K103",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "adf4ca70c904a8d40a3338d907fde578d66a6908f58f925bf9e7748088db2142"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-anomalias-dentofaciales-y-de-la-oclusion",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K071",
+          "K072",
+          "K073",
+          "K074",
+          "K075"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K071",
+          "K072",
+          "K073",
+          "K074",
+          "K075",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "7ea482f0c1de8af173b31fd63c29eb03d1c61ee1698a7130619ba38a6c51ae90"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-comunicacion-bucosinusal-k109",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K109"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K109",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "50cb4061df17d019a5a44f29387bed0afd0d43a381fed4439712739f82e5cde4"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-dientes-incluidos-impactados-supernumerarios-y-raiz-retenida",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K010",
+          "K011",
+          "K001",
+          "K083"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K010",
+          "K011",
+          "K001",
+          "K083",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "41bd38fa1a1c310779b7f835fc70ef91722e4bce616b1604f4f8baa59a040639"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-enfermedades-periodontales-agudas-y-agresivas",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K055"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K055",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "e4687e9fff3b67045aaf8890445f97378f32d722cafc3393a5d68c7a92229e17"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-fractura-dentoalveolar-s025",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "S025"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "S025",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "1ef5b79f540a328f6c0e37125e8a265c903adbfc4b35441f606f6b66b85666b9"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-fractura-mandibular-s026",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "S026"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "S026",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "d3c741ecd5b2a336e49bf14b67dac13b3f0e17093dcdc4da6b1b4db98aee67e0"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-fractura-maxilar-s024",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "S024"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "S024",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "1100e87c247091e5a7fc249edaab8e8497ac14be4bb96cf8a18cccffa92da7fb"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-lesiones-de-encia-y-de-la-zona-edentula-asociadas-con-traumatismo-k062",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K062"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K062",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "60ea1e6f946a9475c3d192cda0050d94a7af7d9bdcf4afbd90b69255083e7a81"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-luxacion-temporomandibular-referencia-urgente",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K076"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K076",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "df5e375362a634b35420b33027a59d95151bfbb32762c13936ff89791ff16edc"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-paciente-con-compromiso-sistemico-y-tratamientos-invasivos",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": []
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "60edf44006e385536eaf84691d16cc7200fc32a27446da5c51259d46e51cf22a"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-patologia-maligna",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "Z031",
+          "C029",
+          "C419",
+          "Z080",
+          "C069",
+          "C030",
+          "C031",
+          "C080",
+          "C081",
+          "C089",
+          "C039",
+          "C060",
+          "C040",
+          "C411",
+          "C009",
+          "C059",
+          "C051",
+          "C310",
+          "C798"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "Z031",
+          "C029",
+          "C419",
+          "Z080",
+          "C069",
+          "C030",
+          "C031",
+          "C080",
+          "C081",
+          "C089",
+          "C039",
+          "C060",
+          "C040",
+          "C411",
+          "C009",
+          "C059",
+          "C051",
+          "C310",
+          "C798",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "77472e30f9227773442ac6cd61703ab19a598043a1681c5d3b7fe869710a83c1"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-patologia-premaligna-oral-k132",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K132"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K132",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "ce424bad51c8a7997d86af062bbfb820a509732543690af1f05a764b27d11721"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-periodontitis-aguda-y-cronica",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K052",
+          "K053"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K052",
+          "K053",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "9faebbbcf4f750f2c0c25a72856d3c40bd87077763bd80a04ec8a53a60c1895e"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-periodontitis-apical-asintomatica-k045",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K045"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K045",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "164f8094cc4de07a353e6800aecef9cf1e492dabce1c9655fa3b9fbdc3e04ff7"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-periodontitis-apical-sintomatica-k045",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K045"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K045",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "0cd76313d1d8bc3a805e757c8f3151d1aa93b6c51cb826baadfa89e1c2320442"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-pulpitis-asintomatica-k040",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K040"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K040",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "cd599243733bc30486b888e88c3044207978e09fe5e01c8ba6a9f3acf909869a"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-pulpitis-sintomatica-k040",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K040"
+        ]
+      },
+      "after": {
+        "specialty": "Endodoncia",
+        "aliases": [
+          "K040",
+          "Odontología especializada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "a37d511c4ea7eba070b82ff6f627011f12bd540859487fcfe6a0ec9db6c6df4d"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-quistes-odontogenicos-y-de-la-region-bucal-k090-k098",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K090",
+          "K098"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K090",
+          "K098",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "8a2d30f8d728223084c4fb2349e82a50a5e772ba462780bc18f02ebd7c9a155d"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-rebordes-irregulares-y-espiculas-oseas-k089",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K089"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K089",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "dc29be439568919c6827171258cf071e1b080b1cf6c7ff6f000f1f8e9423b989"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-requisitos-generales-de-odontologia-especializada",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": []
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ],
+        "appliesToSpecialties": [
+          "Odontología general avanzada",
+          "Endodoncia"
+        ]
+      },
+      "preservedFieldsSha256": "56ac77bfd8ab65f3e08abba32c0279eb7dd6a8d475a52168ce2e138fb4c876d7"
+    },
+    {
+      "cardId": "r01-odontologia-especializada-trastornos-temporomandibulares-k076",
+      "before": {
+        "specialty": "Odontología especializada",
+        "aliases": [
+          "K076"
+        ]
+      },
+      "after": {
+        "specialty": "Odontología general avanzada",
+        "aliases": [
+          "K076",
+          "Odontología especializada",
+          "Odontología general avanzada",
+          "OGA"
+        ]
+      },
+      "preservedFieldsSha256": "3063187f4a4552f388fe131bacc2d07d49641408ab829db9c68a3672c3f39b75"
+    }
+  ]
+}

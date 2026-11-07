@@ -1,0 +1,47 @@
+name: Diagnosticar publicacion de Pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: read
+  deployments: read
+jobs:
+  diagnostico:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Consultar estado autenticado sin modificar Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+          base = 'https://api.github.com/repos/' + os.environ['REPOSITORY']
+          paths = [
+              '/pages',
+              '/pages/deployments/1b6f7f32747acef2cb78220c7239567bdc20fe31',
+              '/pages/deployments/d30dedadc3c0c3889251aedcdad77693b9bc21cd',
+              '/pages/builds/latest',
+          ]
+          for path in paths:
+              request = urllib.request.Request(base + path, headers={
+                  'Accept': 'application/vnd.github+json',
+                  'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
+                  'X-GitHub-Api-Version': '2022-11-28',
+                  'User-Agent': 'Criterios-Pages-Diagnostics',
+              }, method='GET')
+              try:
+                  with urllib.request.urlopen(request, timeout=25) as response:
+                      payload = json.load(response)
+                      print(json.dumps({'path': path, 'http': response.status,
+                          'request_id': response.headers.get('x-github-request-id'),
+                          'data': payload}, ensure_ascii=False))
+              except urllib.error.HTTPError as error:
+                  print(json.dumps({'path': path, 'http': error.code,
+                      'request_id': error.headers.get('x-github-request-id'),
+                      'data': error.read().decode('utf-8', errors='replace')[:6000]},
+                      ensure_ascii=False))
+              except Exception as error:
+                  print(json.dumps({'path': path, 'error': str(error)}, ensure_ascii=False))
+          PY

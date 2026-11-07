@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import './test-pwa-identity.mjs';
+import './check-dental-specialties.mjs';
 import {createTopicIndex, groupResults, orderDocuments, uniqueTopicCount, isCatalogCard} from '../catalog.js';
 const root=path.resolve(import.meta.dirname,'..');
 const cards=JSON.parse(await fs.readFile(path.join(root,'data/cards.json'),'utf8'));
@@ -59,6 +60,8 @@ assert.equal(classify(norm,'Servicio de Urgencias si hay pérdida súbita de vis
 assert.equal(classify(norm,'Criterio de Prioridad: Grado 3 Gastroscopia por Consulta externa','N19'),'routine');
 assert.equal(classify(norm,'Criterio de Prioridad: Urgente','N19'),'urgent');
 assert.equal(classify(norm,'Criterio de Prioridad: Grado 1','N19'),'priority');
+assert.equal(classify(norm,'3 (No Urgente)','R01'),'routine','No interpretar la negación de urgencia como atención prioritaria.');
+assert.equal(classify(norm,'1 ( Cita Urgente )','R01'),'priority','Conservar la cita urgente de la tabla, sin convertirla en Servicio de Urgencias.');
 assert.equal(classify(norm,'Grado 2 colonoscopia por consulta externa a cupo','N19'),'mixed');
 const colonFamily=cards.find(card=>card.id==='n19-antecedente-de-cancer-de-colon-en-familiar-de-primer-grado-colonoscopia');
 assert(colonFamily.studies.some(study=>study.type==='source'&&/hemograma/i.test(study.text)),'Hemograma familiar de colon no es condicional');

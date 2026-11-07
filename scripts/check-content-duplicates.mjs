@@ -4,12 +4,49 @@ import {createHash} from 'node:crypto';
 import {isCatalogCard} from '../catalog.js';
 
 const root=new URL('../',import.meta.url);
-const [publishedCards,sources,audit,provenanceAudit,cataractAudit,integratedAudit,generalChecklistAudit]=await Promise.all(['data/cards.json','data/sources.json','audits/2026-10-29-repeated-content.json','audits/2026-10-29-r03-provenance.json','audits/2026-10-29-cataract-general-requirements.json','audits/2026-10-29-integrated-general-requirements.json','audits/2026-10-29-general-checklists.json'].map(async path=>JSON.parse(await fs.readFile(new URL(path,root),'utf8'))));
+const [rawPublishedCards,sources,audit,provenanceAudit,cataractAudit,integratedAudit,generalChecklistAudit,dentalAudit]=await Promise.all(['data/cards.json','data/sources.json','audits/2026-10-29-repeated-content.json','audits/2026-10-29-r03-provenance.json','audits/2026-10-29-cataract-general-requirements.json','audits/2026-10-29-integrated-general-requirements.json','audits/2026-10-29-general-checklists.json','audits/2026-11-07-dental-specialties.json'].map(async path=>JSON.parse(await fs.readFile(new URL(path,root),'utf8'))));
 const text=value=>typeof value==='object'&&value!==null?String(value.text??value.label??''):String(value??'');
 const normal=value=>text(value).normalize('NFC').replace(/\s+/gu,' ').trim();
 const period=value=>normal(value).replace(/\.$/u,'');
 const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
 const sha=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');
+
+// La corrección odontológica cambia únicamente metadatos de navegación. Se
+// comprueba la migración y se revierte en memoria antes de las auditorías
+// históricas; sus hashes y protecciones del contenido clínico siguen intactos.
+const dentalMetadataKeys=['specialty','aliases','appliesToSpecialties'];
+const dentalMetadata=card=>Object.fromEntries(dentalMetadataKeys.filter(key=>Object.hasOwn(card,key)).map(key=>[key,card[key]]));
+const preservedDentalFields=card=>Object.fromEntries(Object.entries(card).filter(([key])=>!dentalMetadataKeys.includes(key)));
+const dentalPrefix='r01-odontologia-especializada-';
+const expectedEndodonticIds=new Set(['pulpitis-sintomatica-k040','pulpitis-asintomatica-k040','periodontitis-apical-sintomatica-k045','periodontitis-apical-asintomatica-k045','absceso-apical-agudo-k047','absceso-apical-cronico-k046','lesiones-de-encia-y-de-la-zona-edentula-asociadas-con-traumatismo-k062'].map(suffix=>dentalPrefix+suffix));
+const expectedDentalIds=rawPublishedCards.filter(card=>card.id.startsWith(dentalPrefix)).map(card=>card.id).sort();
+assert.equal(dentalAudit.schemaVersion,1);assert.equal(dentalAudit.changes.length,28);assert.equal(expectedDentalIds.length,28);
+assert.deepEqual(dentalAudit.changes.map(change=>change.cardId).sort(),expectedDentalIds,'La reclasificación queda limitada a las 28 fichas odontológicas existentes.');
+assert.equal(dentalAudit.generalCardId,dentalPrefix+'requisitos-generales-de-odontologia-especializada');
+assert.equal(sha(rawPublishedCards),dentalAudit.after.cardsSha256,'El catálogo publicado coincide con la migración odontológica auditada.');
+assert.equal(dentalAudit.before.cardsSha256,generalChecklistAudit.after.cardsSha256,'La nueva capa parte del estado clínico previamente auditado.');
+const publishedCards=structuredClone(rawPublishedCards);
+for(const change of dentalAudit.changes){
+  const card=publishedCards.find(card=>card.id===change.cardId);assert(card&&card.sourceId==='R01'&&isCatalogCard(card));
+  assert.deepEqual(Object.keys(change.before).sort(),['aliases','specialty']);
+  assert.equal(change.before.specialty,'Odontología especializada');assert(Array.isArray(change.before.aliases));
+  assert.deepEqual(dentalMetadata(card),change.after,'Los únicos metadatos nuevos coinciden con la revisión: '+card.id);
+  assert.equal(card.specialty,expectedEndodonticIds.has(card.id)?'Endodoncia':'Odontología general avanzada');
+  assert(change.before.aliases.every(alias=>card.aliases.includes(alias)),'Conservar los alias previos, incluidos CIE: '+card.id);
+  assert(card.aliases.includes('Odontología especializada')&&card.aliases.includes(card.specialty),'Mantener búsqueda por el nombre general y la especialidad.');
+  if(card.specialty==='Odontología general avanzada')assert(card.aliases.includes('OGA'));
+  if(card.id===dentalAudit.generalCardId){
+    assert.deepEqual(Object.keys(change.after).sort(),['aliases','appliesToSpecialties','specialty']);
+    assert.deepEqual(card.appliesToSpecialties,['Odontología general avanzada','Endodoncia']);
+  }else{
+    assert.deepEqual(Object.keys(change.after).sort(),['aliases','specialty']);
+    assert(!Object.hasOwn(card,'appliesToSpecialties'),'Solo el apartado general comparte su aplicación.');
+  }
+  assert.equal(sha(preservedDentalFields(card)),change.preservedFieldsSha256,'Conservar íntegros criterios, casillas, transcripción y páginas: '+card.id);
+  for(const key of dentalMetadataKeys)delete card[key];
+  Object.assign(card,structuredClone(change.before));
+}
+assert.equal(sha(publishedCards),dentalAudit.before.cardsSha256,'Fuera de los metadatos odontológicos autorizados, las 808 fichas permanecen idénticas.');
 
 // Esta capa estructura únicamente nueve listas generales que ya estaban
 // transcritas. Se valida el cambio exacto y se restaura en memoria el estado

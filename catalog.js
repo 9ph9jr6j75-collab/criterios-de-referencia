@@ -42,8 +42,8 @@ export function generalRequirementsCoverage(members,cards) {
   return {total:clinical.length,included,label:included&&included===clinical.length?'Incluye requisitos generales y específicos':included?'Requisitos generales según documento':''};
 }
 
-export function showSpecialtyGeneralAccess({specialty,query='',mode='all'}={}) {
-  return Boolean(specialty&&!String(query).trim()&&mode==='all');
+export function showSpecialtyGeneralAccess({specialty,mode='all'}={}) {
+  return Boolean(specialty&&mode==='all');
 }
 
 export function includeGeneralSearchResult(card,{query=''}={}) {

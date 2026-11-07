@@ -1,6 +1,11 @@
 name: Diagnosticar publicacion de Pages
 on:
   workflow_dispatch:
+    inputs:
+      deployment_sha:
+        description: Commit de la publicacion que se debe consultar
+        required: true
+        default: '12911ad4fba31c2fc8dcfcac65d860c8f879d7bd'
 permissions:
   contents: read
   pages: read
@@ -14,13 +19,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
+          TARGET_SHA: ${{ inputs.deployment_sha }}
         run: |
           python3 - <<'PY'
-          import json, os, urllib.request, urllib.error
+          import json, os, re, urllib.request, urllib.error
           base = 'https://api.github.com/repos/' + os.environ['REPOSITORY']
+          target = os.environ['TARGET_SHA']
+          if not re.fullmatch('[0-9a-f]{40}', target):
+              raise ValueError('El commit debe tener 40 caracteres hexadecimales')
           paths = [
               '/pages',
-              '/pages/deployments/1b6f7f32747acef2cb78220c7239567bdc20fe31',
+              '/pages/deployments/' + target,
               '/pages/deployments/d30dedadc3c0c3889251aedcdad77693b9bc21cd',
               '/pages/builds/latest',
           ]

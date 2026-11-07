@@ -58,19 +58,41 @@ assert.equal(prevented,true);assert.equal(native.hidden,false);assert.equal(call
 const firstClick=native.fire('click');
 await native.fire('click');
 assert.equal(calls,1,'Double click cannot reuse the native event');
+await env.win.fire('appinstalled');
+assert(env.entries.every(entry=>!entry.disabled),'Android appinstalled can precede WebAPK installation');
+assert.equal(dialog.open,true,'Acceptance keeps fallback instructions available');
 resolveChoice({outcome:'accepted'});await firstClick;
 assert.equal(env.header.disabled,false,'Accepted is not installation confirmation');
+assert.match(env.ids.get('install-status').textContent,/Solicitud aceptada/);
+assert.match(env.ids.get('install-status').textContent,/Si no aparece/,'Accepted requests explain how to recover when no icon appears');
 await native.fire('click');assert.equal(calls,1,'A consumed event stays consumed');
 await env.ids.get('install-copy-link').fire('click');
 assert.deepEqual(env.copied,['https://example.test/criterios/index.html'],'Shared app link excludes query and diagnosis');
 await env.win.fire('appinstalled');
-assert(env.entries.every(entry=>entry.disabled),'Confirmation updates both installation entries');
-assert.equal(dialog.open,false,'Confirmed installation closes its instructions');
-assert(env.entries.every(entry=>entry.label.textContent==='App instalada'));
+await env.win.fire('pageshow');
+await env.doc.fire('visibilitychange');
+assert(env.entries.every(entry=>!entry.disabled&&entry.label.textContent==='Instalar app'),'An install request must not latch an installed state in a browser tab');
+assert.equal(dialog.open,true,'appinstalled also keeps instructions open after userChoice');
+assert.equal(native.hidden,true,'A consumed native event remains hidden');
+await env.ids.get('install-close').fire('click');
+await env.doc.fire('click',{target:env.header});
+assert.equal(dialog.open,true,'Installation help can be reopened after an incomplete request');
+const choiceFirst=boot();
+await choiceFirst.doc.fire('click',{target:choiceFirst.header});
+await choiceFirst.win.fire('beforeinstallprompt',{prompt:async()=>{},userChoice:Promise.resolve({outcome:'accepted'})});
+await choiceFirst.ids.get('install-native').fire('click');
+const acceptedMessage=choiceFirst.ids.get('install-status').textContent;
+await choiceFirst.win.fire('appinstalled');
+assert.equal(choiceFirst.ids.get('install-status').textContent,acceptedMessage,'Event order must not change the request guidance');
+assert(choiceFirst.entries.every(entry=>!entry.disabled&&entry.label.textContent==='Instalar app'));
+assert.equal(choiceFirst.ids.get('install-dialog').open,true);
+const unsolicited=boot();await unsolicited.win.fire('appinstalled');
+assert.equal(unsolicited.ids.has('install-dialog'),false,'appinstalled does not open an unsolicited dialog');
+assert(unsolicited.entries.every(entry=>!entry.disabled));
 const standalone=boot({standalone:true});assert(standalone.entries.every(entry=>entry.disabled));
 const ios=boot({iosStandalone:true});assert(ios.entries.every(entry=>entry.disabled));
 const transitioned=boot();transitioned.media.matches=true;await transitioned.media.fire('change');assert(transitioned.entries.every(entry=>entry.disabled));
-for(const app of [env,standalone,ios,transitioned]){
+for(const app of [standalone,ios,transitioned]){
   assert.equal(app.help.disabled,false,'La ayuda permanece disponible cuando la app está instalada.');
   await app.doc.fire('click',{target:app.help});
   const helpDialog=app.ids.get('install-dialog');
@@ -88,6 +110,8 @@ for(const app of [env,standalone,ios,transitioned]){
   await app.ids.get('install-copy-link').fire('click');assert.equal(app.copied.at(-1),'https://example.test/criterios/index.html','La ayuda conserva el enlace general para compartirlo con otra persona.');
   await app.ids.get('install-close').fire('click');assert.equal(helpDialog.open,false);assert.equal(app.doc.activeElement,app.help,'Cerrar devuelve el foco al acceso permanente de ayuda.');
 }
+transitioned.media.matches=false;await transitioned.media.fire('change');
+assert(transitioned.entries.every(entry=>!entry.disabled&&entry.label.textContent==='Instalar app'),'Returning to browser mode does not retain a stale installed state');
 const browserHelp=boot();await browserHelp.doc.fire('click',{target:browserHelp.help});assert.equal(browserHelp.ids.get('install-dialog').open,true,'La ayuda también funciona antes de instalar.');
 assert(browserHelp.entries.every(entry=>!entry.disabled),'La ayuda no cambia el estado real de instalación.');
-console.log(JSON.stringify({ok:true,checks:'PWA prompt lifecycle, installation confirmation, standalone modes, safe share URL and persistent installation help'}));
+console.log(JSON.stringify({ok:true,checks:'PWA request event order, standalone confirmation, restored browser state, safe share URL and persistent installation help'}));

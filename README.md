@@ -2,7 +2,7 @@
 
 Aplicación de consulta de criterios de referencia por patología. Iniciativa de la Dirección de Red Integrada de Prestación de Servicios de Salud Huetar Atlántica (DRIPSSHA), CCSS.
 
-El catálogo inicial presenta 567 temas agrupados de 29 especialidades o servicios. Los datos conservan 730 registros documentales activos: las versiones de distintas fuentes permanecen separadas y siete temas de retorno se consultan desde su documento. El registro original tiene 808 apartados; se retiraron del catálogo 78 sin criterio independiente o con destino pendiente de aclaración. Sus enlaces anteriores muestran el motivo y permiten consultar el respaldo. Las 40 fuentes identifican 38 documentos disponibles y dos pendientes de obtener.
+El catálogo inicial presenta 567 temas agrupados de 30 especialidades o servicios. Los datos conservan 730 registros documentales activos: las versiones de distintas fuentes permanecen separadas y siete temas de retorno se consultan desde su documento. El registro original tiene 808 apartados; se retiraron del catálogo 78 sin criterio independiente o con destino pendiente de aclaración. Sus enlaces anteriores muestran el motivo y permiten consultar el respaldo. Las 40 fuentes identifican 38 documentos disponibles y dos pendientes de obtener.
 
 ## Consulta
 
@@ -77,3 +77,7 @@ La ficha presenta una sola lista de revisión con los requisitos generales y los
 ## Vista previa al compartir
 
 El inicio declara una portada horizontal de 1200 × 630 píxeles en Open Graph, con URL HTTPS pública y dimensiones explícitas. La imagen para compartir está en `assets/social-card-v15.png` y su diseño editable en `assets/social-card.svg`. Los iconos de instalación se conservan separados. El enlace canónico y la imagen corresponden a la publicación de GitHub Pages. El formato final de la vista previa depende de la aplicación receptora.
+
+## Clasificación odontológica
+
+Odontología especializada se presenta en dos especialidades del documento R01: Odontología general avanzada y Endodoncia. Las siete fichas de Endodoncia corresponden a las páginas PDF 160–161, bajo el encabezado de la página 159. Conservan sus identificadores y todo el contenido clínico, incluidas las casillas y el aviso de protocolo no validado por nivel central. Los requisitos generales odontológicos del mismo documento se comparten explícitamente entre ambas especialidades, sin heredar requisitos de otras fuentes o rutas. El registro de verificación está en `audits/2026-11-07-dental-specialties.json`.

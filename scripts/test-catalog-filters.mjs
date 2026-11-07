@@ -130,6 +130,26 @@ for(const query of ['pulpitis','K040']){
   const env=boot({specialty:'Endodoncia',query});assert.equal(env.state.filtered.length,2);
   assert(env.state.filtered.every(result=>result.specialty==='Endodoncia'));
 }
+// Reproducir la búsqueda reportada: ningún criterio clínico coincide, pero
+// la lista común de Endodoncia sigue disponible con los filtros de su fuente.
+const dentalGeneralId=dentalPrefix+'requisitos-generales-de-odontologia-especializada';
+const reportedDentalSearch=boot({specialty:'Endodoncia',scope:'regional',query:'Quiste Apical Lateral'});
+assert.equal(reportedDentalSearch.state.filtered.length,0,'No inventar un criterio clínico para una búsqueda ausente de la fuente.');
+assert.equal(reportedDentalSearch.node('#specialty-general').hidden,false,'Una búsqueda sin coincidencias conserva los requisitos generales de la especialidad.');
+assert.equal((reportedDentalSearch.node('#specialty-general').innerHTML.match(/class="specialty-general-source"/g)||[]).length,1,'Mostrar una sola lista general de la fuente aplicable.');
+assert(reportedDentalSearch.node('#specialty-general').innerHTML.includes(dentalGeneralId));
+assert.match(reportedDentalSearch.node('#result-count').textContent,/0 temas.*1 documento de requisitos generales/);
+reportedDentalSearch.change('#source-filter','N09');
+assert.equal(reportedDentalSearch.node('#specialty-general').hidden,true,'La búsqueda no conserva requisitos de R01 cuando se selecciona otro documento.');
+const wrongScopeDentalSearch=boot({specialty:'Endodoncia',scope:'national',query:'Quiste Apical Lateral'});
+assert.equal(wrongScopeDentalSearch.node('#specialty-general').hidden,true,'El alcance nacional no hereda los requisitos regionales de Endodoncia.');
+const lateralCyst=boot({query:'Quiste Lateral'});
+assert.deepEqual(matchingIds(lateralCyst),[dentalPrefix+'quistes-odontogenicos-y-de-la-region-bucal-k090-k098']);
+assert.equal(lateralCyst.state.filtered[0].specialty,'Odontología general avanzada');
+const lateralCystEndodontics=boot({query:'Quiste Lateral',specialty:'Endodoncia',scope:'regional'});
+assert.equal(lateralCystEndodontics.state.filtered.length,0,'No trasladar criterios de OGA a Endodoncia al buscar.');
+assert.equal(lateralCystEndodontics.node('#specialty-general').hidden,false);
+assert(lateralCystEndodontics.node('#specialty-general').innerHTML.includes(dentalGeneralId));
 const routineEndodonticIds=['pulpitis-asintomatica-k040','periodontitis-apical-asintomatica-k045','absceso-apical-cronico-k046'].map(suffix=>dentalPrefix+suffix).sort();
 const priorityEndodonticIds=expectedEndodonticIds.filter(id=>!routineEndodonticIds.includes(id));
 const routineEndodontics=boot({specialty:'Endodoncia',priority:'routine'});
@@ -141,7 +161,9 @@ assert.equal(urgentEndodontics.state.filtered.length,0,'Cita Urgente no equivale
 const dentalFavoriteId=dentalPrefix+'pulpitis-sintomatica-k040';
 const dentalFavorite=boot({specialty:'Endodoncia',mode:'favorites',favorites:new Set([dentalFavoriteId])});
 assert.deepEqual(matchingIds(dentalFavorite),[dentalFavoriteId],'La reclasificación conserva las favoritas por ID.');
+assert.equal(dentalFavorite.node('#specialty-general').hidden,true,'No anteponer una lista general independiente a las favoritas.');
 const dentalRecent=boot({specialty:'Endodoncia',mode:'recent',recent:[dentalFavoriteId]});
 assert.deepEqual(matchingIds(dentalRecent),[dentalFavoriteId],'Las recientes siguen abriendo la ficha anterior.');
+assert.equal(dentalRecent.node('#specialty-general').hidden,true,'No anteponer una lista general independiente a las recientes.');
 assert.equal(JSON.stringify({cards,sources,definitions}),originalData,'La interfaz no altera la documentación clínica.');
 console.log(JSON.stringify({ok:true,indexedDocuments:20,registeredDocuments:40,topics:567,sourcePredicates:20,sourceSelectionEvents:3,endodonticSearchAndFilter:7,ogaClinicalTopics:20,emptySpecialties:['Alergología','Nefrología','Psicología']}));

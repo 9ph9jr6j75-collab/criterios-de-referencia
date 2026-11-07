@@ -2,10 +2,11 @@
 (() => {
   'use strict';
   const APP_NAME = 'Criterios de referencia';
+  const INSTALL_REQUESTED_MESSAGE = 'Solicitud aceptada. Revise si aparece el nuevo ícono y abra la app desde ahí. Si no aparece, siga las instrucciones de su navegador.';
   const standaloneQuery = window.matchMedia('(display-mode: standalone)');
   let installPrompt = null, lastTrigger = null, chosenDevice = '', dialog = null;
-  let nativeInstallPending = false, confirmedInstalled = false;
-  const isInstalled = () => confirmedInstalled || navigator.standalone === true || standaloneQuery.matches;
+  let nativeInstallPending = false;
+  const isInstalled = () => navigator.standalone === true || standaloneQuery.matches;
   const detectedDevice = () => /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ? 'iphone' : /Android/i.test(navigator.userAgent) ? 'android' : 'computer';
   const appURL = () => new URL('index.html', document.baseURI).href;
   const $ = id => document.getElementById(id);
@@ -129,7 +130,7 @@
     try {
       await prompt.prompt();
       const choice = await prompt.userChoice;
-      announce(choice?.outcome === 'accepted' ? 'Solicitud aceptada. El navegador completará la instalación.' : 'Puede instalarla después usando el menú del navegador.');
+      announce(choice?.outcome === 'accepted' ? INSTALL_REQUESTED_MESSAGE : 'Puede instalarla después usando el menú del navegador.');
     } catch {
       announce('No se pudo abrir la instalación automática. Use los pasos de su navegador.');
     } finally {
@@ -158,10 +159,10 @@
     syncEntrypoints();
   });
   window.addEventListener('appinstalled', () => {
-    confirmedInstalled = true;
+    // En Android puede ocurrir antes de que se genere e instale el WebAPK.
     installPrompt = null;
+    announce(INSTALL_REQUESTED_MESSAGE);
     syncEntrypoints();
-    if (dialog?.open) closeDialog();
   });
   if (standaloneQuery.addEventListener) standaloneQuery.addEventListener('change',syncEntrypoints);
   else if (standaloneQuery.addListener) standaloneQuery.addListener(syncEntrypoints);

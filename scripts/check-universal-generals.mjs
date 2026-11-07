@@ -40,7 +40,7 @@ check('Buscar Amputados o Catarata ofrece la ficha completa sin exigir seleccion
     const baseline=boot({query}),selected=boot({query,specialty});
     for(const env of [baseline,selected]){
       const result=env.state.filtered.find(item=>item.allCards.some(card=>card.id===id));assert(result,query);
-      assert.equal(env.node('#specialty-general').hidden,true,'Una búsqueda no exige abrir una ficha general aparte.');
+      assert.equal(env.node('#specialty-general').hidden,!env.state.specialty,'La lista general sigue disponible al seleccionar especialidad, sin convertirla en una coincidencia clínica.');
       assert(env.state.filtered.every(item=>item.matchingCards.every(card=>!isGeneralCard(card))),'No anteponer documentos generales encontrados por palabras de su texto.');
       assert(env.context.cardHTML(result).includes(allIncluded),query+' indica que los generales están incorporados.');
     }
@@ -52,7 +52,13 @@ check('Cada filtro documental de Catarata conserva solo los requisitos de esa fu
   for(const source of ['N09','R01','R03'])for(const specialty of ['','Oftalmología']){
     const env=boot({query:'catarata',specialty,source});assert.equal(env.state.filtered.length,1);
     const result=env.state.filtered[0];assert(result.matchingCards.every(card=>card.sourceId===source));
-    assert(env.context.cardHTML(result).includes(allIncluded));assert(env.node('#specialty-general').hidden);
+    const general=specialtyGeneralRequirements(cards,{specialty,source},sourceMap);
+    assert(env.context.cardHTML(result).includes(allIncluded));assert.equal(env.node('#specialty-general').hidden,general.length===0);
+    if(general.length){
+      const panel=env.node('#specialty-general').innerHTML;
+      assert(panel.includes(`Fuente ${source}`),'El acceso general identifica la fuente seleccionada.');
+      for(const other of ['N09','R01','R03'].filter(id=>id!==source))assert(!panel.includes(`Fuente ${other}`),'No mostrar listas generales de otros documentos.');
+    }
     for(const card of result.matchingCards)for(const general of generalRequirementsForCard(card,cards))assert.equal(general.sourceId,source);
   }
 });
@@ -70,15 +76,17 @@ check('Favoritas y recientes conservan los requisitos incorporados sin anteponer
   }
 });
 
-check('La consulta general sigue disponible al explorar una especialidad o buscarla expresamente',()=>{
+check('La consulta general sigue disponible al explorar o buscar dentro de una especialidad',()=>{
   const browse=boot({specialty:'Fisiatría'});assert.equal(browse.node('#specialty-general').hidden,false);
   assert(browse.node('#specialty-general').innerHTML.includes('Consulta adicional de la especialidad'));
   assert(browse.node('#specialty-general').innerHTML.includes('r01-fisiatria-requisitos-generales'));
   const explicit=boot({query:'requisitos generales',specialty:'Fisiatría'});
-  assert(explicit.state.filtered.some(item=>item.matchingCards.some(card=>card.id==='r01-fisiatria-requisitos-generales')));
-  assert.equal(explicit.node('#specialty-general').hidden,true,'La búsqueda expresa utiliza el resultado habitual.');
+  assert(explicit.node('#specialty-general').innerHTML.includes('r01-fisiatria-requisitos-generales'));
+  assert(!explicit.state.filtered.some(item=>item.matchingCards.some(card=>card.id==='r01-fisiatria-requisitos-generales')),'La lista anclada no se duplica como resultado clínico.');
+  assert.equal(explicit.node('#specialty-general').hidden,false,'La búsqueda expresa conserva el acceso común.');
   assert.equal(showSpecialtyGeneralAccess({specialty:'Fisiatría',query:'  ',mode:'all'}),true);
-  for(const state of [{specialty:''},{specialty:'Fisiatría',query:'amputados'},{specialty:'Fisiatría',mode:'favorites'},{specialty:'Fisiatría',mode:'recent'}])assert.equal(showSpecialtyGeneralAccess(state),false);
+  assert.equal(showSpecialtyGeneralAccess({specialty:'Fisiatría',query:'amputados',mode:'all'}),true);
+  for(const state of [{specialty:''},{specialty:'Fisiatría',mode:'favorites'},{specialty:'Fisiatría',mode:'recent'}])assert.equal(showSpecialtyGeneralAccess(state),false);
 });
 
 check('No se anuncia una lista general inexistente ni se hereda de otra fuente al filtrar',()=>{

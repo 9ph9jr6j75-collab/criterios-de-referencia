@@ -22752,10 +22752,13 @@
   },
   {
     "id": "r01-odontologia-especializada-k116-mucocele-de-la-glandula-salival",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "(K116) Mucocele de la Glándula salival",
     "aliases": [
-      "K116"
+      "K116",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -22836,10 +22839,13 @@
   },
   {
     "id": "r01-odontologia-especializada-k134-granuloma-y-lesiones-semejantes-de-la-mucosa",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "(K134) Granuloma y Lesiones semejantes de la mucosa",
     "aliases": [
-      "K134"
+      "K134",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -22899,10 +22905,13 @@
   },
   {
     "id": "r01-odontologia-especializada-k135-fibrosis-de-la-submucosa-bucal",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "(K135) Fibrosis de la Submucosa Bucal",
     "aliases": [
-      "K135"
+      "K135",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -22962,10 +22971,12 @@
   },
   {
     "id": "r01-odontologia-especializada-absceso-apical-agudo-k047",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Absceso apical agudo (K047)",
     "aliases": [
-      "K047"
+      "K047",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23027,10 +23038,12 @@
   },
   {
     "id": "r01-odontologia-especializada-absceso-apical-cronico-k046",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Absceso apical crónico (K046)",
     "aliases": [
-      "K046"
+      "K046",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23082,10 +23095,13 @@
   },
   {
     "id": "r01-odontologia-especializada-abscesos-faciales-celulitis-y-absceso-de-boca-k122",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Abscesos faciales (Celulitis y Absceso de Boca) (K122)",
     "aliases": [
-      "K122"
+      "K122",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23157,10 +23173,13 @@
   },
   {
     "id": "r01-odontologia-especializada-alveolitis-k103",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Alveolitis (K103)",
     "aliases": [
-      "K103"
+      "K103",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23222,14 +23241,17 @@
   },
   {
     "id": "r01-odontologia-especializada-anomalias-dentofaciales-y-de-la-oclusion",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Anomalías dentofaciales y de la oclusión",
     "aliases": [
       "K071",
       "K072",
       "K073",
       "K074",
-      "K075"
+      "K075",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23318,10 +23340,13 @@
   },
   {
     "id": "r01-odontologia-especializada-comunicacion-bucosinusal-k109",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Comunicación bucosinusal (K109)",
     "aliases": [
-      "K109"
+      "K109",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23394,13 +23419,16 @@
   },
   {
     "id": "r01-odontologia-especializada-dientes-incluidos-impactados-supernumerarios-y-raiz-retenida",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Dientes incluidos, impactados, supernumerarios y raíz retenida",
     "aliases": [
       "K010",
       "K011",
       "K001",
-      "K083"
+      "K083",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23474,10 +23502,13 @@
   },
   {
     "id": "r01-odontologia-especializada-enfermedades-periodontales-agudas-y-agresivas",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Enfermedades periodontales agudas y agresivas",
     "aliases": [
-      "K055"
+      "K055",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23528,10 +23559,13 @@
   },
   {
     "id": "r01-odontologia-especializada-fractura-dentoalveolar-s025",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Fractura dentoalveolar (S025)",
     "aliases": [
-      "S025"
+      "S025",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23605,10 +23639,13 @@
   },
   {
     "id": "r01-odontologia-especializada-fractura-mandibular-s026",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Fractura mandibular (S026)",
     "aliases": [
-      "S026"
+      "S026",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23659,10 +23696,13 @@
   },
   {
     "id": "r01-odontologia-especializada-fractura-maxilar-s024",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Fractura maxilar (S024)",
     "aliases": [
-      "S024"
+      "S024",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23714,10 +23754,12 @@
   },
   {
     "id": "r01-odontologia-especializada-lesiones-de-encia-y-de-la-zona-edentula-asociadas-con-traumatismo-k062",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Lesiones de Encía y de la Zona Edéntula asociadas con Traumatismo (K062)",
     "aliases": [
-      "K062"
+      "K062",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23781,10 +23823,13 @@
   },
   {
     "id": "r01-odontologia-especializada-luxacion-temporomandibular-referencia-urgente",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Luxación temporomandibular, referencia urgente",
     "aliases": [
-      "K076"
+      "K076",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -23856,9 +23901,13 @@
   },
   {
     "id": "r01-odontologia-especializada-paciente-con-compromiso-sistemico-y-tratamientos-invasivos",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Paciente con compromiso sistémico y tratamientos invasivos",
-    "aliases": [],
+    "aliases": [
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
+    ],
     "sourceId": "R01",
     "pages": [
       150,
@@ -23946,7 +23995,7 @@
   },
   {
     "id": "r01-odontologia-especializada-patologia-maligna",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Patología Maligna",
     "aliases": [
       "Z031",
@@ -23967,7 +24016,10 @@
       "C059",
       "C051",
       "C310",
-      "C798"
+      "C798",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24052,10 +24104,13 @@
   },
   {
     "id": "r01-odontologia-especializada-patologia-premaligna-oral-k132",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Patología premaligna oral (K132)",
     "aliases": [
-      "K132"
+      "K132",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24130,11 +24185,14 @@
   },
   {
     "id": "r01-odontologia-especializada-periodontitis-aguda-y-cronica",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Periodontitis aguda y crónica",
     "aliases": [
       "K052",
-      "K053"
+      "K053",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24217,10 +24275,12 @@
   },
   {
     "id": "r01-odontologia-especializada-periodontitis-apical-asintomatica-k045",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Periodontitis Apical Asintomática (K045)",
     "aliases": [
-      "K045"
+      "K045",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24282,10 +24342,12 @@
   },
   {
     "id": "r01-odontologia-especializada-periodontitis-apical-sintomatica-k045",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Periodontitis Apical Sintomática (K045)",
     "aliases": [
-      "K045"
+      "K045",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24347,10 +24409,12 @@
   },
   {
     "id": "r01-odontologia-especializada-pulpitis-asintomatica-k040",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Pulpitis Asintomática (K040)",
     "aliases": [
-      "K040"
+      "K040",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24393,10 +24457,12 @@
   },
   {
     "id": "r01-odontologia-especializada-pulpitis-sintomatica-k040",
-    "specialty": "Odontología especializada",
+    "specialty": "Endodoncia",
     "name": "Pulpitis Sintomática (K040)",
     "aliases": [
-      "K040"
+      "K040",
+      "Odontología especializada",
+      "Endodoncia"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24458,11 +24524,14 @@
   },
   {
     "id": "r01-odontologia-especializada-quistes-odontogenicos-y-de-la-region-bucal-k090-k098",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Quistes odontogénicos y de la región bucal (K090, K098)",
     "aliases": [
       "K090",
-      "K098"
+      "K098",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24543,10 +24612,13 @@
   },
   {
     "id": "r01-odontologia-especializada-rebordes-irregulares-y-espiculas-oseas-k089",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Rebordes irregulares y espículas óseas (K089)",
     "aliases": [
-      "K089"
+      "K089",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [
@@ -24616,9 +24688,13 @@
   },
   {
     "id": "r01-odontologia-especializada-requisitos-generales-de-odontologia-especializada",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Requisitos generales de Odontología especializada",
-    "aliases": [],
+    "aliases": [
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
+    ],
     "sourceId": "R01",
     "pages": [
       142,
@@ -24644,14 +24720,21 @@
       }
     ],
     "direction": "I-II",
-    "checklistRevision": "2026-10-28-content-audit"
+    "checklistRevision": "2026-10-28-content-audit",
+    "appliesToSpecialties": [
+      "Odontología general avanzada",
+      "Endodoncia"
+    ]
   },
   {
     "id": "r01-odontologia-especializada-trastornos-temporomandibulares-k076",
-    "specialty": "Odontología especializada",
+    "specialty": "Odontología general avanzada",
     "name": "Trastornos Temporomandibulares (K076)",
     "aliases": [
-      "K076"
+      "K076",
+      "Odontología especializada",
+      "Odontología general avanzada",
+      "OGA"
     ],
     "sourceId": "R01",
     "pages": [

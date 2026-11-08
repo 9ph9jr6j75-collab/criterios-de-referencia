@@ -1,0 +1,1365 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-08T06:15:02Z",
+  "baselineCommit": "448470a81e87b6aabd2f5676a5448cd51b015305",
+  "scope": {
+    "sourceRegistry": 40,
+    "imageSources": 22,
+    "expectedImages": 1012,
+    "publishedCards": 730,
+    "visibleCatalogTopics": 567
+  },
+  "before": {
+    "existingImages": 1012,
+    "decodableImages": 966,
+    "missingImages": 0,
+    "emptyImages": 46,
+    "otherCorruptImages": 0,
+    "directlyAffectedRegisteredCards": 32,
+    "directlyAffectedPublishedCards": 28,
+    "directlyAffectedVisibleTopics": 28,
+    "affectedPublishedCardsIncludingSharedRequirements": 71,
+    "affectedVisibleTopicsIncludingSharedRequirements": 71
+  },
+  "after": {
+    "existingImages": 1012,
+    "decodableImages": 1012,
+    "missingImages": 0,
+    "emptyImages": 0,
+    "corruptImages": 0
+  },
+  "unchangedOriginalPdfs": {
+    "count": 38,
+    "sha256BySource": {
+      "R01": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "R02": "80e3e09342812c46d16061b7ba10f570cd7f523a1a2e81a8c7459a0ea8719558",
+      "R03": "93507676ae6d70f2ba863992e73a32973f576f90afa0e31c728d9b5086a3beb7",
+      "N01": "e6beafd65f595727a98129d61d73f4b4081cdf699f874e8bf2c078fa9b9ad859",
+      "N02": "2ee05a48bacdcb75cd7bb22e066395b06ddaa29cdecd37a5aa1f3f2ae0c8349c",
+      "N03": "2bc697fdd6e285934f3ae502d6ffb10ec3005120195d609a709a6a0456ca4b55",
+      "N04": "f0dd81b4860e8c1e9e37b194de37f2e6d3ef92db1ee963ce29e0b2550e4759a5",
+      "N05": "9e1c78a0d0781ed06d3ddafbeb69dd649b47af92a29fa1642bdf52a67a8dc6f6",
+      "N06": "9ec411982b3f7aa09df178b13b9b747b5bc5044bf10d32028e2760010fb40e9e",
+      "N07": "79a94ed0ca2fccc26c35660a81a2985e10c54bbfe9d7dd904bda9fa7ee737236",
+      "N08": "ec60920fd28e5912502fd79b71725f8bfc78397c1e7d173f16489d1d45230d72",
+      "N09": "d261a31bec4a5608a36b364b68887d637269dbc9105f6d644bfce27ddd7d3675",
+      "N10": "811956c1f55ca6b06d21e94268cbf5f92c3b8c7a1b5f962b7f82088a1ee93502",
+      "N11": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "N12": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "N13": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "N14": "d7924e0dbb9d6880da5a01360166e488bb6a34bae6e067cb0c2abc621f48ff82",
+      "N15": "803c914b59472e55c668a8b9e4cd593731e2127382fce4c85aee958bd9e26736",
+      "N16": "bcebfe8bc014f601ea6b6f084e79632d0a34a00c66ff936224aa5e634df0616a",
+      "N17": "28e22abd558ad86eafdd274f52abf7413de90907e58f2a9e6c00591bb3cb3f30",
+      "N18": "6fc8279f4d5698d27d347878685078d5b937728bf0e4aa2641dfe73a3110d0f7",
+      "N19": "7edc82f6d43a24aa20bc4191f6a9129afdb72b4a5f80452c339c7d08f0980924",
+      "N20": "80c119425375a5892e115caef8007cbc7d3fb6a1cb912d568b8f66d373b3caaf",
+      "N21": "e1f927c0530bd9f1ccb763f6d2c711874a73518b1c19b85124e85fe7590cc7ba",
+      "N22": "9ceddcd88a5c19564b5ec0484639a84c8cb429d732534bdfb8869101a7d5d2bf",
+      "N23": "f467e308a1f96081af6db0a6371fc52bc48cabd626a7c4280be0ea46d679c85a",
+      "N24": "f9b634a7129b05fe736c6c2e9f705ec969a0c9065cb222cd568792c65baf88bb",
+      "N25": "31f10a4dad39a43b6a3ef0de477d5854a213be0d680fcb42c847126d1c2fc29f",
+      "N26": "00c0c117934b66d0961905905091390d5013ed0ffa4d045a90683cf29ea188a6",
+      "N27": "7ff0326603836e388ee77f90b7dbf87806fd32e32f91fb8b928f734f82d3a454",
+      "N28": "ea40ebc4d8d9c6cf8fc23eef21f92d6d3dd178a38c33839fc85a6de400b71323",
+      "N29": "ec718b68b0588ac64f81c171c77e2e7ae145137fa14598baeef891358e45510b",
+      "N30": "60922a0f3d388bd9cf14d526e0ab641b6cb07f1a273615dff12b32ef58b07ed3",
+      "N31": "fadec4e491fec44d5bd11313b44380dcfa45222890d60ce3bde5191657a4409f",
+      "N32": "a90f00ef3779dafe962650c24fc0e1ac41c572593fe5684aa9175ff23a0020f2",
+      "N33": "33848956e325d2afee660eb8f41fb03f833ed3ab20c6f29c2444c03f287c53ce",
+      "N34": "c3626b9d82e9ed63b41a298030f0195783729654287b49729ae3c3bc8fcba040",
+      "N35": "82bb4988edcfd51203f0841b7ab96ea3a1accbba9d77fd0cf744ac0951e17bdc"
+    },
+    "verified": true
+  },
+  "repairs": [
+    {
+      "sourceId": "R01",
+      "page": 70,
+      "path": "assets/pages/R01/70.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 182366,
+        "sha256": "91585338081f12058dcfca28a0df867f9cf37d99249a291f2c24471a7e550586",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "R01",
+      "page": 102,
+      "path": "assets/pages/R01/102.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 119382,
+        "sha256": "8e96f8472fbd69ab27dd49474492710dcfdf16ad6b5ee1a5e4cc5d817e179347",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "R01",
+      "page": 118,
+      "path": "assets/pages/R01/118.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 71718,
+        "sha256": "d13a192d935aa1c44ff252690d9ce6654c99511ebfb7b817cb30f07a8ec912e4",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "R01",
+      "page": 132,
+      "path": "assets/pages/R01/132.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 125418,
+        "sha256": "2f902efc301633d2ffb2243eec80b9206b492b82bbfc79d4eb9557b290b742b2",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "R01",
+      "page": 145,
+      "path": "assets/pages/R01/145.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 136844,
+        "sha256": "5a59e36156d7ac4876aeb29fb75f84aab0e376b0be4479b25e2bf48712d8b9e1",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "R01",
+      "page": 173,
+      "path": "assets/pages/R01/173.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 59912,
+        "sha256": "25e50a73e4aae71f4fb99403fe1cf637355cae14721ee4536bfc15c8ee201807",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "R01",
+      "page": 204,
+      "path": "assets/pages/R01/204.webp",
+      "pdfPath": "assets/documents/R01.pdf",
+      "pdfSha256": "812d285ee6f512abb4c857671bf7c3a1f4c19bb7cfbdb972fa8d8f9400aba03c",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 118080,
+        "sha256": "523475c6bceba11a540faf5b803237bcbb870402465c4c90c63f8dda51ff7cdf",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 1391
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N05",
+      "page": 30,
+      "path": "assets/pages/N05/30.webp",
+      "pdfPath": "assets/documents/N05.pdf",
+      "pdfSha256": "9e1c78a0d0781ed06d3ddafbeb69dd649b47af92a29fa1642bdf52a67a8dc6f6",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 180972,
+        "sha256": "9f27facb6012aff621920be385cc0c97d1bfcc2f141d79ab7dc139f902530713",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N07",
+      "page": 13,
+      "path": "assets/pages/N07/13.webp",
+      "pdfPath": "assets/documents/N07.pdf",
+      "pdfSha256": "79a94ed0ca2fccc26c35660a81a2985e10c54bbfe9d7dd904bda9fa7ee737236",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 102878,
+        "sha256": "bd8cb987133c96a3043cd484327a9c7a0069a9c5b9c711bebee3844da4a10e48",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N08",
+      "page": 10,
+      "path": "assets/pages/N08/10.webp",
+      "pdfPath": "assets/documents/N08.pdf",
+      "pdfSha256": "ec60920fd28e5912502fd79b71725f8bfc78397c1e7d173f16489d1d45230d72",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 309518,
+        "sha256": "ca6dc2b9da1b651aaa174f9308e13970d27c7d891551fe9902e57c274200f2e6",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N08",
+      "page": 19,
+      "path": "assets/pages/N08/19.webp",
+      "pdfPath": "assets/documents/N08.pdf",
+      "pdfSha256": "ec60920fd28e5912502fd79b71725f8bfc78397c1e7d173f16489d1d45230d72",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 253562,
+        "sha256": "0df84fa00e34f4728863687b65a072f0dabc88ccbc5378c93b49d41fb6d267eb",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N09",
+      "page": 13,
+      "path": "assets/pages/N09/13.webp",
+      "pdfPath": "assets/documents/N09.pdf",
+      "pdfSha256": "d261a31bec4a5608a36b364b68887d637269dbc9105f6d644bfce27ddd7d3675",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 261488,
+        "sha256": "9afcddcb672ea59e6c261b632e338292e022775a465e64231bf504b7ffd56509",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 2,
+      "path": "assets/pages/N11/2.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 292134,
+        "sha256": "2c581a0ef358edb120046067fcc5d5d94aba85cec53af047be52ffe3bcbd6ee1",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 18,
+      "path": "assets/pages/N11/18.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 360088,
+        "sha256": "e0d6daf710da9bb88599751739da87219a3f9d86916b5b281419686c95862cb0",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 25,
+      "path": "assets/pages/N11/25.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 341702,
+        "sha256": "d252b9cca81fcc2f0972d8750d350fc63b993b4e87b4439e33d534cde0b70469",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 34,
+      "path": "assets/pages/N11/34.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 366606,
+        "sha256": "300234e03beac319620107ce36ea40218e2ef6e6cae78425f7dc69899183affa",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 60,
+      "path": "assets/pages/N11/60.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 82122,
+        "sha256": "25863f914b4cbeb98b139ff6c8ccee6a4da0b61a7c0f6afa5264e0f3e7b917e9",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 76,
+      "path": "assets/pages/N11/76.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 303256,
+        "sha256": "f0a671edfa251be467664742ef748451bcf84789df09c5322ac45d5edc1a57bd",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N11",
+      "page": 108,
+      "path": "assets/pages/N11/108.webp",
+      "pdfPath": "assets/documents/N11.pdf",
+      "pdfSha256": "14f0b94ab5afd05bedaafb612f3c5f0a5c0876271aaf306026d2c48e2adde61f",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 44528,
+        "sha256": "de3b27dcee2629f24aa36ec5e86917d9ee52194c430ebcf07d7f8b3a8d3a872f",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N12",
+      "page": 15,
+      "path": "assets/pages/N12/15.webp",
+      "pdfPath": "assets/documents/N12.pdf",
+      "pdfSha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 173926,
+        "sha256": "d3ebd0ee472401694bfc73975579bb03718405304725dc2b2d8a54f925d57122",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N12",
+      "page": 23,
+      "path": "assets/pages/N12/23.webp",
+      "pdfPath": "assets/documents/N12.pdf",
+      "pdfSha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 251118,
+        "sha256": "26b37437ccb9958ac8f85e31d10e2ba5cea176756609b2df2eb605737d078647",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N12",
+      "page": 32,
+      "path": "assets/pages/N12/32.webp",
+      "pdfPath": "assets/documents/N12.pdf",
+      "pdfSha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 261258,
+        "sha256": "fbc1c4d9ad031f1324e14817637f2ad7705117c154710249f5ed25a80ffa5c9b",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N12",
+      "page": 49,
+      "path": "assets/pages/N12/49.webp",
+      "pdfPath": "assets/documents/N12.pdf",
+      "pdfSha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 252128,
+        "sha256": "ffa5d8af0cbef6f2beb2da42ab6d09a89f46f95d2d62d813c0cdbd2a86e24eaf",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N12",
+      "page": 57,
+      "path": "assets/pages/N12/57.webp",
+      "pdfPath": "assets/documents/N12.pdf",
+      "pdfSha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 316944,
+        "sha256": "2b741667c7848308ea674c38523f4ef1cd3eaf7bac5ad1bffabee128409c3fb9",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N12",
+      "page": 99,
+      "path": "assets/pages/N12/99.webp",
+      "pdfPath": "assets/documents/N12.pdf",
+      "pdfSha256": "60a9ce61296d96ebc3bfbea39bc9295357fe95c49dea69f91bca91c482751381",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 256172,
+        "sha256": "9a0b96b6a021da71d2ae52fcca3ce5075b0d09be0a449750980edf72974e46b3",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 9,
+      "path": "assets/pages/N13/9.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 338504,
+        "sha256": "43e665a02ab538a935cea35de201702de06529ba49753e44375311fb01371458",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 16,
+      "path": "assets/pages/N13/16.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 291680,
+        "sha256": "86de4ffee712b95302b4b57cd06212e428a335c95146e94da94fca91448307e7",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 24,
+      "path": "assets/pages/N13/24.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 164540,
+        "sha256": "b8a4722dc5fb1f2d55ba2244306ffab45d9d6e417d9b3f74e37f28f046829ed0",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 40,
+      "path": "assets/pages/N13/40.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 277490,
+        "sha256": "84780ceaa98c2f04d65a11177c2ff7f8a63dc7ec4f9ecad78f951273a6dba5f5",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 48,
+      "path": "assets/pages/N13/48.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 163086,
+        "sha256": "bfeb07c42897fd7a5252ceba014d49a951144da6405818e42668ac19062ad5bc",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 63,
+      "path": "assets/pages/N13/63.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 321282,
+        "sha256": "8c22162d740eadd7d8f6f62986301e238234a0f7bd257745e05e6e932e5826fe",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 85,
+      "path": "assets/pages/N13/85.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 344244,
+        "sha256": "e2b32f395864ff4f85295f7b146b6d4e2b22290b383b71fb7e0da74981ea776b",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 92,
+      "path": "assets/pages/N13/92.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 235706,
+        "sha256": "78ec4228fcff29192602a3504540e9643626566973638ce4abcac29ad67673b0",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 100,
+      "path": "assets/pages/N13/100.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 180904,
+        "sha256": "81add47ce21f47334bf78677c3846519e05c540f987b3e4c6c06d5d127c74927",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 114,
+      "path": "assets/pages/N13/114.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 83136,
+        "sha256": "93367cc4b87191e909e72569a123b8ca54cd9ea6feb732df5e0b235976146709",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 122,
+      "path": "assets/pages/N13/122.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 265210,
+        "sha256": "c0d102525f32511c15f9a00fa0845bbe8490e493acce024e802f124e30a12d0e",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N13",
+      "page": 128,
+      "path": "assets/pages/N13/128.webp",
+      "pdfPath": "assets/documents/N13.pdf",
+      "pdfSha256": "88ed6de39066dfcb28c16ea13bf83f6ce316f409849c2f9a4f06151b79513d54",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 290522,
+        "sha256": "5cbe61bc4648d1d33a4b303b2db18b96fe36a4648c4d313eba547963a155ea2d",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N14",
+      "page": 11,
+      "path": "assets/pages/N14/11.webp",
+      "pdfPath": "assets/documents/N14.pdf",
+      "pdfSha256": "d7924e0dbb9d6880da5a01360166e488bb6a34bae6e067cb0c2abc621f48ff82",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 320308,
+        "sha256": "eae055c5f57e63f956dca75275646646a79a2d72c7a48223f7aa7b2bd85afb2f",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N15",
+      "page": 18,
+      "path": "assets/pages/N15/18.webp",
+      "pdfPath": "assets/documents/N15.pdf",
+      "pdfSha256": "803c914b59472e55c668a8b9e4cd593731e2127382fce4c85aee958bd9e26736",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 325646,
+        "sha256": "3f45e21ae55c616cbfe15b4952d732335319899f091a4fc71fbd5af381eb1476",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N15",
+      "page": 26,
+      "path": "assets/pages/N15/26.webp",
+      "pdfPath": "assets/documents/N15.pdf",
+      "pdfSha256": "803c914b59472e55c668a8b9e4cd593731e2127382fce4c85aee958bd9e26736",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 310170,
+        "sha256": "289a96fb3b32628f22754db7893c556b82c612e866bc47596d4b6046efa127fa",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N15",
+      "page": 98,
+      "path": "assets/pages/N15/98.webp",
+      "pdfPath": "assets/documents/N15.pdf",
+      "pdfSha256": "803c914b59472e55c668a8b9e4cd593731e2127382fce4c85aee958bd9e26736",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 352894,
+        "sha256": "a18da628e71a9b108617bc539934e8a54707404cb92e6bb15fb4ab51609871fc",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N16",
+      "page": 26,
+      "path": "assets/pages/N16/26.webp",
+      "pdfPath": "assets/documents/N16.pdf",
+      "pdfSha256": "bcebfe8bc014f601ea6b6f084e79632d0a34a00c66ff936224aa5e634df0616a",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 287252,
+        "sha256": "e361e29ecad413dda9b33298752b50a6dc6731b2f053292afc2de1a537c475c7",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N18",
+      "page": 6,
+      "path": "assets/pages/N18/6.webp",
+      "pdfPath": "assets/documents/N18.pdf",
+      "pdfSha256": "6fc8279f4d5698d27d347878685078d5b937728bf0e4aa2641dfe73a3110d0f7",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 315706,
+        "sha256": "900a1d85f93fa31c2a57e35f06ba6bf9a211506604190f046c36c637bbca8f0d",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N18",
+      "page": 14,
+      "path": "assets/pages/N18/14.webp",
+      "pdfPath": "assets/documents/N18.pdf",
+      "pdfSha256": "6fc8279f4d5698d27d347878685078d5b937728bf0e4aa2641dfe73a3110d0f7",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 359332,
+        "sha256": "5ebd59bbc1bed12fdc863004b1935d4b21b4b465c5e11c7b61769f4fab35ea75",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N18",
+      "page": 28,
+      "path": "assets/pages/N18/28.webp",
+      "pdfPath": "assets/documents/N18.pdf",
+      "pdfSha256": "6fc8279f4d5698d27d347878685078d5b937728bf0e4aa2641dfe73a3110d0f7",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 221472,
+        "sha256": "787a612b1b32ca4e3ea99bcd589a8760bbce845e78be832e90d27dc3905db201",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2330
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    },
+    {
+      "sourceId": "N19",
+      "page": 16,
+      "path": "assets/pages/N19/16.webp",
+      "pdfPath": "assets/documents/N19.pdf",
+      "pdfSha256": "7edc82f6d43a24aa20bc4191f6a9129afdb72b4a5f80452c339c7d08f0980924",
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode": "error"
+      },
+      "after": {
+        "bytes": 191490,
+        "sha256": "028eef483f0a06b6b2b77520e446447169a47572f1a6749d1dd24ec39dbac9fc",
+        "decode": "ok",
+        "format": "WEBP",
+        "width": 1800,
+        "height": 2546
+      },
+      "method": {
+        "renderer": "pdftoppm",
+        "scaleToWidth": 1800,
+        "format": "WEBP",
+        "quality": 88,
+        "encoderMethod": 6,
+        "atomicReplace": true
+      }
+    }
+  ]
+}

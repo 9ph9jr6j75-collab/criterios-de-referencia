@@ -42,7 +42,7 @@ function boot(options={}){
 let checks=0;
 async function check(name,fn){await fn();checks++;console.log('✓ '+name);}
 await check('Abrir el visor carga una imagen, conserva volver y prepara botones seguros sin descargar PDF',async()=>{
- const app=boot();await settle();assert.equal(app.fetches.length,1);assert.equal(app.fetches[0].url,'data/sources.json');assert.equal(app.images.length,1);assert.equal(app.images[0].src,'assets/pages/N09/2.webp');
+ const app=boot();await settle();assert.equal(app.fetches.length,1);assert.equal(app.fetches[0].url,'data/sources.json');assert.equal(app.images.length,1);assert.equal(app.images[0].src,'assets/pages/N09/2.webp?v=20261108-1');
  assert.equal(app.node('return').href,'./#ficha/n09-catarata');assert.equal(app.node('page-image').hidden,false);assert.equal(app.node('print').disabled,false);app.dispatch('print');assert.equal(app.printCount(),1);
  const button=app.node('download');assert.equal(button.dataset.pdfUrl,'assets/documents/N09.pdf');assert.equal(button.dataset.pdfName,'Documento de prueba');assert.equal(button.dataset.pdfFilename,'N09-criterios-referencia.pdf');assert.equal(button.disabled,false);assert.equal(button.href,undefined,'El PDF no es un enlace que navega fuera de la app');
  assert.equal(app.node('print').hidden,false);assert.match(app.node('pdf-kind').textContent,/documento original/);
@@ -60,7 +60,7 @@ await check('Apple y la app instalada ofrecen una sola acción PDF; escritorio c
  const desktop=boot({pendingDecode:true});await settle();desktop.dispatch('print');assert.equal(desktop.printCount(),0);desktop.decodes[0].resolve();await settle();desktop.dispatch('print');assert.equal(desktop.printCount(),1);assert.equal(desktop.pdfOpens.length,0);
 });
 await check('Siguiente, anterior, entrada de página y volver del navegador cargan solo la página elegida',async()=>{
- const app=boot();await settle();app.dispatch('next');assert.equal(app.node('print').disabled,true);await settle();assert.equal(app.node('page').value,3);assert.equal(app.node('next').disabled,true);assert.equal(app.images.at(-1).src,'assets/pages/N09/3.webp');
+ const app=boot();await settle();app.dispatch('next');assert.equal(app.node('print').disabled,true);await settle();assert.equal(app.node('page').value,3);assert.equal(app.node('next').disabled,true);assert.equal(app.images.at(-1).src,'assets/pages/N09/3.webp?v=20261108-1');
  app.dispatch('previous');await settle();assert.equal(app.node('page').value,2);assert.equal(app.node('download').dataset.pdfUrl,'assets/documents/N09.pdf');
  app.node('page').value=999;app.dispatch('page-form','submit');await settle();assert.equal(app.node('page').value,3);
  app.location.search='?screen=source&source=N09&page=1&return=%23ficha%2Fn09-catarata';app.events.popstate();await settle();assert.equal(app.node('page').value,1);assert.equal(app.node('previous').disabled,true);assert.equal(app.node('return').href,'./#ficha/n09-catarata');

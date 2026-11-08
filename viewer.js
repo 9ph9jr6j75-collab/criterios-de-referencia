@@ -3,6 +3,8 @@
  'use strict';
  const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
  const sourceId=params.get('source');
+ // Renueva la URL de las imágenes restauradas, evitando respuestas vacías en caché.
+ const PAGE_IMAGE_REVISION='20261108-1';
  let source,page=1,loadNumber=0,timer;
  const back=params.get('return')||'';
  $('return').href='./'+(/^#[a-zA-Z0-9_\-/%.?=&]*$/.test(back)?back:'');
@@ -21,7 +23,7 @@
   const seq=++loadNumber,img=new Image();clearTimeout(timer);timer=setTimeout(()=>{if(seq===loadNumber)showError()},10000);
   img.onload=()=>{if(seq!==loadNumber)return;const shown=$('page-image');shown.src=img.src;shown.alt='Página '+page+' de '+source.titulo;shown.hidden=false;$('loading').hidden=true;$('error').hidden=true;Promise.resolve(shown.decode?shown.decode():undefined).then(()=>{if(seq===loadNumber){clearTimeout(timer);$('print').disabled=false}}).catch(()=>{if(seq===loadNumber)showError()});};
   img.onerror=()=>{if(seq===loadNumber)showError()};
-  img.src=source.pageImageBase+page+'.webp';
+  img.src=source.pageImageBase+page+'.webp?v='+PAGE_IMAGE_REVISION;
   document.title='Página '+page+' · '+source.tema+' · Criterios de referencia';
   if(typeof window.trackReferenceEvent==='function')window.trackReferenceEvent('source_page',{source_id:source.id,page_number:page});
  }

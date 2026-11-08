@@ -3,10 +3,14 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import './test-pwa-identity.mjs';
 import './check-dental-specialties.mjs';
+import './test-source-pages.mjs';
+import {auditSourcePages,assertSourcePages} from './check-source-pages.mjs';
 import {createTopicIndex, groupResults, orderDocuments, uniqueTopicCount, isCatalogCard} from '../catalog.js';
 const root=path.resolve(import.meta.dirname,'..');
 const cards=JSON.parse(await fs.readFile(path.join(root,'data/cards.json'),'utf8'));
 const sources=JSON.parse(await fs.readFile(path.join(root,'data/sources.json'),'utf8'));
+const sourcePages=await auditSourcePages(root,{sources,cards});
+assertSourcePages(sourcePages);
 const byId=new Map(sources.map(s=>[s.id,s]));
 const definitions=JSON.parse(await fs.readFile(path.join(root,'data/topics.json'),'utf8')).groups;
 const topicIndex=createTopicIndex(cards,definitions);
@@ -36,7 +40,7 @@ for(const card of cards){
  assert(card.pages.length,'Ficha sin página: '+card.id);
  for(const page of card.pages){
   assert(Number.isInteger(page)&&page>=1&&page<=source.pageCount,'Página incorrecta: '+card.id);
-  await fs.access(path.join(root,source.pageImageBase,page+'.webp'));pageLinks++;
+  pageLinks++;
  }
  for(const check of card.checklist||[]){assert(check.text?.trim(),'Casilla vacía '+card.id);checks++;}
  assert(!/[\ue000-\uf8ff]/u.test(JSON.stringify(card)),'Glifo no legible '+card.id);
@@ -69,4 +73,4 @@ assert(colonFamily.studies.some(study=>study.type==='conditional'&&/enema/i.test
 assert(cards.find(card=>card.id==='n19-poliposis-familiar-y-polipos-adenomatosos-colonoscopia').requiresReview,'No ocultar discrepancia Grado 2/a cupo');
 assert(cards.filter(card=>card.sourceId==='N19').every(card=>card.applicability),'Conservar exclusiones de Gastroenterología');
 assert(!/G-ZF3D4DNPKB|G-H0Z84C93TL/.test(app),'No reutilizar Analytics de otra app');
-console.log(JSON.stringify({ok:true,temas:grouped.length,fichas:cards.length,fichasPublicadas:cards.filter(isCatalogCard).length,apartadosSinCriterios:cards.filter(card=>!isCatalogCard(card)).length,fuentes:sources.length,enlacesDePagina:pageLinks,elementosDeRevision:checks}));
+console.log(JSON.stringify({ok:true,temas:grouped.length,fichas:cards.length,fichasPublicadas:cards.filter(isCatalogCard).length,apartadosSinCriterios:cards.filter(card=>!isCatalogCard(card)).length,fuentes:sources.length,paginasValidadas:sourcePages.validPages,enlacesDePagina:pageLinks,elementosDeRevision:checks}));

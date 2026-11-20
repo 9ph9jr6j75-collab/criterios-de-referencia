@@ -1,5 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {compileGuideCatalog} from './guide-catalog.mjs';
+import {auditSourcePages,assertSourcePages} from './check-source-pages.mjs';
 const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist');
 await fs.mkdir(dist,{recursive:true});
 async function copy(src,dst){
@@ -12,7 +15,7 @@ async function copy(src,dst){
   if(!old||old.size!==st.size||old.mtimeMs<st.mtimeMs)await fs.copyFile(src,dst);
  }
 }
-for(const item of ['index.html','styles.css','app.js','review-content.js','edus-guidance.js','catalog.js','document-screen.js','share-card.js','print-session.js','print-session.css','pdf-actions.js','pdf-actions.css','printable-pdf.js','pwa.js','analytics.js','viewer.html','viewer.css','viewer.js','print.html','print.css','print.js','sw.js','manifest.webmanifest','icon.svg','data','assets']){
+for(const item of ['index.html','styles.css','app.js','referral-guide.js','review-content.js','edus-guidance.js','catalog.js','document-screen.js','share-card.js','print-session.js','print-session.css','pdf-actions.js','pdf-actions.css','printable-pdf.js','pwa.js','analytics.js','viewer.html','viewer.css','viewer.js','print.html','print.css','print.js','sw.js','manifest.webmanifest','icon.svg','data','assets']){
  const src=path.join(root,item);if(await fs.stat(src).catch(()=>null))await copy(src,path.join(dist,item));
 }
 // Las vistas de documentos usan el mismo inicio canónico de la app. El HTML de
@@ -28,7 +31,12 @@ for(const [screen,filename] of [['source','viewer.html'],['print','print.html']]
  documentPages[screen]={title,body:body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,''),css,scripts};
 }
 await fs.writeFile(path.join(dist,'document-pages.js'),'export const DOCUMENT_PAGES = '+JSON.stringify(documentPages)+';\n');
-const release=JSON.parse(await fs.readFile(path.join(root,'data/release.json'),'utf8'));
+const {cards, topics, sources, release, toRender} = await compileGuideCatalog(root);
+for (const [name, value] of Object.entries({cards,topics,sources,release})) {
+  await fs.writeFile(path.join(dist,'data',name + '.json'),JSON.stringify(value) + '\n');
+}
+execFileSync('python3',[path.join(root,'scripts/render-guide-pages.py'),dist,...toRender],{stdio:'inherit'});
+assertSourcePages(await auditSourcePages(dist,{sources,cards}));
 if(!release.appVersion||!Number.isFinite(Date.parse(release.updatedAt)))throw Error('Falta fecha de actualización válida');
 await fs.writeFile(path.join(dist,'release.js'),'export const APP_RELEASE = Object.freeze('+JSON.stringify({version:release.appVersion,updatedAt:release.updatedAt})+');\n');
 await fs.writeFile(path.join(dist,'.nojekyll'),'');

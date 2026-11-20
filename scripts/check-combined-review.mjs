@@ -14,7 +14,8 @@ const catalogURL=new URL('../catalog.js',import.meta.url).href,pdfURL=new URL('.
 const printSource=(await fs.readFile(new URL('print.js',root),'utf8'))
   .replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`)
   .replace("'./catalog.js'",JSON.stringify(catalogURL)).replace("'./printable-pdf.js'",JSON.stringify(pdfURL))
-  .replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href));
+  .replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href))
+  .replace("'./referral-guide.js'",JSON.stringify(new URL('../referral-guide.js',import.meta.url).href));
 const {checklistEntries}=await import('data:text/javascript;base64,'+Buffer.from(printSource).toString('base64'));
 const index=await fs.readFile(new URL('index.html',root),'utf8');
 const definitions=JSON.parse(await fs.readFile(new URL('data/topics.json',root),'utf8')).groups;
@@ -91,7 +92,14 @@ check('Las 652 fichas asociadas reciben generales antes de la patología sin mez
   for(const card of cards.filter(isCatalogCard)){
     const generals=generalRequirementsForCard(card,cards),groups=env.context.reviewGroups(card);
     assert.deepEqual(Array.from(groups,item=>item.card.id),[...generals.map(item=>item.id),card.id]);
-    if(generals.length){associated++;assert(groups.slice(0,-1).every(item=>item.general&&item.card.sourceId===card.sourceId&&item.card.specialty===card.specialty));}
+    if(generals.length){
+      associated++;
+      for(const group of groups.slice(0,-1)){
+        assert(group.general && group.card.sourceId===card.sourceId, card.id);
+        const specialties=[group.card.specialty,...(group.card.appliesToSpecialties||[])];
+        assert(specialties.includes(card.specialty), card.id + ': la fuente debe indicar la especialidad a la que se aplican los requisitos.');
+      }
+    }
   }
   assert.equal(associated,652);
 });

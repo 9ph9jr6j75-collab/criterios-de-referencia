@@ -1,0 +1,20 @@
+{
+  "N15": {"shortLabel":"Oferta institucional por nivel","documentOnly":true,"notice":"La página 107 distingue los perfiles de competencia de los criterios de referencia que deben elaborarse a partir de ellos."},
+  "N18": {"shortLabel":"Urgencias oftalmológicas","notice":"El circuito entre la Clínica Oftalmológica y el Hospital México se describe como plan piloto. Compruebe la red y los establecimientos participantes."},
+  "N20": {"shortLabel":"Patología lumbar"},
+  "N21": {"shortLabel":"Artrosis de cadera","documentStatus":"review","notice":"BINASSS identifica el archivo como FINAL. La copia lleva la marca BORRADOR y la portada consigna aval de la Gerencia Médica. La página 15 condiciona la vigencia a su publicación en Webmaster. Queda por confirmar la versión definitiva."},
+  "N22": {"shortLabel":"Escoliosis en menores","notice":"El documento declara vigencia 2021–2026. Verifique si existe una actualización."},
+  "N23": {"shortLabel":"Asma en la edad pediátrica"},
+  "N24": {"shortLabel":"Enfermedad renal crónica: lineamiento","notice":"El documento declara tres años de vigencia desde el aval de 2021. Hay diferencias entre el texto y las tablas. Verifique la versión aplicable antes de usar los criterios."},
+  "N25": {"shortLabel":"Diabetes mellitus tipo 2"},
+  "N26": {"shortLabel":"Comportamiento de riesgo suicida"},
+  "N27": {"shortLabel":"Prótesis auditivas"},
+  "N28": {"shortLabel":"Enfermedad renal crónica: protocolo","notice":"Esta ficha procede del protocolo de 2017. La vigencia de esta versión está por confirmar."},
+  "N29": {"shortLabel":"Enfermedad celíaca","notice":"El documento fijó su próxima revisión en 2024. Compruebe la versión aplicable."},
+  "N30": {"shortLabel":"Resonancia magnética cardiovascular"},
+  "N31": {"shortLabel":"Tomografía cardiovascular"},
+  "N32": {"shortLabel":"Pruebas genéticas en cáncer de mama y ovario"},
+  "N33": {"shortLabel":"Resonancia magnética por diagnóstico"},
+  "N34": {"shortLabel":"Valoración para toxina botulínica"},
+  "N35": {"shortLabel":"Imágenes médicas en pediatría"}
+}

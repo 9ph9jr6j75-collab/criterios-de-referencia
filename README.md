@@ -2,13 +2,13 @@
 
 Aplicación de consulta de criterios de referencia por patología. Iniciativa de la Dirección de Red Integrada de Prestación de Servicios de Salud Huetar Atlántica (DRIPSSHA), CCSS.
 
-El catálogo inicial presenta 567 temas agrupados de 30 especialidades o servicios. Los datos conservan 730 registros documentales activos: las versiones de distintas fuentes permanecen separadas y siete temas de retorno se consultan desde su documento. El registro original tiene 808 apartados; se retiraron del catálogo 78 sin criterio independiente o con destino pendiente de aclaración. Sus enlaces anteriores muestran el motivo y permiten consultar el respaldo. Las 40 fuentes identifican 38 documentos disponibles y dos pendientes de obtener.
+El buscador presenta 618 temas. Hay 784 fichas activas, incluidas las variantes por documento y las fichas de retorno. El registro contiene 40 fuentes. Hay PDF de 38 y fichas clínicas de 37. N15 es un manual de oferta de servicios. E01 y E02 figuran en el registro sin PDF incorporado. Los enlaces de los 78 apartados retirados del catálogo siguen explicando el motivo de su retiro.
 
 ## Consulta
 
 El catálogo permite buscar por diagnóstico, especialidad o texto del criterio. Cada ficha conserva su página de respaldo y diferencia los estudios deseables de los condicionados. Los requisitos generales se vinculan a la misma fuente, especialidad y ruta. Se incluyen al inicio de la revisión dentro de cada ficha, incluso al buscar un diagnóstico sin seleccionar especialidad. El resultado indica si todas las variantes coincidentes incluyen requisitos generales o si dependen del documento. El acceso independiente a requisitos generales es adicional al explorar una especialidad; no se antepone a una búsqueda por diagnóstico. Los documentos sin una lista general propia conservan sus requisitos específicos, sin heredar listas de otras fuentes. Las casillas indican aspectos revisados; no certifican pertinencia clínica ni señalan automáticamente que una condición esté presente o ausente.
 
-Los filtros activos aparecen junto a los resultados y se pueden quitar individualmente. El filtro de documento muestra únicamente las variantes de la fuente elegida en las tarjetas; las demás fuentes siguen disponibles al abrir el tema. Los 20 documentos con fichas se distinguen de los 40 documentos del registro. Los alcances sin fichas no se ofrecen en el buscador. Si un filtro de atención deja la búsqueda vacía, se indica cuántos temas reaparecen al quitarlo; una prioridad no especificada en la fuente no se interpreta como consulta prioritaria.
+Los filtros activos aparecen junto a los resultados y se pueden quitar individualmente. El filtro de documento muestra únicamente las variantes de la fuente elegida en las tarjetas; las demás fuentes siguen disponibles al abrir el tema. El filtro de fuente enumera los documentos con fichas y enlaza el registro de los 40 documentos. Los alcances sin fichas no se ofrecen en el buscador. Si un filtro de atención deja la búsqueda vacía, se indica cuántos temas reaparecen al quitarlo; una prioridad no especificada en la fuente no se interpreta como consulta prioritaria.
 
 Las nueve listas generales que carecían de casillas tienen instrucciones verificables agrupadas por numeral, sin cambiar su transcripción ni sus páginas. Las notas explicativas se conservan como lectura. La auditoría `audits/2026-10-29-general-checklists.json` protege los campos originales y los 799 registros restantes; conserva las condiciones y la diferencia entre recomendaciones y obligaciones. En Nutrición se cotejan también las columnas de inclusión y exclusión de la página original.
 
@@ -36,9 +36,12 @@ La lista de revisión y la transcripción documental proceden de las mismas secc
 
 ## Construcción y comprobación
 
-Requiere Node.js 22 o posterior. No tiene dependencias de ejecución ni necesita claves de API.
+La compilación utiliza Node.js 22 o posterior y Python 3.11 o posterior con PyMuPDF y Pillow. El visor genera imágenes de páginas desde los PDF originales y las carga cuando el lector abre una página.
 
 ```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install PyMuPDF==1.26.6 Pillow==12.0.0
 node scripts/check.mjs
 node scripts/build.mjs
 ```
@@ -53,7 +56,7 @@ Las verificaciones comprueban IDs, contenido y páginas de todas las fichas, exi
 
 ## Actualizaciones
 
-Los datos están en `data/cards.json` y `data/sources.json`. Cada ficha tiene un ID estable y referencia una fuente mediante `sourceId`. Al corregir una fuente deben conservarse las condiciones y actualizarse sus páginas. El caché de `sw.js` debe cambiar de versión cuando cambien la interfaz o los datos.
+El catálogo auditado original está en `data/`. Las guías por destino y sus datos de procedencia están en `content/referral-guides.json` y `content/referral-sources.json`. La compilación los reúne en `dist/data/` y calcula los conteos que utiliza la app. Cada ficha tiene un ID estable y referencia una fuente mediante `sourceId`. Al corregir una fuente deben conservarse las condiciones y actualizarse sus páginas. El caché de `sw.js` debe cambiar de versión cuando cambien la interfaz o los datos.
 
 Observaciones y nuevos documentos: msolanoc@ccss.sa.cr. Indicar ficha y fuente, sin datos de pacientes.
 
@@ -81,3 +84,9 @@ El inicio declara una portada horizontal de 1200 × 630 píxeles en Open Graph, 
 ## Clasificación odontológica
 
 Odontología especializada se presenta en dos especialidades del documento R01: Odontología general avanzada y Endodoncia. Las siete fichas de Endodoncia corresponden a las páginas PDF 160–161, bajo el encabezado de la página 159. Conservan sus identificadores y todo el contenido clínico, incluidas las casillas y el aviso de protocolo no validado por nivel central. Los requisitos generales odontológicos del mismo documento se comparten explícitamente entre ambas especialidades, sin heredar requisitos de otras fuentes o rutas. El registro de verificación está en `audits/2026-11-07-dental-specialties.json`.
+
+## Consulta por destino
+
+En artrosis de cadera, la ficha N21 muestra los requisitos generales y permite elegir el destino. Los criterios y las páginas cambian con esa elección. La ficha regional R01 de coxalgias conserva su propio enlace y su alcance pediátrico y adulto. Se puede llegar a las dos desde la búsqueda por «coxartrosis». El nombre de archivo de N21 en BINASSS y la marca de agua de la copia difieren. La ficha informa de esa discrepancia.
+
+Los criterios alternativos y las limitaciones se presentan como notas de lectura. Cuando una tabla distingue escenarios por filas o columnas, la ficha enlaza la página correspondiente. Las marcas de revisión se guardan por documento y destino.

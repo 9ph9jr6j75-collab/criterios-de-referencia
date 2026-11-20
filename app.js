@@ -3,6 +3,7 @@ import {mountDocumentScreen} from './document-screen.js';
 import {shareCard} from './share-card.js';
 import {printCard} from './print-session.js';
 import {checklistEntries} from './print.js';
+import {guideStorageKey, mountReferralGuide} from './referral-guide.js';
 import {edusGuidanceForCard} from './edus-guidance.js';
 import {reviewBuckets,reviewSupplements} from './review-content.js';
 import {createTopicIndex, orderDocuments, groupResults, uniqueTopicCount, isCatalogCard, specialtyGeneralRequirements, generalRequirementsForCard, specificRequirementsForCard, generalRequirementsCoverage, showSpecialtyGeneralAccess, includeGeneralSearchResult, orderCatalogTopics} from './catalog.js';
@@ -93,6 +94,7 @@ if (!mountDocumentScreen()) (() => {
     let html = `<span class="badge ${scope === 'regional' ? 'badge-regional' : scope === 'unverified' ? 'badge-unverified' : ''}">${scope === 'national' ? 'Nacional CCSS' : scope === 'unverified' ? 'Procedencia por documentar' : esc(source.shortLabel || 'Regional / servicio')}</span>`;
     if (status === 'review') html += '<span class="badge badge-review" title="Verifique la continuidad o actualización del documento antes de aplicar sus criterios.">Vigencia por confirmar</span>';
     if(!card&&source.indexingStatus==='documentOnly')html += '<span class="badge badge-review">PDF disponible · sin fichas clínicas todavía</span>';
+    if (!card && source.indexingStatus === 'referenceOnly') html += '<span class="badge">Documento de consulta</span>';
     if (isReturnCard(card || {})) html += '<span class="badge badge-regional">Retorno a primer nivel</span>';
     return html;
   }
@@ -121,9 +123,9 @@ if (!mountDocumentScreen()) (() => {
     renderCatalog(); saveCatalog(0);
   }
   function populateFilters() {
-    const counts = new Map();
-    for (const topic of state.topics) if (topic.cards.some(card => isCatalogCard(card)&&!isReturnCard(card))) counts.set(topic.specialty, (counts.get(topic.specialty) || 0) + 1);
-    const specialities = [...counts.keys()].filter(Boolean).sort((a,b) => a.localeCompare(b, 'es'));
+    const searchable = state.cards.filter(card => isCatalogCard(card) && !isReturnCard(card));
+    const specialties = new Set(searchable.flatMap(card => [card.specialty, ...(card.additionalSpecialties || [])]));
+    const specialities = [...specialties].filter(Boolean).sort((a,b) => a.localeCompare(b, 'es'));
     $('#specialty-filter').innerHTML = '<option value="">Todas las especialidades</option>' + specialities.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('');
     const usedSources = new Set(state.cards.filter(isCatalogCard).map(card => card.sourceId));
     const scopes = new Set(state.cards.filter(isCatalogCard).map(scopeType));
@@ -158,10 +160,10 @@ if (!mountDocumentScreen()) (() => {
   }
   function buildIndex(card) {
     const title = norm(card.name);
-    const specialty = norm(card.specialty);
+    const specialty = norm([card.specialty, ...(card.additionalSpecialties || [])].join(' '));
     const topic=state.topicIndex.byCard.get(card.id);
     const aliases = norm([...arr(card.aliases),topic?.name,...(topic?.cards||[]).map(member=>member.name)].join(' '));
-    const full = norm([card.name,card.specialty,aliases,card.priority,...arr(card.criteria).map(textOf),...arr(card.studies).map(textOf),...arr(card.prior).map(textOf),...arr(card.notes).map(textOf),card.fullText,card.context].filter(Boolean).join(' '));
+    const full = norm([card.name,specialty,aliases,card.priority,...arr(card.criteria).map(textOf),...arr(card.studies).map(textOf),...arr(card.prior).map(textOf),...arr(card.notes).map(textOf),card.fullText,card.context].filter(Boolean).join(' '));
     return {title,specialty,aliases,full};
   }
   function filterCards(overrides = {}) {
@@ -177,7 +179,7 @@ if (!mountDocumentScreen()) (() => {
       if (isReturnCard(card) && !selected.source) return false;
       if (selected.mode === 'favorites' && !favoriteTopics.has(selected.topicIndex.byCard.get(card.id)?.id)) return false;
       if (selected.mode === 'recent' && !recentOrder.has(card.id)) return false;
-      if (selected.specialty && card.specialty !== selected.specialty) return false;
+      if (selected.specialty && card.specialty !== selected.specialty && !card.additionalSpecialties?.includes(selected.specialty)) return false;
       if (selected.scope && scopeType(card) !== selected.scope) return false;
       if (selected.source && card.sourceId !== selected.source) return false;
       if (selected.priority && cardPriorityType(card) !== selected.priority && !(cardPriorityType(card) === 'mixed' && (selected.priority === 'urgent' ? /urgenc|emergenc|inmediat/ : selected.priority === 'priority' ? /prioridad|prioritari|preferent/ : /cupo|ordinari|rutina|rutinari/).test(norm(card.priority)))) return false;
@@ -323,7 +325,7 @@ if (!mountDocumentScreen()) (() => {
     $('#reset-checklist').disabled = !count;
   }
   function sourceStatusNote(source,card) {
-    let html=card?.applicability?`<div class="document-status-note applicability-note"><strong>Alcance de este lineamiento.</strong> ${esc(card.applicability)} <a href="./?screen=source&source=${esc(source.id)}&page=4&return=${encodeURIComponent(location.hash)}">Ver aplicación en la fuente</a></div>`:'';
+    let html=card?.applicability?`<div class="document-status-note applicability-note"><strong>Alcance de este lineamiento.</strong> ${esc(card.applicability)}${card.referralGuide ? '' : ` <a href="./?screen=source&source=${esc(source.id)}&page=4&return=${encodeURIComponent(location.hash)}">Ver aplicación en la fuente</a>`}</div>`:'';
     if (source.documentStatus === 'review') html += `<div class="document-status-note"><strong>Verificación documental pendiente.</strong> ${esc(source.vigencia ? `Vigencia declarada: ${source.vigencia}. ` : '')}${esc(source.estado || 'Confirme la versión actual del documento.')}</div>`;
     if (source.documentStatus === 'unverified') html += '<div class="document-status-note unverified"><strong>Procedencia por documentar.</strong> El establecimiento o el acto de aprobación no están identificados en la copia disponible. Este documento requiere validación para su uso en la red.</div>';
     if(card?.requiresReview) html += `<div class="document-status-note"><strong>Discrepancia en el documento de origen.</strong> ${esc(arr(card.documentIssues).map(textOf).join(' ') || 'Revise las condiciones y la página original antes de definir el destino o los requisitos.')}</div>`;
@@ -418,6 +420,14 @@ if (!mountDocumentScreen()) (() => {
   function feedbackPanel(card) {
     return `<section class="info-panel feedback-panel no-print" aria-label="Reportar un error o sugerir una mejora"><p class="eyebrow">Observaciones y mejoras</p><h2>${card?'Reportar un error de esta ficha':'Reportar un error o sugerir una mejora'}</h2><p>${card?'El borrador identifica esta ficha, su documento y las páginas de respaldo.':'Indique la ficha, el documento o la función de la app que desea señalar.'} Escriba a <a href="${esc(reportHref(card))}" data-feedback>${REPORT_EMAIL}</a>.</p><div class="feedback-actions"><a class="button button-secondary" href="${esc(reportHref(card))}" data-feedback>${icon('external')}${card?'Reportar error de esta ficha':'Escribir una observación'}</a><button class="button button-subtle" type="button" data-copy-email>${icon('copy')}Copiar correo</button><button class="button button-subtle" type="button" data-copy-report>${icon('copy')}Copiar datos del reporte</button></div><p class="source-navigation-note">El enlace abre un borrador en su aplicación de correo. Usted lo revisa y decide si lo envía. Si no se abre, copie el correo y los datos del reporte. No incluya datos de pacientes.</p></section>`;
   }
+  function relatedDocumentsHTML(card) {
+    const links = arr(card.relatedCards).map(link => {
+      const target = state.cards.find(item => item.id === link.id && item.sourceId === link.sourceId && isCatalogCard(item));
+      if (!target) return '';
+      return `<p><a href="#ficha/${encodeURIComponent(target.id)}" data-source-choice="${esc(target.id)}">${esc(link.label)} · Fuente ${esc(target.sourceId)} · ${esc(pageLabel({pages:link.pages}))}</a></p>`;
+    }).filter(Boolean);
+    return links.length ? `<section class="info-panel guide-related" aria-label="Documentos relacionados"><h2>Consultar otro documento</h2>${links.join('')}</section>` : '';
+  }
   function sourcePanel(source,card) {
     return `<section class="source-panel" aria-label="Documento de respaldo"><p class="eyebrow">Fuente que respalda esta ficha · ${esc(source.id)}</p><h3>${esc(source.titulo)}</h3><div class="source-metadata"><span>${esc(source.codigo || 'Sin código identificado')}</span><span>${esc(source.fecha || 'Fecha no identificada')}</span><span>${esc(pageLabel(card))}</span></div>${source.provenance?`<p class="source-navigation-note"><strong>Procedencia:</strong> ${esc(source.provenance)}</p>`:''}${source.approvalNote?`<p class="source-navigation-note"><strong>Aprobación documental:</strong> ${esc(source.approvalNote)}</p>`:''}${source.derivativeNotice?`<p class="source-navigation-note">${esc(source.derivativeNotice)}</p>`:''}<div class="source-actions no-print">${sourceActions(source,card)}</div><p class="source-navigation-note">Consulte las páginas en el visor para volver a esta ficha. El botón de PDF prepara ${source.derivativeNotice?'la versión de lectura del documento':'el documento original completo'}; después toque Abrir menú para guardar o compartir. En iPhone, elija Guardar en Archivos para seleccionar la carpeta.</p><p class="print-source-url" hidden>${esc(source.enlace || '')}</p></section>`;
   }
@@ -462,18 +472,35 @@ if (!mountDocumentScreen()) (() => {
     safeWrite(localStorage, `${STORE}:recent`, state.recent);
     const source = sourceFor(card), ptype = cardPriorityType(card);
     const topic = state.topicIndex.byCard.get(id);
-    panel.innerHTML = `<div class="detail-topbar no-print"><a class="back-link" href="#" id="back-to-results">${icon('back')}Volver a resultados</a><div class="detail-tools"><button class="icon-button" id="detail-favorite" type="button" title="Guardar en favoritas" aria-label="Guardar en favoritas">${icon('star')}</button><button class="icon-button" id="detail-share" type="button" title="Compartir ficha" aria-label="Compartir ficha">${icon('share')}</button><button class="icon-button" id="detail-print" type="button" title="Imprimir ficha" aria-label="Imprimir ficha">${icon('print')}</button></div></div><div class="detail-title-row"><p class="detail-specialty"><span class="specialty-dot"></span>${esc(card.specialty)}</p><h1 id="detail-title" tabindex="-1">${esc(topic?.name||card.name)}</h1><div class="card-badges">${statusBadge(source,card)}<span class="badge">Fuente ${esc(card.sourceId)} · ${esc(pageLabel(card))}</span></div></div>${topicSourcesHTML(topic,card)}<div class="active-document-label"><strong>Documento elegido: ${esc(source.id)}</strong><span>${esc(card.name)} · ${esc(source.titulo)}</span><span><b>Ámbito:</b> ${esc(source.alcance||card.scope||'No identificado en la copia')}</span></div>${sourceStatusNote(source,card)}${card.priority ? `<section class="priority-panel ${ptype}">${icon(ptype === 'urgent' ? 'info' : 'clock')}<div><strong>Prioridad y destino según la fuente</strong><p>${esc(card.priority)}</p></div></section>` : ''}<div class="detail-layout single-reading">${checklistHTML(card)}${sourceTranscriptionHTML(card)}${sourcePanel(source,card)}</div>${feedbackPanel(card)}`;
+    const reading = card.referralGuide
+      ? '<section class="checklist-panel referral-guide" id="referral-guide" aria-label="Revise su referencia"></section>'
+      : checklistHTML(card) + sourceTranscriptionHTML(card);
+    panel.innerHTML = `<div class="detail-topbar no-print"><a class="back-link" href="#" id="back-to-results">${icon('back')}Volver a resultados</a><div class="detail-tools"><button class="icon-button" id="detail-favorite" type="button" title="Guardar en favoritas" aria-label="Guardar en favoritas">${icon('star')}</button><button class="icon-button" id="detail-share" type="button" title="Compartir ficha" aria-label="Compartir ficha">${icon('share')}</button><button class="icon-button" id="detail-print" type="button" title="Imprimir ficha" aria-label="Imprimir ficha">${icon('print')}</button></div></div><div class="detail-title-row"><p class="detail-specialty"><span class="specialty-dot"></span>${esc(card.specialty)}</p><h1 id="detail-title" tabindex="-1">${esc(topic?.name||card.name)}</h1><div class="card-badges">${statusBadge(source,card)}<span class="badge">Fuente ${esc(card.sourceId)} · ${esc(pageLabel(card))}</span></div></div>${topicSourcesHTML(topic,card)}<div class="active-document-label"><strong>Documento elegido: ${esc(source.id)}</strong><span>${esc(card.name)} · ${esc(source.titulo)}</span><span><b>Ámbito:</b> ${esc(source.alcance||card.scope||'No identificado en la copia')}</span></div>${sourceStatusNote(source,card)}${card.priority ? `<section class="priority-panel ${ptype}">${icon(ptype === 'urgent' ? 'info' : 'clock')}<div><strong>Prioridad y destino según la fuente</strong><p>${esc(card.priority)}</p></div></section>` : ''}<div class="detail-layout single-reading">${reading}${sourcePanel(source,card)}</div>${card.relatedCards?.length ? relatedDocumentsHTML(card) : ''}${feedbackPanel(card)}`;
     $('#detail-source-select')?.addEventListener('change',event=>chooseDocument(event.target.value));
+    let guide;
+    if (card.referralGuide) {
+      const key = guideStorageKey(card.id);
+      const previous = safeRead(sessionStorage, key, {}) || {};
+      const saved = {checked: previous.checked, route: restoreReading ? previous.route : ''};
+      guide = mountReferralGuide($('#referral-guide'), {
+        card, source, saved, save: value => safeWrite(sessionStorage, key, value),
+        pageLink: page => viewerURL(source, {pages:[page]}), guidanceHTML: edusGuidanceHTML,
+        copyText, referenceTemplate, announce
+      });
+      // Reiniciar la elección en cada apertura. El regreso desde el visor conserva la ruta elegida.
+      safeWrite(sessionStorage, key, guide.snapshot());
+    }
     updateDetailFavorite(); updateChecklist(card); applyDetailTab(state.detailTab);
     window.trackReferenceEvent?.('reference_open',{card_id:card.id});
     document.title = `${card.name} · Criterios de referencia`;
     $('#detail-print').addEventListener('click',() => {
       saveDetailReading();
       const checkedByCard=Object.fromEntries(state.cards.filter(item=>item.sourceId===card.sourceId&&norm(item.specialty)===norm(card.specialty)).map(item=>[item.id,[...getChecked(item.id)]]));
-      printCard({card,cards:state.cards,sources:state.sources,topics:state.topics,checkedByCard,button:$('#detail-print'),onStatus:announce});
+      printCard({card,cards:state.cards,sources:state.sources,topics:state.topics,checkedByCard,guideState:guide?.snapshot(),button:$('#detail-print'),onStatus:announce});
     });
     $('#detail-favorite').addEventListener('click',() => toggleFavorite(id));
     $('#detail-share').addEventListener('click',() => shareCard({card,title:topic?.name||card.name,url:location.href,button:$('#detail-share'),onStatus:announce}));
+    if (guide) { panel.onchange = null; return; }
     $('#copy-reference').addEventListener('click',() => copyText(referenceTemplate(card),'Esquema copiado. Complete los datos clínicos en el expediente.'));
     $('#copy-missing').addEventListener('click',() => copyText(missingTemplate(card),'Elementos por revisar copiados.'));
     $('#reset-checklist').addEventListener('click',() => {
@@ -534,7 +561,7 @@ if (!mountDocumentScreen()) (() => {
   }
   function renderSources() {
     const groups = [{title:'Fuentes nacionales',items:state.sources.filter(s => /^N/.test(s.id))},{title:'Documentos regionales y de servicio',items:state.sources.filter(s => /^R/.test(s.id))},{title:'Documentos identificados por obtener',items:state.sources.filter(s => !/^[NR]/.test(s.id))}];
-    return `<a class="back-link" href="#">${icon('back')}Volver al catálogo</a><div class="info-page-heading"><p class="eyebrow">Respaldo documental</p><h1>Fuentes y versiones</h1><p>Cada ficha conserva el documento y la página de origen. El alcance regional, los periodos impresos y los documentos por obtener se mantienen visibles. Los complementos marcados “sin fichas clínicas todavía” se ofrecen como PDF y aún no forman parte de la búsqueda por diagnóstico.</p></div>${groups.map(group => group.items.length ? `<h2 class="source-group-title">${esc(group.title)}</h2>${group.items.map(source => `<article class="source-card"><div class="source-card-header"><div><span class="source-card-id">${esc(source.id)}${source.tema?' · '+esc(source.tema):''}</span><h2>${esc(source.titulo)}</h2></div></div><div class="card-badges">${statusBadge(source)}</div><div class="source-metadata" style="margin-top:12px"><span>${esc(source.codigo || 'Sin código identificado')}</span><span>${esc(source.fecha || 'Sin fecha confirmada')}</span>${source.pageCount?`<span>${esc(source.pageCount)} páginas</span>`:''}</div><p><strong>Alcance:</strong> ${esc(source.alcance || 'Por documentar')}<br><strong>Vigencia declarada:</strong> ${esc(source.vigencia || 'No confirmada')}</p>${source.estado?`<p>${esc(source.estado)}</p>`:''}${source.limites?`<p>${esc(source.limites)}</p>`:''}<div class="source-actions">${source.localPdf||source.pageImageBase?sourceActions(source):source.enlace?`<a class="button button-secondary" href="${esc(validURL(source.enlace))}" target="_blank" rel="noopener noreferrer">${icon('external')}Ver respaldo de la identificación</a>`:''}</div></article>`).join('')}`:'').join('')}`;
+    return `<a class="back-link" href="#">${icon('back')}Volver al catálogo</a><div class="info-page-heading"><p class="eyebrow">Respaldo documental</p><h1>Fuentes y versiones</h1><p>Cada ficha conserva el documento y la página de origen. El alcance regional, los periodos impresos y los documentos por obtener se mantienen visibles. El manual de oferta institucional se consulta aquí. Cada ficha del buscador identifica el documento del que proceden sus criterios.</p></div>${groups.map(group => group.items.length ? `<h2 class="source-group-title">${esc(group.title)}</h2>${group.items.map(source => `<article class="source-card"><div class="source-card-header"><div><span class="source-card-id">${esc(source.id)}${source.tema?' · '+esc(source.tema):''}</span><h2>${esc(source.titulo)}</h2></div></div><div class="card-badges">${statusBadge(source)}</div><div class="source-metadata" style="margin-top:12px"><span>${esc(source.codigo || 'Sin código identificado')}</span><span>${esc(source.fecha || 'Sin fecha confirmada')}</span>${source.pageCount?`<span>${esc(source.pageCount)} páginas</span>`:''}</div><p><strong>Alcance:</strong> ${esc(source.alcance || 'Por documentar')}<br><strong>Vigencia declarada:</strong> ${esc(source.vigencia || 'No confirmada')}</p>${source.estado?`<p>${esc(source.estado)}</p>`:''}${source.limites?`<p>${esc(source.limites)}</p>`:''}<div class="source-actions">${source.localPdf||source.pageImageBase?sourceActions(source):source.enlace?`<a class="button button-secondary" href="${esc(validURL(source.enlace))}" target="_blank" rel="noopener noreferrer">${icon('external')}Ver respaldo de la identificación</a>`:''}</div></article>`).join('')}`:'').join('')}`;
   }
   function renderGuide() {
     const steps=[

@@ -37,8 +37,8 @@ export function specificRequirementsForCard(card) {
 }
 
 export function generalRequirementsCoverage(members,cards) {
-  const clinical=members.filter(card=>isCatalogCard(card)&&isReferralCard(card)&&!isGeneralCard(card));
-  const included=clinical.filter(card=>generalRequirementsForCard(card,cards).length>0).length;
+  const clinical=members.filter(card=>isCatalogCard(card)&&(isReferralCard(card)||card.referralGuide)&&!isGeneralCard(card));
+  const included=clinical.filter(card=>card.referralGuide ? card.referralGuide.general.length > 0 : generalRequirementsForCard(card,cards).length > 0).length;
   return {total:clinical.length,included,label:included&&included===clinical.length?'Incluye requisitos generales y específicos':included?'Requisitos generales según documento':''};
 }
 

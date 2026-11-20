@@ -1,0 +1,5523 @@
+[
+  {
+    "id": "n18-urgencias-oftalmologicas-alta-prioridad",
+    "sourceId": "N18",
+    "specialty": "Oftalmología",
+    "name": "Urgencias oftalmológicas de alta prioridad. Referencia y teleinterconsulta",
+    "aliases": [
+      "urgencia oftalmológica",
+      "teleinterconsulta de Oftalmología",
+      "urgencias de retina y vítreo",
+      "retinología"
+    ],
+    "general": [
+      {
+        "label": "Alcance del lineamiento",
+        "pages": [
+          3
+        ],
+        "items": [],
+        "notes": [
+          "Organiza la atención en red de las urgencias oftalmológicas, con énfasis en retina y vítreo durante fines de semana y feriados. Los criterios diagnósticos y terapéuticos se consultan en la normativa clínica institucional correspondiente."
+        ]
+      },
+      {
+        "label": "Cuándo activar la ruta asistencial de inmediato",
+        "pages": [
+          17,
+          19
+        ],
+        "items": [
+          "Ante riesgo de pérdida visual, deterioro funcional o necesidad de resolución inmediata, active la ruta asistencial correspondiente sin esperar respuesta de la teleinterconsulta. La valoración presencial, la referencia o el traslado urgente proceden según la condición clínica."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Desde áreas de salud participantes con atención oftalmológica en horario ampliado",
+        "sections": [
+          {
+            "label": "Referencia desde el área de salud",
+            "pages": [
+              11
+            ],
+            "items": [
+              "En fines de semana y feriados, la estrategia de atención periférica cubre casos de complejidad media o baja que el establecimiento pueda resolver con seguridad y con especialista en Oftalmología. Ante signos de alarma o incertidumbre diagnóstica, active la referencia inmediata al nivel correspondiente."
+            ],
+            "notes": [
+              "La modalidad de urgencias 24/7 se limita a áreas de salud tipo 3 en la red periférica inmediata de hospitales nacionales o regionales de alta demanda, con referencia directa a esas unidades."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Desde servicios de emergencias. Red de retina y vítreo propuesta como plan piloto",
+        "sections": [
+          {
+            "label": "Circuito previsto en el plan piloto",
+            "pages": [
+              15
+            ],
+            "items": [],
+            "notes": [
+              "El lineamiento propone a la Clínica Oftalmológica y al Hospital México como circuito receptor, con prioridad para fines de semana y feriados. Prevé activación mediante una llamada institucional desde Emergencias, conforme al protocolo de referencia y contrarreferencia.",
+              "La propuesta requiere disponibilidad formal de cirugía de retina y vítreo, con cobertura de anestesiología, enfermería especializada y sala quirúrgica al mismo tiempo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Teleinterconsulta con Oftalmología o Retina en establecimientos participantes",
+        "sections": [
+          {
+            "label": "Valoración especializada",
+            "pages": [
+              16,
+              17
+            ],
+            "items": [
+              "Ante sospecha de urgencia oftalmológica mayor, el lineamiento prevé valoración por el oftalmólogo o retinólogo de referencia antes de diferir la atención, programar o reprogramar cirugía, rechazar un traslado o dar el egreso.",
+              "El profesional tratante realiza la valoración presencial inicial, adopta las medidas diagnósticas y terapéuticas requeridas y registra la solicitud en el SIES-EDUS con la información clínica que la sustenta. Si están disponibles, incorpore las fotografías clínicas, imágenes diagnósticas o resultados de ultrasonido ocular pertinentes."
+            ]
+          },
+          {
+            "label": "Conducta y registro",
+            "pages": [
+              17,
+              18
+            ],
+            "items": [
+              "El tratante y las instancias responsables ejecutan la conducta según la condición clínica y la organización de la red. El registro incluye solicitud, información clínica, criterio especializado, conducta recomendada, acciones realizadas y resultado final cuando corresponda."
+            ],
+            "notes": [
+              "El especialista registra su criterio en el SIES-EDUS. Según la valoración puede recomendar manejo local temporal con seguimiento, estudios complementarios, valoración presencial por Oftalmología, referencia a un centro con mayor capacidad resolutiva, traslado urgente, resolución quirúrgica prioritaria o seguimiento específico."
+            ]
+          },
+          {
+            "label": "Si el sistema está fuera de servicio",
+            "pages": [
+              18,
+              19
+            ],
+            "items": [
+              "Use los mecanismos asistenciales ordinarios para dar continuidad a la atención. La falla tecnológica no debe retrasar la valoración presencial, la referencia, el traslado ni la resolución de la urgencia. Registre lo actuado al restablecerse el sistema."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Emergencias"
+    ],
+    "priority": "Servicio de Urgencias"
+  },
+  {
+    "id": "n20-cauda-equina",
+    "sourceId": "N20",
+    "specialty": "Emergencias",
+    "name": "Sospecha de síndrome de cauda equina",
+    "aliases": [
+      "cola de caballo",
+      "G83.4",
+      "hernia lumbar",
+      "compresión lumbar"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Emergencias o Urgencias, atención inmediata",
+        "sections": [
+          {
+            "label": "Sospecha clínica",
+            "pages": [
+              14,
+              15
+            ],
+            "items": [],
+            "notes": [
+              "Retención o incontinencia urinaria, pérdida de sensibilidad en silla de montar, ciática bilateral o debilidad de las piernas son manifestaciones descritas. La sospecha requiere imágenes y descompresión inmediatas."
+            ]
+          },
+          {
+            "label": "Referencia de urgencia",
+            "pages": [
+              19
+            ],
+            "items": [
+              "Enviar de inmediato al servicio de Emergencias del siguiente nivel según la red, con referencia completa, examen físico y radiografías si están disponibles en el nivel de origen."
+            ]
+          }
+        ]
+      }
+    ],
+    "priority": "Servicio de Urgencias"
+  },
+  {
+    "id": "n20-ciatica-y-lumbago",
+    "sourceId": "N20",
+    "specialty": "Fisiatría",
+    "name": "Ciática y lumbago con ciática",
+    "aliases": [
+      "dolor lumbar",
+      "M54.3",
+      "M54.4",
+      "lumbalgia"
+    ],
+    "general": [
+      {
+        "label": "Datos de la referencia",
+        "pages": [
+          13
+        ],
+        "items": [
+          "Identificar centro, médico y fecha. Consignar identificación, edad, estado civil, situación laboral y escolaridad de la persona.",
+          "Describir antecedentes personales patológicos y no patológicos, transfusiones, uso de drogas ilícitas, alergias, antecedentes familiares y quirúrgicos.",
+          "Anotar duración en días, probable causa, tratamientos y respuesta, limitación de actividades diarias y días de incapacidad. Justificar el diagnóstico o impresión diagnóstica y por qué se agotó la capacidad resolutiva del primer nivel.",
+          "Describir examen articular y neurológico, fuerza de 0 a 5, sensibilidad, arcos de movilidad, reflejos osteotendinosos y pruebas específicas. Documentar la revaloración en primer nivel.",
+          "Incluir valoración de las radiografías. Si no constan en el módulo de imágenes del expediente electrónico, la fuente pide llevarlas el día de la cita.",
+          "La fuente solicita marcadores inflamatorios y antígeno prostático específico en hombres mayores de 60 años o ante banderas rojas a cualquier edad. En personas con cirugía lumbar previa, verificar cuál servicio realizó el procedimiento."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Fisiatría de la red, prioridad 3",
+        "sections": [
+          {
+            "label": "Ciática M54.3 y lumbago con ciática M54.4",
+            "pages": [
+              22
+            ],
+            "items": [
+              "Adjuntar examen físico, radiografías AP y lateral de columna con carga y AP y lateral de pelvis. Descartar patología ginecológica o urológica según los síntomas.",
+              "En presencia de obesidad, referir a Nutrición, excepto ante banderas rojas o alteraciones radiológicas que ameriten abordaje por especialista."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n20-curvatura-columna-sintomatica",
+    "sourceId": "N20",
+    "specialty": "Ortopedia",
+    "name": "Curvatura sintomática de la columna vertebral",
+    "aliases": [
+      "escoliosis",
+      "M43.9"
+    ],
+    "general": [
+      {
+        "label": "Datos de la referencia",
+        "pages": [
+          13
+        ],
+        "items": [
+          "Identificar centro, médico y fecha. Consignar identificación, edad, estado civil, situación laboral y escolaridad de la persona.",
+          "Describir antecedentes personales patológicos y no patológicos, transfusiones, uso de drogas ilícitas, alergias, antecedentes familiares y quirúrgicos.",
+          "Anotar duración en días, probable causa, tratamientos y respuesta, limitación de actividades diarias y días de incapacidad. Justificar el diagnóstico o impresión diagnóstica y por qué se agotó la capacidad resolutiva del primer nivel.",
+          "Describir examen articular y neurológico, fuerza de 0 a 5, sensibilidad, arcos de movilidad, reflejos osteotendinosos y pruebas específicas. Documentar la revaloración en primer nivel.",
+          "Incluir valoración de las radiografías. Si no constan en el módulo de imágenes del expediente electrónico, la fuente pide llevarlas el día de la cita.",
+          "La fuente solicita marcadores inflamatorios y antígeno prostático específico en hombres mayores de 60 años o ante banderas rojas a cualquier edad. En personas con cirugía lumbar previa, verificar cuál servicio realizó el procedimiento."
+        ]
+      },
+      {
+        "label": "Cuándo considerar una referencia quirúrgica",
+        "pages": [
+          3,
+          14
+        ],
+        "items": [
+          "Correlacionar los síntomas y el examen con los hallazgos de imagen. Para Ortopedia, verificar que exista una posible resolución quirúrgica y que la persona esté dispuesta a considerarla."
+        ],
+        "notes": [
+          "En patología degenerativa, la fuente indica tratamiento inicial del dolor y valorar referencia para probable cirugía si no responde.",
+          "La fuente reserva la cirugía, en general, para cauda equina, déficit neurológico grave y progresivo o ausencia de mejoría tras seis semanas de manejo conservador con compresión radicular demostrada en TAC o resonancia y síntomas concordantes."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Ortopedia, prioridad 3",
+        "sections": [
+          {
+            "label": "Curva sintomática y magnitud",
+            "pages": [
+              14,
+              22
+            ],
+            "items": [
+              "Indicar la magnitud en grados cuando se trate de escoliosis. El cuadro de referencia solicita perfilograma completo, radiografías dorsal AP y lateral y examen físico.",
+              "Si hay obesidad, referir a Nutrición excepto si hay banderas rojas o alteraciones radiológicas que ameriten abordaje por especialista."
+            ]
+          },
+          {
+            "label": "Consulta especializada para intervención quirúrgica",
+            "pages": [
+              15
+            ],
+            "items": [
+              "Perfilograma de hasta un año y resonancia magnética de hasta un año y medio.",
+              "Las enfermedades crónicas, como diabetes o hipertensión, deben estar controladas. Con IMC mayor de 30, la fuente solicita referencia a Nutrición."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n20-lumbalgia-evolucion",
+    "sourceId": "N20",
+    "specialty": "Fisiatría",
+    "name": "Lumbalgia persistente: referencia según evolución",
+    "aliases": [
+      "fisioterapia",
+      "dolor lumbar",
+      "hernia lumbar",
+      "obesidad y lumbalgia"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Fisioterapia",
+        "sections": [
+          {
+            "label": "Sin mejoría clínica y funcional en dos a seis semanas",
+            "pages": [
+              10
+            ],
+            "items": [
+              "Reevaluar signos de alarma, evolución del dolor y medidas higiénico-posturales. La fuente indica referir a Fisioterapia e indicar ejercicio."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Valoración especializada según la red",
+        "sections": [
+          {
+            "label": "Revaloración de las seis a las dieciséis semanas",
+            "pages": [
+              10
+            ],
+            "items": [],
+            "notes": [
+              "Valorar referencia ante signos de alarma, radiculopatía grave o evolución superior a dieciséis semanas."
+            ]
+          },
+          {
+            "label": "Compromiso neurológico",
+            "pages": [
+              9
+            ],
+            "items": [],
+            "notes": [
+              "Se recomienda neuroimagen urgente si se sospecha cauda equina o déficit neurológico rápidamente progresivo. Donde la red disponga de Clínica de Algias o Medicina Familiar y Comunitaria, la fuente pide referir con el reporte de TAC o resonancia si existe compromiso neurológico."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nutrición",
+        "sections": [
+          {
+            "label": "Obesidad asociada a patología lumbar",
+            "pages": [
+              9
+            ],
+            "items": [
+              "Consignar la obesidad como diagnóstico principal y la patología lumbar como secundaria. Incluir motivo de referencia, datos antropométricos, bioquímicos y clínicos, evolución, tratamiento y recomendaciones."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Psicología del mismo establecimiento",
+        "sections": [
+          {
+            "label": "Revaloración de las seis a las dieciséis semanas",
+            "pages": [
+              10
+            ],
+            "items": [],
+            "notes": [
+              "Valorar referencia si la historia clínica identifica elementos que requieren intervención psicológica."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Trabajo Social",
+        "sections": [
+          {
+            "label": "Cuando la historia justifica la intervención",
+            "pages": [
+              10,
+              11
+            ],
+            "items": [],
+            "notes": [
+              "En áreas de salud de primer y segundo nivel, valorar crisis o necesidad de reorganización familiar, presunta violencia, falta de red de apoyo efectiva, baja adherencia, conductas adictivas, problemas socioeconómicos asociados a la enfermedad o necesidad de movilizar recursos.",
+              "Para el segundo y tercer nivel se contempla también vulnerabilidad que afecta el egreso hospitalario, abandono o riesgo de abandono, intervención en el estilo de vida o con la persona cuidadora."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Terapia Física",
+      "Nutrición",
+      "Psicología",
+      "Trabajo Social"
+    ]
+  },
+  {
+    "id": "n20-trastornos-discales",
+    "sourceId": "N20",
+    "specialty": "Ortopedia",
+    "name": "Patología discal lumbar y radiculopatía",
+    "aliases": [
+      "hernia de disco lumbar",
+      "lumbago",
+      "ciática discal",
+      "mielopatía",
+      "espondilosis",
+      "M47.2",
+      "M51",
+      "M54.1"
+    ],
+    "general": [
+      {
+        "label": "Cuándo considerar una referencia quirúrgica",
+        "pages": [
+          3,
+          14
+        ],
+        "items": [
+          "Correlacionar los síntomas y el examen con los hallazgos de imagen. Para Ortopedia, verificar que exista una posible resolución quirúrgica y que la persona esté dispuesta a considerarla."
+        ],
+        "notes": [
+          "En patología degenerativa, la fuente indica tratamiento inicial del dolor y valorar referencia para probable cirugía si no responde.",
+          "La fuente reserva la cirugía, en general, para cauda equina, déficit neurológico grave y progresivo o ausencia de mejoría tras seis semanas de manejo conservador con compresión radicular demostrada en TAC o resonancia y síntomas concordantes."
+        ]
+      },
+      {
+        "label": "Datos de la referencia",
+        "pages": [
+          13
+        ],
+        "items": [
+          "Identificar centro, médico y fecha. Consignar identificación, edad, estado civil, situación laboral y escolaridad de la persona.",
+          "Describir antecedentes personales patológicos y no patológicos, transfusiones, uso de drogas ilícitas, alergias, antecedentes familiares y quirúrgicos.",
+          "Anotar duración en días, probable causa, tratamientos y respuesta, limitación de actividades diarias y días de incapacidad. Justificar el diagnóstico o impresión diagnóstica y por qué se agotó la capacidad resolutiva del primer nivel.",
+          "Describir examen articular y neurológico, fuerza de 0 a 5, sensibilidad, arcos de movilidad, reflejos osteotendinosos y pruebas específicas. Documentar la revaloración en primer nivel.",
+          "Incluir valoración de las radiografías. Si no constan en el módulo de imágenes del expediente electrónico, la fuente pide llevarlas el día de la cita.",
+          "La fuente solicita marcadores inflamatorios y antígeno prostático específico en hombres mayores de 60 años o ante banderas rojas a cualquier edad. En personas con cirugía lumbar previa, verificar cuál servicio realizó el procedimiento."
+        ]
+      },
+      {
+        "label": "Consulta especializada para intervención quirúrgica",
+        "pages": [
+          15
+        ],
+        "items": [
+          "Perfilograma de hasta un año y resonancia magnética de hasta un año y medio.",
+          "Las enfermedades crónicas, como diabetes o hipertensión, deben estar controladas. Con IMC mayor de 30, la fuente solicita referencia a Nutrición."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Ortopedia, prioridad 2",
+        "sections": [
+          {
+            "label": "Radiculopatía con espondilosis",
+            "pages": [
+              19
+            ],
+            "items": [],
+            "notes": [
+              "M47.2. El anexo asigna prioridad 2 a Ortopedia."
+            ]
+          },
+          {
+            "label": "Requisitos del anexo",
+            "pages": [
+              19
+            ],
+            "items": [],
+            "notes": [
+              "Adjuntar examen físico, perfilograma completo, radiografías anteroposterior, lateral y oblicuas y radiografías dinámicas. Según los síntomas, descartar patología ginecológica o urológica.",
+              "Ante obesidad, referir a Nutrición, excepto si hay banderas rojas o alteraciones radiológicas que ameriten abordaje por especialista."
+            ]
+          },
+          {
+            "label": "Trastorno discal lumbar",
+            "pages": [
+              20
+            ],
+            "items": [],
+            "notes": [
+              "Prioridad 2 para radiculopatía o ciática debida a trastorno de disco lumbar (M51.1), lumbago por desplazamiento de disco u otro desplazamiento específico (M51.2) y otras degeneraciones específicas de disco (M51.3). Perfilograma completo, radiografías AP, lateral, oblicuas y dinámicas y examen físico. La excepción por banderas rojas o hallazgos radiológicos también aplica a la referencia a Nutrición por obesidad."
+            ]
+          },
+          {
+            "label": "Radiculopatía M54.1",
+            "pages": [
+              21
+            ],
+            "items": [],
+            "notes": [
+              "Examen físico, radiografías AP y lateral de columna con carga y AP y lateral de pelvis. Descartar etiología ginecológica o urológica según los síntomas. Si hay obesidad, referir a Nutrición salvo banderas rojas o alteraciones radiológicas que ameriten abordaje especializado."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Neurocirugía u Ortopedia según la red, prioridad 2",
+        "sections": [
+          {
+            "label": "Trastorno de discos lumbares u otros con mielopatía",
+            "pages": [
+              19
+            ],
+            "items": [
+              "M51.0. Adjuntar perfilograma completo, radiografías cefalocaudales AP, lateral y oblicuas, radiografías dinámicas y exploración neurológica completa. Descartar etiología ginecológica o urológica según la clínica. Si hay obesidad, valorar Nutrición con la excepción de banderas rojas o alteraciones radiológicas que ameriten abordaje por especialista."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ortopedia, prioridad 3",
+        "sections": [
+          {
+            "label": "Otros trastornos específicos o no especificados de discos intervertebrales",
+            "pages": [
+              21
+            ],
+            "items": [],
+            "notes": [
+              "M51.8 y M51.9. El anexo asigna prioridad 3."
+            ]
+          },
+          {
+            "label": "Requisitos del anexo",
+            "pages": [
+              21
+            ],
+            "items": [
+              "Adjuntar examen físico, perfilograma completo, radiografías anteroposterior, lateral y oblicuas y radiografías dinámicas. Según los síntomas, descartar patología ginecológica o urológica.",
+              "Ante obesidad, referir a Nutrición, excepto si hay banderas rojas o alteraciones radiológicas que ameriten abordaje por especialista."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Neurocirugía"
+    ]
+  },
+  {
+    "id": "n21-artrosis-de-cadera",
+    "sourceId": "N21",
+    "specialty": "Ortopedia",
+    "name": "Artrosis de cadera",
+    "aliases": [
+      "Coxartrosis",
+      "Osteoartrosis de cadera",
+      "Osteoartritis de cadera"
+    ],
+    "general": [
+      {
+        "label": "Datos que debe incluir toda referencia a medicina especializada",
+        "pages": [
+          7
+        ],
+        "items": [
+          "Identifique el centro de procedencia y al médico que refiere. Consigne la fecha.",
+          "Incluya la identificación de la persona, edad, estado civil, condición laboral y escolaridad.",
+          "Describa los antecedentes patológicos, los síntomas, el tiempo de evolución y el tratamiento recibido.",
+          "Registre los antecedentes personales no patológicos, transfusiones, uso de drogas ilícitas y alergias a medicamentos. Incluya los antecedentes heredofamiliares y quirúrgicos.",
+          "Documente el examen físico completo y describa los hallazgos de la exploración articular."
+        ]
+      },
+      {
+        "label": "Justificación de la referencia a un nivel de mayor capacidad resolutiva",
+        "pages": [
+          8
+        ],
+        "items": [
+          "Indique el motivo de la referencia y el diagnóstico o la impresión diagnóstica. Explique por qué la persona requiere atención en el segundo nivel y cuáles son los límites del manejo realizado en el primer nivel."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Fisiatría",
+        "sections": [
+          {
+            "label": "Referencia desde el primer nivel",
+            "pages": [
+              8
+            ],
+            "items": [
+              "Fundamente la sospecha de osteoartrosis de cadera con el examen físico completo y estudios de imagen.",
+              "En casos inflamatorios, aporte los resultados de laboratorio correspondientes. Si el índice de masa corporal es mayor de 30, la persona debe haberse referido previamente a Nutrición."
+            ]
+          },
+          {
+            "label": "Dolor articular de cadera y prioridad según la tabla 1",
+            "pages": [
+              9,
+              10
+            ],
+            "items": [
+              "Precise los días de evolución y cómo el dolor limita las actividades. Consigne el diagnóstico o la causa que se sospecha, los hallazgos del examen físico, el tratamiento recibido y el motivo de referencia."
+            ],
+            "notes": [
+              "A cupo cuando el dolor persiste a pesar del tratamiento, hay limitación funcional y esta afecta las actividades de la persona. La valoración se solicita para mejorar la función articular."
+            ]
+          },
+          {
+            "label": "Estudios que se aportan a la cita",
+            "pages": [
+              9,
+              10
+            ],
+            "items": [
+              "Radiografía de pelvis con foco en pubis y proyección axial de cadera. La fuente indica llevar las placas a la cita.",
+              "Adjunte los estudios de laboratorio y gabinete. Los resultados de laboratorio pueden anotarse en la referencia o aportarse en fotocopia. Si hay ultrasonido, la fuente pide incorporarlo a los adjuntos del EDUS y llevar al especialista una copia con las imágenes visibles. Aporte otros estudios complementarios cuando corresponda."
+            ]
+          },
+          {
+            "label": "Si el caso es prioritario",
+            "pages": [
+              9
+            ],
+            "items": [
+              "Comente el caso con el especialista por los medios oficiales de comunicación institucional. Si no logra localizarlo, envíelo a la Jefatura de Consulta Externa para su canalización y deje constancia del intento de contacto."
+            ]
+          },
+          {
+            "label": "Referencia posquirúrgica y contrarreferencia",
+            "pages": [
+              13,
+              14
+            ],
+            "items": [
+              "Después de la cirugía, refiera a Fisiatría para el tratamiento fisioterapéutico posquirúrgico que indica el protocolo de artroplastia total de cadera del CENARE."
+            ],
+            "notes": [
+              "Fisiatría contrarrefiere cuando la persona ha completado la rehabilitación funcional, con o sin intervención quirúrgica. Corresponde una nueva referencia si, después de alcanzar estabilidad funcional y control del dolor, presenta una recaída que supera la capacidad del primer nivel."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Control del Dolor",
+        "sections": [
+          {
+            "label": "Referencia desde el primer nivel",
+            "pages": [
+              8
+            ],
+            "items": [],
+            "notes": [
+              "Ante sospecha clínica clara de osteoartrosis, respaldada por imágenes, el criterio es dolor de 5 o más en la escala visual analógica (EVA) o necesidad de manejo intervencionista, pese al esquema analgésico del primer nivel en dosis óptimas."
+            ]
+          },
+          {
+            "label": "Dolor crónico de difícil manejo y prioridad según la tabla 2",
+            "pages": [
+              10,
+              11
+            ],
+            "items": [
+              "A cupo. El médico que refiere debe haber establecido la causa del dolor. Documente la respuesta insuficiente al tratamiento específico o el motivo que impide administrarlo."
+            ],
+            "notes": [
+              "El servicio apoya al médico tratante en el control del dolor de difícil manejo. El diagnóstico etiológico y el seguimiento corresponden al equipo tratante. Para manejo intervencionista, refiera al Centro Nacional de Control del Dolor y Cuidado Paliativo."
+            ]
+          },
+          {
+            "label": "Exámenes y coordinación",
+            "pages": [
+              10
+            ],
+            "items": [
+              "Aporte pruebas de función renal y hepática. Adjunte los exámenes de laboratorio y gabinete e incluya las imágenes que correspondan. La fuente menciona la fotocopia para los resultados de laboratorio.",
+              "Si el caso es prioritario, coméntelo con el especialista. Si no logra localizarlo, remítalo a la Jefatura de Consulta Externa y deje constancia del intento de contacto.",
+              "Si la persona vive en una zona lejana, coordine la valoración por teleconsulta con el Centro Nacional de Control del Dolor y Cuidado Paliativo."
+            ]
+          },
+          {
+            "label": "Contrarreferencia y revaloración",
+            "pages": [
+              13
+            ],
+            "items": [],
+            "notes": [
+              "Contrarrefiera al primer nivel para continuar la analgesia crónica cuando la persona alcance las metas de control del dolor y de independencia. Si tras estabilizarse presenta una recaída que el primer nivel no puede manejar, refiera de nuevo para revaloración."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ortopedia",
+        "sections": [
+          {
+            "label": "Adultos. Valoración para resolución quirúrgica",
+            "pages": [
+              8
+            ],
+            "items": [
+              "Refiera para considerar cirugía cuando persistan una limitación importante de la movilidad y dolor superior a 5 en la escala visual analógica (EVA), pese al tratamiento del primer nivel, la valoración y el acompañamiento en Fisiatría y el manejo por la Clínica del Dolor.",
+              "Aporte examen físico completo, estudios de imagen y descripción del manejo no quirúrgico realizado."
+            ]
+          },
+          {
+            "label": "Coxalgia. Criterio, prioridad e imágenes según la edad (tabla 3)",
+            "pages": [
+              11
+            ],
+            "items": [
+              "Para las radiografías, la tabla solicita las imágenes y prescinde del informe escrito."
+            ],
+            "notes": [
+              "Adultos con artrosis de cadera y control insuficiente con medidas no quirúrgicas. La tabla indica atención a cupo y radiografía anteroposterior de pelvis.",
+              "La tabla incluye otra población: niños y adolescentes con dolor de cadera, con o sin trauma. Especifica prioridad para niños y radiografía anteroposterior de pelvis y en posición de rana en niños."
+            ]
+          },
+          {
+            "label": "Plazos máximos razonables según la prioridad en Ortopedia (tabla 4)",
+            "pages": [
+              11,
+              12
+            ],
+            "items": [],
+            "notes": [
+              "Baja, de 0 a 365 días, si la demora no ocasiona secuelas clínicas o sociales importantes ni afecta la calidad de vida. Media, de 0 a 240 días, si hay riesgo a corto plazo e impacto relativo en la calidad de vida. Alta, de 0 a 120 días, para tratamiento quirúrgico programable de alta prioridad cuando el médico tratante establece riesgo vital inminente."
+            ]
+          },
+          {
+            "label": "Priorización de la cirugía por artrosis de cadera (tabla 5)",
+            "pages": [
+              12,
+              13
+            ],
+            "items": [],
+            "notes": [
+              "Para la lista de espera quirúrgica, consulte la tabla de puntajes por complejidad de la enfermedad, episodios previos de dolor, limitación en las actividades cotidianas y el trabajo, personas a cargo y dependencia. Los intervalos son baja prioridad hasta 272 puntos, media de 273 a 544 y alta desde 545."
+            ]
+          },
+          {
+            "label": "Derivación a rehabilitación y contrarreferencia",
+            "pages": [
+              9,
+              13,
+              14
+            ],
+            "items": [
+              "Definida la cirugía de reemplazo, el especialista en Ortopedia refiere para fisioterapia prequirúrgica según el protocolo de artroplastia total de cadera del CENARE. Después de la cirugía corresponde referencia a Fisiatría para rehabilitación."
+            ],
+            "notes": [
+              "Ortopedia contrarrefiere una vez resuelta quirúrgicamente la patología y completada la valoración posoperatoria. Si, tras alcanzar estabilidad funcional y control del dolor, ocurre una recaída que supera la capacidad del primer nivel, refiera de nuevo a la especialidad correspondiente."
+            ]
+          },
+          {
+            "label": "Decisión de tratamiento quirúrgico",
+            "pages": [
+              7
+            ],
+            "items": [],
+            "notes": [
+              "El ortopedista valora la opción quirúrgica cuando el tratamiento no quirúrgico no ha permitido recuperar adecuadamente la calidad de vida. El reemplazo total de cadera es una de las opciones descritas."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Terapia Física (por indicación de Fisiatría)",
+        "sections": [
+          {
+            "label": "Indicación para iniciar la rehabilitación",
+            "pages": [
+              8
+            ],
+            "items": [],
+            "notes": [
+              "El servicio valora a las personas que tienen indicación de iniciar rehabilitación prescrita por un médico especialista en Medicina Física y Rehabilitación."
+            ]
+          },
+          {
+            "label": "Rehabilitación en la artroplastia total de cadera",
+            "pages": [
+              9,
+              14,
+              17
+            ],
+            "items": [
+              "Para el reemplazo articular, el ortopedista refiere una vez definido el tipo de cirugía para iniciar el tratamiento fisioterapéutico prequirúrgico. Después de la cirugía se refiere a Fisiatría. El protocolo del CENARE se encuentra en el anexo 2."
+            ]
+          },
+          {
+            "label": "Tanque terapéutico del CENARE antes y después de la artroplastia",
+            "pages": [
+              18,
+              22
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Trabajo Social (según la situación social)",
+        "sections": [
+          {
+            "label": "Red de apoyo para el cuidado posoperatorio",
+            "pages": [
+              5
+            ],
+            "items": [
+              "Valore el entorno social y la red de apoyo para los cuidados después de la cirugía. Ante sospecha de dificultades en ese entorno, refiera a Trabajo Social para su estudio."
+            ]
+          },
+          {
+            "label": "Motivos de referencia en áreas de salud del I y II nivel (anexo 1)",
+            "pages": [
+              16
+            ],
+            "items": [],
+            "notes": [
+              "Considere el motivo que corresponda: crisis familiar por el diagnóstico o necesidad de reorganización, presunta violencia, red de apoyo ausente o desorganizada, baja adherencia, conductas adictivas, necesidad de movilizar recursos institucionales o problemas socioeconómicos relacionados con la condición de salud."
+            ]
+          },
+          {
+            "label": "Motivos de referencia en hospitales del II y III nivel (anexo 1)",
+            "pages": [
+              16,
+              17
+            ],
+            "items": [],
+            "notes": [
+              "Considere, según la situación, crisis o reorganización familiar, apoyo insuficiente, baja adherencia, presunta violencia, vulnerabilidad social al definir el egreso, riesgo de abandono o abandono, necesidad de intervención en el modo de vida asociado a la salud, conductas adictivas, intervención con la persona cuidadora principal, problemas socioeconómicos asociados a la salud o necesidad de organizar y movilizar recursos intra e interinstitucionales."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Fisiatría",
+      "Medicina Paliativa y Control del Dolor",
+      "Terapia Física",
+      "Trabajo Social"
+    ],
+    "context": "Referencia a Fisiatría, Control del Dolor u Ortopedia. Incluye las indicaciones para Terapia Física y Trabajo Social.",
+    "related": [
+      {
+        "id": "r01-ortopedia-coxalgias",
+        "pages": [
+          197
+        ],
+        "searchAliases": [
+          "Coxartrosis en adultos",
+          "Artrosis de cadera en adultos"
+        ],
+        "label": "Coxalgias. El apartado regional incluye artrosis de cadera en adultos y dolor de cadera en menores.",
+        "reversePages": [
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n22-escoliosis-pediatrica",
+    "sourceId": "N22",
+    "specialty": "Fisiatría",
+    "name": "Sospecha de escoliosis en niños, niñas y adolescentes",
+    "aliases": [
+      "escoliosis idiopática",
+      "Adams",
+      "ángulo de Cobb",
+      "desviación columna",
+      "ortopedia infantil"
+    ],
+    "general": [
+      {
+        "label": "Valoración en el área de salud",
+        "pages": [
+          6,
+          9
+        ],
+        "items": [
+          "Preguntar por antecedentes familiares de escoliosis, perinatales, dolor y alteraciones observadas en la espalda. Si la deformidad es visible, preguntar por el impacto emocional o acoso escolar.",
+          "Realizar prueba de Tanner. Ante hallazgos positivos en la historia clínica y el examen físico, se solicita radiografía PA de columna en bipedestación."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "EBAIS de adscripción",
+        "sections": [
+          {
+            "label": "Captación en escuela, consulta externa o urgencias",
+            "pages": [
+              6
+            ],
+            "items": [
+              "Referir al EBAIS ante sospecha. En el tamizaje escolar, la asimetría en la altura de los hombros o una prueba de Adams positiva motivan la referencia. Enviar copia a la RISA para seguimiento."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fisiatría según la red",
+        "sections": [
+          {
+            "label": "Elementos para considerar al referir",
+            "pages": [
+              9
+            ],
+            "items": [],
+            "notes": [
+              "Antecedente familiar de escoliosis por línea materna o edad menor de tres años son elementos para valorar.",
+              "Al examen, curvatura evidente o prueba de Adams positiva, o Tanner que sugiera alto potencial de empeoramiento. La fuente permite considerar también otras condiciones a criterio médico.",
+              "Es deseable una radiografía PA de columna de pie con ángulo de Cobb mayor de 10°. Su disponibilidad depende del establecimiento y no es indispensable para esta referencia."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ortopedia para valoración quirúrgica",
+        "sections": [
+          {
+            "label": "Valoración desde Fisiatría",
+            "pages": [
+              10
+            ],
+            "items": [],
+            "notes": [
+              "Referencia según criterio del especialista en Fisiatría para valorar cirugía. La fuente identifica curvas mayores de 40° de Cobb en radiografía simple de columna PA en bipedestación."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Psicología",
+        "sections": [
+          {
+            "label": "Repercusión de la escoliosis",
+            "pages": [
+              9
+            ],
+            "items": [
+              "Referir si la alteración es visible y afecta emocionalmente la imagen corporal o la autoestima, o si hay estigmatización o acoso en el centro educativo por este motivo."
+            ]
+          }
+        ]
+      }
+    ],
+    "groupWith": "topic-r01-fisiatria-escoliosis-de-0-a-18-anos-p59",
+    "direction": "I-II",
+    "additionalSpecialties": [
+      "Ortopedia",
+      "Psicología"
+    ]
+  },
+  {
+    "id": "n23-asma-bronquial-pediatrica",
+    "sourceId": "N23",
+    "specialty": "Pediatría",
+    "name": "Asma bronquial en niños y niñas",
+    "aliases": [
+      "asma pediátrica",
+      "asma bronquial",
+      "sibilancias",
+      "neumología pediátrica",
+      "clínica AIRE",
+      "APER"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Clínica de AIRE o Medicina Familiar y Comunitaria",
+        "sections": [
+          {
+            "label": "Criterios para consulta",
+            "pages": [
+              44
+            ],
+            "items": [],
+            "notes": [
+              "Niños y niñas de seis años o más con diagnóstico de asma. La fuente incluye también asma con rinitis alérgica para manejo y tratamiento."
+            ]
+          },
+          {
+            "label": "Desde el EBAIS",
+            "pages": [
+              26,
+              43
+            ],
+            "items": [],
+            "notes": [
+              "A partir de los seis años, si tras seis semanas de uso adecuado del tratamiento del segundo escalón persiste la falta de respuesta, referir según disponibilidad a Clínica de AIRE, Medicina Familiar y Comunitaria o Pediatría.",
+              "En la cita de control a los dos meses, revisar el grado de control, la adherencia y la técnica con el espaciador. Si los síntomas persisten pese a buena adherencia y técnica correcta, referir para escalar el tratamiento. Si hay problemas de adherencia o de técnica, corregirlos y revalorar con el mismo tratamiento."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Consulta externa de Pediatría según la red",
+        "sections": [
+          {
+            "label": "Del primer nivel a Pediatría",
+            "pages": [
+              24,
+              47
+            ],
+            "items": [],
+            "notes": [
+              "Menores de seis años con sospecha clínica de asma, para diagnóstico diferencial, o con asma.",
+              "Desde los seis años, con asma parcialmente controlada o no controlada que no responde al uso adecuado de esteroide inhalado a dosis bajas indicado por el EBAIS, referir a Pediatría cuando el área carezca de Clínica de AIRE o Medicina Familiar y Comunitaria."
+            ]
+          },
+          {
+            "label": "Desde Clínica de AIRE o Medicina Familiar y Comunitaria",
+            "pages": [
+              47
+            ],
+            "items": [],
+            "notes": [
+              "A partir de los seis años, referir si hay control parcial o insuficiente y a criterio del profesional se requiere ampliar el diagnóstico diferencial o persisten dudas diagnósticas.",
+              "Referir con carácter prioritario si pasan al menos dos meses con el nuevo esquema, buena adherencia y uso correcto del espaciador, sin mejoría y sin posibilidad de escalar por el perfil de prescripción. Si ya llegó al escalón 4, la fuente dirige a Neumología Pediátrica del HNN."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Neumología Pediátrica del Hospital Nacional de Niños",
+        "sections": [
+          {
+            "label": "Desde Pediatría o Medicina Familiar y Comunitaria",
+            "pages": [
+              50
+            ],
+            "items": [],
+            "notes": [
+              "A cualquier edad, diagnóstico dudoso por mala respuesta al tratamiento.",
+              "Valorar otros diagnósticos si existen sibilancias persistentes, retraso del crecimiento pondoestatural, disfonía, llanto anormal, estridor, disfagia, hipocratismo digital o poliposis nasal.",
+              "Antecedente de crisis graves o amenazantes para la vida.",
+              "Falta de control en el escalón 4 pese al control de factores ambientales, buena adherencia y seguimiento adecuado. En este supuesto también puede referir el médico general de Clínica de AIRE que da seguimiento. Si hay dudas, la fuente permite consulta por telemedicina."
+            ]
+          },
+          {
+            "label": "Escalón 4 según la edad",
+            "pages": [
+              24,
+              26
+            ],
+            "items": [],
+            "notes": [
+              "En menores de seis años, desde consulta externa de Pediatría si no hay respuesta tras seis semanas de uso adecuado del cuarto escalón. Desde los seis años, la tabla permite esta referencia desde Pediatría, Medicina Familiar y Comunitaria o Clínica de AIRE."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Trabajo Social del establecimiento",
+        "sections": [
+          {
+            "label": "Sospecha de maltrato o negligencia",
+            "pages": [
+              43
+            ],
+            "items": [
+              "Referir a Trabajo Social si se sospecha negligencia, violencia física, psicológica u otra manifestación de abuso. La fuente establece también reporte al Ministerio Público, referencia al PANI y boleta obligatoria VE-01."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clínica de cesación de tabaco",
+        "sections": [
+          {
+            "label": "Personas fumadoras del entorno inmediato",
+            "pages": [
+              40
+            ],
+            "items": [
+              "Referir a quienes fuman en el entorno inmediato de la persona menor de edad para que reciban tratamiento de forma voluntaria, si aún no se ha realizado la referencia."
+            ]
+          }
+        ]
+      }
+    ],
+    "groupWith": "topic-n05-asma",
+    "direction": "I-II",
+    "additionalSpecialties": [
+      "Medicina Familiar y Comunitaria",
+      "Neumología pediátrica",
+      "Trabajo Social"
+    ]
+  },
+  {
+    "id": "n23-crisis-asmatica",
+    "sourceId": "N23",
+    "specialty": "Pediatría",
+    "name": "Crisis asmática en niños y niñas: traslado y seguimiento",
+    "aliases": [
+      "exacerbación de asma",
+      "hospitalización por asma",
+      "urgencias",
+      "dificultad respiratoria"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Emergencias o Urgencias",
+        "sections": [
+          {
+            "label": "Desde el hogar",
+            "pages": [
+              44
+            ],
+            "items": [],
+            "notes": [
+              "Acudir al servicio más cercano en casos graves, si el salbutamol se necesita a intervalos menores de tres horas o si los síntomas persisten más de 24 horas pese al plan de acción."
+            ]
+          },
+          {
+            "label": "Desde el EBAIS o Urgencias al hospital de la red",
+            "pages": [
+              35
+            ],
+            "items": [],
+            "notes": [
+              "En crisis grave o amenazante para la vida, iniciar el manejo y trasladar al Servicio de Emergencias hospitalario.",
+              "En crisis inicialmente leve o moderada, si tras el tratamiento y la revaloración persisten dificultad respiratoria y saturación de oxígeno de 95 % o menos, referir a Emergencias hospitalarias o interconsultar con Pediatría para valorar hospitalización."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hospitalización y, si corresponde, traslado al HNN",
+        "sections": [
+          {
+            "label": "Criterios de hospitalización",
+            "pages": [
+              37
+            ],
+            "items": [],
+            "notes": [
+              "Crisis grave o amenazante para la vida, saturación menor de 92 % en aire ambiente, poca o nula respuesta inicial al broncodilatador o complicaciones como atelectasia o neumotórax.",
+              "Otras neumopatías crónicas o cardiopatías. Dificultad social o ambiental para volver a urgencias, o cuidadores sin capacidad para manejar una crisis en casa."
+            ]
+          },
+          {
+            "label": "Traslado al Servicio de Emergencias del HNN",
+            "pages": [
+              37
+            ],
+            "items": [],
+            "notes": [
+              "En la revaloración del plan C por crisis grave, valorar falta de mejoría, empeoramiento de la dificultad respiratoria o hipoxemia persistente con cánula de alto flujo y necesidad de más de 50 % de oxígeno. Ante mala respuesta, la fuente indica intubación endotraqueal y coordinación del traslado."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Seguimiento ambulatorio tras la crisis",
+        "sections": [
+          {
+            "label": "Buen resultado del tratamiento inicial en crisis leve o moderada",
+            "pages": [
+              34
+            ],
+            "items": [],
+            "notes": [
+              "Con buen patrón respiratorio, buen estado general y saturación de al menos 95 % sin oxígeno, referir desde los seis años a EBAIS, Clínica de AIRE o Medicina Familiar y Comunitaria según disponibilidad.",
+              "Valorar Pediatría en todo menor de seis años o, desde los seis años, si recibe beclometasona de mantenimiento a dosis bajas y el asma está parcialmente controlada o no controlada."
+            ]
+          },
+          {
+            "label": "Después de hospitalización",
+            "pages": [
+              40
+            ],
+            "items": [],
+            "notes": [
+              "Al egreso, referir desde los seis años al EBAIS, Clínica de AIRE o Medicina Familiar y Comunitaria según disponibilidad.",
+              "Referir a Pediatría a todo menor de seis años. Desde los seis, referir si el asma está parcialmente controlada o no controlada en el escalón 3 con seguimiento en Clínica de AIRE o Medicina Familiar y Comunitaria y existen dudas diagnósticas o de manejo."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Emergencias"
+    ]
+  },
+  {
+    "id": "n24-enfermedad-renal-cronica",
+    "sourceId": "N24",
+    "specialty": "Nefrología",
+    "name": "Enfermedad renal crónica: rutas de referencia por estadio",
+    "aliases": [
+      "ERC",
+      "enfermedad renal crónica no tradicional",
+      "insuficiencia renal crónica",
+      "filtración glomerular",
+      "albuminuria",
+      "proteinuria"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la edición de 2021",
+        "pages": [
+          1,
+          2
+        ],
+        "items": [],
+        "notes": [
+          "El documento declara vigencia de tres años desde su aval. Su continuidad está pendiente de confirmación.",
+          "La población de la ficha es de 13 a 79 años. El apartado de alcance excluye a personas de 12 años o menos, de 80 años o más, gestantes y personas en encamamiento prolongado."
+        ]
+      },
+      {
+        "label": "Casos que requieren aclaración de la fuente",
+        "pages": [
+          2,
+          4,
+          5,
+          6,
+          13
+        ],
+        "items": [],
+        "notes": [
+          "En G1A3 y G2A3, el texto indica valoración por Medicina Interna, Medicina Familiar o Geriatría para decidir coordinación con Nefrología. El diagrama asigna todo A3 a Nefrología. El texto y el diagrama también difieren en los valores de albuminuria de G3bA3. Verificar la ruta vigente con la red para esos casos.",
+          "El apartado de alcance excluye a las personas de 80 años o más. Las páginas 4 y 13 sí describen situaciones para ese grupo. Confirme con la red la ruta que corresponde."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "EBAIS de adscripción",
+        "sections": [
+          {
+            "label": "Sospecha de enfermedad renal crónica",
+            "pages": [
+              3,
+              6
+            ],
+            "items": [
+              "Estudios complementarios: examen general de orina, hemograma, proteinuria o albuminuria, función renal, ácido úrico, glucosa, lípidos, fosfatasa alcalina y electrolitos. Si hay alteraciones se pide también orina de 24 horas."
+            ],
+            "notes": [
+              "En personas de 13 a 79 años con filtración glomerular estimada (TFGe) de 15 a menos de 60 ml/min/1,73 m², verificar si hay otra medición baja en los tres meses previos. Si falta, el documento pide repetir la medición en tres meses y solicitar exámenes complementarios. Con TFGe menor de 15, el flujograma deriva directamente a Nefrología."
+            ]
+          },
+          {
+            "label": "Seguimiento en primer nivel",
+            "pages": [
+              4,
+              5,
+              6
+            ],
+            "items": [],
+            "notes": [
+              "El flujograma asigna G1A1, G1A2, G2A1, G2A2 y G3aA1 a Medicina General. Con filtración conservada, el diagnóstico requiere evidencia persistente de daño renal."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medicina Familiar, Medicina Interna o Geriatría",
+        "sections": [
+          {
+            "label": "Enfermedad renal crónica confirmada",
+            "pages": [
+              4,
+              5,
+              6
+            ],
+            "items": [],
+            "notes": [
+              "G3aA2: TFGe de 45 a 59 ml/min/1,73 m², albúmina/creatinina de 30 a 300 mg/g y proteína/creatinina de 150 a 500 mg/g. Referir para definir conducta, pronóstico, funcionalidad y necesidad de coordinar con Nefrología. En mayores de 65 años, considerar Geriatría si está disponible.",
+              "G3bA1 y G3bA2: TFGe de 30 a 44 ml/min/1,73 m². La fuente asigna seguimiento a Medicina Familiar, Medicina Interna o Geriatría según disponibilidad."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nefrología de la red",
+        "sections": [
+          {
+            "label": "Filtración muy reducida o G3aA3",
+            "pages": [
+              4,
+              5,
+              6
+            ],
+            "items": [],
+            "notes": [
+              "Estadio 4, TFGe de 15 a 29 ml/min/1,73 m²: referir a Nefrología.",
+              "Estadio 5, TFGe menor de 15 ml/min/1,73 m²: coordinar con Nefrología de la red para valorar diálisis o trasplante. La fuente distingue los hospitales de coordinación técnica de los de coordinación parcial.",
+              "G3aA3, TFGe de 45 a 59 ml/min/1,73 m² con cocientes albúmina/creatinina superiores a 300 mg/g y proteína/creatinina superiores a 500 mg/g: referir a Nefrología."
+            ]
+          },
+          {
+            "label": "Desde Geriatría en personas de 65 a 79 años",
+            "pages": [
+              13
+            ],
+            "items": [],
+            "notes": [
+              "Valorar estadio, velocidad de progresión, albuminuria, signos de alarma, comorbilidad y funcionalidad. Referir en estadios 4 o 5, o con hematuria de origen no urológico asociada a proteinuria.",
+              "Tras descartar factores exógenos, refiera a Nefrología si el filtrado disminuye más de 25 % en menos de un mes o la creatinina plasmática aumenta más de 25 % en ese plazo.",
+              "Con filtrado de 30 a 45 ml/min/1,73 m², la fuente indica seguimiento cada tres a seis meses y referencia por progresión de albuminuria en dos controles consecutivos, cociente albúmina/creatinina cercano a 300 mg/g o signos de alarma como hematuria no urológica, albuminuria mayor de 300 mg/g, deterioro renal de más de 5 ml/min/1,73 m² por año o previsión de terapia sustitutiva."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Urología",
+        "sections": [
+          {
+            "label": "Hematuria microscópica desde primer nivel",
+            "pages": [
+              10
+            ],
+            "items": [
+              "Evaluar enfermedad renal crónica, sepsis o lesión tumoral. La fuente indica referir a Urología para descartar patología y, si corresponde, coordinar desde Urología la referencia a Nefrología."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nutrición",
+        "sections": [
+          {
+            "label": "Atención nutricional",
+            "pages": [
+              10,
+              11
+            ],
+            "items": [],
+            "notes": [
+              "La fuente incluye la referencia a Nutrición desde Medicina General o Medicina Familiar, con atención del paciente con enfermedad renal crónica o factores de riesgo asociados."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Trabajo Social",
+        "sections": [
+          {
+            "label": "Criterios de referencia",
+            "pages": [
+              11
+            ],
+            "items": [],
+            "notes": [
+              "Violencia, relaciones familiares conflictivas, red de apoyo débil, desorganizada o inexistente, conductas de alto riesgo social, problemas socioeconómicos asociados, dificultades de adherencia, crisis social o familiar por el diagnóstico o valoración para terapias sustitutivas renales."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Psicología",
+        "sections": [
+          {
+            "label": "Persona usuaria o red primaria de apoyo",
+            "pages": [
+              12
+            ],
+            "items": [],
+            "notes": [
+              "Considerar referencia de quienes tengan indicadores de ERC o participen en el programa de enfermedades metabólicas y manifiesten afectación emocional asociada a ERC o soliciten atención por ese motivo."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Medicina Familiar y Comunitaria",
+      "Medicina Interna",
+      "Geriatría",
+      "Urología",
+      "Nutrición",
+      "Trabajo Social",
+      "Psicología"
+    ],
+    "related": [
+      {
+        "id": "n28-enfermedad-renal-cronica-adultos",
+        "label": "Enfermedad renal crónica en adultos. Consulte el protocolo de la otra fuente.",
+        "pages": [
+          57,
+          58
+        ],
+        "reversePages": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n25-diabetes-especialidades",
+    "sourceId": "N25",
+    "specialty": "Endocrinología",
+    "name": "Diabetes mellitus tipo 2, referencia según el servicio",
+    "aliases": [
+      "DM2",
+      "diabetes",
+      "pie diabético",
+      "neuropatía",
+      "hipoglicemia",
+      "retinopatía",
+      "nefropatía diabética",
+      "polifarmacia",
+      "claudicación",
+      "vejiga neurogénica"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Atención Farmacéutica",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Adherencia deficiente al tratamiento o polifarmacia."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cardiología",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Sospecha o presencia de cardiopatía isquémica, hipertensión resistente o sospecha de insuficiencia cardiaca.",
+              "Neuropatía autonómica con hipotensión arterial sintomática o taquicardia de reposo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clínica del Dolor",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Dolor neuropático de difícil manejo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clínica de Pie Diabético",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Lesiones que afectan la integridad cutánea."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Emergencias de adultos",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Pie diabético con osteomielitis, absceso o gangrena.",
+              "Descompensación hiperosmolar o cetoacidosis diabética.",
+              "Descompensación simple sintomática con morbilidad asociada (sepsis, trastorno hidroelectrolítico, deshidratación o descompensación concomitante de otra enfermedad crónica).",
+              "Sospecha de acidosis láctica, hipoglicemia grave que requiere ayuda de otra persona o debut de diabetes tipo 1."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Emergencias del Hospital Nacional de Niños",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Debut de diabetes en menores de 12 años, según la tabla 7."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Geriatría",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Deterioro cognitivo o demencia, aumento de la dependencia e inmovilidad, o persona adulta mayor funcionalmente dependiente."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ginecoobstetricia",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Embarazo en mujer diabética o diabetes gestacional."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medicina Interna o Endocrinología",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Sospecha de diabetes secundaria, edad menor de 20 años, hipoglicemias graves o recurrentes, o deseo de embarazo.",
+              "Diabetes de difícil manejo pese a insulina. La tabla también consigna alergia a la insulina y efectos adversos severos a hipoglicemiantes orales."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nefrología",
+        "sections": [
+          {
+            "label": "Nefropatía diabética",
+            "pages": [
+              29,
+              111
+            ],
+            "items": [],
+            "notes": [
+              "Eventual necesidad de biopsia renal.",
+              "Aclaramiento estimado de creatinina menor de 30 ml/min/1,73 m² en dos mediciones separadas por al menos tres meses.",
+              "La tabla 7 cita anemia secundaria a enfermedad renal crónica con hemoglobina menor de 10 g/dl. El apartado de nefropatía indica descartar otras causas de anemia."
+            ]
+          },
+          {
+            "label": "Estudios que idealmente acompañan la referencia",
+            "pages": [
+              110
+            ],
+            "items": [],
+            "notes": [
+              "Desde el primer nivel, reporte de ultrasonido renal y de vías urinarias, A1c, glicemia en ayunas, pruebas de función renal, electrolitos completos, relación albúmina/creatinina en orina al azar u orina de 24 horas, APE en varones mayores de 40 años, hemograma y tiempos de coagulación. Indicar retinopatía, neuropatía y otras comorbilidades conocidas.",
+              "Desde el segundo nivel, la guía describe estudios adicionales deseables. Su ausencia previa no limita el envío ni la valoración en el tercer nivel."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Neurología",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Enfermedad cerebrovascular, neuropatía dolorosa aguda, mononeuropatía craneal, sospecha de neuropatía no diabética o amiotrofia diabética."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Odontología",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Enfermedad periodontal."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Oftalmología",
+        "sections": [
+          {
+            "label": "Valoración inicial y seguimiento",
+            "pages": [
+              29,
+              99
+            ],
+            "items": [],
+            "notes": [
+              "Valoración en el debut diabético después de la compensación glicémica. Sin lesión, valoración anual. Con lesión, control regular por Oftalmología.",
+              "Para el control del fondo de ojo con retinopatía diagnosticada, la guía indica tamizaje fotográfico con cámara no midriática. Cuando no esté disponible, referir a Oftalmología."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ortopedia o Fisiatría",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              29
+            ],
+            "items": [],
+            "notes": [
+              "Deformidad del pie susceptible de corrección con tratamiento ortésico o necesidad de plantillas de descarga cuando hay riesgo de pie diabético."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Urología",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              30
+            ],
+            "items": [],
+            "notes": [
+              "Vejiga neurogénica."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Trabajo Social",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              30
+            ],
+            "items": [],
+            "notes": [
+              "Condición social de riesgo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vascular Periférico",
+        "sections": [
+          {
+            "label": "Síntomas y signos considerados por la tabla 7",
+            "pages": [
+              30
+            ],
+            "items": [],
+            "notes": [
+              "Dolor de reposo o claudicación intermitente.",
+              "Lesión tisular menor (ulceraciones digitales, interdigitales, de talón o en sitios de apoyo, o gangrena de dedos aislados) o mayor (gangrena de varios dedos, úlceras extensas, necrosis o ulceraciones de talón).",
+              "Ausencia de pulso pedio, tibial posterior o ambos. Índice tobillo/brazo menor de 0,9 o mayor de 1,3."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Enfermería, consulta no médica de diabetes",
+        "sections": [
+          {
+            "label": "Ingreso y referencia",
+            "pages": [
+              82,
+              83
+            ],
+            "items": [
+              "Programar la consulta para la persona con diabetes o su cuidador cuando requieran educación sobre la enfermedad, según el área de adscripción. La guía incluye el egreso hospitalario con diagnóstico de diabetes y la derivación clínica a otra red."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Geriatría, Medicina Familiar o Medicina Interna",
+        "sections": [
+          {
+            "label": "Hipertrigliceridemia",
+            "pages": [
+              132
+            ],
+            "items": [
+              "Cuando la persona requiere terapia combinada con estatina y fibrato, la guía indica referir al especialista."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Cardiología",
+      "Medicina Paliativa y Control del Dolor",
+      "Emergencias",
+      "Geriatría",
+      "Ginecoobstetricia",
+      "Medicina Interna",
+      "Nefrología",
+      "Neurología",
+      "Oftalmología",
+      "Ortopedia",
+      "Fisiatría",
+      "Urología",
+      "Trabajo Social",
+      "Vascular periférico",
+      "Odontología"
+    ]
+  },
+  {
+    "id": "n25-diabetes-infancia-adolescencia",
+    "sourceId": "N25",
+    "specialty": "Endocrinología",
+    "name": "Diabetes tipo 2 y alteraciones de la glicemia en niños y adolescentes",
+    "aliases": [
+      "DM2 pediátrica",
+      "intolerancia a los carbohidratos",
+      "prediabetes",
+      "glicemia alterada",
+      "diabetes infantil",
+      "diabetes juvenil"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Pediatría, menores de 13 años",
+        "sections": [
+          {
+            "label": "Tabla 29",
+            "pages": [
+              143
+            ],
+            "items": [],
+            "notes": [
+              "Glicemia alterada en ayunas, intolerancia a los carbohidratos o A1c alterada."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Endocrinología del Hospital Nacional de Niños, menores de 13 años",
+        "sections": [
+          {
+            "label": "Tabla 29",
+            "pages": [
+              143
+            ],
+            "items": [],
+            "notes": [
+              "Diabetes mellitus tipo 2."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Primer nivel, mayores de 13 años según la tabla 29",
+        "sections": [
+          {
+            "label": "Seguimiento en Medicina General",
+            "pages": [
+              143
+            ],
+            "items": [],
+            "notes": [
+              "Glicemia alterada en ayunas o intolerancia a los carbohidratos. Control cada tres meses con énfasis en estilo de vida y factores de riesgo para diabetes tipo 2."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Endocrinología del hospital de adultos, mayores de 13 años según la tabla 29",
+        "sections": [
+          {
+            "label": "Motivos de referencia",
+            "pages": [
+              143
+            ],
+            "items": [],
+            "notes": [
+              "Adolescentes con control metabólico inadecuado que progresan y cumplen criterios diagnósticos de diabetes. La tabla incluye el diagnóstico de diabetes tipo 2."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gastroenterología, adolescentes con diabetes tipo 2",
+        "sections": [
+          {
+            "label": "Transaminasas",
+            "pages": [
+              144
+            ],
+            "items": [],
+            "notes": [
+              "ALT o AST elevadas de forma persistente pese a perder peso y mejorar el control glicémico."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Endocrinología, adolescentes con diabetes tipo 2",
+        "sections": [
+          {
+            "label": "Alteraciones de los lípidos",
+            "pages": [
+              144
+            ],
+            "items": [],
+            "notes": [
+              "LDL que persiste por encima de la meta de la guía (LDL menor de 100 mg/dl) después de seis meses de optimizar el control glicémico, la educación nutricional y la actividad física.",
+              "Triglicéridos mayores de 400 mg/dl en ayunas o mayores de 1.000 mg/dl al azar."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Pediatría",
+      "Gastroenterología"
+    ]
+  },
+  {
+    "id": "n26-riesgo-suicida",
+    "sourceId": "N26",
+    "specialty": "Psiquiatría",
+    "name": "Comportamiento de riesgo suicida en mayores de 13 años",
+    "aliases": [
+      "autolesión",
+      "conducta suicida",
+      "ideación suicida",
+      "intento de suicidio",
+      "urgencias",
+      "salud mental",
+      "patología dual",
+      "psicología"
+    ],
+    "general": [
+      {
+        "label": "Acceso a la atención",
+        "pages": [
+          20
+        ],
+        "items": [],
+        "notes": [
+          "Brindar atención aunque la persona no presente boleta de referencia interinstitucional. Cuando el médico identifica alto riesgo suicida, activa el sistema de articulación definido por la CORESAM o la COLOSAM."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Urgencias o Emergencias desde consulta externa",
+        "sections": [
+          {
+            "label": "Acto médicamente grave de autolesión, algoritmo 1",
+            "pages": [
+              18,
+              20,
+              21
+            ],
+            "items": [],
+            "notes": [
+              "Autolesión con signos de intoxicación o envenenamiento, sangrado por herida autoinfligida, pérdida de conciencia o letargia extrema. Trasladar de consulta externa a Urgencias o Emergencias para valoración y abordaje según el riesgo.",
+              "Mantener vigilancia constante y entorno seguro. No dejar sola a la persona y anotarlo en el expediente."
+            ]
+          },
+          {
+            "label": "Riesgo inminente, algoritmo 2",
+            "pages": [
+              19,
+              20,
+              21
+            ],
+            "items": [],
+            "notes": [
+              "Pensamientos o plan actual de autolesión o suicidio. El algoritmo también contempla pensamientos o planes en el último mes, o un acto en el último año, si la persona está extremadamente agitada, violenta, afligida o no se comunica.",
+              "Desde consulta externa, trasladar a Urgencias. Proporcionar un entorno seguro, mantener acompañamiento y registrarlo."
+            ]
+          },
+          {
+            "label": "Riesgo que persiste sin inminencia, algoritmo 3",
+            "pages": [
+              19,
+              21,
+              22
+            ],
+            "items": [],
+            "notes": [
+              "Sin criterios de inminencia, ante pensamientos o plan en el último mes o un acto de autolesión en el último año, aplicar el algoritmo 3. Si se identifica en consulta externa, trasladar a Urgencias para valoración según el riesgo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Psiquiatría y equipo de salud mental",
+        "sections": [
+          {
+            "label": "Tras la detección según el algoritmo",
+            "pages": [
+              21,
+              22
+            ],
+            "items": [
+              "Realizar interconsulta o referencia a Psiquiatría. Coordinar Psicología, Trabajo Social y Enfermería especialista en Salud Mental según corresponda. Para un acto médicamente grave, aplicar los flujos de atención en violencia."
+            ],
+            "notes": [
+              "En patología dual, referir al EISAA. Enviar la referencia al profesional del propio establecimiento. Derivar al siguiente nivel cuando el establecimiento emisor carezca del profesional."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Emergencias"
+    ]
+  },
+  {
+    "id": "n27-perdida-auditiva-protesis",
+    "sourceId": "N27",
+    "specialty": "Otorrinolaringología",
+    "name": "Pérdida auditiva y referencia para valoración de prótesis auditiva",
+    "aliases": [
+      "hipoacusia",
+      "audífono",
+      "prótesis auditiva",
+      "ORL",
+      "audiometría",
+      "audiología"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Audiología desde el primer nivel o el especialista tratante",
+        "sections": [
+          {
+            "label": "Sospecha de pérdida auditiva",
+            "pages": [
+              4
+            ],
+            "items": [
+              "Ante sospecha de pérdida auditiva, referir a Audiología para solicitar audiometría. Audiología revisa la referencia y realiza los estudios pertinentes."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Otorrinolaringología desde Medicina o Audiología",
+        "sections": [
+          {
+            "label": "Envío y recepción de la referencia",
+            "pages": [
+              4,
+              5
+            ],
+            "items": [
+              "Con la audiometría y los estudios complementarios pertinentes, el médico o el audiólogo confecciona la referencia y la envía a ORL por EDUS."
+            ],
+            "notes": [
+              "Este documento remite al lineamiento de referencia y contrarreferencia de ORL L.GM.DDSS.230821 para los criterios de especialidad. ORL revisa el contenido y programa la cita según la prioridad indicada."
+            ]
+          },
+          {
+            "label": "Prescripción tras la valoración por ORL",
+            "pages": [
+              6,
+              7
+            ],
+            "items": [],
+            "notes": [
+              "Si confirma la necesidad, el especialista en ORL especifica la prótesis en el formulario de prescripción y adjunta copia de la audiometría del centro correspondiente. En hipoacusia bilateral valora si procede prescribir ambas prótesis en la misma gestión."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Audiología"
+    ]
+  },
+  {
+    "id": "n28-enfermedad-renal-cronica-adultos",
+    "sourceId": "N28",
+    "specialty": "Nefrología",
+    "name": "Enfermedad renal crónica en adultos, referencia a Nefrología",
+    "aliases": [
+      "ERC",
+      "enfermedad renal crónica",
+      "insuficiencia renal",
+      "proteinuria",
+      "hematuria glomerular",
+      "enfermedad poliquística renal",
+      "nefrología"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Medicina Familiar y Comunitaria desde Medicina General",
+        "sections": [
+          {
+            "label": "Si el especialista está disponible",
+            "pages": [
+              54
+            ],
+            "items": [],
+            "notes": [
+              "Referir en estadios G3A y G3B. Para G1 o G2 con proteinuria en aumento, revisar en la página el umbral tal como aparece en la fuente."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nefrología desde el primer nivel",
+        "sections": [
+          {
+            "label": "Estadios avanzados y coordinación según la red",
+            "pages": [
+              35,
+              54,
+              57
+            ],
+            "items": [
+              "Si hay una vía de valoración previamente coordinada con Nefrología, el protocolo indica agotarla antes de la remisión, considerando la edad y los signos de alarma de la página 54."
+            ],
+            "notes": [
+              "Referir en estadios 4 y 5. Considerar edad y coordinar con Medicina Familiar, Medicina Interna o Geriatría según disponibilidad. Desde los 65 años, efectuar valoración conjunta con Geriatría cuando esté disponible en la red."
+            ]
+          },
+          {
+            "label": "Criterios de derivación según estadio o complicación",
+            "pages": [
+              57
+            ],
+            "items": [],
+            "notes": [
+              "Estadio 3 con comorbilidad importante, sospecha de lesión renal aguda, reagudización de la enfermedad renal, hipertensión acelerada o hiperkalemia moderada.",
+              "Progresión en estadios 3 o 4 con aumento de creatinina sérica mayor de 0,5 mg/dl cada 2 a 3 meses.",
+              "En diabetes, proteinuria mayor de 500 mg/24 horas pese al control adecuado de la presión arterial, proteinuria en aumento o hipertensión refractaria.",
+              "Hemoglobina menor de 10 g/dl pese a corregir la ferropenia y tras descartar otras causas de anemia.",
+              "Hipertensión de difícil manejo o rápidamente acelerada, o trastornos hidroelectrolíticos."
+            ]
+          },
+          {
+            "label": "Otros criterios y excepción para quistes simples",
+            "pages": [
+              58
+            ],
+            "items": [],
+            "notes": [
+              "Cualquier estadio con sedimento urinario activo (hematuria glomerular) o manifestaciones sistémicas. Aumento de creatinina mayor de 1 mg/dl en menos de un mes.",
+              "Anomalías estructurales, como riñón en herradura o enfermedad renal poliquística del adulto. Los quistes simples sin asociación con enfermedad poliquística del adulto se excluyen de esta indicación.",
+              "Síndrome nefrótico o evidencia de daño renal en presencia de enfermedad sistémica."
+            ]
+          },
+          {
+            "label": "Tabla 11. Referencia según filtración glomerular y albuminuria",
+            "pages": [
+              53
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Atención Primaria o Medicina Interna",
+        "sections": [
+          {
+            "label": "Opciones de seguimiento según edad, estadio y proteinuria",
+            "pages": [
+              57
+            ],
+            "items": [],
+            "notes": [
+              "En mayores de 70 años con estadios 1 a 3 y proteinuria menor de 500 mg/24 horas, puede continuarse el control en atención primaria.",
+              "En menores de 70 años con estadio 3B y proteinuria menor de 500 mg/24 horas, puede realizarse el seguimiento en Medicina Interna."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Odontología en los tres niveles",
+        "sections": [
+          {
+            "label": "Prioridad de la referencia médica",
+            "pages": [
+              85
+            ],
+            "items": [],
+            "notes": [
+              "Al recibir una referencia médica por una persona con enfermedad renal crónica, el protocolo indica atención odontológica inmediata (STAT) en los tres niveles."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Enfermería en Salud Mental",
+        "sections": [
+          {
+            "label": "Referencia o interconsulta desde Medicina o Enfermería",
+            "pages": [
+              147
+            ],
+            "items": [
+              "Referir desde que se establece el diagnóstico para apoyar la adaptación a la enfermedad. Si la persona llega en fase avanzada y debe iniciar diálisis peritoneal, referir con urgencia."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Medicina Familiar y Comunitaria",
+      "Medicina Interna",
+      "Odontología"
+    ]
+  },
+  {
+    "id": "n29-celiaquia-desde-13",
+    "sourceId": "N29",
+    "specialty": "Gastroenterología",
+    "name": "Sospecha de enfermedad celíaca desde los 13 años",
+    "aliases": [
+      "celiaquía",
+      "celiaca",
+      "gluten",
+      "Medicina Familiar",
+      "Medicina Interna",
+      "endoscopia",
+      "biopsia duodenal"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Medicina Familiar o Medicina Interna desde el Área de Salud",
+        "sections": [
+          {
+            "label": "Sospecha y estudios en el primer nivel",
+            "pages": [
+              47
+            ],
+            "items": [
+              "Solicitar y valorar hemograma, morfología eritrocitaria, reticulocitos, frotis de heces, proteínas totales y fraccionadas, ALT, AST, TSH, VIH, VDRL, glicemia, hierro sérico, capacidad de fijación del hierro, saturación de transferrina, vitamina D, folatos, B12, sodio, potasio y cloruro."
+            ],
+            "notes": [
+              "Sospechar ante uno o más hallazgos de la tabla 5: diarrea crónica inexplicada con frotis de heces y pruebas tiroideas normales, desnutrición sin causa específica, anemia crónica por déficit de hierro, B12 o folato, elevación inexplicada de ALT o AST, retraso puberal, amenorrea de causa no definida o aftas orales recurrentes."
+            ]
+          },
+          {
+            "label": "Destino según la red",
+            "pages": [
+              48
+            ],
+            "items": [
+              "Si la sospecha persiste al valorar los resultados, referir a Medicina Familiar o Medicina Interna."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gastroenterología desde Medicina Familiar o Medicina Interna",
+        "sections": [
+          {
+            "label": "Serología y solicitud de endoscopia",
+            "pages": [
+              48
+            ],
+            "items": [
+              "El especialista solicita IgA e IgE totales, IgA antitransglutaminasa tisular e IgA antigliadina deaminada. Si la IgA está baja, solicitar IgG antitransglutaminasa tisular e IgG antigliadina deaminada. Mantener el consumo de gluten al realizar los exámenes."
+            ],
+            "notes": [
+              "Con serología positiva, solicitar a Gastroenterología esofagogastroduodenoscopia con biopsias, dos del bulbo y cuatro de la segunda porción duodenal. Si la histología es negativa con serología positiva, continuar seguimiento y repetir biopsias al año."
+            ]
+          },
+          {
+            "label": "Resultados negativos y alta sospecha",
+            "pages": [
+              49
+            ],
+            "items": [],
+            "notes": [
+              "Con serología negativa y alta sospecha, solicitar endoscopia con biopsias duodenales mientras la alimentación incluya gluten. La tabla 6 define alta sospecha ante una o más de estas manifestaciones: diarrea crónica, anemia crónica por déficit de hierro, ácido fólico y B12 sin causa específica, osteoporosis antes de los 50 años, elevación idiopática de transaminasas o familiar de primer grado con enfermedad celíaca.",
+              "Referir a Gastroenterología ante alta sospecha. Si la serología es negativa y la histología positiva, investigar otras causas y consultar las indicaciones de genotipificación en la fuente. Si ambas son negativas y se excluye el diagnóstico, la derivación es para identificar otras etiologías."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gastroenterología y Nutrición",
+        "sections": [
+          {
+            "label": "Con diagnóstico confirmado",
+            "pages": [
+              48,
+              52
+            ],
+            "items": [
+              "Con serología e histología positivas, referir a Gastroenterología y a consulta externa de Nutrición según la red. El protocolo indica priorizar la atención nutricional."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nutrición o Gastroenterología según el diagnóstico diferencial",
+        "sections": [
+          {
+            "label": "Alternativas distintas de la enfermedad celíaca",
+            "pages": [
+              49
+            ],
+            "items": [],
+            "notes": [
+              "En alergia al gluten o al trigo con síntomas leves, referir a consulta externa de Nutrición. En sensibilidad al gluten no celíaca, referir a Gastroenterología según la red."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Medicina Familiar y Comunitaria",
+      "Medicina Interna",
+      "Nutrición"
+    ]
+  },
+  {
+    "id": "n29-celiaquia-menores-13",
+    "sourceId": "N29",
+    "specialty": "Pediatría",
+    "name": "Sospecha de enfermedad celíaca en menores de 13 años",
+    "aliases": [
+      "celiaquía",
+      "celiaca",
+      "intolerancia al gluten",
+      "gastroenterología pediátrica",
+      "biopsias",
+      "Pediatría"
+    ],
+    "general": [
+      {
+        "label": "Alimentación durante el estudio",
+        "pages": [
+          43
+        ],
+        "items": [
+          "Mantener el consumo de alimentos con gluten hasta la valoración por Pediatría o Gastroenterología Pediátrica y el diagnóstico, para poder efectuar las serologías y biopsias."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Pediatría desde el Área de Salud",
+        "sections": [
+          {
+            "label": "Tabla 4. Sospecha con uno o más signos o síntomas",
+            "pages": [
+              41,
+              42
+            ],
+            "items": []
+          },
+          {
+            "label": "Evaluación y referencia prioritaria",
+            "pages": [
+              42
+            ],
+            "items": [
+              "Solicitar los estudios según los signos o síntomas. La fuente enumera hemograma completo, morfología eritrocitaria y reticulocitos, tres frotis seriados de heces, examen general de orina, sodio, potasio, cloruro, proteínas totales y fraccionadas, glicemia, AST, ALT, creatinina, nitrógeno ureico y TSH.",
+              "Valorar estado nutricional y tendencia en gráficas de crecimiento. Recoger la historia nutricional desde la introducción de alimentos complementarios.",
+              "Programar control en cuatro semanas para valorar los exámenes. Si persiste la sospecha clínica, referir a Pediatría con carácter prioritario según la red."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gastroenterología del Hospital Nacional de Niños desde Pediatría",
+        "sections": [
+          {
+            "label": "Serología y criterios de envío",
+            "pages": [
+              43,
+              44
+            ],
+            "items": [],
+            "notes": [
+              "Si persiste la sospecha, Pediatría solicita IgA, IgG, IgM e IgE, anticuerpos IgA e IgG antitransglutaminasa tisular y antigliadina deaminada. Si alguna de las pruebas de estos dos grupos de anticuerpos específicos resulta positiva, referir al hospital.",
+              "Con pruebas específicas negativas, continuar seguimiento por Pediatría. Si se descartaron otras patologías, la clínica es altamente sugestiva y no hay respuesta terapéutica, valorar referencia para gastroscopia con biopsias."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nutrición y Gastroenterología Pediátrica",
+        "sections": [
+          {
+            "label": "Tras la confirmación diagnóstica",
+            "pages": [
+              44,
+              52
+            ],
+            "items": [
+              "Tras confirmar la enfermedad celíaca, valorar y dar seguimiento con Nutrición según la red, en conjunto con Gastroenterología Pediátrica. La consulta externa de Nutrición tiene prioridad."
+            ]
+          }
+        ]
+      }
+    ],
+    "groupWith": "topic-n05-enfermedad-celiaca",
+    "direction": "I-II",
+    "additionalSpecialties": [
+      "Gastroenterología",
+      "Nutrición"
+    ]
+  },
+  {
+    "id": "n29-celiaquia-nutricion",
+    "sourceId": "N29",
+    "specialty": "Nutrición",
+    "name": "Enfermedad celíaca confirmada, referencia a Nutrición",
+    "aliases": [
+      "celiaquía",
+      "celiaca",
+      "nutrición",
+      "gluten",
+      "consulta externa de nutrición",
+      "interconsulta"
+    ],
+    "general": [],
+    "routes": [
+      {
+        "name": "Consulta externa de Nutrición",
+        "sections": [
+          {
+            "label": "Prioridad y contenido de la referencia",
+            "pages": [
+              52,
+              53
+            ],
+            "items": [
+              "Referir a toda persona con diagnóstico confirmado según la red y dar prioridad a la atención nutricional.",
+              "En el formulario institucional consignar ocupación y escolaridad de la persona y su encargado, antecedentes patológicos y familiares, síntomas, antecedentes antropométricos, medicación y antecedentes de alergia e intolerancia.",
+              "Incluir resultados de estudios ya efectuados por Pediatría, Medicina Familiar o Medicina Interna: glucosa, hemograma, proteínas totales y fraccionadas, pruebas hepáticas, nitrógeno ureico, creatinina y TSH."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nutrición durante hospitalización",
+        "sections": [
+          {
+            "label": "Interconsulta del médico responsable",
+            "pages": [
+              55
+            ],
+            "items": [
+              "Con diagnóstico confirmado, indicar dieta libre de gluten y solicitar por interconsulta firmada la valoración nutricional, con información completa de la condición de la persona."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n30-resonancia-cardiovascular-adultos",
+    "sourceId": "N30",
+    "specialty": "Cardiología",
+    "name": "Resonancia magnética cardiovascular en adultos",
+    "aliases": [
+      "resonancia cardíaca",
+      "RMC",
+      "MINOCA",
+      "TAVI",
+      "cardiopatía isquémica",
+      "miocardiopatía",
+      "electrofisiología",
+      "pericardio",
+      "arritmia",
+      "cardiopatía congénita del adulto",
+      "insuficiencia cardíaca",
+      "miocarditis",
+      "aortopatía"
+    ],
+    "general": [
+      {
+        "label": "Quién puede solicitar la resonancia magnética cardiovascular",
+        "pages": [
+          5
+        ],
+        "items": [],
+        "notes": [
+          "Pueden solicitarla Cardiología general o pediátrica, Medicina Intensiva, Cirugía de Tórax y Cirugía Cardiovascular de hospitales de segundo y tercer nivel. Medicina Interna, Pediatría y las demás especialidades refieren el caso a Cardiología general o pediátrica, según corresponda.",
+          "La sesión médica del hospital de tercer nivel del área de atracción decide la aprobación. Una vez aprobada, la solicitud se envía al Centro Nacional de Imágenes Médicas."
+        ]
+      },
+      {
+        "label": "Clases de recomendación y prioridad",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "La fuente clasifica las indicaciones en I (debe utilizarse), II (podría utilizarse) y III (no se recomienda). La CCSS prioriza las indicaciones de clase I según el contexto de cada persona y con valoración multidisciplinaria."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Resonancia cardiovascular en personas adultas: indicaciones por clase",
+        "sections": [
+          {
+            "label": "Estructura y función cardíaca",
+            "pages": [
+              6,
+              7
+            ],
+            "items": []
+          },
+          {
+            "label": "Cardiopatía isquémica aguda",
+            "pages": [
+              7
+            ],
+            "items": []
+          },
+          {
+            "label": "Cardiopatía isquémica crónica",
+            "pages": [
+              7,
+              8
+            ],
+            "items": []
+          },
+          {
+            "label": "Insuficiencia cardíaca",
+            "pages": [
+              8
+            ],
+            "items": []
+          },
+          {
+            "label": "Valvulopatías",
+            "pages": [
+              8,
+              9
+            ],
+            "items": []
+          },
+          {
+            "label": "Miocardiopatías",
+            "pages": [
+              9
+            ],
+            "items": []
+          },
+          {
+            "label": "Trasplante cardíaco",
+            "pages": [
+              10
+            ],
+            "items": []
+          },
+          {
+            "label": "Enfermedades pericárdicas",
+            "pages": [
+              10
+            ],
+            "items": []
+          },
+          {
+            "label": "Tumores cardíacos",
+            "pages": [
+              10
+            ],
+            "items": []
+          },
+          {
+            "label": "Cardiopatías congénitas del adulto (18 años o más)",
+            "pages": [
+              11,
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Enfermedades de la aorta y grandes vasos",
+            "pages": [
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Electrofisiología",
+            "pages": [
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Contraindicaciones absolutas y relativas",
+            "pages": [
+              18,
+              19
+            ],
+            "items": []
+          },
+          {
+            "label": "Dispositivos cardíacos implantados y verificación de seguridad",
+            "pages": [
+              20,
+              21,
+              22
+            ],
+            "items": []
+          },
+          {
+            "label": "Embarazo",
+            "pages": [
+              22
+            ],
+            "items": []
+          },
+          {
+            "label": "Estrés farmacológico con adenosina: consideraciones y contraindicaciones",
+            "pages": [
+              23
+            ],
+            "items": []
+          },
+          {
+            "label": "Flujograma de resonancia magnética cardiovascular",
+            "pages": [
+              24
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada",
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n30-resonancia-cardiovascular-pediatrica",
+    "sourceId": "N30",
+    "specialty": "Cardiología",
+    "name": "Resonancia magnética cardiovascular en menores de 18 años",
+    "aliases": [
+      "cardiología pediátrica",
+      "RMC",
+      "cardiopatía congénita",
+      "corazón univentricular",
+      "tetralogía de Fallot",
+      "transposición de grandes arterias",
+      "anomalías de las venas pulmonares",
+      "coartación de aorta",
+      "aórtica bicúspide",
+      "aortopatías genéticas",
+      "anillo vascular",
+      "miocardiopatía hipertrófica",
+      "Duchenne",
+      "miocarditis",
+      "Qp/Qs"
+    ],
+    "general": [
+      {
+        "label": "Quién puede solicitar la resonancia magnética cardiovascular",
+        "pages": [
+          5
+        ],
+        "items": [],
+        "notes": [
+          "Pueden solicitarla Cardiología general o pediátrica, Medicina Intensiva, Cirugía de Tórax y Cirugía Cardiovascular de hospitales de segundo y tercer nivel. Medicina Interna, Pediatría y las demás especialidades refieren el caso a Cardiología general o pediátrica, según corresponda.",
+          "La sesión médica del hospital de tercer nivel del área de atracción decide la aprobación. Una vez aprobada, la solicitud se envía al Centro Nacional de Imágenes Médicas."
+        ]
+      },
+      {
+        "label": "Clases de recomendación y prioridad",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "La fuente clasifica las indicaciones en I (debe utilizarse), II (podría utilizarse) y III (no se recomienda). La CCSS prioriza las indicaciones de clase I según el contexto de cada persona y con valoración multidisciplinaria."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Cardiología pediátrica: consideraciones e indicaciones",
+        "sections": [
+          {
+            "label": "Consideraciones para niños y adolescentes",
+            "pages": [
+              13
+            ],
+            "items": []
+          },
+          {
+            "label": "Corazones con fisiología univentricular",
+            "pages": [
+              13,
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Tetralogía de Fallot",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Transposición de las grandes arterias",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Anomalías de las venas pulmonares",
+            "pages": [
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Enfermedad coronaria",
+            "pages": [
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Coartación de la aorta",
+            "pages": [
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Aórtica bicúspide",
+            "pages": [
+              15,
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Aortopatías genéticas",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Anillos vasculares y slings",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Transposición de grandes arterias con ventrículo derecho sistémico",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Miocardiopatía hipertrófica",
+            "pages": [
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Distrofia muscular de Duchenne",
+            "pages": [
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Tumores cardíacos",
+            "pages": [
+              17,
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Miocarditis",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Relación entre flujo sistémico y pulmonar (Qp/Qs) y flujo colateral",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Contraindicaciones absolutas y relativas",
+            "pages": [
+              18,
+              19
+            ],
+            "items": []
+          },
+          {
+            "label": "Dispositivos cardíacos implantados y verificación de seguridad",
+            "pages": [
+              20,
+              21,
+              22
+            ],
+            "items": []
+          },
+          {
+            "label": "Embarazo",
+            "pages": [
+              22
+            ],
+            "items": []
+          },
+          {
+            "label": "Estrés farmacológico con adenosina: consideraciones y contraindicaciones",
+            "pages": [
+              23
+            ],
+            "items": []
+          },
+          {
+            "label": "Flujograma de resonancia magnética cardiovascular",
+            "pages": [
+              24
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada",
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas",
+      "Pediatría"
+    ]
+  },
+  {
+    "id": "n31-tomografia-cardiovascular",
+    "sourceId": "N31",
+    "specialty": "Cardiología",
+    "name": "Tomografía computada cardiovascular en adultos",
+    "aliases": [
+      "AngioTC coronario",
+      "TAC cardiovascular",
+      "TCC",
+      "angio-TAC",
+      "dolor torácico",
+      "enfermedad arterial coronaria",
+      "insuficiencia cardíaca",
+      "cardiopatía congénita",
+      "TAVI",
+      "aneurisma",
+      "disección coronaria",
+      "estenosis aórtica",
+      "pericarditis constrictiva",
+      "orejuela izquierda"
+    ],
+    "general": [
+      {
+        "label": "Vigencia declarada en la copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La fuente indica una vigencia de un año. Verifique la versión vigente antes de utilizar el lineamiento."
+        ]
+      },
+      {
+        "label": "Especialidades autorizadas y valoración colegiada",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Pueden solicitar el estudio Cardiología, Medicina Intensiva, Cirugía de Tórax y Cirugía Cardiovascular de los hospitales de segundo y tercer nivel. Medicina Interna y las demás especialidades refieren a Cardiología.",
+          "La sesión médica del hospital de tercer nivel correspondiente al área de atracción valora la solicitud y decide su aprobación."
+        ]
+      },
+      {
+        "label": "Datos de la referencia",
+        "pages": [
+          15
+        ],
+        "items": [
+          "Consigne centro de procedencia, profesional que refiere, fecha, identificación, edad, antecedentes patológicos y quirúrgicos, evolución de los síntomas, tratamiento y examen físico pertinente.",
+          "Describa la probable etiología, las limitaciones en las actividades diarias y la duda diagnóstica que se desea aclarar. Anote la fecha de la sesión médica e incluya al menos dos firmas de especialistas presentes."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Tomografía cardiovascular: indicaciones por diagnóstico",
+        "sections": [
+          {
+            "label": "Restricción de uso del AngioTC coronario para dolor torácico agudo en Emergencias durante la implementación",
+            "pages": [
+              7
+            ],
+            "items": [],
+            "notes": [
+              "En el momento de la implementación, la fuente dispone que no se utilice la TC coronaria en el Servicio de Emergencias hasta evaluar recursos y capacidad instalada."
+            ]
+          },
+          {
+            "label": "Detección de enfermedad arterial coronaria",
+            "pages": [
+              7,
+              8,
+              9
+            ],
+            "items": []
+          },
+          {
+            "label": "Insuficiencia cardíaca",
+            "pages": [
+              9
+            ],
+            "items": []
+          },
+          {
+            "label": "Preoperatorio de cirugía cardíaca no coronaria o de alto riesgo",
+            "pages": [
+              9
+            ],
+            "items": []
+          },
+          {
+            "label": "Estratificación de riesgo posterior a la revascularización",
+            "pages": [
+              9,
+              10
+            ],
+            "items": []
+          },
+          {
+            "label": "Aneurisma, ectasia y disección coronaria",
+            "pages": [
+              10
+            ],
+            "items": []
+          },
+          {
+            "label": "Estudio complementario de oclusión total crónica",
+            "pages": [
+              10
+            ],
+            "items": []
+          },
+          {
+            "label": "Evaluación de estructura y función cardíaca",
+            "pages": [
+              10,
+              11
+            ],
+            "items": []
+          },
+          {
+            "label": "Cardiopatías congénitas del adulto",
+            "pages": [
+              11,
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Patologías de aorta",
+            "pages": [
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Valoración previa a ablación de venas pulmonares",
+            "pages": [
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Valoración previa a procedimientos de cardiología intervencionista estructural",
+            "pages": [
+              12,
+              13
+            ],
+            "items": []
+          },
+          {
+            "label": "Valoración previa y posterior a implante de TAVI y a cierre de orejuela izquierda",
+            "pages": [
+              13
+            ],
+            "items": []
+          },
+          {
+            "label": "Valoración previa al cierre de cortocircuitos intracardíacos o extracardíacos",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Patología valvular y pericárdica",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Requisitos de referencia",
+            "pages": [
+              14,
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Contraindicaciones",
+            "pages": [
+              15,
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Recomendaciones de manejo de emergencia médica durante el procedimiento",
+            "pages": [
+              16,
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Flujograma para pacientes ambulatorios y hospitalizados",
+            "pages": [
+              20
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada",
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n31-tomografia-cardiovascular-pediatrica",
+    "sourceId": "N31",
+    "specialty": "Cardiología",
+    "name": "Angiotomografía cardíaca en edad pediátrica",
+    "aliases": [
+      "TCC pediátrica",
+      "cardiopatía congénita",
+      "Kawasaki",
+      "ALCAPA",
+      "ARCAPA",
+      "coartación de aorta",
+      "tetralogía de Fallot",
+      "angio-TAC",
+      "arterias coronarias",
+      "ventana aortopulmonar",
+      "válvula pulmonar",
+      "transposición de grandes vasos"
+    ],
+    "general": [
+      {
+        "label": "Vigencia declarada en la copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La fuente indica una vigencia de un año. Verifique la versión vigente antes de utilizar el lineamiento."
+        ]
+      },
+      {
+        "label": "Especialidades autorizadas y valoración colegiada",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Pueden solicitar el estudio Cardiología, Medicina Intensiva, Cirugía de Tórax y Cirugía Cardiovascular de los hospitales de segundo y tercer nivel. Medicina Interna y las demás especialidades refieren a Cardiología.",
+          "La sesión médica del hospital de tercer nivel correspondiente al área de atracción valora la solicitud y decide su aprobación."
+        ]
+      },
+      {
+        "label": "Datos de la referencia",
+        "pages": [
+          15
+        ],
+        "items": [
+          "Consigne centro de procedencia, profesional que refiere, fecha, identificación, edad, antecedentes patológicos y quirúrgicos, evolución de los síntomas, tratamiento y examen físico pertinente.",
+          "Describa la probable etiología, las limitaciones en las actividades diarias y la duda diagnóstica que se desea aclarar. Anote la fecha de la sesión médica e incluya al menos dos firmas de especialistas presentes."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Angiotomografía pediátrica",
+        "sections": [
+          {
+            "label": "Relación con el ecocardiograma y la resonancia",
+            "pages": [
+              17
+            ],
+            "items": [],
+            "notes": [
+              "Se utiliza como complemento al ecocardiograma transtorácico. Especialmente en mayores de 5 años y adolescentes hasta los 18, la primera opción es la resonancia cardiovascular, con la excepción descrita para enfermedad coronaria pediátrica."
+            ]
+          },
+          {
+            "label": "Arterias coronarias: malformaciones y enfermedad adquirida",
+            "pages": [
+              17,
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Coartación de aorta, anomalías del arco y estenosis aórtica supravalvular",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Ventana aortopulmonar, estenosis o atresia de válvula pulmonar y tetralogía de Fallot",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Patología de venas pulmonares",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Transposición de grandes vasos",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Cardiopatía congénita compleja",
+            "pages": [
+              19
+            ],
+            "items": []
+          },
+          {
+            "label": "Requisitos de referencia",
+            "pages": [
+              14,
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Contraindicaciones",
+            "pages": [
+              15,
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Recomendaciones de manejo de emergencia médica durante el procedimiento",
+            "pages": [
+              16,
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Flujograma para pacientes ambulatorios y hospitalizados",
+            "pages": [
+              20
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada",
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas",
+      "Pediatría"
+    ]
+  },
+  {
+    "id": "n32-cancer-mama-multipanel",
+    "sourceId": "N32",
+    "specialty": "Oncología",
+    "name": "Cáncer de mama: prueba germinal con multipanel y referencia a consejería genética",
+    "aliases": [
+      "mama hereditaria",
+      "predisposición hereditaria",
+      "cáncer de mama y ovario",
+      "consejería genética oncológica",
+      "BRCA1",
+      "BRCA2",
+      "panel de mama ovario endometrio"
+    ],
+    "general": [
+      {
+        "label": "Población, prescriptores y consentimiento informado",
+        "pages": [
+          8,
+          9
+        ],
+        "items": [
+          "Personas de 18 años o más atendidas en hospitales nacionales, especializados o regionales de la CCSS. Se requiere consentimiento informado."
+        ],
+        "notes": [
+          "Pueden indicar estas pruebas especialistas en Oncología Médica, Oncología Quirúrgica, Ginecología Oncológica o médicos con entrenamiento responsables de consultas de Consejería Genética Oncológica."
+        ]
+      },
+      {
+        "label": "Alcance de las pruebas",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "El protocolo limita estas pruebas a la negociación institucional para adquirir olaparib, que ofreció una cantidad anual definida de estudios genéticos."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Solicitud de prueba germinal y valoración del resultado",
+        "sections": [
+          {
+            "label": "Población diana para el multipanel",
+            "pages": [
+              8
+            ],
+            "items": [],
+            "notes": [
+              "Cáncer de mama temprano RH(−)/HER2(−) o RH(+)/HER2(−), sospecha de causa hereditaria del cáncer de mama, o ambas condiciones."
+            ]
+          },
+          {
+            "label": "Procedimiento y referencia según el resultado",
+            "pages": [
+              10,
+              11,
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Flujograma de diagnóstico germinal para cáncer de mama con multipanel",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Solicitud de laboratorio mediante EDUS",
+            "pages": [
+              18,
+              19
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Consejería Genética Oncológica",
+        "sections": [
+          {
+            "label": "Criterios personales de referencia por sospecha de predisposición hereditaria a cáncer de mama u ovario",
+            "pages": [
+              20
+            ],
+            "items": [],
+            "notes": [
+              "La fuente enumera como criterios alternativos el diagnóstico de cáncer de mama antes de los 45 años, cáncer de mama triple negativo antes de los 50 años o cáncer de mama bilateral con al menos un tumor diagnosticado antes de los 50 años.",
+              "También enumera cáncer de ovario epitelial de alto grado, de trompa uterina o primario de peritoneo, cáncer de mama y de ovario epitelial en la misma paciente, o cáncer de mama en un hombre."
+            ]
+          },
+          {
+            "label": "Historia familiar: grado de parentesco, línea familiar, número de casos y mutación conocida (anexo 4)",
+            "pages": [
+              20
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n32-ovario-epitelial-hrd",
+    "sourceId": "N32",
+    "specialty": "Oncología",
+    "name": "Cáncer de ovario epitelial: prueba HRD y referencia a consejería genética",
+    "aliases": [
+      "ovario epitelial FIGO III IV",
+      "deficiencia de recombinación homóloga",
+      "BRCA1",
+      "BRCA2",
+      "cáncer hereditario de mama y ovario",
+      "consejería genética oncológica"
+    ],
+    "general": [
+      {
+        "label": "Población, prescriptores y consentimiento informado",
+        "pages": [
+          8,
+          9
+        ],
+        "items": [
+          "Personas de 18 años o más atendidas en hospitales nacionales, especializados o regionales de la CCSS. Se requiere consentimiento informado."
+        ],
+        "notes": [
+          "Pueden indicar estas pruebas especialistas en Oncología Médica, Oncología Quirúrgica, Ginecología Oncológica o médicos con entrenamiento responsables de consultas de Consejería Genética Oncológica."
+        ]
+      },
+      {
+        "label": "Alcance de las pruebas",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "El protocolo limita estas pruebas a la negociación institucional para adquirir olaparib, que ofreció una cantidad anual definida de estudios genéticos."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Prescriptor habilitado a Patología para estudio HRD",
+        "sections": [
+          {
+            "label": "Criterios del estudio HRD",
+            "pages": [
+              8,
+              13
+            ],
+            "items": [
+              "Diagnóstico de cáncer de ovario epitelial estadio FIGO III o IV. El prescriptor debe verificar tejido tumoral disponible o la posibilidad de tomar una biopsia."
+            ],
+            "notes": [
+              "Si no es posible disponer de tejido ni tomar biopsia, el protocolo remite al procedimiento de diagnóstico genético con multipanel."
+            ]
+          },
+          {
+            "label": "Solicitud y referencia a consejería según resultado",
+            "pages": [
+              13,
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Flujograma del diagnóstico genético para cáncer de ovario epitelial",
+            "pages": [
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Solicitud mediante referencia en EDUS y consentimiento",
+            "pages": [
+              21,
+              22
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "name": "Consejería Genética Oncológica",
+        "sections": [
+          {
+            "label": "Criterios personales de referencia por sospecha de predisposición hereditaria a cáncer de mama u ovario",
+            "pages": [
+              20
+            ],
+            "items": [],
+            "notes": [
+              "La fuente enumera como criterios alternativos el diagnóstico de cáncer de mama antes de los 45 años, cáncer de mama triple negativo antes de los 50 años o cáncer de mama bilateral con al menos un tumor diagnosticado antes de los 50 años.",
+              "También enumera cáncer de ovario epitelial de alto grado, de trompa uterina o primario de peritoneo, cáncer de mama y de ovario epitelial en la misma paciente, o cáncer de mama en un hombre."
+            ]
+          },
+          {
+            "label": "Historia familiar: grado de parentesco, línea familiar, número de casos y mutación conocida (anexo 4)",
+            "pages": [
+              20
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-atm",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: disfunción de la articulación temporomandibular",
+    "aliases": [
+      "ATM",
+      "dolor mandibular",
+      "disfunción temporomandibular",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Cuello: disfunción de la articulación temporomandibular",
+            "pages": [
+              14
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-cabeza",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: cabeza y sistema nervioso central",
+    "aliases": [
+      "ictus",
+      "ACV",
+      "esclerosis múltiple",
+      "aneurisma cerebral",
+      "tumores cerebrales",
+      "hipófisis",
+      "silla turca",
+      "fosa posterior",
+      "trombosis venosa cerebral",
+      "hidrocefalia",
+      "función de derivación",
+      "demencias",
+      "Alzheimer",
+      "lesiones orbitarias",
+      "pérdida aguda de visión",
+      "trastornos visuales",
+      "epilepsia",
+      "vértigo",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Enfermedades congénitas, evento cerebrovascular agudo, aneurisma cerebral con o sin ruptura y enfermedades desmielinizantes",
+            "pages": [
+              11
+            ],
+            "items": []
+          },
+          {
+            "label": "Tumores cerebrales, hipófisis y silla turca, fosa posterior, trombosis venosa cerebral e hidrocefalia",
+            "pages": [
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Enfermedad de Alzheimer, otras demencias, lesiones orbitarias, pérdida de visión, epilepsia del adulto y vértigo",
+            "pages": [
+              13
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-colon-recto",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: cáncer de colon y recto",
+    "aliases": [
+      "cáncer de recto",
+      "cáncer de colon",
+      "cáncer colorrectal",
+      "cáncer colorectal",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Cáncer de recto: estadificación locorregional. Cáncer colorrectal: estadificación de metástasis a distancia",
+            "pages": [
+              25
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-columna",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: columna vertebral",
+    "aliases": [
+      "mielopatía",
+      "compresión medular",
+      "tumor óseo de columna",
+      "subluxación atloaxial",
+      "braquialgia",
+      "cervicalgia",
+      "radiculopatía cervical",
+      "trauma cervical",
+      "dorsalgia",
+      "lumbalgia",
+      "ciática",
+      "cauda equina",
+      "cola de caballo",
+      "articulación facetaria",
+      "espondiloartritis axial",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Enfermedades congénitas, mielopatías y compresión medular de origen tumoral",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Tumor óseo de columna, subluxación atloaxial, braquialgia y cervicalgia aguda",
+            "pages": [
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Cervicalgia crónica, radiculopatía y trauma de columna cervical",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Dolor dorsal con o sin irradiación, signos de tracto largo o cambios degenerativos",
+            "pages": [
+              16,
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Lumbalgia crónica sin signos de alerta",
+            "pages": [
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Lumbalgia con signos de alarma, lumbalgia aguda y ciática según evolución",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Síndrome de cauda equina, articulación facetaria y espondiloartritis axial",
+            "pages": [
+              19
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-hepatobiliar",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: enfermedad biliar y hepática",
+    "aliases": [
+      "enfermedad biliar",
+      "lesión hepática",
+      "ictericia",
+      "dolor en hipocondrio derecho",
+      "hígado",
+      "embarazo",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Enfermedad biliar",
+            "pages": [
+              22
+            ],
+            "items": []
+          },
+          {
+            "label": "Lesión hepática en imagen inicial por ultrasonido o TAC, ictericia y dolor en cuadrante superior derecho, incluido el embarazo",
+            "pages": [
+              23
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-hombro-codo",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: hombro y codo",
+    "aliases": [
+      "dolor de hombro",
+      "manguito rotador",
+      "tendón largo del bíceps",
+      "inestabilidad glenohumeral",
+      "bursitis subacromial",
+      "pinzamiento subacromial",
+      "acromioclavicular",
+      "epicondilitis lateral",
+      "codo de tenista",
+      "bursitis olecraneana",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Dolor de hombro no localizado, manguito rotador, tendón largo del bíceps, inestabilidad glenohumeral y bursitis subacromial-subdeltoidea",
+            "pages": [
+              19
+            ],
+            "items": []
+          },
+          {
+            "label": "Pinzamiento subacromial, lesión acromioclavicular y desgarros de bíceps, tríceps y deltoides",
+            "pages": [
+              20
+            ],
+            "items": []
+          },
+          {
+            "label": "Codo: epicondilitis lateral y bursitis olecraneana",
+            "pages": [
+              20
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-mama",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: mama y cáncer mamario",
+    "aliases": [
+      "cáncer de mama",
+      "primario oculto",
+      "enfermedad de Paget",
+      "tamizaje mamario",
+      "quimioterapia neoadyuvante",
+      "reconstrucción oncoplástica",
+      "recurrencia de cáncer de mama",
+      "cáncer de mama inflamatorio",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Cáncer de mama primario oculto, enfermedad de Paget y tamizaje en alto riesgo",
+            "pages": [
+              26
+            ],
+            "items": []
+          },
+          {
+            "label": "Tamizaje en pacientes con riesgo moderado",
+            "pages": [
+              27
+            ],
+            "items": []
+          },
+          {
+            "label": "Estadificación y evaluación de la respuesta a quimioterapia neoadyuvante",
+            "pages": [
+              28
+            ],
+            "items": []
+          },
+          {
+            "label": "Reconstrucción o aumento mamario, recurrencia, hallazgos equívocos y cáncer de mama inflamatorio",
+            "pages": [
+              29
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-pancreas",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: páncreas",
+    "aliases": [
+      "adenocarcinoma de páncreas",
+      "quiste pancreático",
+      "pancreatitis aguda",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Adenocarcinoma de páncreas: diagnóstico, estadificación y reestadificación. Quistes pancreáticos mayores de 1 cm y pancreatitis aguda",
+            "pages": [
+              24
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-renales",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: masas renales y suprarrenales",
+    "aliases": [
+      "masa renal",
+      "masa suprarrenal",
+      "tumor renal",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Masa renal y masa en suprarrenales",
+            "pages": [
+              25
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n33-rm-rodilla",
+    "sourceId": "N33",
+    "specialty": "Radiología e imágenes médicas",
+    "name": "Resonancia magnética: dolor y lesiones de rodilla",
+    "aliases": [
+      "gonalgia",
+      "rodilla",
+      "lesión de menisco",
+      "ligamento cruzado",
+      "lesión osteocondral",
+      "tendón patelar",
+      "cuádriceps",
+      "ligamento colateral",
+      "banda iliotibial",
+      "pata de ganso",
+      "quiste de Baker",
+      "resonancia magnética",
+      "RM",
+      "CNIM"
+    ],
+    "general": [
+      {
+        "label": "Alcance de la guía de resonancia magnética",
+        "pages": [
+          10
+        ],
+        "items": [],
+        "notes": [
+          "Guía para la valoración de solicitudes hospitalarias por las comisiones locales de resonancia magnética. La tabla original distingue los escenarios indicados, condicionales y aquellos en los que el estudio se considera innecesario."
+        ]
+      },
+      {
+        "label": "Contraindicaciones, efectos adversos, contraste y función renal",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "items": []
+      }
+    ],
+    "routes": [
+      {
+        "name": "Valoración hospitalaria de la solicitud de resonancia",
+        "sections": [
+          {
+            "label": "Dolor agudo después de traumatismo en una rodilla previamente asintomática",
+            "pages": [
+              20
+            ],
+            "items": []
+          },
+          {
+            "label": "Dolor crónico según edad, lesión traumática de menisco o ligamento cruzado, defecto osteocondral, lesión de tendón patelar o del mecanismo extensor del cuádriceps",
+            "pages": [
+              21
+            ],
+            "items": []
+          },
+          {
+            "label": "Ligamentos colaterales, banda iliotibial, tendones de la pata de ganso, bíceps femoral distal y quiste de Baker",
+            "pages": [
+              22
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n34-toxina-fisiatria",
+    "sourceId": "N34",
+    "specialty": "Fisiatría",
+    "name": "Espasticidad y distonía: valoración para aplicación de toxina botulínica",
+    "aliases": [
+      "espasticidad focal",
+      "distonía",
+      "parálisis cerebral",
+      "lesión medular",
+      "bruxismo",
+      "geriatría HNGG",
+      "Ashworth",
+      "Tardieu",
+      "toxina botulínica"
+    ],
+    "general": [
+      {
+        "label": "Qué servicios pueden referir a valoración",
+        "pages": [
+          6,
+          7
+        ],
+        "items": [],
+        "notes": [
+          "Los servicios autorizados y sus indicaciones se enumeran en la página 7. Los demás servicios de la red refieren primero a la consulta externa de la especialidad correspondiente.",
+          "Todo caso urgente debe referirse al servicio de emergencias."
+        ]
+      },
+      {
+        "label": "Información mínima de la referencia",
+        "pages": [
+          6
+        ],
+        "items": [
+          "Indique centro de procedencia, nombre del médico que refiere, fecha, edad e impresión diagnóstica. Incluya antecedentes patológicos y no patológicos, síntomas y evolución, tratamiento, examen físico dirigido, laboratorios recientes y estudios de gabinete según patología."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Consulta de Fisiatría",
+        "sections": [
+          {
+            "label": "Prerrequisitos de la referencia por espasticidad",
+            "pages": [
+              9
+            ],
+            "items": [
+              "Valoración previa por Fisiatría. Documente los tratamientos farmacológicos, ortésicos o quirúrgicos previos y su evolución. Indique el objetivo en dolor, función o postura.",
+              "La tabla exige examen físico con las escalas de Ashworth modificada y Tardieu y ausencia de contracturas fijas."
+            ]
+          },
+          {
+            "label": "Criterios y exclusiones según edad y centro: pediatría, adolescentes, adultos y HNGG",
+            "pages": [
+              9,
+              10,
+              11
+            ],
+            "items": []
+          },
+          {
+            "label": "Anexos: escalas de Ashworth modificada y Tardieu",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "De la referencia al servicio autorizado",
+            "pages": [
+              15
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n34-toxina-hernias",
+    "sourceId": "N34",
+    "specialty": "Cirugía general",
+    "name": "Hernias complejas de pared abdominal: valoración para aplicación de toxina botulínica",
+    "aliases": [
+      "hernia ventral incisional",
+      "hernia compleja de pared abdominal",
+      "hernia gigante",
+      "pérdida de domicilio abdominal",
+      "toxina botulínica"
+    ],
+    "general": [
+      {
+        "label": "Qué servicios pueden referir a valoración",
+        "pages": [
+          6,
+          7
+        ],
+        "items": [],
+        "notes": [
+          "Los servicios autorizados y sus indicaciones se enumeran en la página 7. Los demás servicios de la red refieren primero a la consulta externa de la especialidad correspondiente.",
+          "Todo caso urgente debe referirse al servicio de emergencias."
+        ]
+      },
+      {
+        "label": "Información mínima de la referencia",
+        "pages": [
+          6
+        ],
+        "items": [
+          "Indique centro de procedencia, nombre del médico que refiere, fecha, edad e impresión diagnóstica. Incluya antecedentes patológicos y no patológicos, síntomas y evolución, tratamiento, examen físico dirigido, laboratorios recientes y estudios de gabinete según patología."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Consulta de Cirugía general",
+        "sections": [
+          {
+            "label": "Consulta previa antes del traslado de nivel",
+            "pages": [
+              11,
+              12
+            ],
+            "items": [
+              "Todo caso que se desee referir a un nivel superior debe comentarse previamente con el grupo de cirujanos con experiencia en hernias de pared abdominal correspondiente al área de atracción."
+            ]
+          },
+          {
+            "label": "Criterios de referencia, evaluación por cirugía general y estudios de gabinete",
+            "pages": [
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "De la referencia al servicio autorizado",
+            "pages": [
+              15
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n34-toxina-hiperhidrosis",
+    "sourceId": "N34",
+    "specialty": "Dermatología pediátrica",
+    "name": "Hiperhidrosis primaria en el Hospital Nacional de Niños: valoración para aplicación de toxina botulínica",
+    "aliases": [
+      "hiperhidrosis primaria palmar plantar axilar craneofacial multifocal",
+      "sudoración excesiva",
+      "toxina botulínica"
+    ],
+    "general": [
+      {
+        "label": "Qué servicios pueden referir a valoración",
+        "pages": [
+          6,
+          7
+        ],
+        "items": [],
+        "notes": [
+          "Los servicios autorizados y sus indicaciones se enumeran en la página 7. Los demás servicios de la red refieren primero a la consulta externa de la especialidad correspondiente.",
+          "Todo caso urgente debe referirse al servicio de emergencias."
+        ]
+      },
+      {
+        "label": "Información mínima de la referencia",
+        "pages": [
+          6
+        ],
+        "items": [
+          "Indique centro de procedencia, nombre del médico que refiere, fecha, edad e impresión diagnóstica. Incluya antecedentes patológicos y no patológicos, síntomas y evolución, tratamiento, examen físico dirigido, laboratorios recientes y estudios de gabinete según patología."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Consulta de Dermatología pediátrica",
+        "sections": [
+          {
+            "label": "Población y vía de referencia de Pediatría",
+            "pages": [
+              12
+            ],
+            "items": [],
+            "notes": [
+              "La tabla indica personas mayores de 6 y menores de 12 años con hiperhidrosis primaria y uso previo de tópicos antitranspirantes u oxibutinina sin respuesta, o suspensión por efectos adversos o contraindicaciones.",
+              "En áreas de adscripción sin especialista en Dermatología se permite la referencia desde Pediatría."
+            ]
+          },
+          {
+            "label": "Criterios de exclusión para Dermatología Pediátrica del HNN",
+            "pages": [
+              13
+            ],
+            "items": []
+          },
+          {
+            "label": "De la referencia al servicio autorizado",
+            "pages": [
+              15
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n34-toxina-neurologia",
+    "sourceId": "N34",
+    "specialty": "Neurología",
+    "name": "Trastornos de movimiento, neuralgias y otras indicaciones de Neurología: valoración para aplicación de toxina botulínica",
+    "aliases": [
+      "distonía generalizada",
+      "distonía focal",
+      "distonía laríngea",
+      "distonía oromandibular",
+      "espasmo hemifacial",
+      "migraña crónica persistente",
+      "neuralgia del trigémino",
+      "neuralgia postherpética",
+      "meralgia parestésica",
+      "síndrome del piriforme",
+      "sialorrea",
+      "sincinesias faciales",
+      "corea",
+      "temblor",
+      "hemibalismo",
+      "tics",
+      "toxina botulínica"
+    ],
+    "general": [
+      {
+        "label": "Qué servicios pueden referir a valoración",
+        "pages": [
+          6,
+          7
+        ],
+        "items": [],
+        "notes": [
+          "Los servicios autorizados y sus indicaciones se enumeran en la página 7. Los demás servicios de la red refieren primero a la consulta externa de la especialidad correspondiente.",
+          "Todo caso urgente debe referirse al servicio de emergencias."
+        ]
+      },
+      {
+        "label": "Información mínima de la referencia",
+        "pages": [
+          6
+        ],
+        "items": [
+          "Indique centro de procedencia, nombre del médico que refiere, fecha, edad e impresión diagnóstica. Incluya antecedentes patológicos y no patológicos, síntomas y evolución, tratamiento, examen físico dirigido, laboratorios recientes y estudios de gabinete según patología."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Consulta de Neurología",
+        "sections": [
+          {
+            "label": "Población y servicios de referencia",
+            "pages": [
+              7,
+              8
+            ],
+            "items": [],
+            "notes": [
+              "La sección de Neurología incluye personas de 13 años o más. Para distonía laríngea se permite referencia de ORL y para distonía oromandibular, de Maxilofacial."
+            ]
+          },
+          {
+            "label": "Tabla 1. Distonía generalizada, segmentaria o focal",
+            "pages": [
+              7,
+              8
+            ],
+            "items": []
+          },
+          {
+            "label": "Tabla 1. Otros trastornos del movimiento, neuralgias, migraña crónica persistente, sialorrea, sincinesias faciales y espasmo hemifacial",
+            "pages": [
+              8
+            ],
+            "items": []
+          },
+          {
+            "label": "De la referencia al servicio autorizado",
+            "pages": [
+              15
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n34-toxina-oftalmologia",
+    "sourceId": "N34",
+    "specialty": "Oftalmología",
+    "name": "Blefaroespasmo severo y estrabismo refractario: valoración para aplicación de toxina botulínica",
+    "aliases": [
+      "blefaroespasmo",
+      "estrabismo paralítico",
+      "estrabismo refractario",
+      "toxina botulínica"
+    ],
+    "general": [
+      {
+        "label": "Qué servicios pueden referir a valoración",
+        "pages": [
+          6,
+          7
+        ],
+        "items": [],
+        "notes": [
+          "Los servicios autorizados y sus indicaciones se enumeran en la página 7. Los demás servicios de la red refieren primero a la consulta externa de la especialidad correspondiente.",
+          "Todo caso urgente debe referirse al servicio de emergencias."
+        ]
+      },
+      {
+        "label": "Información mínima de la referencia",
+        "pages": [
+          6
+        ],
+        "items": [
+          "Indique centro de procedencia, nombre del médico que refiere, fecha, edad e impresión diagnóstica. Incluya antecedentes patológicos y no patológicos, síntomas y evolución, tratamiento, examen físico dirigido, laboratorios recientes y estudios de gabinete según patología."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Consulta de Oftalmología",
+        "sections": [
+          {
+            "label": "Tabla 4. Blefaroespasmo severo y corrección de estrabismo",
+            "pages": [
+              11
+            ],
+            "items": [],
+            "notes": [
+              "Para blefaroespasmo severo, la tabla especifica personas de 13 años o más y referencia al área de adscripción con consulta de toxina botulínica.",
+              "En estrabismo refractario al tratamiento, principalmente paralítico, se refiere al área de adscripción con la consulta. El Hospital Nacional de Niños atiende a su población interna."
+            ]
+          },
+          {
+            "label": "De la referencia al servicio autorizado",
+            "pages": [
+              15
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "direction": "Atención especializada"
+  },
+  {
+    "id": "n35-imagenes-abuso-fisico",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: sospecha de abuso físico",
+    "aliases": [
+      "abuso físico",
+      "maltrato infantil",
+      "traumatismo craneoencefálico abusivo",
+      "estudio óseo",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Estudios según lesiones sospechadas y seguimiento ante alta sospecha en niños de hasta 24 meses",
+            "pages": [
+              23
+            ],
+            "items": []
+          },
+          {
+            "label": "Anexo 6: estudio óseo en situación de sospecha de abuso físico",
+            "pages": [
+              42
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-apendicitis",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: apendicitis aguda",
+    "aliases": [
+      "apendicitis aguda",
+      "dolor abdominal",
+      "escala de Alvarado",
+      "puntaje PAS",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Apendicitis aguda: estudio según riesgo clínico y valoración por cirugía",
+            "pages": [
+              19
+            ],
+            "items": []
+          },
+          {
+            "label": "Anexos 4 y 5: escala de Alvarado y escala pediátrica PAS",
+            "pages": [
+              19,
+              40,
+              41
+            ],
+            "items": [],
+            "notes": [
+              "Los límites de las escalas de Alvarado y PAS difieren entre la tabla y los anexos. Compare las páginas indicadas para los puntajes limítrofes."
+            ]
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-cabeza",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: cabeza, desarrollo y ataxia",
+    "aliases": [
+      "craneosinostosis",
+      "microcefalia",
+      "macrocefalia",
+      "hidrocefalia",
+      "parálisis cerebral infantil",
+      "desarrollo",
+      "sordera",
+      "conductos salivales",
+      "ataxia",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Malformación congénita, craneosinostosis y microcefalia",
+            "pages": [
+              8
+            ],
+            "items": []
+          },
+          {
+            "label": "Macrocefalia evolutiva, hidrocefalia con posible disfunción valvular, retraso del desarrollo, sordera y obstrucción de conductos salivales",
+            "pages": [
+              9
+            ],
+            "items": []
+          },
+          {
+            "label": "Ataxia aguda con o sin trauma, ataxia recurrente y ataxia crónica",
+            "pages": [
+              9,
+              10
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-cefalea",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: cefalea",
+    "aliases": [
+      "cefalea",
+      "migraña",
+      "dolor de cabeza",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Cefalea primaria, secundaria, súbita severa, atribuida a infección severa o a trauma subagudo o antiguo",
+            "pages": [
+              13
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-convulsiones",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: convulsiones y epilepsia",
+    "aliases": [
+      "convulsión neonatal",
+      "convulsiones febriles",
+      "convulsiones postraumáticas",
+      "epilepsia refractaria",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Convulsiones neonatales, febriles simples o complejas, postraumáticas, focales, generalizadas e intratables, según edad y examen neurológico",
+            "pages": [
+              10,
+              11
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-cuello-columna",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: cuello y columna vertebral",
+    "aliases": [
+      "hipotiroidismo congénito",
+      "nódulo tiroideo",
+      "masa cervical",
+      "tortícolis",
+      "cervicalgia",
+      "lumbalgia",
+      "disrafia espinal",
+      "escoliosis",
+      "subluxación atlantoaxoidea",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Hipotiroidismo congénito, nódulos tiroideos, masa en cuello, posible subluxación atlantoaxoidea y tortícolis",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Cervicalgia o lumbalgia y riesgo de disrafia espinal",
+            "pages": [
+              14
+            ],
+            "items": []
+          },
+          {
+            "label": "Escoliosis",
+            "pages": [
+              15
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-digestivo",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: aparato digestivo y trauma abdominal",
+    "aliases": [
+      "cuerpo extraño ingerido",
+      "disfagia",
+      "invaginación intestinal",
+      "trauma abdominal",
+      "ictericia neonatal",
+      "rectorragia",
+      "vómitos biliosos",
+      "vómitos en proyectil",
+      "estreñimiento",
+      "masa abdominal",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Cuerpo extraño radiopaco ingerido, disfagia e invaginación intestinal",
+            "pages": [
+              17
+            ],
+            "items": []
+          },
+          {
+            "label": "Trauma abdominal",
+            "pages": [
+              17,
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Ictericia neonatal persistente, rectorragia, vómitos biliosos del neonato, vómitos en proyectil y vómitos persistentes",
+            "pages": [
+              18
+            ],
+            "items": []
+          },
+          {
+            "label": "Estreñimiento",
+            "pages": [
+              18,
+              19
+            ],
+            "items": []
+          },
+          {
+            "label": "Dolor abdominal crónico y masa abdominal palpable",
+            "pages": [
+              19
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-extremidades",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: extremidades y displasia de cadera",
+    "aliases": [
+      "talla baja",
+      "sinovitis transitoria",
+      "claudicación",
+      "displasia de cadera",
+      "dolor óseo localizado",
+      "masa de partes blandas",
+      "osteocondrosis tibial",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Talla baja, sinovitis transitoria o claudicación de cadera, dolor óseo y masa de partes blandas",
+            "pages": [
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Sospecha de displasia de cadera según edad, examen, factores de riesgo y seguimiento con arnés",
+            "pages": [
+              15
+            ],
+            "items": []
+          },
+          {
+            "label": "Osteocondrosis de la tuberosidad anterior de la tibia",
+            "pages": [
+              16
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-genitourinarias",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: enuresis, criptorquidia e hidronefrosis prenatal",
+    "aliases": [
+      "enuresis",
+      "incontinencia urinaria",
+      "criptorquidia",
+      "testículo no descendido",
+      "hidronefrosis prenatal",
+      "hidroureter",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Enuresis e incontinencia urinaria permanente",
+            "pages": [
+              19,
+              20
+            ],
+            "items": []
+          },
+          {
+            "label": "Criptorquidia",
+            "pages": [
+              20
+            ],
+            "items": []
+          },
+          {
+            "label": "Diagnóstico prenatal de hidronefrosis: estudio inicial y seguimiento según hallazgos",
+            "pages": [
+              20,
+              21
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-hematuria-itu",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: hematuria e infección urinaria",
+    "aliases": [
+      "hematuria",
+      "litiasis",
+      "proteinuria",
+      "infección urinaria",
+      "infección del tracto urinario",
+      "ITU",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Hematuria microscópica o macroscópica, con o sin proteinuria, dolorosa o traumática según el escenario",
+            "pages": [
+              21,
+              22
+            ],
+            "items": []
+          },
+          {
+            "label": "Infección urinaria comprobada: primera infección febril, infección atípica o recurrente",
+            "pages": [
+              22
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-sinusitis",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: sinusitis",
+    "aliases": [
+      "sinusitis aguda",
+      "sinusitis crónica",
+      "sinusitis fúngica",
+      "complicaciones orbitarias",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Sinusitis aguda no complicada, persistente, recurrente o crónica, planificación prequirúrgica, sospecha de complicaciones o de infección fúngica invasiva",
+            "pages": [
+              12
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-solicitud-seguridad",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: trámite, seguridad y consentimiento",
+    "aliases": [
+      "radiación",
+      "medios de contraste",
+      "consentimiento informado",
+      "cistouretrografía miccional seriada",
+      "CUMS",
+      "tránsito gastrointestinal",
+      "colon por enema",
+      "preparación"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Información para la solicitud y para la familia",
+        "sections": [
+          {
+            "label": "Radiación y consideraciones sobre tomografía",
+            "pages": [
+              24,
+              25
+            ],
+            "items": []
+          },
+          {
+            "label": "Efectos adversos y consideraciones sobre contrastes y procedimientos",
+            "pages": [
+              25,
+              26,
+              27
+            ],
+            "items": []
+          },
+          {
+            "label": "Consentimiento informado",
+            "pages": [
+              27,
+              28
+            ],
+            "items": []
+          },
+          {
+            "label": "Cistouretrografía miccional seriada: información para las familias",
+            "pages": [
+              33,
+              34
+            ],
+            "items": []
+          },
+          {
+            "label": "Esofagograma y serie gastroduodenal: información para las familias",
+            "pages": [
+              35,
+              36
+            ],
+            "items": []
+          },
+          {
+            "label": "Colon por enema: información para las familias",
+            "pages": [
+              37,
+              38
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-torax",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: corazón y pulmones",
+    "aliases": [
+      "neumonía",
+      "cuerpo extraño intrabronquial",
+      "broncoaspiración crónica",
+      "asma",
+      "estridor",
+      "cardiopatía",
+      "preoperatorio",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Neumonía en paciente inmunocompetente, cuerpo extraño intrabronquial y sospecha de broncoaspiración crónica",
+            "pages": [
+              16
+            ],
+            "items": []
+          },
+          {
+            "label": "Asma, estridor agudo, cardiopatía y estudio preoperatorio",
+            "pages": [
+              17
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  },
+  {
+    "id": "n35-imagenes-trauma-craneo",
+    "sourceId": "N35",
+    "specialty": "Pediatría",
+    "name": "Imágenes médicas pediátricas: traumatismo craneoencefálico",
+    "aliases": [
+      "TCE",
+      "PECARN",
+      "trauma craneal",
+      "trauma de cráneo",
+      "traumatismo craneoencefálico",
+      "radiología pediátrica",
+      "imágenes médicas pediátricas"
+    ],
+    "general": [
+      {
+        "label": "Vigencia de esta copia",
+        "pages": [
+          1
+        ],
+        "items": [],
+        "notes": [
+          "La portada indica vigencia hasta 2025 y próxima revisión en 2026. Verifique la versión vigente antes de aplicar los criterios."
+        ]
+      },
+      {
+        "label": "Qué estudio puede solicitar cada nivel y cuándo referir",
+        "pages": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "items": [
+          "La tabla distingue el estudio inicial del que corresponde después de valoración especializada. El médico documenta el diagnóstico presuntivo, verifica estudios previos y coordina con Radiología según la capacidad de su red."
+        ],
+        "notes": [
+          "Si la condición requiere atención inmediata, refiera a Emergencias o a un establecimiento de mayor complejidad. La espera de imágenes no debe retrasar la atención."
+        ]
+      },
+      {
+        "label": "Estudios en el Hospital Nacional de Niños cuando se agota el recurso de la red",
+        "pages": [
+          6
+        ],
+        "items": [],
+        "notes": [
+          "Para pacientes no hospitalizados, Pediatría o Neonatología envía la solicitud y el comprobante de la cita de seguimiento. Para pacientes hospitalizados, la coordinación es telefónica por el especialista.",
+          "Las solicitudes de cistouretrografía miccional seriada, tránsito gastrointestinal y colon por enema en menores de tres meses deben remitirse al Hospital Nacional de Niños."
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "name": "Estudio inicial y estudio posterior a valoración especializada",
+        "sections": [
+          {
+            "label": "Trauma craneoencefálico según severidad, evolución y riesgo de lesión intracraneal, con exclusiones según el escenario",
+            "pages": [
+              11,
+              12
+            ],
+            "items": []
+          },
+          {
+            "label": "Anexo 3: criterios clínicos de PECARN",
+            "pages": [
+              39
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "additionalSpecialties": [
+      "Radiología e imágenes médicas"
+    ]
+  }
+]

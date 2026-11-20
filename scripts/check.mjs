@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import './test-pwa-identity.mjs';
 import './check-dental-specialties.mjs';
 import './test-source-pages.mjs';
+import './test-referral-guide.mjs';
+import './check-referral-guides.mjs';
 import {auditSourcePages,assertSourcePages} from './check-source-pages.mjs';
 import {createTopicIndex, groupResults, orderDocuments, uniqueTopicCount, isCatalogCard} from '../catalog.js';
 const root=path.resolve(import.meta.dirname,'..');

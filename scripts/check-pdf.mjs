@@ -13,7 +13,8 @@ const root=path.resolve(import.meta.dirname,'..');
 const [cards,sources,topics,release]=await Promise.all(['cards','sources','topics','release'].map(async name=>JSON.parse(await fs.readFile(path.join(root,`data/${name}.json`),'utf8'))));
 let printScript=await fs.readFile(path.join(root,'print.js'),'utf8');
 const catalogModule='data:text/javascript;base64,'+Buffer.from(await fs.readFile(path.join(root,'catalog.js'),'utf8')).toString('base64');
-const importless=printScript.replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`).replace("'./catalog.js'",JSON.stringify(catalogModule)).replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href)).replace("import { createTextPdf } from './printable-pdf.js';",'const createTextPdf=globalThis.createTextPdf;');
+const importless=printScript.replace("import { APP_RELEASE } from './release.js';",`const APP_RELEASE=${JSON.stringify(release)};`).replace("'./catalog.js'",JSON.stringify(catalogModule)).replace("'./edus-guidance.js'",JSON.stringify(new URL('../edus-guidance.js',import.meta.url).href))
+  .replace("'./referral-guide.js'",JSON.stringify(new URL('../referral-guide.js',import.meta.url).href)).replace("import { createTextPdf } from './printable-pdf.js';",'const createTextPdf=globalThis.createTextPdf;');
 const {buildPrintDocument}=await import('data:text/javascript;base64,'+Buffer.from(importless).toString('base64'));
 const plain=html=>html.replace(/<(?:\/p|\/h[1-6]|\/li|\/dt|\/dd|\/pre|\/section|br)\b[^>]*>/g,'\n').replace(/<[^>]*>/g,'').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&');
 const compact=value=>String(value).replace(/\s+/g,' ').trim();

@@ -2,6 +2,7 @@ import { APP_RELEASE } from './release.js';
 import { isCatalogCard, generalRequirementsForCard, specificRequirementsForCard } from './catalog.js';
 import { createTextPdf } from './printable-pdf.js';
 import { edusGuidanceForCard } from './edus-guidance.js';
+import { guideReview, guideClinicalCard, guideStorageKey } from './referral-guide.js';
 
 const STORE = 'referencias-dipssha-v1';
 const arr = value => Array.isArray(value) ? value.filter(item => item !== null && item !== undefined) : value ? [value] : [];
@@ -75,7 +76,19 @@ function edusGuidancePrintHTML(card, cards) {
   return `<section class="notice edus-guidance-print" aria-label="Orientación operativa sobre estudios en EDUS"><p class="checklist-note">Orientación operativa de la app · EDUS</p><h2>${esc(guidance.title)}</h2><p>${esc(guidance.body)}</p>${guidance.originalsNote ? `<p><strong>Material original.</strong> ${esc(guidance.originalsNote)}</p>` : ''}<p class="checklist-note">${esc(guidance.scopeNote)}</p>${guidance.sources.map(source=>`<p class="source-url">${esc(source.label)}: ${esc(source.url)}</p>`).join('')}</section>`;
 }
 
-export function buildPrintDocument({ card, cards, sources, topics, checkedByCard = {}, release = APP_RELEASE }) {
+function guidePrintHTML(card, source, review) {
+  const pdf = source.localPdf && safeUrl(source.localPdf);
+  const section = ({label, pages, entries, notes}) => {
+    const links = pages.map(page => pdf ? `<a href="${pdf}#page=${esc(page)}">Pág. ${esc(page)}</a>` : `Pág. ${esc(page)}`);
+    const body = entries.length
+      ? `<ul class="checklist">${entries.map(entry => `<li><strong class="review-state">${entry.checked ? 'Revisado' : 'Por revisar'}</strong> ${esc(entry.text)}</li>`).join('')}</ul>`
+      : notes.length ? '' : '<p>Consulte este apartado en las páginas originales indicadas.</p>';
+    return `<section><h3>${esc(label)}</h3><p>Fuente ${esc(source.id)} · ${links.join(' · ')}</p>${notes.map(note => `<p>${esc(note)}</p>`).join('')}${body}</section>`;
+  };
+  return `<section><h2>Revise su referencia</h2>${statusNotes(source, card, new Set())}${review.notice ? `<p class="notice">${esc(review.notice)}</p>` : ''}${review.general.map(section).join('')}${review.needsChoice ? '<p>Falta elegir la ruta para consultar sus criterios específicos.</p>' : ''}${review.routeName ? `<h2>Ruta consultada · ${esc(review.routeName)}</h2>` : ''}${review.specific.map(section).join('')}<p class="checklist-note">Las marcas indican qué aspectos revisó en esta sesión. Aplique los criterios según el caso.</p></section>`;
+}
+
+export function buildPrintDocument({ card, cards, sources, topics, checkedByCard = {}, guideState = {}, release = APP_RELEASE }) {
   if(!isCatalogCard(card))throw new Error('Este apartado no establece criterios de referencia. Vuelva a la ficha para consultar los criterios documentados y la fuente original.');
   const source = sources.find(item => item.id === card.sourceId);
   if (!source) throw new Error('No se encontró la fuente que respalda esta ficha.');
@@ -84,8 +97,11 @@ export function buildPrintDocument({ card, cards, sources, topics, checkedByCard
   const title = topic?.name || card.name;
   const variant = topic?.variantLabels?.[card.id] || card.name;
   const general = generalRequirements(card, cards), shownApplicability = new Set();
+  const review = card.referralGuide ? guideReview(card, guideState) : null;
+  const clinical = review ? guidePrintHTML(card, source, review) :
+    `${general.length ? `<section aria-labelledby="general-title"><h2 id="general-title">Requisitos generales de ${esc(card.specialty)}</h2><p class="checklist-note">Proceden de la misma fuente ${esc(card.sourceId)} y especialidad. Revise las condiciones que correspondan a la persona valorada.</p>${general.map(item => `<section class="general-group">${clinicalContent(item, source, checkedByCard[item.id], item.name, shownApplicability)}</section>`).join('')}</section>` : ''}<section aria-labelledby="clinical-title"><h2 id="clinical-title">Criterios de la ficha consultada</h2>${clinicalContent(specificRequirementsForCard(card), source, checkedByCard[card.id], '', shownApplicability)}</section>`;
   const originalUrl = safeUrl(source.enlace);
-  return `<header class="document-heading"><p class="app-name">Criterios de referencia · DRIPSSHA</p><p class="specialty">${esc(card.specialty)}</p><h1>${esc(title)}</h1>${variant !== title ? `<p class="variant-name">Documento y variante consultada: ${esc(variant)}</p>` : ''}${card.name !== variant && card.name !== title ? `<p>${esc(card.name)}</p>` : ''}<p class="updated">Actualización de la app: ${esc(updateLabel(release))} · hora de Costa Rica</p></header><section aria-labelledby="source-title"><h2 id="source-title">Documento que respalda esta ficha</h2><dl class="metadata">${metadataRow('Fuente', `${source.id} · ${source.titulo}`)}${metadataRow('Alcance', source.alcance || card.scope)}${card.scope && card.scope !== source.alcance ? metadataRow('Alcance de la ficha', card.scope) : ''}${metadataRow('Código', source.codigo)}${metadataRow('Páginas de la ficha', pageLabel(card))}${metadataRow('Fecha del documento', source.fecha)}${metadataRow('Vigencia declarada', source.vigencia)}${metadataRow('Estado documental', source.estado)}${source.limites ? metadataRow('Procedencia y límites', source.limites) : ''}${source.provenance ? metadataRow('Procedencia de la copia', source.provenance) : ''}${source.approvalNote ? metadataRow('Aprobación documental', source.approvalNote) : ''}${source.derivativeNotice ? metadataRow('Nota de procedencia', source.derivativeNotice) : ''}</dl>${originalUrl ? `<p class="source-url">Enlace de la fuente: <span>${originalUrl}</span></p>` : ''}<p class="source-url">Identificador de la ficha: ${esc(card.id)}</p></section>${edusGuidancePrintHTML(card, cards)}${general.length ? `<section aria-labelledby="general-title"><h2 id="general-title">Requisitos generales de ${esc(card.specialty)}</h2><p class="checklist-note">Proceden de la misma fuente ${esc(card.sourceId)} y especialidad. Revise las condiciones que correspondan a la persona valorada.</p>${general.map(item => `<section class="general-group">${clinicalContent(item, source, checkedByCard[item.id], item.name, shownApplicability)}</section>`).join('')}</section>` : ''}<section aria-labelledby="clinical-title"><h2 id="clinical-title">Criterios de la ficha consultada</h2>${clinicalContent(specificRequirementsForCard(card), source, checkedByCard[card.id], '', shownApplicability)}</section><footer class="document-footer"><p><strong>DRIPSSHA · Huetar Atlántica</strong><br>Dirección de Red Integrada de Prestación de Servicios de Salud Huetar Atlántica</p><p>Reportar un error: <a href="mailto:msolanoc@ccss.sa.cr">msolanoc@ccss.sa.cr</a></p><p>Actualización de la app: ${esc(updateLabel(release))} · hora de Costa Rica. Los criterios conservan el alcance y las condiciones del documento indicado.</p></footer>`;
+  return `<header class="document-heading"><p class="app-name">Criterios de referencia · DRIPSSHA</p><p class="specialty">${esc(card.specialty)}</p><h1>${esc(title)}</h1>${variant !== title ? `<p class="variant-name">Documento y variante consultada: ${esc(variant)}</p>` : ''}${card.name !== variant && card.name !== title ? `<p>${esc(card.name)}</p>` : ''}<p class="updated">Actualización de la app: ${esc(updateLabel(release))} · hora de Costa Rica</p></header><section aria-labelledby="source-title"><h2 id="source-title">Documento que respalda esta ficha</h2><dl class="metadata">${metadataRow('Fuente', `${source.id} · ${source.titulo}`)}${metadataRow('Alcance', source.alcance || card.scope)}${card.scope && card.scope !== source.alcance ? metadataRow('Alcance de la ficha', card.scope) : ''}${metadataRow('Código', source.codigo)}${metadataRow('Páginas de la ficha', pageLabel(card))}${metadataRow('Fecha del documento', source.fecha)}${metadataRow('Vigencia declarada', source.vigencia)}${metadataRow('Estado documental', source.estado)}${source.limites ? metadataRow('Procedencia y límites', source.limites) : ''}${source.provenance ? metadataRow('Procedencia de la copia', source.provenance) : ''}${source.approvalNote ? metadataRow('Aprobación documental', source.approvalNote) : ''}${source.derivativeNotice ? metadataRow('Nota de procedencia', source.derivativeNotice) : ''}</dl>${originalUrl ? `<p class="source-url">Enlace de la fuente: <span>${originalUrl}</span></p>` : ''}<p class="source-url">Identificador de la ficha: ${esc(card.id)}</p></section>${edusGuidancePrintHTML(review ? guideClinicalCard(card, review) : card, cards)}${clinical}<footer class="document-footer"><p><strong>DRIPSSHA · Huetar Atlántica</strong><br>Dirección de Red Integrada de Prestación de Servicios de Salud Huetar Atlántica</p><p>Reportar un error: <a href="mailto:msolanoc@ccss.sa.cr">msolanoc@ccss.sa.cr</a></p><p>Actualización de la app: ${esc(updateLabel(release))} · hora de Costa Rica. Los criterios conservan el alcance y las condiciones del documento indicado.</p></footer>`;
 }
 
 function readChecks(id) {
@@ -142,7 +158,12 @@ async function initialise() {
       const card = cards.find(item => item.id === id);
       if (!card) throw new Error('Esta ficha no se encontró. Vuelva a la app y seleccione una ficha disponible.');
       const relevant = [card, ...generalRequirements(card, cards)], checkedByCard = Object.fromEntries(relevant.map(item => [item.id, readChecks(item.id)]));
-      $('print-content').innerHTML = buildPrintDocument({ card, cards, sources, topics, checkedByCard });
+      let guideState = {};
+      if (card.referralGuide) {
+        try { guideState = JSON.parse(sessionStorage.getItem(guideStorageKey(card.id)) || '{}'); }
+        catch { /* La impresión sigue disponible con la revisión en blanco. */ }
+      }
+      $('print-content').innerHTML = buildPrintDocument({ card, cards, sources, topics, checkedByCard, guideState });
       document.title = `${card.name} · Imprimir · Criterios de referencia`;
       $('print-content').hidden = false; $('print-help').hidden = false; $('print-document').disabled = false;$('share-print').disabled=false;
     } catch (error) {

@@ -15,6 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Preparar el visor de documentos
+        run: |
+          python3 -m venv "$RUNNER_TEMP/pdf-tools"
+          "$RUNNER_TEMP/pdf-tools/bin/pip" install PyMuPDF==1.26.6 Pillow==12.0.0
+          echo "$RUNNER_TEMP/pdf-tools/bin" >> "$GITHUB_PATH"
+      - uses: actions/cache@v4
+        with:
+          path: .cache/guide-pages
+          key: guide-pages-${{ runner.os }}-${{ hashFiles('scripts/render-guide-pages.py', '.github/workflows/github-pages.yml') }}-${{ hashFiles('assets/documents/N2*.pdf', 'assets/documents/N3*.pdf') }}
+          restore-keys: |
+            guide-pages-${{ runner.os }}-${{ hashFiles('scripts/render-guide-pages.py', '.github/workflows/github-pages.yml') }}-
       - name: Comprobar datos y navegación de fuentes
         run: node scripts/check.mjs
       - name: Preparar aplicación
